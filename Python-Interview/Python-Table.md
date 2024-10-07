@@ -188,6 +188,147 @@ Here's a table of commonly used Python keywords and built-in functions. Python k
 ---
 
 
+Here’s an expanded table that covers the core concepts, data structures, modules and packages, file handling, error handling, built-in functions, object-oriented programming, functional programming, and regular expressions in Python.
+
+### Core Concepts
+
+| Concept                  | Description                                                                                                                                                        |
+|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Variables**            | Named storage that holds data which can be changed during program execution.                                                                                     |
+| **Data Types**           | Different kinds of data in Python, including:                                                                                                                    |
+| - `int`                  | Represents integers (whole numbers) such as 1, 2, 3.                                                                                                            |
+| - `float`                | Represents floating-point numbers (decimals) such as 1.0, 2.5, 3.14.                                                                                           |
+| - `str`                  | Represents strings (text) enclosed in quotes, e.g., "Hello, World!".                                                                                             |
+| - `list`                 | An ordered, mutable collection of items, defined using square brackets, e.g., `[1, 2, 3]`.                                                                      |
+| - `dict`                 | A collection of key-value pairs, defined using curly braces, e.g., `{"key": "value"}`.                                                                         |
+| - `set`                  | An unordered collection of unique items, defined using curly braces, e.g., `{1, 2, 3}`.                                                                          |
+| - `tuple`                | An ordered, immutable collection of items, defined using parentheses, e.g., `(1, 2, 3)`.                                                                         |
+| **Control Flow**         | Determines the direction of execution in a program.                                                                                                             |
+| - `if`                   | A conditional statement that executes a block of code if a specified condition is true.                                                                          |
+| - `elif`                 | Stands for "else if"; used to check multiple conditions.                                                                                                        |
+| - `else`                 | Executes a block of code if none of the previous conditions are true.                                                                                           |
+| **Loops**                | Constructs for iterating over sequences or performing repeated actions.                                                                                         |
+| - `for`                  | Iterates over a sequence (like a list or a string) and executes a block of code for each item.                                                                   |
+| - `while`                | Repeatedly executes a block of code as long as a specified condition is true.                                                                                   |
+| **Functions**            | Blocks of reusable code designed to perform a specific task.                                                                                                     |
+| - `def`                  | Keyword used to define a standard function.                                                                                                                     |
+| - `lambda`               | Used to create anonymous functions (functions without a name).                                                                                                   |
+| **Scope**                | Refers to the visibility of variables within different parts of a program (local, global, nonlocal).                                                             |
+| **List Comprehensions**  | A concise way to create lists using a single line of code, allowing for easier and more readable list generation.                                               |
+
+### Data Structures
+
+| Data Structure          | Description                                                                                                                                                      |
+|-------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Lists**               | Ordered, mutable collections that can hold mixed data types, defined with square brackets, e.g., `[1, 2, 3]`.                                                |
+| **Tuples**              | Ordered, immutable collections that can hold mixed data types, defined with parentheses, e.g., `(1, 2, 3)`.                                                  |
+| **Sets**                | Unordered collections of unique elements, defined with curly braces, e.g., `{1, 2, 3}`.                                                                        |
+| **Dictionaries**        | Unordered collections of key-value pairs, defined with curly braces, e.g., `{"key": "value"}`.                                                                |
+| **Arrays**              | Homogeneous collections of items stored in a contiguous memory location, available through the `array` module, e.g., `array.array('i', [1, 2, 3])`.        |
+| **Stacks**              | A linear data structure that follows Last In First Out (LIFO) principle, implemented using lists or collections.                                               |
+| **Queues**              | A linear data structure that follows First In First Out (FIFO) principle, often implemented using `collections.deque`.                                       |
+| **Linked Lists**        | A linear data structure where elements are stored in nodes, each containing a reference to the next node.                                                     |
+| **Heaps**               | A specialized tree-based data structure that satisfies the heap property, often used to implement priority queues.                                             |
+
+### Modules and Packages
+
+| Module/Package          | Description                                                                                                                                                    |
+|-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Importing Modules**   | Mechanism to include external code and libraries into a Python program.                                                                                     |
+| - `import`              | Used to import an entire module, e.g., `import math`.                                                                                                       |
+| - `from ... import`     | Imports specific attributes or methods from a module, e.g., `from math import sqrt`.                                                                        |
+| **Creating Packages**   | A way to structure and organize Python modules, allowing for better modularity.                                                                              |
+| **`__init__.py`**      | A special file that indicates a directory is a Python package and can also be used to initialize package attributes.                                         |
+| **`pip`**               | A package installer for Python, used to install and manage software packages.                                                                                 |
+| **`virtualenv`**        | A tool used to create isolated Python environments for managing dependencies separately for different projects.                                               |
+| **`requirements.txt`**  | A text file that lists the packages and their versions required for a project, allowing easy installation with `pip install -r requirements.txt`.          |
+
+### File Handling
+
+| Concept                  | Description                                                                                                                                                   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Open/Close Files**     | Opening files for reading or writing, and closing them after operations.                                                                                  |
+| **Read/Write Methods**   | Methods for handling file content:                                                                                                                          |
+| - `read()`               | Reads the entire file.                                                                                                                                     |
+| - `write()`              | Writes a string to a file.                                                                                                                                 |
+| - `readline()`           | Reads the next line from the file.                                                                                                                          |
+| - `readlines()`          | Reads all the lines in a file and returns them as a list.                                                                                                   |
+| **File Modes**           | Different modes for opening files:                                                                                                                         |
+| - `r`                    | Read mode; default mode, opens a file for reading.                                                                                                          |
+| - `w`                    | Write mode; creates a new file or truncates an existing file.                                                                                              |
+| - `a`                    | Append mode; adds content to the end of the file.                                                                                                          |
+| - `r+`                   | Read and write mode; opens a file for both reading and writing.                                                                                            |
+| - `w+`                   | Write and read mode; creates a new file or truncates an existing file for reading and writing.                                                              |
+| - `b`                    | Binary mode; opens files in binary format, useful for non-text files.                                                                                      |
+| **Context Managers**     | Simplifies file handling using the `with` statement, ensuring proper acquisition and release of resources.                                                  |
+
+### Error Handling
+
+| Concept                  | Description                                                                                                                                                   |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Try-Except Blocks**    | A mechanism to handle exceptions that may occur during execution without crashing the program.                                                                |
+| **Finally Clause**       | Code that runs after the try and except blocks, regardless of whether an exception was raised.                                                                |
+| **Raising Exceptions**    | The `raise` keyword is used to trigger an exception manually.                                                                                                 |
+| **Custom Exceptions**    | User-defined exception classes to handle specific errors in a program.                                                                                     |
+| **Assertions**           | A debugging aid that tests a condition, raising an `AssertionError` if the condition is false.                                                               |
+
+### Built-in Functions
+
+| Function                 | Description                                                                                                                                                    |
+|--------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`print()`**            | Outputs a message to the console.                                                                                                                           |
+| **`len()`**              | Returns the length (number of items) of an object.                                                                                                          |
+| **`type()`**             | Returns the type of an object.                                                                                                                                 |
+| **`int()`**              | Converts a value to an integer.                                                                                                                                 |
+| **`float()`**            | Converts a value to a floating-point number.                                                                                                                 |
+| **`str()`**              | Converts a value to a string.                                                                                                                                 |
+| **`list()`**             | Creates a list from an iterable.                                                                                                                             |
+| **`dict()`**             | Creates a dictionary from key-value pairs.                                                                                                                    |
+| **`set()`**              | Creates a set from an iterable, removing duplicates.                                                                                                          |
+| **`tuple()`**            | Creates a tuple from an iterable.                                                                                                                              |
+| **`map()`**              | Applies a function to all items in an iterable and returns a map object.                                                                                     |
+| **`filter()`**           | Constructs an iterator from elements of an iterable for which a function returns true.                                                                         |
+| **`zip()`**              | Combines multiple iterables into tuples.                                                                                                                      |
+| **`sum()`**              | Sums the items of an iterable.                                                                                                                                 |
+| **`any()`**              | Returns True if any element of the iterable is true.                                                                                                          |
+| **`all()`**              | Returns True if all elements of the iterable are true.                                                                                                         |
+
+### Object-Oriented Programming
+
+| Concept                  | Description                                                                                                                                                    |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Classes**              | Blueprints for creating objects, defining properties and methods.
+
+                                                                                            |
+| **Objects**              | Instances of classes containing data and methods to operate on that data.                                                                                  |
+| **Inheritance**          | Mechanism that allows a new class to inherit attributes and methods from an existing class.                                                                  |
+| **Encapsulation**        | Bundling of data and methods that operate on that data within a single unit (class), restricting direct access to some of the object’s components.          |
+| **Polymorphism**         | The ability of different classes to be treated as instances of the same class through a common interface, often implemented through method overriding.       |
+| **Method Overriding**    | Redefining a method in a derived class that was already defined in the base class, allowing for specialized behavior.                                         |
+| **Magic Methods**        | Special methods (also known as dunder methods) that allow for the implementation of behavior for built-in operations, e.g., `__init__`, `__str__`, `__add__`. |
+
+### Functional Programming
+
+| Concept                  | Description                                                                                                                                                    |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **First-Class Functions** | Functions that can be passed around as arguments, returned from other functions, and assigned to variables.                                                  |
+| **Higher-Order Functions**| Functions that take other functions as arguments or return them as results.                                                                                 |
+| **`map()`**              | Applies a specified function to every item in an iterable and returns a map object.                                                                          |
+| **`filter()`**           | Constructs an iterator from elements of an iterable for which a function returns true.                                                                       |
+| **`reduce()`**           | Applies a function of two arguments cumulatively to the items of an iterable, reducing the iterable to a single value.                                       |
+| **Lambda Functions**      | Anonymous functions defined using the `lambda` keyword, often used for short, throwaway functions.                                                           |
+
+### Regular Expressions
+
+| Concept                  | Description                                                                                                                                                    |
+|--------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **`re` module**          | A module that provides support for regular expressions in Python.                                                                                          |
+| **Patterns**              | Specific sequences that define the search criteria for matching strings.                                                                                     |
+| **Search**               | Searches a string for a match and returns a match object if found.                                                                                          |
+| **Match**                | Determines if the regular expression matches at the beginning of the string.                                                                                 |
+| **Substitute**           | Replaces occurrences of a pattern in a string with a specified replacement string.                                                                          |
+| **Split**                | Splits a string by the occurrences of a pattern.                                                                                                            |
+
 
 
 
