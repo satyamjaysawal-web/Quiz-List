@@ -1,9 +1,8 @@
 
 
+## Python Important Codes
 
-
-Chalo, main aapko Python mein strings se related kuch concepts aur unke codes ke sath explain karta hoon. Har concept ke saath uska output bhi dikhata hoon.
-
+---
 ### 1. What is a string in Python and how is it defined?
 Python mein string ek sequence hai characters ka. Aap strings ko single ya double quotes mein define kar sakte ho.
 
