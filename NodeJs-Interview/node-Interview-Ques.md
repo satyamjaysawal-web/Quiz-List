@@ -1637,6 +1637,192 @@ HTTPS Server running at https://localhost:3000/
 
 ---
 
+### Streams and Buffers
+
+---
+
+### 1. **What is a Buffer in Node.js?**
+
+#### Answer:
+A Buffer is a global object in Node.js that provides a way to work with binary data. It is a temporary storage space for raw binary data that can be manipulated directly. Buffers are especially useful when dealing with I/O operations, such as reading files or handling network communications.
+
+---
+
+### 2. **What is the difference between a Buffer and a Stream in Node.js?**
+
+#### Answer:
+- **Buffer**: Represents a fixed-size chunk of memory that stores binary data. Buffers are used to hold data that is read from or written to files, network streams, etc. Buffers are generally used when you have all the data available at once.
+
+- **Stream**: Represents a sequence of data that can be read or written over time. Streams can handle data in chunks, which makes them suitable for processing large files or continuous data flows without consuming a lot of memory.
+
+---
+
+### 3. **How do you create a Buffer in Node.js?**
+
+#### Answer:
+You can create a Buffer using the `Buffer` constructor or the static methods like `Buffer.alloc()` and `Buffer.from()`.
+
+#### Example:
+
+```javascript
+// Creating a buffer using Buffer.alloc()
+const bufferAlloc = Buffer.alloc(10); // Creates a buffer of 10 bytes
+console.log(bufferAlloc); // Output: <Buffer 00 00 00 00 00 00 00 00 00 00>
+
+// Creating a buffer using Buffer.from()
+const bufferFrom = Buffer.from('Hello, World!'); // Creates a buffer from a string
+console.log(bufferFrom); // Output: <Buffer 48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21>
+```
+
+#### Output:
+```
+<Buffer 00 00 00 00 00 00 00 00 00 00>
+<Buffer 48 65 6c 6c 6f 2c 20 57 6f 72 6c 64 21>
+```
+
+---
+
+### 4. **What are writable and readable streams in Node.js?**
+
+#### Answer:
+- **Readable Stream**: A stream from which data can be read. Examples include `fs.createReadStream()` and `http.IncomingMessage`. You can consume data from a readable stream using methods like `read()` and event listeners.
+
+- **Writable Stream**: A stream to which data can be written. Examples include `fs.createWriteStream()` and `http.ServerResponse`. You can write data to a writable stream using methods like `write()` and `end()`.
+
+---
+
+### 5. **What is `stream.pipe()` used for in Node.js?**
+
+#### Answer:
+The `stream.pipe()` method is used to connect a readable stream to a writable stream, allowing data to flow from the source stream directly into the destination stream. It handles the piping of data automatically, making it easier to transfer data between streams.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+const readableStream = fs.createReadStream('input.txt');
+const writableStream = fs.createWriteStream('output.txt');
+
+// Piping data from readableStream to writableStream
+readableStream.pipe(writableStream);
+
+writableStream.on('finish', () => {
+  console.log('Data has been piped successfully!');
+});
+```
+
+#### Output:
+```
+Data has been piped successfully!
+```
+
+---
+
+### 6. **How do you handle backpressure in streams?**
+
+#### Answer:
+Backpressure occurs when a writable stream cannot process data as fast as it is being read from a readable stream. You can handle backpressure by checking if the writable stream is ready to accept more data using the `write()` method, which returns a boolean.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+const readableStream = fs.createReadStream('input.txt');
+const writableStream = fs.createWriteStream('output.txt');
+
+readableStream.on('data', (chunk) => {
+  const canWrite = writableStream.write(chunk);
+  
+  if (!canWrite) {
+    console.log('Backpressure: Pausing readable stream');
+    readableStream.pause(); // Pause reading from the source stream
+  }
+});
+
+writableStream.on('drain', () => {
+  console.log('Draining: Resuming readable stream');
+  readableStream.resume(); // Resume reading from the source stream
+});
+```
+
+#### Output:
+```
+Backpressure: Pausing readable stream
+Draining: Resuming readable stream
+```
+
+---
+
+### 7. **What are Duplex and Transform streams in Node.js?**
+
+#### Answer:
+- **Duplex Stream**: A stream that can read and write data. It can operate as both a readable and writable stream. An example is `net.Socket`.
+
+- **Transform Stream**: A type of duplex stream that modifies or transforms the data as it is written and read. An example is `zlib.createGzip()`, which compresses data.
+
+---
+
+### 8. **How do you read large files efficiently using streams in Node.js?**
+
+#### Answer:
+To read large files efficiently, you can use the `fs.createReadStream()` method to read the file in chunks instead of loading the entire file into memory at once. This reduces memory usage and improves performance.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+const readableStream = fs.createReadStream('largeFile.txt', { highWaterMark: 16 * 1024 }); // 16KB chunks
+
+readableStream.on('data', (chunk) => {
+  console.log(`Read ${chunk.length} bytes of data.`);
+});
+
+readableStream.on('end', () => {
+  console.log('Finished reading the file.');
+});
+```
+
+#### Output:
+```
+Read 16384 bytes of data.
+Finished reading the file.
+```
+
+---
+
+### 9. **What is the purpose of the `Buffer.alloc()` and `Buffer.from()` methods?**
+
+#### Answer:
+- **`Buffer.alloc(size)`**: Allocates a new buffer of the specified size filled with zeroes. It is used to create a buffer when the exact data is not yet known.
+
+- **`Buffer.from(array)`**: Creates a buffer from an existing array or string. It is used to convert data into a buffer format for further manipulation.
+
+---
+
+### 10. **How do you convert a buffer to a string in Node.js?**
+
+#### Answer:
+You can convert a buffer to a string using the `toString()` method of the Buffer class. You can also specify the encoding format (e.g., 'utf-8', 'ascii').
+
+#### Example:
+
+```javascript
+const buffer = Buffer.from('Hello, World!');
+const str = buffer.toString('utf-8'); // Converting buffer to string
+console.log(str); // Output: Hello, World!
+```
+
+#### Output:
+```
+Hello, World!
+```
+
+---
+
+
+
 ---
 ---
 
