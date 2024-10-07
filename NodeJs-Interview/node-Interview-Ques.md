@@ -2910,6 +2910,346 @@ readableStream.on('end', () => {
 ```
 
 ---
+Here's a comprehensive guide on **Database Connectivity** in Node.js with examples and outputs:
+
+### 1. **How do you connect a Node.js application to a database?**
+
+#### Answer:
+To connect a Node.js application to a database, you typically use a driver or an ORM (Object Relational Mapping) library specific to the database you are using (e.g., MongoDB, MySQL, PostgreSQL).
+
+#### Example of connecting to MongoDB using the native MongoDB driver:
+```bash
+npm install mongodb
+```
+
+```javascript
+const { MongoClient } = require('mongodb');
+
+async function main() {
+    const uri = 'mongodb://localhost:27017';
+    const client = new MongoClient(uri);
+
+    try {
+        await client.connect();
+        console.log('Connected to MongoDB');
+    } finally {
+        await client.close();
+    }
+}
+
+main().catch(console.error);
+
+// Output: Connected to MongoDB
+```
+
+---
+
+### 2. **What are the differences between SQL and NoSQL databases in Node.js?**
+
+#### Answer:
+- **SQL Databases**:
+  - Structured, schema-based.
+  - Use SQL for queries (e.g., MySQL, PostgreSQL).
+  - Data is stored in tables with rows and columns.
+  - Support ACID transactions.
+
+- **NoSQL Databases**:
+  - Schema-less or flexible schema.
+  - Use various query languages (e.g., MongoDB uses BSON).
+  - Data can be stored in JSON-like documents, key-value pairs, graphs, or wide-column stores (e.g., MongoDB, Redis, Cassandra).
+  - Typically designed for horizontal scaling and high availability.
+
+---
+
+### 3. **How do you perform CRUD operations using MongoDB in Node.js?**
+
+#### Answer:
+CRUD operations can be performed using the MongoDB driver or an ORM like Mongoose.
+
+#### Example using the MongoDB native driver:
+```javascript
+const { MongoClient } = require('mongodb');
+
+async function main() {
+    const uri = 'mongodb://localhost:27017';
+    const client = new MongoClient(uri);
+    const dbName = 'testDB';
+    const collectionName = 'testCollection';
+
+    try {
+        await client.connect();
+        const db = client.db(dbName);
+        const collection = db.collection(collectionName);
+
+        // Create (Insert)
+        await collection.insertOne({ name: 'Alice', age: 25 });
+        
+        // Read (Find)
+        const user = await collection.findOne({ name: 'Alice' });
+        console.log('User found:', user);
+
+        // Update
+        await collection.updateOne({ name: 'Alice' }, { $set: { age: 26 } });
+
+        // Delete
+        await collection.deleteOne({ name: 'Alice' });
+    } finally {
+        await client.close();
+    }
+}
+
+main().catch(console.error);
+
+// Output: User found: { _id: ..., name: 'Alice', age: 25 }
+```
+
+---
+
+### 4. **What is the role of Mongoose in Node.js?**
+
+#### Answer:
+Mongoose is an ODM (Object Data Modeling) library for MongoDB and Node.js. It provides a schema-based solution to model your application data and includes built-in validation, query building, and more.
+
+#### Example of using Mongoose:
+```bash
+npm install mongoose
+```
+
+```javascript
+const mongoose = require('mongoose');
+
+async function main() {
+    await mongoose.connect('mongodb://localhost:27017/testDB');
+
+    const userSchema = new mongoose.Schema({
+        name: String,
+        age: Number,
+    });
+
+    const User = mongoose.model('User', userSchema);
+
+    // Create
+    const user = new User({ name: 'Bob', age: 30 });
+    await user.save();
+
+    // Read
+    const foundUser = await User.findOne({ name: 'Bob' });
+    console.log('Found User:', foundUser);
+
+    // Update
+    await User.updateOne({ name: 'Bob' }, { age: 31 });
+
+    // Delete
+    await User.deleteOne({ name: 'Bob' });
+
+    await mongoose.disconnect();
+}
+
+main().catch(console.error);
+
+// Output: Found User: { _id: ..., name: 'Bob', age: 30 }
+```
+
+---
+
+### 5. **How do you handle database errors in Node.js?**
+
+#### Answer:
+You can handle database errors using `try-catch` blocks for asynchronous code or by checking for errors in callbacks. When using Promises, you can handle errors with `.catch()`.
+
+#### Example:
+```javascript
+async function main() {
+    try {
+        await mongoose.connect('mongodb://localhost:27017/testDB');
+        // Perform database operations...
+    } catch (error) {
+        console.error('Database connection error:', error);
+    } finally {
+        await mongoose.disconnect();
+    }
+}
+
+main().catch(console.error);
+
+// Output: Database connection error: [Error: ...]
+```
+
+---
+
+### 6. **How do you perform transactions in Node.js?**
+
+#### Answer:
+In MongoDB, you can use transactions when working with multiple operations that need to be executed atomically. This feature requires using a replica set.
+
+#### Example of using transactions with Mongoose:
+```javascript
+async function main() {
+    const session = await mongoose.startSession();
+    session.startTransaction();
+    
+    try {
+        const user = new User({ name: 'Charlie', age: 28 });
+        await user.save({ session });
+        
+        // Other operations can be added here
+        
+        await session.commitTransaction();
+        console.log('Transaction committed');
+    } catch (error) {
+        await session.abortTransaction();
+        console.error('Transaction aborted:', error);
+    } finally {
+        session.endSession();
+        await mongoose.disconnect();
+    }
+}
+
+main().catch(console.error);
+
+// Output: Transaction committed or Transaction aborted: [Error: ...]
+```
+
+---
+
+### 7. **What is connection pooling, and why is it important in Node.js?**
+
+#### Answer:
+Connection pooling is a technique used to manage multiple connections to the database. Instead of creating and closing connections for each request, a pool of connections is maintained, allowing applications to reuse existing connections.
+
+**Importance**:
+- Reduces latency by avoiding the overhead of establishing new connections.
+- Manages database resources efficiently.
+- Improves the performance of applications that require multiple database operations.
+
+#### Example of using connection pooling with `mysql`:
+```bash
+npm install mysql
+```
+
+```javascript
+const mysql = require('mysql');
+
+const pool = mysql.createPool({
+    connectionLimit: 10,
+    host: 'localhost',
+    user: 'root',
+    password: '',
+    database: 'testDB'
+});
+
+pool.query('SELECT * FROM users', (error, results) => {
+    if (error) throw error;
+    console.log(results);
+});
+
+// Output: Rows fetched from the database
+```
+
+---
+
+### 8. **How do you use PostgreSQL with Node.js?**
+
+#### Answer:
+To use PostgreSQL with Node.js, you can use the `pg` library, which provides a client for connecting to PostgreSQL.
+
+#### Example:
+```bash
+npm install pg
+```
+
+```javascript
+const { Pool } = require('pg');
+
+const pool = new Pool({
+    user: 'user',
+    host: 'localhost',
+    database: 'testDB',
+    password: 'password',
+    port: 5432,
+});
+
+async function main() {
+    const res = await pool.query('SELECT NOW()');
+    console.log('Current time:', res.rows[0]);
+
+    await pool.end();
+}
+
+main().catch(console.error);
+
+// Output: Current time: { now: 2023-10-08T00:00:00.000Z }
+```
+
+---
+
+### 9. **What is the difference between using callbacks and promises for database operations?**
+
+#### Answer:
+- **Callbacks**: 
+  - Pass a function as an argument to handle results or errors.
+  - Can lead to callback hell (deeply nested callbacks).
+
+- **Promises**:
+  - Return a promise that resolves with the result or rejects with an error.
+  - Can be chained with `.then()` and `.catch()`, making code cleaner and easier to read.
+
+#### Example using Callbacks:
+```javascript
+pool.query('SELECT * FROM users', (error, results) => {
+    if (error) throw error;
+    console.log(results);
+});
+
+// Output: Rows fetched from the database
+```
+
+#### Example using Promises:
+```javascript
+pool.query('SELECT * FROM users')
+    .then(results => console.log(results))
+    .catch(error => console.error(error));
+
+// Output: Rows fetched from the database
+```
+
+---
+
+### 10. **How do you implement pagination in database queries in Node.js?**
+
+#### Answer:
+Pagination can be implemented in database queries by using `LIMIT` and `OFFSET` clauses in SQL or the `skip()` and `limit()` methods in MongoDB.
+
+#### Example for PostgreSQL:
+```javascript
+const page = 1; // Current page
+const pageSize = 10; // Number of records per page
+const offset = (page - 1) * pageSize;
+
+pool.query('SELECT * FROM users LIMIT $1 OFFSET $2', [pageSize, offset])
+    .then(results => console.log(results.rows))
+    .catch(error => console.error(error));
+
+// Output: 10 users from the specified page
+```
+
+#### Example for MongoDB:
+```javascript
+const page = 1; // Current page
+const pageSize = 10; // Number of records per page
+
+collection.find()
+    .skip((page - 1) * pageSize)
+    .limit(pageSize)
+    .toArray((err, items) => {
+        if (err) throw err;
+        console.log(items);
+    });
+
+// Output: 10 users from the specified page
+```
+
+---
 
 ---
 ---
