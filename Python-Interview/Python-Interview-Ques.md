@@ -67,6 +67,117 @@ This table provides a detailed overview of various Python-related terms and func
 
 ---
 ---
+Here's a table of commonly used Python keywords and built-in functions. Python keywords are reserved words that have special meaning in the language and cannot be used as identifiers. Built-in functions are available by default in Python.
+
+### Python Keywords
+
+| Keyword       | Description                                      |
+|---------------|--------------------------------------------------|
+| `False`       | Boolean value representing false                 |
+| `None`        | Represents the absence of a value                |
+| `True`        | Boolean value representing true                  |
+| `and`         | Logical AND operator                             |
+| `as`          | Used to create an alias                           |
+| `assert`      | Used for debugging; tests a condition           |
+| `async`       | Used to declare an asynchronous function          |
+| `await`       | Used to call an asynchronous function            |
+| `break`       | Exits a loop                                     |
+| `class`       | Defines a class                                  |
+| `continue`    | Continues to the next iteration of a loop       |
+| `def`         | Defines a function                               |
+| `del`         | Deletes a reference to an object                 |
+| `elif`        | Used in conditional statements (else if)       |
+| `else`        | Defines an alternative condition                  |
+| `except`      | Used to catch exceptions                          |
+| `finally`     | A block of code that runs after try/except      |
+| `for`         | Used to create a for loop                        |
+| `from`        | Imports specific parts of a module              |
+| `global`      | Declares a global variable                       |
+| `if`          | Used for conditional statements                   |
+| `import`      | Imports a module                                 |
+| `in`          | Tests for membership                             |
+| `is`          | Tests for object identity                        |
+| `lambda`      | Creates an anonymous function                     |
+| `nonlocal`    | Declares a non-local variable                   |
+| `not`         | Logical NOT operator                             |
+| `or`          | Logical OR operator                              |
+| `pass`        | A null statement, does nothing                  |
+| `raise`       | Raises an exception                              |
+| `return`      | Exits a function and returns a value            |
+| `try`         | Specifies exception handling                     |
+| `while`       | Creates a while loop                             |
+| `with`        | Used to wrap the execution of a block           |
+| `yield`       | Used to make a generator function                |
+
+### Python Built-in Functions
+
+| Function          | Description                                      |
+|-------------------|--------------------------------------------------|
+| `abs()`           | Returns the absolute value of a number          |
+| `all()`           | Returns True if all elements of an iterable are true |
+| `any()`           | Returns True if any element of an iterable is true |
+| `bin()`           | Converts an integer to a binary string          |
+| `bool()`          | Converts a value to a Boolean                   |
+| `bytearray()`     | Returns a new array of bytes                    |
+| `bytes()`         | Returns a new "bytes" object                    |
+| `callable()`      | Checks if the object appears callable           |
+| `chr()`           | Converts an integer to a character              |
+| `classmethod()`   | Transforms a method into a class method         |
+| `compile()`       | Compiles source into a code object              |
+| `complex()`       | Creates a complex number                         |
+| `delattr()`       | Deletes an attribute from an object             |
+| `dict()`          | Creates a dictionary                             |
+| `dir()`           | Returns a list of attributes and methods        |
+| `divmod()`        | Returns the quotient and remainder               |
+| `enumerate()`     | Returns an enumerate object                     |
+| `eval()`          | Evaluates a string as a Python expression       |
+| `exec()`          | Executes the Python code in the given string    |
+| `filter()`        | Constructs an iterator from elements of an iterable |
+| `float()`         | Converts a value to a floating point number     |
+| `format()`        | Formats a specified value                        |
+| `frozenset()`     | Returns a frozenset object                      |
+| `getattr()`       | Returns the value of a named attribute          |
+| `globals()`       | Returns a dictionary representing the current global symbol table |
+| `hasattr()`       | Checks if an object has a named attribute       |
+| `hash()`          | Returns the hash value of an object             |
+| `help()`          | Invokes the built-in help system                |
+| `id()`            | Returns the identity of an object               |
+| `input()`         | Reads a line from input                          |
+| `int()`           | Converts a value to an integer                  |
+| `isinstance()`    | Checks if an object is an instance of a class   |
+| `issubclass()`    | Checks if a class is a subclass of another      |
+| `len()`           | Returns the length of an object                 |
+| `list()`          | Creates a list                                  |
+| `locals()`        | Returns a dictionary representing the current local symbol table |
+| `map()`           | Applies a function to all items in an iterable   |
+| `max()`           | Returns the largest item in an iterable         |
+| `memoryview()`    | Returns a memory view object                    |
+| `min()`           | Returns the smallest item in an iterable        |
+| `next()`          | Retrieves the next item from an iterator        |
+| `object()`        | Returns a new featureless object                |
+| `oct()`           | Converts an integer to an octal string          |
+| `open()`          | Opens a file and returns a file object         |
+| `ord()`           | Converts a character to its integer value       |
+| `pow()`           | Returns the value of x to the power of y       |
+| `print()`         | Prints the specified message to the screen      |
+| `property()`      | Returns a property attribute                     |
+| `range()`         | Returns a sequence of numbers                   |
+| `repr()`          | Returns a string representing an object         |
+| `reversed()`      | Returns a reversed iterator                     |
+| `round()`         | Rounds a number to a specified number of decimals |
+| `set()`           | Creates a set                                   |
+| `setattr()`       | Sets the value of a named attribute             |
+| `slice()`         | Returns a slice object                          |
+| `sorted()`        | Returns a sorted list                           |
+| `staticmethod()`  | Transforms a method into a static method       |
+| `str()`           | Converts an object to a string                  |
+| `sum()`           | Sums the items of an iterable                   |
+| `super()`         | Returns a proxy object that delegates method calls to a parent or sibling class |
+| `tuple()`         | Creates a tuple                                 |
+| `type()`          | Returns the type of an object                   |
+| `vars()`          | Returns the `__dict__` attribute for a module, class, instance, or any other object |
+| `zip()`           | Returns an iterator of tuples                   |
+
 
 
 ---
