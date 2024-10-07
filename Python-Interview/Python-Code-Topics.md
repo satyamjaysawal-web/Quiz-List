@@ -744,8 +744,543 @@ except AssertionError as e:
 ```
 
 ### Summary
+
 This overview covers error handling in Python using try-except blocks, finally clauses, raising exceptions, creating custom exceptions, and using assertions. Proper error handling is essential for writing robust and user-friendly applications, as it allows you to gracefully manage unexpected conditions and maintain the flow of your program.
 ---
 ---
+
+Here’s a detailed overview of some commonly used built-in functions in Python, including examples and their outputs.
+
+### 1. `print()`
+The `print()` function outputs data to the console.
+
+```python
+# Example of print()
+print("Hello, World!")  # Output: Hello, World!
+```
+
+### 2. `len()`
+The `len()` function returns the number of items in an object (like strings, lists, tuples, etc.).
+
+```python
+# Example of len()
+my_list = [1, 2, 3, 4]
+print(len(my_list))  # Output: 4
+
+my_string = "Hello"
+print(len(my_string))  # Output: 5
+```
+
+### 3. `type()`
+The `type()` function returns the type of an object.
+
+```python
+# Example of type()
+print(type(5))  # Output: <class 'int'>
+print(type(5.0))  # Output: <class 'float'>
+print(type("Hello"))  # Output: <class 'str'>
+print(type([1, 2, 3]))  # Output: <class 'list'>
+```
+
+### 4. `int()`
+The `int()` function converts a value to an integer.
+
+```python
+# Example of int()
+print(int("10"))  # Output: 10
+print(int(5.99))  # Output: 5
+```
+
+### 5. `float()`
+The `float()` function converts a value to a float.
+
+```python
+# Example of float()
+print(float("10.5"))  # Output: 10.5
+print(float(5))  # Output: 5.0
+```
+
+### 6. `str()`
+The `str()` function converts a value to a string.
+
+```python
+# Example of str()
+print(str(10))  # Output: '10'
+print(str(5.5))  # Output: '5.5'
+```
+
+### 7. `list()`
+The `list()` function creates a list from an iterable.
+
+```python
+# Example of list()
+my_tuple = (1, 2, 3)
+my_list = list(my_tuple)
+print(my_list)  # Output: [1, 2, 3]
+
+my_string = "Hello"
+print(list(my_string))  # Output: ['H', 'e', 'l', 'l', 'o']
+```
+
+### 8. `dict()`
+The `dict()` function creates a dictionary.
+
+```python
+# Example of dict()
+my_dict = dict(name="Alice", age=25)
+print(my_dict)  # Output: {'name': 'Alice', 'age': 25}
+
+# Creating a dictionary from a list of tuples
+pairs = [("a", 1), ("b", 2)]
+my_dict2 = dict(pairs)
+print(my_dict2)  # Output: {'a': 1, 'b': 2}
+```
+
+### 9. `set()`
+The `set()` function creates a set, which is a collection of unique elements.
+
+```python
+# Example of set()
+my_set = set([1, 2, 2, 3, 4])
+print(my_set)  # Output: {1, 2, 3, 4}
+
+# Creating a set from a string
+my_set2 = set("Hello")
+print(my_set2)  # Output: {'H', 'e', 'l', 'o'}
+```
+
+### 10. `tuple()`
+The `tuple()` function creates a tuple from an iterable.
+
+```python
+# Example of tuple()
+my_list = [1, 2, 3]
+my_tuple = tuple(my_list)
+print(my_tuple)  # Output: (1, 2, 3)
+```
+
+### 11. `map()`
+The `map()` function applies a function to all items in an iterable (like a list).
+
+```python
+# Example of map()
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4]
+squared = list(map(square, numbers))
+print(squared)  # Output: [1, 4, 9, 16]
+```
+
+### 12. `filter()`
+The `filter()` function filters elements from an iterable based on a function that returns True or False.
+
+```python
+# Example of filter()
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5]
+even_numbers = list(filter(is_even, numbers))
+print(even_numbers)  # Output: [2, 4]
+```
+
+### 13. `zip()`
+The `zip()` function combines two or more iterables into a single iterable of tuples.
+
+```python
+# Example of zip()
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+combined = list(zip(names, ages))
+print(combined)  # Output: [('Alice', 25), ('Bob', 30), ('Charlie', 35)]
+```
+
+### 14. `sum()`
+The `sum()` function returns the sum of all items in an iterable.
+
+```python
+# Example of sum()
+numbers = [1, 2, 3, 4]
+total = sum(numbers)
+print(total)  # Output: 10
+```
+
+### 15. `any()`
+The `any()` function returns True if at least one of the elements in the iterable is True.
+
+```python
+# Example of any()
+print(any([False, False, True]))  # Output: True
+print(any([False, False, False]))  # Output: False
+```
+
+### 16. `all()`
+The `all()` function returns True if all elements in the iterable are True.
+
+```python
+# Example of all()
+print(all([True, True, True]))  # Output: True
+print(all([True, False, True]))  # Output: False
+```
+
+### Summary
+This overview covered various built-in functions in Python that are essential for data manipulation and processing. Understanding these functions will greatly enhance your ability to write efficient and concise Python code.
+
+
 ---
 ---
+Here's a comprehensive overview of Object-Oriented Programming (OOP) concepts in Python, including classes, objects, inheritance, encapsulation, polymorphism, method overriding, and magic methods (also known as dunder methods).
+
+### 1. Classes and Objects
+
+**Classes** are blueprints for creating objects (instances). An **object** is an instance of a class.
+
+```python
+# Example of a class and object
+class Dog:
+    def __init__(self, name, age):
+        self.name = name  # Instance variable
+        self.age = age
+
+    def bark(self):
+        return "Woof!"
+
+# Creating an object of the Dog class
+my_dog = Dog("Buddy", 3)
+
+# Accessing attributes and methods
+print(my_dog.name)  # Output: Buddy
+print(my_dog.age)   # Output: 3
+print(my_dog.bark())  # Output: Woof!
+```
+
+### 2. Inheritance
+**Inheritance** allows a class (child class) to inherit attributes and methods from another class (parent class).
+
+```python
+# Example of inheritance
+class Animal:
+    def speak(self):
+        return "Animal speaks"
+
+class Cat(Animal):  # Cat inherits from Animal
+    def meow(self):
+        return "Meow!"
+
+# Creating an object of the Cat class
+my_cat = Cat()
+print(my_cat.speak())  # Output: Animal speaks
+print(my_cat.meow())    # Output: Meow!
+```
+
+### 3. Encapsulation
+**Encapsulation** is the practice of restricting access to certain attributes and methods to protect the integrity of the object. In Python, this is achieved using private variables (prefixing with an underscore `_`).
+
+```python
+# Example of encapsulation
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance  # Private variable
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.__balance += amount
+            return self.__balance
+        else:
+            return "Invalid deposit amount"
+
+    def get_balance(self):
+        return self.__balance
+
+# Creating a BankAccount object
+account = BankAccount("Alice", 1000)
+
+# Accessing public methods
+print(account.deposit(500))  # Output: 1500
+print(account.get_balance())  # Output: 1500
+
+# Trying to access the private variable directly will raise an AttributeError
+# print(account.__balance)  # Uncommenting this line will raise an error
+```
+
+### 4. Polymorphism
+**Polymorphism** allows methods to do different things based on the object it is acting upon, typically achieved through method overriding.
+
+```python
+# Example of polymorphism
+class Bird:
+    def speak(self):
+        return "Chirp!"
+
+class Dog:
+    def speak(self):
+        return "Woof!"
+
+def animal_sound(animal):
+    print(animal.speak())
+
+# Using polymorphism
+my_bird = Bird()
+my_dog = Dog()
+
+animal_sound(my_bird)  # Output: Chirp!
+animal_sound(my_dog)   # Output: Woof!
+```
+
+### 5. Method Overriding
+**Method overriding** allows a child class to provide a specific implementation of a method that is already defined in its parent class.
+
+```python
+# Example of method overriding
+class Vehicle:
+    def start(self):
+        return "Vehicle starting"
+
+class Car(Vehicle):
+    def start(self):  # Overriding the start method
+        return "Car starting"
+
+# Creating objects
+my_vehicle = Vehicle()
+my_car = Car()
+
+print(my_vehicle.start())  # Output: Vehicle starting
+print(my_car.start())      # Output: Car starting
+```
+
+### 6. Magic Methods (Dunder Methods)
+**Magic methods**, also known as **dunder methods** (double underscore methods), allow you to define the behavior of objects for built-in functions. Common examples include `__init__`, `__str__`, `__repr__`, `__len__`, and `__add__`.
+
+```python
+# Example of magic methods
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __str__(self):
+        return f"Point({self.x}, {self.y})"
+
+    def __add__(self, other):
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __len__(self):
+        return int((self.x ** 2 + self.y ** 2) ** 0.5)
+
+# Creating Point objects
+point1 = Point(2, 3)
+point2 = Point(5, 7)
+
+# Using magic methods
+print(point1)              # Output: Point(2, 3)
+print(point2)              # Output: Point(5, 7)
+print(point1 + point2)     # Output: Point(7, 10)
+print(len(point1))         # Output: 3
+```
+
+### Summary
+This overview covered the core concepts of Object-Oriented Programming in Python, including classes, objects, inheritance, encapsulation, polymorphism, method overriding, and magic methods. Mastering these concepts will help you write organized and reusable code, making your programming tasks more efficient and maintainable.
+
+---
+---
+
+Here's a comprehensive overview of functional programming concepts in Python, including first-class functions, higher-order functions, `map()`, `filter()`, `reduce()`, and lambda functions.
+
+### 1. First-Class Functions
+In Python, functions are first-class citizens, meaning they can be treated like any other variable. You can assign functions to variables, pass them as arguments to other functions, and return them from functions.
+
+```python
+# Example of first-class functions
+def greet(name):
+    return f"Hello, {name}!"
+
+# Assigning a function to a variable
+greeting = greet
+
+# Calling the function
+print(greeting("Alice"))  # Output: Hello, Alice!
+```
+
+### 2. Higher-Order Functions
+Higher-order functions are functions that take other functions as arguments or return them as results. This allows for greater abstraction and modularity in your code.
+
+```python
+# Example of a higher-order function
+def apply_function(func, value):
+    return func(value)
+
+# Defining a simple function
+def square(x):
+    return x ** 2
+
+# Using the higher-order function
+result = apply_function(square, 5)
+print(result)  # Output: 25
+```
+
+### 3. `map()`
+The `map()` function applies a given function to all items in an iterable (like a list) and returns a map object (which can be converted to a list).
+
+```python
+# Example of map()
+def square(x):
+    return x ** 2
+
+numbers = [1, 2, 3, 4]
+squared_numbers = list(map(square, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16]
+```
+
+### 4. `filter()`
+The `filter()` function filters elements from an iterable based on a function that returns True or False. It returns an iterator that can be converted to a list.
+
+```python
+# Example of filter()
+def is_even(x):
+    return x % 2 == 0
+
+numbers = [1, 2, 3, 4, 5, 6]
+even_numbers = list(filter(is_even, numbers))
+print(even_numbers)  # Output: [2, 4, 6]
+```
+
+### 5. `reduce()`
+The `reduce()` function, found in the `functools` module, applies a rolling computation to sequential pairs of values in an iterable. It is useful for aggregating results.
+
+```python
+from functools import reduce
+
+# Example of reduce()
+def add(x, y):
+    return x + y
+
+numbers = [1, 2, 3, 4]
+sum_result = reduce(add, numbers)
+print(sum_result)  # Output: 10
+```
+
+### 6. Lambda Functions
+Lambda functions are small anonymous functions defined using the `lambda` keyword. They can take any number of arguments but can only have one expression.
+
+```python
+# Example of lambda functions
+# Lambda function for squaring a number
+square = lambda x: x ** 2
+print(square(5))  # Output: 25
+
+# Using lambda with map
+numbers = [1, 2, 3, 4]
+squared_numbers = list(map(lambda x: x ** 2, numbers))
+print(squared_numbers)  # Output: [1, 4, 9, 16]
+
+# Using lambda with filter
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # Output: [2, 4]
+```
+
+### Summary
+This overview covers key concepts in functional programming using Python, including first-class functions, higher-order functions, `map()`, `filter()`, `reduce()`, and lambda functions. Understanding these concepts can lead to more concise and readable code, leveraging the power of functional programming paradigms.
+
+---
+---
+Regular expressions (regex) are a powerful tool for searching and manipulating strings based on patterns. In Python, the `re` module provides a wide range of functionalities for working with regex patterns. Here’s an overview of the key concepts and methods available in the `re` module, including patterns, search, match, substitute, and split operations.
+
+### 1. The `re` Module
+To work with regular expressions in Python, you first need to import the `re` module.
+
+```python
+import re
+```
+
+### 2. Patterns
+A pattern is a sequence of characters that defines a search criterion. Common patterns include:
+
+- `\d` for digits
+- `\w` for word characters (alphanumeric + underscore)
+- `\s` for whitespace characters
+- `.` for any character except a newline
+- `^` for the start of a string
+- `$` for the end of a string
+- `*`, `+`, `?` for quantifiers
+
+### 3. Search
+The `re.search()` function scans through a string looking for the first location where the regex pattern produces a match. It returns a match object if found, or `None` if not.
+
+```python
+# Example of re.search()
+text = "The rain in Spain"
+match = re.search(r"rain", text)
+
+if match:
+    print("Match found:", match.group())  # Output: Match found: rain
+else:
+    print("No match found.")
+```
+
+### 4. Match
+The `re.match()` function checks for a match only at the beginning of the string. If the pattern is found at the start, it returns a match object; otherwise, it returns `None`.
+
+```python
+# Example of re.match()
+text = "The rain in Spain"
+match = re.match(r"The", text)
+
+if match:
+    print("Match found:", match.group())  # Output: Match found: The
+else:
+    print("No match found.")
+
+# Checking for a pattern that doesn't match at the start
+match = re.match(r"rain", text)
+print(match)  # Output: None (no match)
+```
+
+### 5. Substitute
+The `re.sub()` function replaces occurrences of the pattern with a specified replacement string.
+
+```python
+# Example of re.sub()
+text = "The rain in Spain"
+result = re.sub(r"rain", "sun", text)
+print(result)  # Output: The sun in Spain
+```
+
+### 6. Split
+The `re.split()` function splits a string by the occurrences of the pattern.
+
+```python
+# Example of re.split()
+text = "apple, banana; cherry orange"
+result = re.split(r"[;,\s]+", text)  # Split by semicolon, comma, or whitespace
+print(result)  # Output: ['apple', 'banana', 'cherry', 'orange']
+```
+
+### Summary
+The `re` module in Python is a powerful tool for working with regular expressions, allowing you to search, match, substitute, and split strings based on patterns. Understanding these functions can greatly enhance your ability to handle text processing tasks effectively. Here's a quick recap of the key functions:
+
+- **`re.search()`**: Finds the first occurrence of a pattern in a string.
+- **`re.match()`**: Checks if a pattern matches at the beginning of a string.
+- **`re.sub()`**: Replaces occurrences of a pattern in a string.
+- **`re.split()`**: Splits a string by a specified pattern.
+
+These functions allow you to perform complex string operations with relative ease, making regex an invaluable tool in Python programming.
+
+---
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
