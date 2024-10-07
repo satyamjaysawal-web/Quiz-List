@@ -279,7 +279,297 @@ This list covers a wide range of **Node.js interview topics** to help prepare fo
 
 ---
 ---
+Sure! Aapke instructions follow karte hue, main har concept ko answer karunga, phir ek example ke sath code aur expected output bhi provide karunga.
 
+---
+
+### 1. **What is Node.js?**
+
+#### Answer:
+Node.js ek open-source, cross-platform runtime environment hai jo JavaScript ko server-side pe execute karne ke liye use hota hai. Yeh event-driven, non-blocking I/O model pe kaam karta hai, jisse performance aur scalability better hoti hai, especially for real-time applications like chat, APIs, etc.
+
+#### Example:
+
+```javascript
+// Example of a basic HTTP server in Node.js
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, World!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+```
+Server running at http://localhost:3000/
+(Opening http://localhost:3000/ will show "Hello, World!")
+```
+
+---
+
+### 2. **Why is Node.js single-threaded?**
+
+#### Answer:
+Node.js single-threaded hai because it follows an event-driven, non-blocking I/O model. Single-threaded architecture ka benefit ye hai ki it efficiently handles a large number of concurrent requests without creating new threads for each request. Instead, the event loop takes care of task execution asynchronously.
+
+#### Example:
+
+```javascript
+// Example of non-blocking I/O
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log('File data:', data);
+});
+
+console.log('This will run first, even if file reading is not done.');
+```
+
+#### Output:
+```
+This will run first, even if file reading is not done.
+File data: <Contents of file.txt>
+```
+
+---
+
+### 3. **Explain the event-driven architecture in Node.js.**
+
+#### Answer:
+Node.js mein event-driven architecture ka matlab hai ki system asynchronous events pe react karta hai. Jab koi event (like HTTP request) trigger hota hai, toh Node.js us event ko handle karta hai without blocking the main execution thread. Each I/O operation generates an event, and when the event completes, the callback function is executed.
+
+#### Example:
+
+```javascript
+// Example of event-driven code with an HTTP request
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  if (req.url === '/') {
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end('<h1>Welcome to Node.js Event-Driven Server!</h1>');
+  }
+});
+
+server.on('request', (req) => {
+  console.log('A new request was made at:', req.url);
+});
+
+server.listen(3000, () => {
+  console.log('Server running on http://localhost:3000');
+});
+```
+
+#### Output:
+```
+Server running on http://localhost:3000
+A new request was made at: /
+```
+
+---
+
+### 4. **What is the event loop in Node.js, and how does it work?**
+
+#### Answer:
+Event loop Node.js ka core hai jo asynchronous tasks ko manage karta hai. Event loop ensures ki JavaScript synchronous code ke baad asynchronous tasks (like file I/O or API calls) ko handle kar sake. Event loop continuously tasks ki queue ko check karta hai aur jo task ready hota hai, usko handle karta hai.
+
+#### Example:
+
+```javascript
+// Example to demonstrate event loop
+console.log('Start');
+
+setTimeout(() => {
+  console.log('Timeout callback');
+}, 0);
+
+console.log('End');
+```
+
+#### Output:
+```
+Start
+End
+Timeout callback
+```
+
+---
+
+### 5. **How does Node.js handle asynchronous code?**
+
+#### Answer:
+Node.js asynchronous code ko event loop ke through handle karta hai, jisme callbacks, promises, aur async/await patterns ka use hota hai. Jab koi asynchronous function execute hota hai (like HTTP request), Node.js us function ko event loop ke sath manage karta hai, aur jab response ready hota hai, callback function ko execute karta hai.
+
+#### Example:
+
+```javascript
+// Example using async/await for asynchronous code
+const fs = require('fs').promises;
+
+async function readFile() {
+  try {
+    const data = await fs.readFile('file.txt', 'utf8');
+    console.log('File data:', data);
+  } catch (err) {
+    console.error('Error:', err);
+  }
+}
+
+readFile();
+
+console.log('This runs before the file is read.');
+```
+
+#### Output:
+```
+This runs before the file is read.
+File data: <Contents of file.txt>
+```
+
+---
+
+### 6. **What are the advantages of using Node.js?**
+
+#### Answer:
+1. **Non-blocking, asynchronous I/O:** Efficiently handles multiple requests.
+2. **Single programming language:** JavaScript can be used both on the client and server-side.
+3. **Scalability:** Handles concurrent requests with minimal overhead.
+4. **Large ecosystem:** NPM provides a vast library of packages.
+5. **Fast execution:** Powered by Google's V8 engine, which compiles JavaScript to machine code.
+
+#### Example:
+
+```javascript
+// Example: Non-blocking asynchronous code advantage
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log('File data:', data);
+});
+
+console.log('I can handle more requests while reading the file!');
+```
+
+#### Output:
+```
+I can handle more requests while reading the file!
+File data: <Contents of file.txt>
+```
+
+---
+
+### 7. **What is the difference between Node.js and JavaScript in the browser?**
+
+#### Answer:
+- **Node.js:** Server-side JavaScript runtime, no access to DOM, can perform file system operations, has access to global objects like `process`, and runs on the V8 engine.
+- **JavaScript in Browser:** Client-side, can manipulate DOM, has access to `window` and `document`, but no file system access.
+
+#### Example:
+
+```javascript
+// Browser JavaScript: Manipulating DOM
+document.getElementById('demo').innerHTML = "Hello from Browser JS!";
+
+// Node.js: Server-side task
+const fs = require('fs');
+fs.writeFileSync('test.txt', 'Hello from Node.js!');
+```
+
+#### Output (Browser):
+```
+Changes the content of an HTML element.
+```
+
+#### Output (Node.js):
+```
+Creates a file 'test.txt' with the content 'Hello from Node.js!'
+```
+
+---
+
+### 8. **What is the role of the V8 engine in Node.js?**
+
+#### Answer:
+The **V8 Engine** is Google's high-performance JavaScript engine. In Node.js, V8 is responsible for converting JavaScript code directly into machine code, which allows for fast execution and optimization. V8 also manages memory and garbage collection.
+
+#### Example:
+
+```javascript
+// Example to demonstrate V8 performance
+console.time('Execution Time');
+for (let i = 0; i < 1000000; i++) {
+  // Fast execution due to V8 optimization
+}
+console.timeEnd('Execution Time');
+```
+
+#### Output:
+```
+Execution Time: <Some milliseconds>
+```
+
+---
+
+### 9. **What are global objects in Node.js?**
+
+#### Answer:
+Node.js provides global objects that are accessible in all modules without the need for imports. Some common global objects are:
+- `__dirname`: Directory name of the current module.
+- `__filename`: File name of the current module.
+- `global`: Global object like `window` in the browser.
+- `require()`: To import modules.
+- `process`: Provides information about the current Node.js process.
+
+#### Example:
+
+```javascript
+// Example of global objects
+console.log(__dirname);  // Outputs the directory path
+console.log(__filename); // Outputs the file path
+```
+
+#### Output:
+```
+/Users/username/projects
+/Users/username/projects/example.js
+```
+
+---
+
+### 10. **Explain the concept of non-blocking I/O in Node.js.**
+
+#### Answer:
+Non-blocking I/O ka matlab hai ki I/O operations (like reading a file, database queries) background mein asynchronous tarike se perform hote hain. Main thread block nahi hota, balki agle tasks ko handle karta hai, aur jab operation complete hota hai, tab callback function execute hota hai.
+
+#### Example:
+
+```javascript
+// Example of non-blocking I/O
+const fs = require('fs');
+
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log('File content:', data);
+});
+
+console.log('This will execute before file reading is complete.');
+```
+
+#### Output:
+```
+This will execute before file reading is complete.
+File content: <Contents of file.txt>
+```
+
+---
 
 
 
