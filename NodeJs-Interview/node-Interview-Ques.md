@@ -1119,6 +1119,245 @@ Timeout executed
 ```
 
 ---
+### 1. **How do you read a file in Node.js?**
+
+#### Answer:
+To read a file in Node.js, you can use the `fs.readFile()` method, which reads the entire contents of a file asynchronously into memory.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Reading a file asynchronously
+fs.readFile('example.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error reading file:', err);
+  } else {
+    console.log('File content:', data);
+  }
+});
+```
+
+#### Output:
+```
+File content: <contents of example.txt>
+```
+
+---
+
+### 2. **What is the difference between `fs.readFile()` and `fs.createReadStream()`?**
+
+#### Answer:
+- **`fs.readFile()`**: Reads the entire file into memory at once, which can be inefficient for large files as it consumes a lot of memory.
+  
+- **`fs.createReadStream()`**: Reads the file in chunks using streams, which is more memory-efficient for large files because it processes small parts of the file at a time.
+
+#### Example using `fs.createReadStream()`:
+
+```javascript
+const fs = require('fs');
+
+// Reading a file using stream
+const stream = fs.createReadStream('example.txt', 'utf8');
+
+stream.on('data', (chunk) => {
+  console.log('Chunk received:', chunk);
+});
+
+stream.on('end', () => {
+  console.log('File reading finished.');
+});
+```
+
+#### Output:
+```
+Chunk received: <part of file content>
+File reading finished.
+```
+
+---
+
+### 3. **How do you write a file in Node.js?**
+
+#### Answer:
+You can use `fs.writeFile()` to write data to a file asynchronously. If the file does not exist, it will be created.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Writing to a file asynchronously
+fs.writeFile('output.txt', 'Hello, World!', (err) => {
+  if (err) throw err;
+  console.log('File written successfully.');
+});
+```
+
+#### Output:
+```
+File written successfully.
+```
+
+---
+
+### 4. **How do you append data to a file in Node.js?**
+
+#### Answer:
+To append data to a file, you can use `fs.appendFile()`. If the file doesn't exist, it will be created.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Appending data to a file
+fs.appendFile('output.txt', '\nAppended Text', (err) => {
+  if (err) throw err;
+  console.log('Data appended to file.');
+});
+```
+
+#### Output:
+```
+Data appended to file.
+```
+
+---
+
+### 5. **Explain the concept of streams in Node.js.**
+
+#### Answer:
+**Streams** in Node.js are objects that allow you to read or write data continuously, piece by piece, instead of waiting for the entire data to load. This is especially useful for large files or data.
+
+Streams are used to handle **I/O** operations efficiently in Node.js. Streams are event-driven, meaning they emit events such as `data`, `end`, `error`, etc.
+
+---
+
+### 6. **What are the types of streams in Node.js?**
+
+#### Answer:
+There are **four types of streams** in Node.js:
+1. **Readable Streams**: Stream data for reading (e.g., `fs.createReadStream`).
+2. **Writable Streams**: Stream data for writing (e.g., `fs.createWriteStream`).
+3. **Duplex Streams**: Stream that can be both readable and writable (e.g., `net.Socket`).
+4. **Transform Streams**: A type of duplex stream where the output is transformed based on the input (e.g., `zlib.createGzip`).
+
+---
+
+### 7. **What is the purpose of `fs.stat()` method?**
+
+#### Answer:
+The `fs.stat()` method is used to get information about a file or directory. It returns an object containing details such as file size, creation date, and whether it's a file or directory.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Getting file statistics
+fs.stat('example.txt', (err, stats) => {
+  if (err) throw err;
+  console.log('File Stats:', stats);
+  console.log('Is file:', stats.isFile());
+  console.log('Is directory:', stats.isDirectory());
+});
+```
+
+#### Output:
+```
+File Stats: <stat object>
+Is file: true
+Is directory: false
+```
+
+---
+
+### 8. **How do you handle file errors in Node.js?**
+
+#### Answer:
+Errors in file operations can be handled by checking the error argument in the callback functions of file methods like `fs.readFile()`, `fs.writeFile()`, etc.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Handling file errors
+fs.readFile('nonexistent.txt', 'utf8', (err, data) => {
+  if (err) {
+    console.error('Error:', err.message);  // Handling file read error
+  } else {
+    console.log('File content:', data);
+  }
+});
+```
+
+#### Output:
+```
+Error: ENOENT: no such file or directory, open 'nonexistent.txt'
+```
+
+---
+
+### 9. **How do you watch for file changes in Node.js?**
+
+#### Answer:
+You can use `fs.watch()` to watch for changes in a file or directory. This will emit events whenever the file or directory is modified.
+
+#### Example:
+
+```javascript
+const fs = require('fs');
+
+// Watching a file for changes
+fs.watch('example.txt', (eventType, filename) => {
+  if (filename) {
+    console.log(`File ${filename} has been modified. Event: ${eventType}`);
+  }
+});
+```
+
+#### Output:
+```
+File example.txt has been modified. Event: change
+```
+
+---
+
+### 10. **What is the difference between `fs.unlink()` and `fs.rmdir()`?**
+
+#### Answer:
+- **`fs.unlink()`**: This method is used to delete a file.
+  
+- **`fs.rmdir()`**: This method is used to remove a directory. However, it can only delete empty directories. For non-empty directories, `fs.rmdir()` will throw an error.
+
+#### Example of `fs.unlink()`:
+
+```javascript
+const fs = require('fs');
+
+// Deleting a file
+fs.unlink('output.txt', (err) => {
+  if (err) throw err;
+  console.log('File deleted successfully.');
+});
+```
+
+#### Example of `fs.rmdir()`:
+
+```javascript
+const fs = require('fs');
+
+// Deleting a directory
+fs.rmdir('myFolder', (err) => {
+  if (err) throw err;
+  console.log('Directory deleted successfully.');
+});
+```
+
+---
 
 
 
