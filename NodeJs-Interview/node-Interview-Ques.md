@@ -1359,7 +1359,283 @@ fs.rmdir('myFolder', (err) => {
 
 ---
 
+### 1. **How do you create a basic HTTP server in Node.js?**
 
+#### Answer:
+To create a basic HTTP server in Node.js, you can use the `http` module. The server can listen to incoming requests and respond accordingly.
+
+#### Example:
+
+```javascript
+const http = require('http');
+
+// Creating a basic HTTP server
+const server = http.createServer((req, res) => {
+  res.statusCode = 200; // HTTP status code
+  res.setHeader('Content-Type', 'text/plain'); // Setting response header
+  res.end('Hello, World!\n'); // Sending response
+});
+
+// Server listens on port 3000
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+```
+Server running at http://localhost:3000/
+```
+
+---
+
+### 2. **What is the purpose of `http.createServer()` in Node.js?**
+
+#### Answer:
+The `http.createServer()` method is used to create an instance of an HTTP server. It takes a callback function as an argument that is executed whenever an HTTP request is received. This function has access to the request (`req`) and response (`res`) objects, which are used to handle client requests and send responses.
+
+---
+
+### 3. **How do you handle HTTP requests and responses in Node.js?**
+
+#### Answer:
+You handle HTTP requests and responses by defining a callback function in `http.createServer()`, where you can access the request and response objects to read data from the request and send a response back.
+
+#### Example:
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  // Handling different routes
+  if (req.url === '/') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('Welcome to the homepage!\n');
+  } else if (req.url === '/about') {
+    res.statusCode = 200;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('About Page\n');
+  } else {
+    res.statusCode = 404;
+    res.setHeader('Content-Type', 'text/plain');
+    res.end('404 Not Found\n');
+  }
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+```
+Server running at http://localhost:3000/
+```
+- Accessing `http://localhost:3000/` returns "Welcome to the homepage!"
+- Accessing `http://localhost:3000/about` returns "About Page"
+- Accessing `http://localhost:3000/unknown` returns "404 Not Found"
+
+---
+
+### 4. **What is the difference between `http` and `https` modules in Node.js?**
+
+#### Answer:
+- **`http` Module**: Used for creating HTTP servers and clients. It transmits data in plaintext and does not provide any security.
+  
+- **`https` Module**: Used for creating secure HTTP servers and clients. It encrypts the data using TLS/SSL, making it secure for sensitive data transmission.
+
+---
+
+### 5. **How do you handle query parameters in Node.js?**
+
+#### Answer:
+You can handle query parameters using the `url` module, which provides utilities for URL resolution and parsing.
+
+#### Example:
+
+```javascript
+const http = require('http');
+const url = require('url');
+
+const server = http.createServer((req, res) => {
+  const queryObject = url.parse(req.url, true).query; // Parsing query parameters
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'application/json');
+  res.end(JSON.stringify(queryObject)); // Sending back the query parameters
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+- Accessing `http://localhost:3000/?name=John&age=30` returns:
+```json
+{"name":"John","age":"30"}
+```
+
+---
+
+### 6. **How do you handle POST requests in Node.js?**
+
+#### Answer:
+To handle POST requests, you need to listen for data events on the request object and concatenate the chunks of data. Once the data is fully received, you can process it.
+
+#### Example:
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  if (req.method === 'POST') {
+    let body = '';
+
+    req.on('data', chunk => {
+      body += chunk.toString(); // Convert Buffer to string
+    });
+
+    req.on('end', () => {
+      res.statusCode = 200;
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify({ message: 'Data received', data: body }));
+    });
+  } else {
+    res.statusCode = 405; // Method Not Allowed
+    res.end('Method Not Allowed');
+  }
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+- Sending a POST request with body `{"name":"John"}` returns:
+```json
+{"message":"Data received","data":"{\"name\":\"John\"}"}
+```
+
+---
+
+### 7. **What is the purpose of `req` and `res` objects in an HTTP server?**
+
+#### Answer:
+- **`req` (Request) Object**: Represents the incoming HTTP request. It contains information such as request headers, request method (GET, POST), URL, and any data sent by the client.
+
+- **`res` (Response) Object**: Represents the outgoing HTTP response that is sent back to the client. It contains methods to set response headers, status codes, and to send the response body.
+
+---
+
+### 8. **How do you set headers in an HTTP response in Node.js?**
+
+#### Answer:
+You can set headers in the response object using the `setHeader()` method before sending the response with `res.end()`.
+
+#### Example:
+
+```javascript
+const http = require('http');
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.setHeader('X-Custom-Header', 'myValue'); // Setting custom header
+  res.end('Hello with custom header!\n');
+});
+
+server.listen(3000, () => {
+  console.log('Server running at http://localhost:3000/');
+});
+```
+
+#### Output:
+```
+Server running at http://localhost:3000/
+```
+
+---
+
+### 9. **What are the differences between `http.get()` and `http.request()` methods?**
+
+#### Answer:
+- **`http.get()`**: A convenience method for making GET requests. It automatically sets the method to GET and is simpler to use for quick requests.
+
+- **`http.request()`**: A more generic method that allows you to set various options, such as method type (GET, POST), headers, and body. It is used for more complex requests.
+
+#### Example of `http.get()`:
+
+```javascript
+const http = require('http');
+
+http.get('http://www.example.com', (res) => {
+  console.log(`STATUS: ${res.statusCode}`);
+}).on('error', (e) => {
+  console.error(`Got error: ${e.message}`);
+});
+```
+
+#### Example of `http.request()`:
+
+```javascript
+const http = require('http');
+
+const options = {
+  hostname: 'www.example.com',
+  port: 80,
+  path: '/',
+  method: 'GET'
+};
+
+const req = http.request(options, (res) => {
+  console.log(`STATUS: ${res.statusCode}`);
+});
+
+req.on('error', (e) => {
+  console.error(`Got error: ${e.message}`);
+});
+
+req.end();
+```
+
+---
+
+### 10. **How do you create an HTTPS server in Node.js?**
+
+#### Answer:
+To create an HTTPS server, you need to use the `https` module and provide SSL/TLS certificates. You can generate self-signed certificates for testing purposes.
+
+#### Example:
+
+```javascript
+const https = require('https');
+const fs = require('fs');
+
+// Read SSL certificate and key
+const options = {
+  key: fs.readFileSync('server.key'),
+  cert: fs.readFileSync('server.cert')
+};
+
+const server = https.createServer(options, (req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello, secure world!\n');
+});
+
+server.listen(3000, () => {
+  console.log('HTTPS Server running at https://localhost:3000/');
+});
+```
+
+#### Output:
+```
+HTTPS Server running at https://localhost:3000/
+```
+
+---
 
 ---
 ---
@@ -1370,3 +1646,22 @@ fs.rmdir('myFolder', (err) => {
 
 ---
 ---
+
+
+
+---
+---
+
+
+
+
+
+
+---
+---
+
+
+
+
+
+
