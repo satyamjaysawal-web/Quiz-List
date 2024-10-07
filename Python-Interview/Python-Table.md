@@ -334,6 +334,42 @@ Here’s an expanded table that covers the core concepts, data structures, modul
 
 ---
 ---
+Here’s a detailed table of commonly used magic methods (also known as dunder methods, which stands for "double underscore") in Python, along with their descriptions and use cases.
+
+### Magic Methods (Dunder Methods)
+
+| Magic Method            | Description                                                                                           | Use Case Example                                       |
+|-------------------------|-------------------------------------------------------------------------------------------------------|-------------------------------------------------------|
+| **`__init__(self, ...)`** | Initializes a new instance of a class (constructor).                                               | `obj = MyClass(arg1, arg2)`                            |
+| **`__str__(self)`**    | Returns a string representation of the object, used by `print()` and `str()`.                        | `print(obj)` returns the string defined in `__str__`   |
+| **`__repr__(self)`**   | Returns an unambiguous string representation of the object, used for debugging.                      | `repr(obj)` returns the string defined in `__repr__`  |
+| **`__len__(self)`**    | Returns the length of the object, used by the built-in `len()` function.                             | `len(obj)` returns the length defined in `__len__`    |
+| **`__getitem__(self, key)`** | Retrieves an item from the object using the square bracket notation (indexing).                  | `item = obj[key]` retrieves an item defined in `__getitem__` |
+| **`__setitem__(self, key, value)`** | Sets an item in the object using the square bracket notation (indexing).                     | `obj[key] = value` sets an item defined in `__setitem__` |
+| **`__delitem__(self, key)`** | Deletes an item from the object using the square bracket notation (indexing).                     | `del obj[key]` deletes an item defined in `__delitem__` |
+| **`__iter__(self)`**   | Returns an iterator object, enabling the object to be iterable (used in `for` loops).               | `for item in obj:` uses the iterator defined in `__iter__` |
+| **`__next__(self)`**   | Returns the next item from the iterator, used in conjunction with `__iter__()`.                     | `next(obj)` retrieves the next item defined in `__next__` |
+| **`__contains__(self, item)`** | Checks for membership using the `in` operator.                                             | `if item in obj:` uses the definition in `__contains__`  |
+| **`__call__(self, ...)`** | Allows an instance of a class to be called as a function.                                      | `result = obj(arg1, arg2)` calls the method defined in `__call__` |
+| **`__eq__(self, other)`** | Compares two objects for equality using the `==` operator.                                     | `if obj1 == obj2:` uses the definition in `__eq__`     |
+| **`__ne__(self, other)`** | Compares two objects for inequality using the `!=` operator.                                   | `if obj1 != obj2:` uses the definition in `__ne__`     |
+| **`__lt__(self, other)`** | Less than comparison using the `<` operator.                                                  | `if obj1 < obj2:` uses the definition in `__lt__`      |
+| **`__le__(self, other)`** | Less than or equal to comparison using the `<=` operator.                                      | `if obj1 <= obj2:` uses the definition in `__le__`     |
+| **`__gt__(self, other)`** | Greater than comparison using the `>` operator.                                               | `if obj1 > obj2:` uses the definition in `__gt__`      |
+| **`__ge__(self, other)`** | Greater than or equal to comparison using the `>=` operator.                                     | `if obj1 >= obj2:` uses the definition in `__ge__`     |
+| **`__add__(self, other)`** | Defines the behavior for the addition operator `+`.                                           | `result = obj1 + obj2` uses the definition in `__add__` |
+| **`__sub__(self, other)`** | Defines the behavior for the subtraction operator `-`.                                        | `result = obj1 - obj2` uses the definition in `__sub__` |
+| **`__mul__(self, other)`** | Defines the behavior for the multiplication operator `*`.                                      | `result = obj1 * obj2` uses the definition in `__mul__` |
+| **`__truediv__(self, other)`** | Defines the behavior for the division operator `/`.                                       | `result = obj1 / obj2` uses the definition in `__truediv__` |
+| **`__floordiv__(self, other)`** | Defines the behavior for the floor division operator `//`.                                 | `result = obj1 // obj2` uses the definition in `__floordiv__` |
+| **`__mod__(self, other)`** | Defines the behavior for the modulus operator `%`.                                           | `result = obj1 % obj2` uses the definition in `__mod__`  |
+| **`__pow__(self, other)`** | Defines the behavior for the exponentiation operator `**`.                                     | `result = obj1 ** obj2` uses the definition in `__pow__` |
+| **`__enter__(self)`**   | Called when entering a `with` statement, used with context managers.                               | `with obj as context:` uses the definition in `__enter__` |
+| **`__exit__(self, exc_type, exc_value, traceback)`** | Called when exiting a `with` statement.                                           | Used in context managers for cleanup.                     |
+| **`__hash__(self)`**    | Returns an integer hash value of the object, used for hashing in sets and dictionaries.               | Used automatically in hash tables.                       |
+| **`__bool__(self)`**    | Defines the behavior for boolean conversion, used in `if` statements.                              | `if obj:` uses the definition in `__bool__`              |
+| **`__del__(self)`**     | Called when an object is about to be destroyed, used for cleanup actions.                           | Cleanup actions before the object is deleted.             |
+
 
 
 ---
