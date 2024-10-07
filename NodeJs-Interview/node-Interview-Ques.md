@@ -571,6 +571,238 @@ File content: <Contents of file.txt>
 
 ---
 
+### 1. **What is a module in Node.js?**
+
+#### Answer:
+A **module** in Node.js is a reusable block of code that can be loaded into other files. It encapsulates code, making it easier to maintain and manage. Node.js follows the **CommonJS** module system, where each file is treated as a module by default.
+
+#### Example:
+
+```javascript
+// exampleModule.js
+const message = 'Hello from module!';
+module.exports = message;
+```
+
+```javascript
+// main.js
+const message = require('./exampleModule');
+console.log(message);
+```
+
+#### Output:
+```
+Hello from module!
+```
+
+---
+
+### 2. **How do you create and export a module in Node.js?**
+
+#### Answer:
+To create a module, you simply define some functionality inside a JavaScript file. To export that functionality, you use `module.exports`. Then, in another file, you can import it using `require()`.
+
+#### Example:
+
+```javascript
+// mathModule.js
+function add(a, b) {
+  return a + b;
+}
+
+module.exports = { add };
+```
+
+```javascript
+// app.js
+const math = require('./mathModule');
+console.log(math.add(5, 3)); // Output: 8
+```
+
+#### Output:
+```
+8
+```
+
+---
+
+### 3. **What is `require()` in Node.js?**
+
+#### Answer:
+`require()` is a built-in function in Node.js that is used to import modules, whether they are local modules, core modules, or third-party modules installed via NPM. It loads the module and returns the `module.exports` object.
+
+#### Example:
+
+```javascript
+// logger.js
+module.exports = function (msg) {
+  console.log(msg);
+};
+
+// app.js
+const logger = require('./logger');
+logger('Hello from logger!');
+```
+
+#### Output:
+```
+Hello from logger!
+```
+
+---
+
+### 4. **Explain the difference between `require()` and `import` in Node.js.**
+
+#### Answer:
+- **`require()`**: CommonJS syntax used in Node.js. It is synchronous and used to load modules dynamically at runtime. Supported in all Node.js versions.
+  
+- **`import`**: ES6 module syntax, which is asynchronous and used for loading modules statically. To use `import` in Node.js, you need to use `"type": "module"` in your `package.json` or name your files with the `.mjs` extension.
+
+#### Example using `require()`:
+
+```javascript
+const fs = require('fs');  // CommonJS syntax
+```
+
+#### Example using `import`:
+
+```javascript
+import fs from 'fs';  // ES6 module syntax
+```
+
+---
+
+### 5. **What are Node.js core modules?**
+
+#### Answer:
+**Node.js core modules** are built-in modules that come with Node.js out of the box. They provide basic functionalities and do not require installation. Examples include:
+
+- **`fs`**: File system operations
+- **`http`**: HTTP server creation
+- **`path`**: Path manipulation
+- **`os`**: Operating system-related utilities
+
+#### Example:
+
+```javascript
+const os = require('os');
+console.log('System architecture:', os.arch());
+```
+
+#### Output:
+```
+System architecture: x64
+```
+
+---
+
+### 6. **What is NPM (Node Package Manager)?**
+
+#### Answer:
+**NPM** is the default package manager for Node.js. It helps you install, update, manage, and share packages (libraries or modules) that can be used in Node.js projects. It also helps manage project dependencies through `package.json`.
+
+---
+
+### 7. **How do you install, update, and uninstall packages using NPM?**
+
+#### Answer:
+1. **Install a package**: Use `npm install` or `npm i`.
+   - To install locally: `npm install package-name`
+   - To install globally: `npm install -g package-name`
+
+2. **Update a package**: Use `npm update`.
+   - Example: `npm update package-name`
+
+3. **Uninstall a package**: Use `npm uninstall`.
+   - Example: `npm uninstall package-name`
+
+#### Example:
+
+```bash
+# Install express package
+npm install express
+
+# Update express package
+npm update express
+
+# Uninstall express package
+npm uninstall express
+```
+
+---
+
+### 8. **What is the role of `package.json` in a Node.js project?**
+
+#### Answer:
+The **`package.json`** file is the central configuration file for a Node.js project. It stores metadata about the project (like name, version, and description), dependencies, scripts, and other configurations.
+
+#### Example:
+
+```json
+{
+  "name": "my-app",
+  "version": "1.0.0",
+  "description": "A simple Node.js app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
+```
+
+#### Usage:
+```bash
+# Install dependencies listed in package.json
+npm install
+```
+
+---
+
+### 9. **What is the purpose of `package-lock.json`?**
+
+#### Answer:
+The **`package-lock.json`** file ensures that the exact versions of dependencies are installed across different environments. It "locks" the dependency tree to a specific version to prevent unexpected issues due to package updates.
+
+#### Example:
+If you run `npm install`, the specific versions of dependencies listed in `package-lock.json` will be installed.
+
+---
+
+### 10. **What are NPM scripts, and how do you use them?**
+
+#### Answer:
+**NPM scripts** allow you to define custom commands in the `package.json` file that can be run using the `npm run` command. These scripts can automate tasks like running tests, starting the server, or building the project.
+
+#### Example:
+
+```json
+{
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Running tests...\""
+  }
+}
+```
+
+#### Usage:
+```bash
+# Run the start script
+npm run start
+
+# Run the test script
+npm run test
+```
+
+#### Output:
+```
+Running tests...
+```
+
+---
+
 
 
 
