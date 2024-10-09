@@ -314,7 +314,6 @@ In this example:
 
 ---
 
-![image](https://github.com/user-attachments/assets/be45d095-2f36-4257-a295-d7524b39e099)
 
 ---
 
