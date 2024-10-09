@@ -453,7 +453,110 @@ runTasks();
 - **Avoid it** by using **Promises** or **Async/Await** which make the code much more readable and easier to maintain.
 
 ---
+---
+1. **Synchronous vs Asynchronous Code**:  
+Synchronous aur Asynchronous code ke beech ka main difference unka execution style hai. Let's explore:
 
+- **Synchronous Code**:
+  - **Blocking** hota hai. Matlab, ek operation ke complete hone ke baad hi next operation execute hota hai.
+  - Sab kuch sequentially hota hai.
+  - Agar ek task slow hai, toh poora program uska wait karega aur next task tab tak nahi chalega jab tak current task complete na ho jaye.
+
+- **Asynchronous Code**:
+  - **Non-blocking** hota hai. Matlab, ek operation ke complete hone ka wait nahi karta, balki agle task par chala jaata hai.
+  - Jo operations time-consuming hote hain (like I/O tasks, network requests), wo background me chal sakte hain aur baaki code continue run karta hai.
+  - Jab background task complete hota hai, tab callback ya promise ke through result handle kiya jaata hai.
+
+2. **Differences in short**:
+
+| **Synchronous** | **Asynchronous** |
+|-----------------|------------------|
+| Blocking code execution | Non-blocking code execution |
+| Sequential execution | Parallel or background execution |
+| Code ek hi time pe ek task handle karta hai | Multiple tasks ko efficiently handle karta hai |
+| Slow or time-consuming operations poora program block kar sakte hain | Time-consuming operations background me chalti hain |
+| Example: Simple for-loop | Example: API call, file reading |
+
+3. **Example**:
+
+**Synchronous Code Example**:  
+```javascript
+console.log("Start");
+
+// Synchronous loop
+for (let i = 0; i < 3; i++) {
+  console.log(i);
+}
+
+console.log("End");
+
+#output:
+#Start
+#0
+#1
+#2
+#End
+```
+
+**Explanation**:  
+Yahaan loop sequentially chalta hai, har iteration ke baad agla execute hota hai. Jab tak loop finish nahi hoga, "End" console pe nahi dikhega.
+
+---
+
+**Asynchronous Code Example**:  
+```javascript
+console.log("Start");
+
+// Asynchronous code using setTimeout
+setTimeout(() => {
+  console.log("Inside Timeout");
+}, 1000);
+
+console.log("End");
+
+#output:
+#Start
+#End
+#Inside Timeout
+```
+
+**Explanation**:  
+Yahaan `setTimeout()` ek **asynchronous** function hai, jo 1000ms (1 second) baad run hoga. Code pehle "Start" print karta hai, fir immediately "End" print karta hai, bina timeout ke complete hone ka wait kiye. Jab timeout complete hota hai, tab "Inside Timeout" print hota hai.
+
+**Asynchronous Code with Callback Hell Avoidance using Promises**:
+
+```javascript
+console.log("Start");
+
+function asyncTask() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log("Async Task Done");
+      resolve();
+    }, 1000);
+  });
+}
+
+// Handling asynchronous task with promise
+asyncTask().then(() => {
+  console.log("End");
+});
+
+#output:
+#Start
+#Async Task Done
+#End
+```
+
+**Explanation**:  
+Yahaan **Promises** ka use karke asynchronous task ko handle kiya gaya hai. Asynchronous task complete hone ke baad "End" print hota hai, bina nested callbacks ke (Callback Hell se bachne ke liye).
+
+---
+
+**Summary**:
+- **Synchronous** code sequential aur blocking hota hai.
+- **Asynchronous** code non-blocking hota hai, jo parallelly tasks handle karta hai without stopping the main program.
+- Promises aur async/await ka use karke asynchronous code ko zyada readable aur maintainable banaya jaa sakta hai.
 
 ---
 ---
