@@ -197,8 +197,19 @@ birthdayParty.emit('startParty');
 Jaise Rohan ne apni party ko manage kiya events aur listeners ki tarah, waise hi Node.js mein events aur callbacks ka use hota hai. Har ek event kisi action ya task ko represent karta hai, aur jab woh event fire hota hai, toh listeners apna kaam karte hain. Is tarah se hum asynchrony ko handle karte hain aur ek organized tarike se kaam karte hain.
 
 Agar aapko aur koi example chahiye ya aur kuch samajhna hai, toh bata sakte hain!
+
+
+
+
+
+
 ---
 ---
+
+
+
+
+
 1. **Answer** -  
 **Non-blocking I/O operations** ka matlab hota hai ki jab Node.js koi **I/O task** (jaise file read karna, database request, etc.) perform karta hai, toh voh **CPU** ko block nahi karta. Instead, voh process ko continue karta hai jab tak task complete nahi hota, aur jab task finish hoti hai toh callback ya **event** ke through result return karta hai. Isse **asynchronous** execution possible hoti hai.
 
@@ -233,6 +244,25 @@ In this example, **file read operation** non-blocking hai, toh "File reading sta
 
 
 ---
+
+console.log('Start');
+
+setTimeout(() => {
+    console.log('Timeout 1');
+}, 0);
+
+setImmediate(() => {
+    console.log('Immediate 1');
+});
+
+console.log('End');
+
+// Output
+// Start
+// End
+// Timeout 1
+// Immediate 1
+
 ---
 
 
