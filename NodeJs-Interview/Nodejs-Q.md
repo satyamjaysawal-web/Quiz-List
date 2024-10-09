@@ -245,23 +245,7 @@ In this example, **file read operation** non-blocking hai, toh "File reading sta
 
 ---
 
-console.log('Start');
-
-setTimeout(() => {
-    console.log('Timeout 1');
-}, 0);
-
-setImmediate(() => {
-    console.log('Immediate 1');
-});
-
-console.log('End');
-
-// Output
-// Start
-// End
-// Timeout 1
-// Immediate 1
+![image](https://github.com/user-attachments/assets/be45d095-2f36-4257-a295-d7524b39e099)
 
 ---
 
