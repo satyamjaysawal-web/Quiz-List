@@ -162,7 +162,25 @@ These feature enhancements evolve based on user needs, feedback from stakeholder
 
 ---
 ---
+Here’s a table summarizing the important points for a **1-year MERN stack project** using **Azure Cosmos DB** and **RESTful or GraphQL APIs**:
 
+| **Category**                     | **Technologies/Services**                                                                                  | **Description**                                                                                             |
+|-----------------------------------|------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **Backend**                       | Node.js, Express.js, GraphQL                                                                                | Backend framework for handling APIs (RESTful or GraphQL).                                                    |
+| **Database**                      | Azure Cosmos DB (MongoDB API, SQL API)                                                                      | Fully managed NoSQL database with flexible partitioning, indexing, and query models.                         |
+| **Frontend**                      | React.js, Redux, Context API, Apollo Client (GraphQL)                                                        | Frontend framework for UI, with state management and API interaction.                                        |
+| **Authentication & Security**     | Azure AD, JWT, Azure Key Vault                                                                               | Azure AD for authentication, JWT for token-based security, and Key Vault for storing sensitive credentials.  |
+| **CI/CD & Deployment**            | Azure DevOps, Azure Pipelines, Docker, Kubernetes (AKS), Azure App Service                                   | Continuous integration and deployment, containerization, and scalable deployment using Azure cloud services. |
+| **Performance & Caching**         | Azure Redis Cache, Azure Cosmos DB Indexing, Azure Monitor                                                   | Caching for faster performance and monitoring tools for performance insights and telemetry.                  |
+| **Real-Time Features**            | Socket.io, Azure SignalR                                                                                     | Real-time communication and data updates for chat, notifications, and live data streaming.                   |
+| **API Management & Documentation**| Azure API Management, Swagger/OpenAPI, GraphQL Playground                                                    | API management, version control, and documentation for RESTful/GraphQL APIs.                                 |
+| **Monitoring & Logging**          | Azure Application Insights, Azure Monitor                                                                   | Tools for tracking app performance, logging, and identifying issues in real-time.                            |
+| **Testing**                       | Jest, Mocha, Cypress, Postman                                                                                | Unit and end-to-end testing for both frontend and backend, along with API testing.                           |
+| **File Storage**                  | Azure Blob Storage                                                                                           | For storing and managing files like images and documents.                                                    |
+| **Security & Encryption**         | HTTPS, OAuth, Azure Security Center                                                                          | Secure communication with HTTPS, OAuth for authentication, and security management via Azure Security Center.|
+| **Real-Time API Integration**     | Azure Functions, Azure SignalR, WebSockets                                                                   | For event-driven architecture and real-time data streaming between client and server.                         |
+
+This table outlines key technologies and services likely used in a 1-year project involving MERN stack, Azure Cosmos DB, and APIs, ensuring scalability, security, and performance.
 
 ---
 ---
