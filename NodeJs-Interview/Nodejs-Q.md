@@ -199,4 +199,46 @@ Jaise Rohan ne apni party ko manage kiya events aur listeners ki tarah, waise hi
 Agar aapko aur koi example chahiye ya aur kuch samajhna hai, toh bata sakte hain!
 ---
 ---
+1. **Answer** -  
+**Non-blocking I/O operations** ka matlab hota hai ki jab Node.js koi **I/O task** (jaise file read karna, database request, etc.) perform karta hai, toh voh **CPU** ko block nahi karta. Instead, voh process ko continue karta hai jab tak task complete nahi hota, aur jab task finish hoti hai toh callback ya **event** ke through result return karta hai. Isse **asynchronous** execution possible hoti hai.
 
+2. **Uses in short** -  
+- **Performance** increase karta hai, kyunki CPU idle nahi hota.
+- **Multiple requests** ko handle kar sakta hai bina wait kiye.
+- **Efficient resource usage** hota hai, jo real-time applications ke liye zaroori hai.
+
+3. **Types** -  
+- **I/O Operations**: File handling, network requests.
+- **Non-blocking APIs**: HTTP, File system, Streams.
+
+4. **Example**:
+
+```javascript
+const fs = require('fs');
+
+// Non-blocking I/O file read
+fs.readFile('file.txt', 'utf8', (err, data) => {
+  if (err) throw err;
+  console.log(data);
+});
+
+console.log("File reading started!");
+
+#output:
+#File reading started!
+#(file content will be printed here after some time)
+```
+
+In this example, **file read operation** non-blocking hai, toh "File reading started!" pehle print hoga, aur jab file read complete hoti hai tab callback execute hoga aur file ka data print hoga.
+
+
+---
+---
+
+
+---
+---
+
+
+---
+---
