@@ -313,7 +313,144 @@ In this example:
 
 
 ---
+---
 
+1. **Callback Hell Kya Hota Hai?**  
+**Callback Hell** tab hota hai jab **asynchronous** operations ko handle karne ke liye multiple **nested callbacks** use kiye jaate hain. Jaise jaise callbacks ek dusre ke andar nest hote jaate hain, code ka structure complex aur difficult to read ho jaata hai. Yeh code ko samajhna aur debug karna mushkil bana deta hai.
+
+**Callback Hell** ka structure kuch aisa hota hai:
+
+```javascript
+firstFunction(() => {
+  secondFunction(() => {
+    thirdFunction(() => {
+      fourthFunction(() => {
+        // aur deeply nested callbacks...
+      });
+    });
+  });
+});
+```
+
+**Problem:** Is tarah ka deeply nested structure readability ko affect karta hai, aur agar ek bhi callback fail ho jaye, toh error handling mushkil ho jati hai.
+
+2. **Callback Hell se Kaise Bachen?**
+Callback Hell se bachne ke liye kai tarike hain:
+
+- **Promises ka use karo:** Promises async code ko handle karna easier aur readable banate hain.
+- **Async/Await:** Ye Promises ka hi cleaner version hai jo synchronous code ki tarah lagta hai, but asynchronous operations handle karta hai.
+- **Modularize your code:** Badi functions ko chhote modules me tod do, taaki har function independently kaam kare.
+
+3. **Example: Callback Hell**
+
+```javascript
+// Callback Hell example
+function firstTask(callback) {
+  setTimeout(() => {
+    console.log('First task done');
+    callback();
+  }, 1000);
+}
+
+function secondTask(callback) {
+  setTimeout(() => {
+    console.log('Second task done');
+    callback();
+  }, 1000);
+}
+
+function thirdTask(callback) {
+  setTimeout(() => {
+    console.log('Third task done');
+    callback();
+  }, 1000);
+}
+
+// Callbacks inside callbacks (Callback Hell)
+firstTask(() => {
+  secondTask(() => {
+    thirdTask(() => {
+      console.log('All tasks done');
+    });
+  });
+});
+
+#output:
+#First task done
+#Second task done
+#Third task done
+#All tasks done
+```
+
+**Solution: Using Promises to avoid Callback Hell:**
+
+```javascript
+// Promises example to avoid Callback Hell
+function firstTask() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('First task done');
+      resolve();
+    }, 1000);
+  });
+}
+
+function secondTask() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('Second task done');
+      resolve();
+    }, 1000);
+  });
+}
+
+function thirdTask() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      console.log('Third task done');
+      resolve();
+    }, 1000);
+  });
+}
+
+// Promise chain
+firstTask()
+  .then(secondTask)
+  .then(thirdTask)
+  .then(() => {
+    console.log('All tasks done');
+  });
+
+#output:
+#First task done
+#Second task done
+#Third task done
+#All tasks done
+```
+
+**Solution: Using Async/Await for Cleaner Code:**
+
+```javascript
+// Async/Await example to avoid Callback Hell
+async function runTasks() {
+  await firstTask();
+  await secondTask();
+  await thirdTask();
+  console.log('All tasks done');
+}
+
+runTasks();
+
+#output:
+#First task done
+#Second task done
+#Third task done
+#All tasks done
+```
+
+**Summary**: 
+- **Callback Hell** occurs due to deeply nested callbacks.
+- **Avoid it** by using **Promises** or **Async/Await** which make the code much more readable and easier to maintain.
 
 ---
 
