@@ -124,10 +124,11 @@ Here’s a table format summarizing the important points for working as a Junior
 | **Learning and Mentorship**     | Learn from code reviews and senior developers' feedback, improve coding practices, and develop skills.         |
 | **Typical MERN Stack Tasks**    | Work on MongoDB (database operations), Express.js (API), React.js (UI), and Node.js (server-side code).        |
 
+
 This table outlines the key responsibilities and tasks you'd handle as a Junior MERN Developer working on an existing project.
 ---
 ---
-In a 1-year MERN stack project, **feature enhancements** can vary based on the project’s scope and evolving business requirements. Here’s a list of potential requirements for feature enhancements that you might encounter during different phases of the project:
+## In a 1-year MERN stack project, **feature enhancements** can vary based on the project’s scope and evolving business requirements. Here’s a list of potential requirements for feature enhancements that you might encounter during different phases of the project:
 
 | **Feature Enhancement Requirement**               | **Description**                                                                                       |
 |---------------------------------------------------|-------------------------------------------------------------------------------------------------------|
