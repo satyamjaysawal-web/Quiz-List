@@ -109,7 +109,22 @@ This table captures the core aspects of your journey with the MERN stack, highli
 ---
 ---
 
+Here’s a table format summarizing the important points for working as a Junior MERN Developer on an existing project:
 
+| **Task/Responsibility**         | **Description**                                                                                               |
+|---------------------------------|---------------------------------------------------------------------------------------------------------------|
+| **Understanding Codebase**      | Review the existing code, structure, and project architecture. Read documentation and understand the tech stack.|
+| **Bug Fixing and Debugging**    | Identify and fix bugs, using debugging tools like Chrome DevTools and React Developer Tools.                    |
+| **Feature Enhancements**        | Implement new features or modify existing ones in the frontend (React.js), backend (Node.js), or database (MongoDB).|
+| **Code Refactoring**            | Optimize and clean up code to improve performance and maintainability.                                        |
+| **Version Control (Git)**       | Use Git for branching, merging, creating pull requests, and resolving conflicts.                               |
+| **Testing and Quality Assurance**| Perform unit testing (Jest, Mocha), integration testing, and manual testing to ensure quality.                  |
+| **Deployment and CI/CD**        | Understand deployment process using cloud platforms and manage CI/CD pipelines (Jenkins, GitHub Actions).      |
+| **Collaboration**               | Participate in Agile processes like stand-ups, sprint planning, and use tools like Jira, Trello, and Slack.    |
+| **Learning and Mentorship**     | Learn from code reviews and senior developers' feedback, improve coding practices, and develop skills.         |
+| **Typical MERN Stack Tasks**    | Work on MongoDB (database operations), Express.js (API), React.js (UI), and Node.js (server-side code).        |
+
+This table outlines the key responsibilities and tasks you'd handle as a Junior MERN Developer working on an existing project.
 ---
 ---
 
