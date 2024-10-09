@@ -641,8 +641,57 @@ Is example me hum **`fs.createReadStream`** use kar rahe hain jo ek **readable s
 
 ---
 ---
+1. **Answer** -  
+**Middleware** ek function hota hai jo **Express.js** me **request** aur **response** ke beech mein aata hai. Ye function incoming **HTTP requests** ko process karne, manipulate karne, aur aage route handler ya next middleware ko pass karne ke liye use hota hai. Middleware ka kaam **logic apply karna** hota hai jaise authentication, logging, error handling, etc.
 
+2. **Uses in short** -  
+- **Request logging** ke liye.
+- **Authentication** aur **authorization** ke liye.
+- **Error handling**.
+- **Data parsing** (like JSON, URL-encoded data).
+
+3. **Types in short** -  
+- **Application-level middleware**: Specific routes ya app ke liye.
+- **Router-level middleware**: Express router ke routes ke liye.
+- **Error-handling middleware**: Jab error occur ho tab use hota hai.
+- **Built-in middleware**: Express ke saath aata hai, jaise `express.json()`, `express.static()`.
+- **Third-party middleware**: External modules, jaise `body-parser`, `morgan`, etc.
+
+4. **Example**:
+
+```javascript
+const express = require('express');
+const app = express();
+
+// Simple middleware function
+app.use((req, res, next) => {
+  console.log('Request URL:', req.url);
+  next();  // Next middleware or route ko call karna
+});
+
+// Route handler
+app.get('/', (req, res) => {
+  res.send('Hello, Middleware!');
+});
+
+app.listen(3000, () => {
+  console.log('Server running on port 3000');
+});
+
+#output:
+#Request URL: /
+#Hello, Middleware!
+```
+
+Is example me ek simple **middleware** function hai jo har incoming request pe **URL log** karta hai, phir **next()** call karke request ko aage route handler ko pass karta hai.
 
 
 ---
 ---
+
+
+---
+---
+
+
+
