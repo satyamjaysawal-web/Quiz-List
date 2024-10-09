@@ -597,6 +597,52 @@ Is example me **`bigArray`** continuously grow karta hai, lekin clear nahi hota,
 #output:  
 Memory keep increasing without freeing
 
+---
+---
+1. **Answer** -  
+**Stream** ek data handling concept hai jo Node.js me continuous data flow ko efficiently process karne ke liye use hota hai. Streams **chunks** me data handle karte hain, na ki poora data ek saath. Isse aap **large data sets** ko bhi efficiently process kar sakte hain bina memory ko block kiye.
+
+2. **Uses in short** -  
+- Large files (video/audio) ko **read** ya **write** karna.
+- **Data transfer** during HTTP requests/responses.
+- **Real-time applications** like live video streaming.
+- **Memory efficient** operations kyunki poora data ek saath memory me nahi load hota.
+
+3. **Types in short**:
+   - **Readable Stream**: Jo data ko **read** karta hai, jaise file reading or HTTP requests.
+   - **Writable Stream**: Jo data ko **write** karta hai, jaise file writing or HTTP responses.
+   - **Duplex Stream**: Jo **read** aur **write** dono kar sakta hai, jaise TCP sockets.
+   - **Transform Stream**: Jo data ko **read** aur **write** karta hai, aur saath me **transform** bhi karta hai, jaise compression ya encryption.
+
+4. **Example**:
+
+```javascript
+const fs = require('fs');
+
+// Readable stream se file data read kar rahe hain
+const readableStream = fs.createReadStream('input.txt', 'utf8');
+
+readableStream.on('data', (chunk) => {
+  console.log('Received chunk:', chunk);
+});
+
+readableStream.on('end', () => {
+  console.log('Finished reading file.');
+});
+
+#output:
+#Received chunk: (data in chunks)
+#Finished reading file.
+```
+
+Is example me hum **`fs.createReadStream`** use kar rahe hain jo ek **readable stream** hai. Ye file se data **chunks** me read karta hai aur memory efficient way me process karta hai.
+
+
+
+---
+---
+
+
 
 ---
 ---
