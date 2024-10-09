@@ -243,6 +243,75 @@ console.log("File reading started!");
 In this example, **file read operation** non-blocking hai, toh "File reading started!" pehle print hoga, aur jab file read complete hoti hai tab callback execute hoga aur file ka data print hoga.
 
 
+## ---
+
+1. **Event Loop** Kya Hai?  
+Node.js ka **Event Loop** ek **asynchronous** programming concept hai jo **non-blocking I/O** operations ko manage karta hai. Ye continuous cycle me kaam karta hai, jo system ke har event ko execute karne ke liye responsible hota hai. **Event-driven** architecture ke through Node.js apne tasks efficiently handle karta hai bina poori system ko block kiye.
+
+**Simple words** me, jab Node.js koi **async** task execute karta hai (jaise file read, API request), toh wo task Event Loop ke paas bhej diya jata hai. Jab task complete hota hai, Event Loop uss result ko handle karta hai.
+
+2. **Uses in short**:  
+- **Non-blocking tasks** ko efficiently execute karne ke liye.
+- **Real-time applications** me high performance dene ke liye.
+- **Concurrency** ko handle karne ke liye bina multiple threads ke.
+
+3. **Phases of Event Loop**:
+
+**Node.js** me Event Loop ke different phases hote hain, jaha har phase me specific tasks perform hote hain. Main phases:
+
+1. **Timers**:  
+   Yahaan pe **setTimeout()** aur **setInterval()** jaise scheduled callbacks execute hote hain.
+
+2. **I/O Callbacks**:  
+   Non-blocking I/O operations ke callbacks ko handle karta hai.
+
+3. **Idle, prepare**:  
+   Internally system ke functions execute hote hain, mostly user code yaha nahi hota.
+
+4. **Poll**:  
+   Yahaan pe system events jaise incoming connections, data receive, etc., ko handle kiya jata hai.
+
+5. **Check**:  
+   Yahaan **setImmediate()** ke callbacks ko execute kiya jata hai.
+
+6. **Close Callbacks**:  
+   Yahaan file stream jaise close callbacks ko handle kiya jata hai.
+
+### **Diagram** (Step-by-step loop of Event Loop):
+
+```
+Timers → I/O Callbacks → Idle, Prepare → Poll → Check → Close Callbacks → (Repeat)
+```
+
+4. **Example**:
+
+```javascript
+console.log('Start');
+
+// setTimeout runs in Timer phase
+setTimeout(() => {
+  console.log('Timeout callback');
+}, 0);
+
+// setImmediate runs in Check phase
+setImmediate(() => {
+  console.log('Immediate callback');
+});
+
+console.log('End');
+
+#output:
+#Start
+#End
+#Immediate callback
+#Timeout callback
+```
+
+In this example:
+- **setTimeout()** Timer phase me run hota hai.
+- **setImmediate()** Check phase me run hota hai.
+
+
 ---
 
 ![image](https://github.com/user-attachments/assets/be45d095-2f36-4257-a295-d7524b39e099)
