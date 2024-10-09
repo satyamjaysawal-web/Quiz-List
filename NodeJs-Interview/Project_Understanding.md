@@ -5,7 +5,8 @@
 
 
 
-Liberty Mutual is a well-known insurance company that provides a variety of insurance products and services. Founded in 1912 and headquartered in Boston, Massachusetts, Liberty Mutual is one of the largest property and casualty insurers in the United States. The company offers a wide range of insurance products, including auto, home, renters, and life insurance, as well as commercial insurance for businesses.
+**Liberty Mutual**
+ is a well-known insurance company that provides a variety of insurance products and services. Founded in 1912 and headquartered in Boston, Massachusetts, Liberty Mutual is one of the largest property and casualty insurers in the United States. The company offers a wide range of insurance products, including auto, home, renters, and life insurance, as well as commercial insurance for businesses.
 
 Liberty Mutual operates through several subsidiaries and has a significant presence both in the U.S. and internationally. The company is known for its customer-centric approach and offers various tools and resources to help policyholders manage their insurance needs. These include online account management, mobile apps, and customer service support.
 
