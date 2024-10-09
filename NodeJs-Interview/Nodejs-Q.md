@@ -1,3 +1,73 @@
+---
+
+
+### Node.js Tricky Questions
+
+1. **Event Loop Kya Hai?**
+   - Explain karo ki Node.js ka event loop kaise kaam karta hai. Iske different phases kya hain?
+
+2. **Callback Hell Kya Hota Hai?**
+   - Callback hell se aap kaise bachein? Iska ek example do aur usse kaise avoid kar sakte hain?
+
+3. **Asynchronous vs Synchronous Code:**
+   - Asynchronous aur synchronous code mein kya differences hain? Ek example do jismein aap dono types ka use karte ho.
+
+4. **Promises Kya Hain?**
+   - Promises kaise kaam karte hain? Ek example do jismein promise ka use kiya gaya ho.
+
+5. **Async/Await Kya Hai?**
+   - Async/await kaise kaam karta hai aur isse kaise use karte hain? Ek chota sa example do.
+
+6. **Memory Leak Kya Hota Hai?**
+   - Memory leak ka kya matlab hai? Aap isse kaise identify aur fix kar sakte hain?
+
+7. **EventEmitter Ki Limitations:**
+   - Kya aap EventEmitter ke kuch limitations bata sakte hain? Aur iska alternative kya ho sakta hai?
+
+8. **Stream Kya Hota Hai?**
+   - Node.js mein stream kya hota hai? Iske types aur use cases kya hain?
+
+9. **Middleware Kya Hai?**
+   - Middleware ka kya role hota hai Express.js applications mein? Ek example do.
+
+10. **Buffer Kya Hota Hai?**
+    - Node.js mein Buffer ka kya use hota hai? Ek example ke sath samjhao.
+
+11. **Cluster Module Kya Hai?**
+    - Cluster module ka kya use hai Node.js applications mein? Isse kaise implement karte hain?
+
+12. **CORS Kya Hota Hai?**
+    - Cross-Origin Resource Sharing (CORS) kya hai aur aap isse kaise handle karte hain?
+
+13. **Error Handling Kaise Karein?**
+    - Node.js mein error handling ke best practices kya hain? Ek example do.
+
+14. **Process vs Thread:**
+    - Node.js mein process aur thread ka kya difference hai? Kya aap inke advantages aur disadvantages bata sakte hain?
+
+15. **Single Threaded vs Multi-Threaded:**
+    - Node.js single-threaded hai. Iska kya matlab hai aur iske advantages kya hain?
+
+16. **NPM Kya Hai?**
+    - Node Package Manager (NPM) kya hai aur aap isse kaise use karte hain? 
+
+17. **Deployment Best Practices:**
+    - Node.js applications ko deploy karne ke best practices kya hain?
+
+18. **How to Handle Uncaught Exceptions?**
+    - Uncaught exceptions ko handle karne ke liye kya approach lena chahiye?
+
+19. **Environment Variables Kya Hote Hain?**
+    - Environment variables ka kya use hai? Kaise set aur retrieve karte hain?
+
+20. **API Rate Limiting Kya Hai?**
+    - API rate limiting kya hai aur aap isse kaise implement karte hain?
+
+
+
+
+---
+---
 
 
 Node.js mein events ka concept bahut important hai, kyunki yeh asynchronous programming ko manage karne mein help karta hai. Node.js ek event-driven architecture use karta hai, jismein events ka creation aur handling hota hai. Yeh process asynchronous hota hai, matlab ki jab ek event fire hota hai, tab application kisi doosri task ko execute kar sakta hai bina wait kiye. 
