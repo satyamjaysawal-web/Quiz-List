@@ -560,6 +560,42 @@ Yahaan **Promises** ka use karke asynchronous task ko handle kiya gaya hai. Asyn
 
 ---
 ---
+1. **Answer** -  
+**Memory leak** tab hota hai jab koi program **memory allocate** karta hai lekin us memory ko **free** nahi karta jab voh use nahi ho rahi hoti. Iska matlab ye hai ki program kaafi memory consume karta rahta hai jo use nahi ho rahi, aur dheere-dheere system ke resources khatam hone lagte hain, jisse **performance degrade** hota hai ya program crash kar sakta hai.
+
+2. **Uses in short** (Memory Leak ko Identify aur Fix karna) -  
+- **Identify**:  
+  - **Memory usage continuously increase** ho rahi ho bina kisi reason ke.
+  - **Profiling tools** ka use karein (like Chrome DevTools, Node.js memory profiling).
+  - **Heap snapshots** le ke unused objects ya variables ko identify karein.
+  
+- **Fix**:  
+  - **Unused objects ko dereference** karna (i.e., `null` set karna jab object use na ho).
+  - **Garbage collector** ko sahi se kaam karne dena, manual memory management avoid karein.
+
+3. **Types of Causes**:
+   - **Global Variables**: Jo kabhi memory free nahi karte.
+   - **Closures**: Functions jo unnecessary memory hold karte hain.
+   - **Event listeners**: Remove na karne pe unnecessary memory use hoti rahti hai.
+
+4. **Example**:
+
+```javascript
+let bigArray = [];
+
+// Memory leak ho raha hai, kyunki array ko kabhi empty nahi kar rahe
+setInterval(() => {
+  bigArray.push(new Array(1000).fill('*'));
+  console.log('Array size:', bigArray.length);
+}, 1000);
+
+// Fix: setInterval ke ander array ko clear kar dena jab use na ho
+```
+
+Is example me **`bigArray`** continuously grow karta hai, lekin clear nahi hota, toh memory continuously increase hoti rahegi aur **memory leak** hoga.
+
+#output:  
+Memory keep increasing without freeing
 
 
 ---
