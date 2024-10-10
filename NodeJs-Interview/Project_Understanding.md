@@ -178,6 +178,24 @@ By utilizing Azure AD and Azure AD B2C, you can implement robust user authentica
 ---
 
 ---
+
+Microsoft Authenticator
+Authenticator Lite (in Outlook)
+Windows Hello for Business
+Passkey (FIDO2)
+Passkey in Microsoft Authenticator (preview)
+Certificate-based authentication (when configured for multifactor authentication)
+External authentication methods (preview)
+Temporary Access Pass (TAP)
+OATH hardware token (preview)
+OATH software token
+SMS
+Voice call
+
+![image](https://github.com/user-attachments/assets/f67d720a-5702-4e30-96e4-4384816d5fa1)
+
+
+===
 ---
 ---
 
