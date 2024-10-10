@@ -1,6 +1,5 @@
----
 
-| **Category**                | **Advanced Topics**                                                                 |
+
 |-----------------------------|-------------------------------------------------------------------------------------|
 | **Concurrency & Performance**| - Event Loop and Non-blocking I/O                                                   |
 |                             | - Cluster Module and Load Balancing                                                 |
