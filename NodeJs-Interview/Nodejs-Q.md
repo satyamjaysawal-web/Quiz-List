@@ -1,5 +1,67 @@
 ---
 
+Here is a table of advanced topics for Node.js, categorized for better understanding:
+
+| **Category**                | **Advanced Topics**                                                                 |
+|-----------------------------|-------------------------------------------------------------------------------------|
+| **Concurrency & Performance**| - Event Loop and Non-blocking I/O                                                   |
+|                             | - Cluster Module and Load Balancing                                                 |
+|                             | - Worker Threads for Multithreading                                                 |
+|                             | - Caching Strategies (e.g., Redis, in-memory caching)                               |
+|                             | - Streaming and Buffering                                                           |
+|                             | - Performance Optimization (profiling, monitoring, V8 optimizations)                |
+|                             | - Benchmarking (using `autocannon`, `wrk`)                                          |
+| **Asynchronous Programming** | - Promises and Async/Await                                                          |
+|                             | - Async Control Flow with `async` library                                           |
+|                             | - Handling Errors in Async Code (promise rejections, error boundaries)              |
+|                             | - Async Iterators and Generators                                                    |
+| **Security**                 | - JWT Authentication and Authorization                                             |
+|                             | - Data Encryption and Hashing (bcrypt, crypto)                                      |
+|                             | - SSL/TLS and HTTPS                                                                 |
+|                             | - OWASP Top 10 and Node.js                                                          |
+|                             | - Security Best Practices (Helmet.js, CSRF tokens)                                  |
+|                             | - Securing REST APIs (rate limiting, IP whitelisting, OAuth 2.0)                    |
+| **Networking**               | - WebSockets for Real-time Communication                                            |
+|                             | - HTTP/2 in Node.js                                                                 |
+|                             | - Socket.IO for Bidirectional Event-based Communication                             |
+|                             | - gRPC for Efficient RPC Calls                                                      |
+|                             | - Server-Sent Events (SSE)                                                          |
+| **Microservices & Architecture** | - Microservices Design Patterns (e.g., Circuit Breakers, Saga)                |
+|                             | - Service Discovery and Load Balancing in Node.js                                   |
+|                             | - API Gateway (e.g., using Express, Fastify, NGINX)                                 |
+|                             | - Message Brokers (RabbitMQ, Apache Kafka)                                          |
+|                             | - Distributed Systems (consistency, fault tolerance)                                |
+| **Database & ORMs**          | - Advanced Querying and Indexing (MongoDB, PostgreSQL)                             |
+|                             | - ORMs like Sequelize, TypeORM                                                      |
+|                             | - Database Transactions                                                             |
+|                             | - NoSQL vs SQL Optimization in Node.js                                              |
+|                             | - Connection Pooling                                                                |
+| **Testing**                  | - Unit Testing and Test Coverage (Mocha, Jest, Chai)                               |
+|                             | - E2E Testing with Cypress                                                          |
+|                             | - Mocking and Stubbing (Sinon.js)                                                   |
+|                             | - Load Testing (Artillery, Apache Benchmark)                                        |
+|                             | - Integration Testing with Supertest and Postman                                    |
+| **DevOps & Deployment**      | - Containerization with Docker                                                      |
+|                             | - Kubernetes and Node.js Service Orchestration                                      |
+|                             | - Continuous Integration/Continuous Deployment (CI/CD) Pipelines                    |
+|                             | - Environment Variables and Secrets Management (dotenv, HashiCorp Vault)            |
+|                             | - Cloud Deployment (AWS, GCP, Azure, Heroku)                                        |
+|                             | - Monitoring and Logging (Winston, Morgan, Prometheus, ELK stack)                   |
+| **Native Modules**           | - Native Addons in C++ with Node.js                                                 |
+|                             | - Using `ffi-napi` for Foreign Function Interface                                   |
+|                             | - Memory Management and Garbage Collection                                          |
+|                             | - Node.js Internals and V8 Engine Integration                                       |
+| **Package Management**       | - Monorepo Management (Lerna, Nx)                                                   |
+|                             | - Custom npm Packages and Publishing                                                |
+|                             | - Semantic Versioning and Dependency Management                                     |
+|                             | - Handling Large Dependencies and Tree Shaking                                      |
+
+These topics cover various aspects of Node.js at an advanced level, ranging from performance tuning to security, testing, and scaling applications.
+
+
+---
+
+---
 
 ### Node.js Tricky Questions
 
