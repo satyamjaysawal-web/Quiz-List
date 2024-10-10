@@ -1,6 +1,6 @@
 ---
 
-Here is a table of advanced topics for Node.js, categorized for better understanding:
+
 
 | **Category**                | **Advanced Topics**                                                                 |
 |-----------------------------|-------------------------------------------------------------------------------------|
@@ -56,11 +56,11 @@ Here is a table of advanced topics for Node.js, categorized for better understan
 |                             | - Semantic Versioning and Dependency Management                                     |
 |                             | - Handling Large Dependencies and Tree Shaking                                      |
 
-These topics cover various aspects of Node.js at an advanced level, ranging from performance tuning to security, testing, and scaling applications.
+
 
 
 ---
-
+---
 ---
 
 ### Node.js Tricky Questions
