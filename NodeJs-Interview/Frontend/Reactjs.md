@@ -93,3 +93,102 @@ Here’s a list of advanced React.js topics, categorized for easier navigation:
 |                             | - Lazy Loading Translations                                                         |
 
 These advanced topics can deepen your React.js expertise and help you build highly performant, scalable, and maintainable applications.
+
+
+
+---
+---
+
+
+### **React Context API**
+
+1. **Answer**:  
+The **React Context API** is a method to pass **data globally** through a **React component tree**, allowing you to avoid "prop drilling" (passing props through multiple levels). It is typically used for **global state management**, such as themes, user authentication, or any data that many components need to access.
+
+2. **Uses in short**:
+   - **Global state management** (e.g., theme, user data)
+   - **Avoiding prop drilling**
+   - **Sharing state across deeply nested components**
+
+3. **Types if available**:  
+   - **Provider**: Wraps your component tree and provides the context.
+   - **Consumer**: Accesses and uses the context data.
+   - **useContext hook**: A hook to easily access context data in functional components.
+
+4. **Example**:
+   ```jsx
+   import React, { useContext, useState } from 'react';
+
+   // Step 1: Create a Context
+   const ThemeContext = React.createContext();
+
+   // Step 2: Create a Provider Component
+   const ThemeProvider = ({ children }) => {
+     const [theme, setTheme] = useState('light');
+
+     return (
+       <ThemeContext.Provider value={{ theme, setTheme }}>
+         {children}
+       </ThemeContext.Provider>
+     );
+   };
+
+   // Step 3: Consume the context using useContext hook
+   const ThemeButton = () => {
+     const { theme, setTheme } = useContext(ThemeContext);
+
+     return (
+       <button
+         onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+       >
+         Toggle to {theme === 'light' ? 'dark' : 'light'} mode
+       </button>
+     );
+   };
+
+   const App = () => (
+     <ThemeProvider>
+       <div>
+         <h1>Welcome to the App!</h1>
+         <ThemeButton />
+       </div>
+     </ThemeProvider>
+   );
+
+   export default App;
+   ```
+
+   # Output:
+   ```
+   - Initial render will show a button saying "Toggle to dark mode".
+   - On button click, the theme toggles between light and dark, changing the button text.
+   ```
+
+5. **Summary in table format**:
+
+| **Aspect**              | **Description**                                                                                      |
+|-------------------------|------------------------------------------------------------------------------------------------------|
+| **Purpose**              | Provide a way to share global data (like state) without prop drilling                                |
+| **Components**           | Provider, Consumer, useContext hook                                                                  |
+| **Use cases**            | Global state (themes, user data), Avoiding prop drilling                                              |
+| **Example**              | Created a theme toggle button using Context API and useContext hook                                  |
+| **Advantages**           | Easy global state management, avoid prop drilling, simplifies passing data to deeply nested components|
+| **Alternative to**       | Prop drilling, Redux (for basic global state needs)                                                  |
+
+Let me know if you'd like to explore any other aspect in detail!
+
+
+---
+---
+
+
+
+
+---
+---
+
+
+
+---
+---
+
