@@ -3,7 +3,62 @@
 
 ---
 ---
+React.js lifecycle methods are crucial for managing the lifecycle of components. Here’s a comprehensive list of questions related to React.js lifecycle methods that can be useful for interviews or study purposes:
 
+### General Questions
+1. **What are React component lifecycle methods?**
+2. **Why are lifecycle methods important in React?**
+3. **What are the different phases of a React component's lifecycle?**
+4. **How do class components and functional components differ in terms of lifecycle?**
+
+### Mounting Phase
+5. **What methods are called during the mounting phase of a React component?**
+6. **What is `constructor()` in React, and when is it called?**
+7. **What is the purpose of `componentDidMount()`?**
+8. **What is `getDerivedStateFromProps()` and when is it used during mounting?**
+
+### Updating Phase
+9. **What lifecycle methods are called during the updating phase?**
+10. **What is `shouldComponentUpdate()` and why is it used?**
+11. **What is `componentDidUpdate()`? What parameters does it receive?**
+12. **Explain the `getDerivedStateFromProps()` method during the updating phase.**
+
+### Unmounting Phase
+13. **What methods are called during the unmounting phase?**
+14. **What is the purpose of `componentWillUnmount()`?**
+
+### Error Handling
+15. **What is `componentDidCatch()`? How does it work?**
+16. **What is `getDerivedStateFromError()` and when would you use it?**
+
+### Functional Components
+17. **How do you manage lifecycle events in functional components?**
+18. **What is the role of the `useEffect` hook in functional components?**
+19. **How does the `useEffect` hook simulate `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount`?**
+20. **What are cleanup functions in `useEffect`? How do they work?**
+
+### Performance Optimization
+21. **How can you optimize performance in React components using lifecycle methods?**
+22. **What is the purpose of the `React.PureComponent` and how does it relate to lifecycle methods?**
+
+### Best Practices
+23. **What are some best practices for using lifecycle methods in React?**
+24. **When should you avoid using lifecycle methods?**
+25. **How can you use hooks to replace lifecycle methods in functional components?**
+
+### Advanced Questions
+26. **What are side effects, and how are they managed in React?**
+27. **How do lifecycle methods affect server-side rendering in React?**
+28. **How would you test a component's lifecycle methods?**
+29. **Can you explain the difference between controlled and uncontrolled components concerning lifecycle?**
+
+### Real-World Scenarios
+30. **Can you provide an example where you would use `componentDidMount()`?**
+31. **Describe a situation where `shouldComponentUpdate()` would be beneficial.**
+32. **What happens if you call `setState()` in `componentDidUpdate()`?**
+33. **Explain how to manage subscriptions (like WebSocket or API calls) using lifecycle methods.**
+
+These questions cover various aspects of React component lifecycles, from the basics to more advanced topics, and can be a good resource for understanding and discussing React in depth.
 ---
 ---
 
