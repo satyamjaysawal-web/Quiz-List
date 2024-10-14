@@ -593,7 +593,59 @@ Here's a table summarizing the libraries, tools, and dependencies used for **Gen
 This table provides a clear overview of the key libraries and tools relevant to Generative AI and RAG projects, highlighting their functions and use cases. Let me know if you need any further details or adjustments!
 ---
 ---
+Sure! Here’s a table that organizes the **RAG-related libraries, tools, and dependencies** into distinct categories along with their brief descriptions.
 
+### RAG-Specific Libraries, Tools, and Dependencies
+
+| **Library/Tool**        | **Description**                                                                                             |
+|-------------------------|-------------------------------------------------------------------------------------------------------------|
+| **FAISS**               | Facebook AI Similarity Search for efficient similarity search on large datasets, used for retrieving relevant context. |
+| **Pinecone**            | Fully managed vector database for real-time similarity search and storing vector embeddings.                |
+| **Haystack**            | Python framework for building end-to-end search systems, integrating document retrieval and question answering. |
+| **Hugging Face Transformers** | Essential for using models like BERT or T5 for retrieval and generative tasks.                        |
+| **LlamaIndex**          | Framework for document indexing and retrieval in conjunction with large language models.                     |
+| **OpenAI API**          | Used for generating text and creating embeddings for documents.                                            |
+| **Elasticsearch**       | Powerful search engine for performing full-text searches on large document collections.                     |
+| **BM25**                | Ranking function used for information retrieval to find relevant documents based on query similarity.       |
+| **Weaviate**            | Scalable vector database for storing and retrieving embeddings for RAG systems.                             |
+| **Deep Lake**           | Vector database optimized for storing, querying, and analyzing large-scale datasets in tensor format.      |
+| **DPR**                 | Dense Passage Retrieval technique using bi-encoders to compute dense embeddings for documents and queries.  |
+| **Chroma**              | Vector database for embeddings that supports similarity-based retrieval in RAG architectures.                |
+| **Sentence Transformers**| Python library for generating sentence and document embeddings using transformer models.                    |
+| **LangChain**           | Framework for creating RAG pipelines by linking retrieval models with large language models.                |
+| **NMSLIB**              | Fast similarity search library for approximate nearest neighbor (ANN) search in vector spaces.              |
+
+### General Workflow in RAG
+
+| **Component**             | **Description**                                                                                         |
+|---------------------------|---------------------------------------------------------------------------------------------------------|
+| **Vector Store**          | Stores embeddings for retrieval, using tools like Pinecone, Weaviate, and FAISS.                      |
+| **Document Chunking**     | Splits large documents into smaller chunks for improved precision in retrieval.                         |
+| **Embedding Generation**   | Creates embeddings for both queries and documents using Sentence Transformers or OpenAI's API.         |
+| **Context Injection**      | Passes retrieved documents or data chunks as context to generative models for enhanced output.          |
+| **Retrieval Layer**       | Involves tools like BM25, FAISS, or Elasticsearch for finding relevant documents.                      |
+
+### Cloud and Infrastructure Components
+
+| **Cloud Service**         | **Description**                                                                                             |
+|---------------------------|-------------------------------------------------------------------------------------------------------------|
+| **AWS OpenSearch**        | Managed version of Elasticsearch, used as a retrieval layer for efficient document searching.              |
+| **Azure Cognitive Search**| Search solution integrated with Azure for retrieving context for generative models.                        |
+| **Google Vertex AI**      | Managed machine learning services including embedding generation and vector search.                        |
+| **Elastic Cloud**         | Managed Elasticsearch service for building retrieval layers in RAG systems.                               |
+
+### CI/CD for RAG Pipelines
+
+| **Tool**                  | **Description**                                                                                             |
+|---------------------------|-------------------------------------------------------------------------------------------------------------|
+| **MLflow**                | Tool for managing machine learning experiments, models, and datasets used in RAG pipelines.                 |
+| **DVC**                   | Data Version Control for managing data and model versions in ML workflows.                                 |
+| **Docker**                | Containerization tool for deploying RAG systems in a scalable environment.                                 |
+| **Kubernetes**            | Orchestration platform for managing containerized applications, including large-scale RAG deployments.     |
+
+---
+
+This table format provides a clear and organized view of the libraries, tools, and components related to **Retrieval-Augmented Generation** (RAG) and their respective roles in the project.
 
 ---
 ---
