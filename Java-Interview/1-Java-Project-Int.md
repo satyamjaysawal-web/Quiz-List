@@ -1,5 +1,33 @@
 
 
+---
+---
+
+Project-Related Interview Questions
+What was your role in the Liberty Mutual project?
+Can you explain the architecture of the system you worked on?
+What types of errors did you handle in your project?
+What update requirements came under your responsibility?
+What new requirements were introduced during your time on the project?
+What specific tasks were you assigned to enhance the project?
+What issues or challenges did you face while working on the project?
+How did you prioritize tasks when new requirements came in?
+Can you describe a specific update you implemented and its impact?
+What tools or technologies did you use for debugging and error handling?
+How did you ensure code quality and maintainability in your updates?
+What testing strategies did you use to validate new features?
+How did you handle performance optimization in the project?
+Can you discuss any integrations with third-party services you worked on?
+What security measures did you implement to protect user data?
+How did you collaborate with other team members on your project?
+What steps did you take to document your work?
+Can you give an example of how you used data analytics or monitoring tools?
+How did you manage changes in project scope or requirements?
+What was the most significant learning experience from working on this project?
+
+
+---
+---
 
 
 If you worked as a **Java Backend Developer** for **1 year** on a **Liberty Mutual** project, the interviewer will likely focus on your experience with backend development, your knowledge of Java, and how you contributed to the project. Below are **common types of questions** you might encounter in the interview, categorized by topic:
