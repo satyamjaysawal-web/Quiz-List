@@ -3,27 +3,30 @@
 ---
 ---
 
-Project-Related Interview Questions
-What was your role in the Liberty Mutual project?
-Can you explain the architecture of the system you worked on?
-What types of errors did you handle in your project?
-What update requirements came under your responsibility?
-What new requirements were introduced during your time on the project?
-What specific tasks were you assigned to enhance the project?
-What issues or challenges did you face while working on the project?
-How did you prioritize tasks when new requirements came in?
-Can you describe a specific update you implemented and its impact?
-What tools or technologies did you use for debugging and error handling?
-How did you ensure code quality and maintainability in your updates?
-What testing strategies did you use to validate new features?
-How did you handle performance optimization in the project?
-Can you discuss any integrations with third-party services you worked on?
-What security measures did you implement to protect user data?
-How did you collaborate with other team members on your project?
-What steps did you take to document your work?
-Can you give an example of how you used data analytics or monitoring tools?
-How did you manage changes in project scope or requirements?
-What was the most significant learning experience from working on this project?
+## List of project-related questions you may encounter as a Java Backend Developer working on a Liberty Mutual project (1 year):
+
+### Project-Related Interview Questions
+1. **What was your role in the Liberty Mutual project?**
+2. **Can you explain the architecture of the system you worked on?**
+3. **What types of errors did you handle in your project?**
+4. **What update requirements came under your responsibility?**
+5. **What new requirements were introduced during your time on the project?**
+6. **What specific tasks were you assigned to enhance the project?**
+7. **What issues or challenges did you face while working on the project?**
+8. **How did you prioritize tasks when new requirements came in?**
+9. **Can you describe a specific update you implemented and its impact?**
+10. **What tools or technologies did you use for debugging and error handling?**
+11. **How did you ensure code quality and maintainability in your updates?**
+12. **What testing strategies did you use to validate new features?**
+13. **How did you handle performance optimization in the project?**
+14. **Can you discuss any integrations with third-party services you worked on?**
+15. **What security measures did you implement to protect user data?**
+16. **How did you collaborate with other team members on your project?**
+17. **What steps did you take to document your work?**
+18. **Can you give an example of how you used data analytics or monitoring tools?**
+19. **How did you manage changes in project scope or requirements?**
+20. **What was the most significant learning experience from working on this project?**
+
 
 
 ---
