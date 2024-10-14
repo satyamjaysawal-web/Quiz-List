@@ -89,6 +89,151 @@ This table provides a clear and structured overview of your role and experiences
 
 
 
+Here’s a concise breakdown of the example APIs used in the Liberty Mutual project, formatted in bullet points:
+
+### 1. **RESTful API for Account Management**
+- **API Endpoint**: `GET /api/v1/accounts/{accountId}`
+- **Purpose**: Retrieves account details for a specific user.
+- **Sample Request**:
+  - Method: `GET`
+  - Headers: 
+    - `Authorization: Bearer {access_token}`
+  - URL: `/api/v1/accounts/12345`
+- **Sample Response**:
+  ```json
+  {
+    "accountId": "12345",
+    "ownerName": "John Doe",
+    "email": "john.doe@example.com",
+    "balance": 150.75,
+    "policies": [...]
+  }
+  ```
+
+### 2. **RESTful API for Payment Processing**
+- **API Endpoint**: `POST /api/v1/payments`
+- **Purpose**: Processes a payment for a specified policy.
+- **Sample Request**:
+  - Method: `POST`
+  - Headers:
+    - `Authorization: Bearer {access_token}`
+  - Body:
+  ```json
+  {
+    "accountId": "12345",
+    "policyId": "abc123",
+    "amount": 150.00,
+    "paymentMethod": "credit_card",
+    "transactionId": "txn789"
+  }
+  ```
+- **Sample Response**:
+  ```json
+  {
+    "paymentStatus": "Success",
+    "transactionId": "txn789",
+    "amount": 150.00,
+    "date": "2024-10-14T10:30:00Z",
+    "message": "Payment processed successfully."
+  }
+  ```
+
+### 3. **RESTful API for Claims Submission**
+- **API Endpoint**: `POST /api/v1/claims`
+- **Purpose**: Submits a new insurance claim.
+- **Sample Request**:
+  - Method: `POST`
+  - Headers:
+    - `Authorization: Bearer {access_token}`
+  - Body:
+  ```json
+  {
+    "accountId": "12345",
+    "policyId": "abc123",
+    "claimType": "accident",
+    "description": "Rear-ended at a stoplight.",
+    "claimAmount": 5000.00,
+    "dateOfIncident": "2024-10-10",
+    "attachments": [...]
+  }
+  ```
+- **Sample Response**:
+  ```json
+  {
+    "claimId": "claim456",
+    "claimStatus": "Submitted",
+    "message": "Your claim has been submitted successfully."
+  }
+  ```
+
+### 4. **Webhook for Claim Status Updates**
+- **Webhook URL**: `https://www.example.com/webhooks/claim-status`
+- **Purpose**: Notifies users of changes in claim status.
+- **Sample Payload**:
+  ```json
+  {
+    "claimId": "claim456",
+    "status": "Approved",
+    "approvalDate": "2024-10-12",
+    "amountApproved": 4500.00,
+    "message": "Your claim has been approved."
+  }
+  ```
+
+### 5. **RESTful API for Transaction History**
+- **API Endpoint**: `GET /api/v1/accounts/{accountId}/transactions`
+- **Purpose**: Retrieves the transaction history for a specific account.
+- **Sample Request**:
+  - Method: `GET`
+  - Headers:
+    - `Authorization: Bearer {access_token}`
+  - URL: `/api/v1/accounts/12345/transactions`
+- **Sample Response**:
+  ```json
+  {
+    "accountId": "12345",
+    "transactions": [...]
+  }
+  ```
+
+### 6. **RESTful API for Policy Information**
+- **API Endpoint**: `GET /api/v1/policies/{policyId}`
+- **Purpose**: Retrieves details for a specific insurance policy.
+- **Sample Request**:
+  - Method: `GET`
+  - Headers:
+    - `Authorization: Bearer {access_token}`
+  - URL: `/api/v1/policies/abc123`
+- **Sample Response**:
+  ```json
+  {
+    "policyId": "abc123",
+    "policyType": "Auto",
+    "startDate": "2024-01-01",
+    "endDate": "2025-01-01",
+    "premium": 1200.00,
+    "coverage": {...},
+    "status": "Active"
+  }
+  ```
+
+### Conclusion
+- These APIs facilitate **account management**, **payment processing**, **claims handling**, and **transaction history** retrieval.
+- They ensure a **seamless user experience** for managing insurance needs efficiently.
+
+
+
+
+
+
+
+
+
+
+---
+
+---
+
 If you worked as a **Java Backend Developer** for **1 year** on a **Liberty Mutual** project, the interviewer will likely focus on your experience with backend development, your knowledge of Java, and how you contributed to the project. Below are **common types of questions** you might encounter in the interview, categorized by topic:
 
 ---
