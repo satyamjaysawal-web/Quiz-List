@@ -1,4 +1,35 @@
 
+---
+---
+
+
+As a **Java Backend Developer** on the **Liberty Mutual** project, I focused on developing and maintaining **server-side applications** using **Java** and **Spring Boot**.
+
+I implemented **RESTful APIs** for functionalities like **policy management**, **claims processing**, and **payment systems**, enhancing application **reliability** and **user experience**.
+
+I contributed to a **microservices architecture**, utilizing tools such as **Docker** and **Kubernetes** for independent service **deployment**.
+
+I managed **runtime** and **database errors** through robust **exception handling strategies**, which improved system **stability**.
+
+I handled **API versioning**, integrated **mobile support**, and security features like **OAuth 2.0**, and automated workflows for **claims notifications**, leading to increased **operational efficiency**.
+
+By prioritizing tasks in **Jira** based on **business impact**, I ensured timely delivery of critical **features**.
+
+I adapted to changing project **requirements** through effective **stakeholder communication**.
+
+I optimized **database performance**, implemented **caching strategies**, and integrated **third-party payment processing services**.
+
+I enhanced **code quality** through peer reviews and **testing strategies**, utilizing tools like **SonarQube** and **JUnit**.
+
+Additionally, I set up application performance monitoring with **Prometheus** and **Grafana**.
+
+I documented APIs and project workflows using **Swagger** and **Confluence**.
+
+I fostered **collaboration** within the team through **Agile ceremonies**, which ultimately strengthened our collective effort and improved the overall **success** of the project.
+
+---
+
+Feel free to adjust any part of the text further!
 
 ---
 ---
