@@ -514,10 +514,49 @@ The goal of the project was to use **Generative AI** to automate various tasks r
 - **Scalability**: With the AI models deployed in the cloud, the client could scale their content automation efforts across multiple regions and products without additional manual effort.
 - **Improved Decision-Making**: AI-driven reports and insights provided key decision-makers with timely and accurate information, speeding up business processes.
 
-This project not only solved the business problems related to content generation and document processing but also provided the client with an adaptable, scalable system capable of handling future use cases involving AI and automation.
+   This project not only solved the business problems related to content generation and document processing but also provided the client with an adaptable, scalable system capable of handling future use cases involving AI and automation.
 ---
 ---
 
+Here is a table summarizing the **Generative AI Project** roles and tasks implemented:
+
+| **Aspect**                 | **Description**                                                                                                                                                 |
+|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Project Title**           | AI-Powered Content Generation and Automation Suite                                                                                                              |
+| **Business Problem**        | Manual content creation (reports, summaries, customer communications) was time-consuming and error-prone. Needed to automate content generation and document processing. |
+| **Client Industry**         | Insurance & Financial Services                                                                                                                                  |
+| **Objective**               | To automate content generation, document comparison, and streamline workflows using Generative AI.                                                               |
+| **Technologies Used**       | GPT-based models, NLP, AWS/Azure cloud, OCR, CI/CD pipelines                                                                                                    |
+| **Deployment**              | Cloud-based (Azure/AWS) with CI/CD for seamless updates and model deployment.                                                                                    |
+
+### Tasks Implemented in the Client Project
+
+| **Task**                                  | **Description**                                                                                                                                                                                                 |
+|-------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Text Generation**                       | Used GPT-based models to automate personalized customer communications, blog posts, and product descriptions.                                                                                                    |
+| **Tabular Data Summarization**            | Generated natural language summaries from structured data like insurance claims and financial reports.                                                                                                          |
+| **Synthetic Data Generation**             | Created synthetic data to train machine learning models without compromising customer data privacy.                                                                                                             |
+| **Document Comparison & Analysis**        | Built a tool to compare insurance policies, contracts, and legal documents using NLP techniques, highlighting differences and discrepancies.                                                                     |
+| **Requirement Creation (Jira Integration)**| Automated conversion of client feedback into requirements and integrated into Jira for project tracking.                                                                                                         |
+| **Code Generation & Documentation**       | Implemented automated code and documentation generation for APIs and backend services, reducing manual coding effort.                                                                                            |
+| **Test Case Generation**                  | Created auto-generated unit and integration test cases based on system requirements and code, improving test coverage and reliability.                                                                           |
+| **Summarization (Document/Video)**        | Integrated document and video summarization features for executive reports, customer feedback, and instructional videos.                                                                                          |
+| **Q&A System with Document Summarization**| Built a system to query large documents and get natural language responses, improving information accessibility.                                                                                                  |
+| **Multimodal Search & Image-to-Content**  | Developed a multimodal search system that retrieved data from textual and visual content and extracted text from images (OCR).                                                                                   |
+| **Proposal Generation**                   | Automated insurance product proposal creation using pre-defined templates, streamlining sales processes.                                                                                                         |
+| **Deployment & CI/CD Integration**        | Deployed models in the cloud and set up CI/CD pipelines for seamless integration and updates.                                                                                                                    |
+| **Mobile App Integration**                | Integrated Generative AI functionalities into the mobile app to provide real-time customer support and personalized content.                                                                                      |
+
+### **Impact**
+
+| **Impact Area**            | **Description**                                                                 |
+|----------------------------|---------------------------------------------------------------------------------|
+| **Increased Efficiency**    | Reduced manual work for content generation and document summarization by 50%.    |
+| **Customer Experience**     | Improved customer satisfaction with personalized AI-generated communications.   |
+| **Scalability**             | Scalable solutions via cloud deployment across multiple regions and products.   |
+| **Improved Decision-Making**| Provided timely, AI-driven insights to business decision-makers.                 |
+
+This table provides a detailed overview of your involvement and the tasks you performed in the Generative AI project, as well as the business impact of the solution.
 
 
 ---
