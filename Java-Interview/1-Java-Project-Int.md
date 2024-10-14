@@ -28,7 +28,33 @@
 20. **What was the most significant learning experience from working on this project?**
 
 
+---
+Here’s a table summarizing your experience as a Java Backend Developer on the Liberty Mutual project, structured with key points focusing on what you did, the tools and technologies used, how you did it, and the impact of your work:
 
+| **Question**                                   | **What I Did**                                           | **Tools & Tech**                                | **How I Did It**                                            | **Impact**                                       |
+|------------------------------------------------|---------------------------------------------------------|-------------------------------------------------|------------------------------------------------------------|--------------------------------------------------|
+| **Role in the Project**                        | Developed and maintained server-side applications       | Java, Spring Boot, RESTful APIs                 | Implemented RESTful APIs and business logic                 | Improved application functionality and reliability |
+| **System Architecture**                        | Contributed to a microservices architecture             | Docker, Kubernetes, Apache Kafka                 | Designed independent services with containers               | Enabled scalable and independent service deployment |
+| **Types of Errors Handled**                    | Managed runtime and database errors                     | Exception handling in Java, transaction management | Implemented error handling strategies                        | Enhanced system stability and user experience    |
+| **Update Requirements**                        | Implemented API versioning and feature enhancements     | Swagger for API documentation                    | Updated APIs based on new requirements                      | Maintained compatibility and usability            |
+| **New Requirements Introduced**                | Developed APIs for mobile support and integrated security features | OAuth 2.0, RESTful API development               | Collaborated with stakeholders to identify needs            | Expanded user accessibility and improved security |
+| **Specific Tasks Assigned**                    | Automated notifications for claims, refactored legacy code | Java, Spring Framework                           | Created automated workflows and improved code structure     | Increased operational efficiency and code maintainability |
+| **Issues Faced**                               | Navigated legacy systems and managed scope creep        | Agile methodologies for project management       | Communicated with the team to address issues                 | Improved team collaboration and project adaptability |
+| **Task Prioritization**                        | Prioritized tasks based on business impact              | Jira for task management                         | Evaluated tasks for urgency and importance                  | Ensured timely delivery of critical features      |
+| **Specific Update Implemented**                | Added document upload functionality for claims         | RESTful API, file storage services               | Developed API endpoints for file handling                   | Streamlined user experience and reduced processing time |
+| **Tools for Debugging and Error Handling**     | Utilized logging and monitoring tools                   | SLF4J, Logback, Prometheus, Grafana             | Set up logging frameworks and monitoring dashboards          | Improved error tracking and system performance monitoring |
+| **Ensuring Code Quality**                      | Conducted code reviews and implemented static code analysis | SonarQube, JUnit, Mockito                        | Reviewed code against best practices and standards          | Enhanced code quality and reduced bugs            |
+| **Testing Strategies**                         | Developed and executed various testing types           | Spring Boot Test, Selenium, JMeter              | Created unit and integration tests                           | Validated new features and ensured application reliability |
+| **Performance Optimization**                   | Optimized database queries and implemented caching      | Redis, PostgreSQL                               | Analyzed query performance and applied caching strategies    | Reduced API response times and improved user satisfaction |
+| **Third-Party Integrations**                   | Integrated payment processing services                   | RESTful APIs for transactions                    | Developed endpoints for payment gateways                     | Enhanced payment processing capabilities           |
+| **Security Measures**                          | Implemented encryption and multi-factor authentication   | HTTPS, OAuth 2.0                                | Secured APIs and user data                                   | Strengthened user data protection                  |
+| **Collaboration with Team Members**           | Participated in Agile ceremonies and shared knowledge    | Git for version control, Confluence for documentation | Engaged in sprint meetings and knowledge sharing sessions    | Fostered a collaborative environment and knowledge retention |
+| **Documentation of Work**                      | Created and updated project documentation                | Swagger for APIs, Confluence for project documentation | Documented APIs and project workflows                       | Ensured team alignment and knowledge retention     |
+| **Data Analytics and Monitoring**              | Set up application performance monitoring                 | Prometheus, Grafana                             | Configured monitoring tools for performance metrics          | Enabled proactive performance management            |
+| **Managing Changes in Project Scope**          | Adapted to changing requirements through stakeholder communication | Agile project management tools                    | Engaged in discussions with stakeholders to align on goals   | Maintained project momentum and responsiveness      |
+| **Significant Learning Experience**            | Learned the value of collaboration in a microservices architecture | N/A                                             | Engaged with team members and participated in workshops     | Enhanced skills in cross-functional teamwork and adaptability |
+
+This table format concisely summarizes your role and contributions, highlighting the tools and technologies used, the methods employed, and the resulting impact of your work on the Liberty Mutual project.
 ---
 ---
 
