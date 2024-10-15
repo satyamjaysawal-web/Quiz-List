@@ -341,7 +341,8 @@ Here’s a comprehensive list of topics related to **Go (Golang)** in web develo
    - Go documentation and community resources
    - Online forums and discussion groups
 
-This list covers a wide range of topics that can help you understand and implement web development using Go. If you have any specific areas you would like to dive deeper into, feel free to ask!
+  This list covers a wide range of topics that can help you understand and implement web development using Go. If you have any specific areas you would like to dive deeper into, feel free to ask!
+  
 ---
 ---
 
