@@ -160,7 +160,6 @@ Here’s a table summarizing the pros and cons of Golang (Go):
 | **Simplicity Can Be a Limiting Factor** | **Basic Error Handling**                |
 | - Minimalism may feel restrictive     | - Can feel limiting compared to feature-rich languages |
 
-This table captures the key advantages and disadvantages of using Go as a programming language, helping you weigh its strengths against its limitations.
 ---
 
 ---
