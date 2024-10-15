@@ -5,6 +5,23 @@
 ---
 
 ---
+## Golang and its history in table format:
+
+| **Aspect**           | **Description**                                                                                             |
+|----------------------|-------------------------------------------------------------------------------------------------------------|
+| **Language Name**    | Go (commonly referred to as Golang)                                                                         |
+| **Developed By**     | Google                                                                                                      |
+| **Key Features**     | - Simplicity: Clean and easy-to-learn syntax <br> - Concurrency: Built-in support with goroutines and channels <br> - Performance: Statically typed and compiled <br> - Garbage Collection: Automatic memory management <br> - Rich Standard Library: Comprehensive packages for various tasks |
+| **History**          |                                                                                                             |
+| **2007**             | Development began at Google by Robert Griesemer, Rob Pike, and Ken Thompson.                               |
+| **2009**             | Official announcement of Go as an open-source language; initial version (Go 1.0) released.                |
+| **2012**             | Go 1.0 released, emphasizing compatibility and stability for existing code.                                |
+| **2015 onwards**     | Subsequent versions introduced new features, including support for modules (Go 1.11) and generics (Go 1.18). |
+| **2021**             | Go 1.17 released with performance improvements and compiler enhancements.                                   |
+| **2022**             | Go 1.18 introduced generics, enabling more flexible and reusable code.                                     |
+| **Current Status**   | Popular choice for backend development, cloud computing, and microservices; used by companies like Google, Docker, and Kubernetes. |
+
+This table provides a concise overview of Golang and its evolution over the years. If you need more information or details about any specific aspect, feel free to ask!
 ---
 
 
