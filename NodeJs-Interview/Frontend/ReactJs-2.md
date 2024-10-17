@@ -1,4 +1,22 @@
 
+---
+
+## React.js developer for 1 year:
+
+| **Feature/Functionality**       | **Description**                                                                                             |
+|----------------------------------|-------------------------------------------------------------------------------------------------------------|
+| **UI Development**               | Developed responsive and dynamic UI components using **Flexbox**, **Grid**, **Navbar**, **Sidebar**, **Footer**. |
+| **State Management**             | Managed state using **useState**, **useReducer**, **Context API**, and implemented **Redux** for complex state. |
+| **User Authentication**          | Implemented **JWT-based authentication**, login, signup forms, session handling, and **role-based access control (RBAC)**. |
+| **Data Fetching & API Integration** | Fetched data from **RESTful APIs** using **Axios**/**Fetch API**, handled loading states, and error handling with **useEffect**. |
+| **Dashboard Development**        | Created dynamic dashboards with real-time data visualizations using **Chart.js**, **D3.js**, and customizable widgets. |
+| **Search & Filtering**           | Built real-time **search bars** and advanced **filtering options** for better data retrieval and user experience. |
+| **Form Handling**                | Developed **controlled** and **uncontrolled forms**, implemented **custom validation** and error handling. |
+| **Responsive Design**            | Ensured app responsiveness using **media queries**, **responsive grids**, and worked across mobile and desktop. |
+| **Routing & Navigation**         | Managed **React Router**, implemented **dynamic routing**, **protected routes**, and **nested routes**. |
+| **Performance Optimization**     | Used **React.memo**, **useMemo**, **useCallback** to optimize performance; added **lazy loading** and **code splitting**. |
+| **Real-Time Features**           | Integrated **WebSockets** for real-time updates, implemented chat features, and live notifications. |
+| **Testing**                      | Conducted unit and integration testing using **Jest**, **Mocha**, and API testing with **Postman**. |
 
 
 ---
