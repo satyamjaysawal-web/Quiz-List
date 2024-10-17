@@ -2,6 +2,151 @@
 
 
 ---
+Yeh rahe ReactJS UI se related common terms aur words ki list jo aapko React development ke dauran frequently sunne ya use karne ko milengi:
+
+### UI Components Related Words:
+1. **Component**
+2. **Functional Component**
+3. **Class Component**
+4. **Stateless Component**
+5. **Stateful Component**
+6. **Pure Component**
+7. **Reusable Component**
+8. **Higher-Order Component (HOC)**
+9. **Custom Components**
+
+### State and Props:
+10. **State**
+11. **Props**
+12. **useState Hook**
+13. **useEffect Hook**
+14. **useReducer Hook**
+15. **useRef Hook**
+16. **Context API**
+17. **Prop Drilling**
+18. **Controlled Components**
+19. **Uncontrolled Components**
+
+### Event Handling and Interactivity:
+20. **onClick**
+21. **onChange**
+22. **onSubmit**
+23. **Event Listeners**
+24. **Event Handlers**
+25. **Synthetic Events**
+
+### Layout and Structure:
+26. **Layout Components**
+27. **Flexbox**
+28. **Grid System**
+29. **Container**
+30. **Row/Column**
+31. **Header**
+32. **Footer**
+33. **Sidebar**
+34. **Navbar**
+
+### Forms and Input Handling:
+35. **Form**
+36. **Input Fields**
+37. **Text Input**
+38. **TextArea**
+39. **Select/Dropdown**
+40. **Checkbox**
+41. **Radio Button**
+42. **Button**
+43. **Form Validation**
+44. **Form Submission**
+45. **Controlled Input**
+46. **Uncontrolled Input**
+
+### Lists and Rendering:
+47. **List Rendering**
+48. **Keys (List Keys)**
+49. **Array.map()**
+50. **Conditional Rendering**
+51. **Ternary Operator**
+52. **Short-Circuit Evaluation (&&)**
+53. **Fragments**
+54. **Children Prop**
+
+### Styling and CSS:
+55. **Inline Styles**
+56. **CSS Modules**
+57. **Styled Components**
+58. **CSS-in-JS**
+59. **Styled JSX**
+60. **CSS Frameworks (Bootstrap, Tailwind CSS, etc.)**
+61. **ClassName Prop**
+62. **Style Prop**
+63. **Theme**
+
+### Navigation and Routing:
+64. **React Router**
+65. **Route**
+66. **Link**
+67. **NavLink**
+68. **useHistory Hook**
+69. **useLocation Hook**
+70. **Dynamic Routing**
+71. **Nested Routing**
+
+### Data Fetching and API:
+72. **API Calls**
+73. **Fetching Data**
+74. **Axios**
+75. **Fetch API**
+76. **useEffect (for data fetching)**
+77. **Loading State**
+78. **Error Handling**
+
+### UI Interaction Components:
+79. **Button**
+80. **Card**
+81. **Modal**
+82. **Tooltip**
+83. **Alert**
+84. **Notification**
+85. **Dropdown Menu**
+86. **Sidebar**
+87. **Tabs**
+88. **Accordion**
+89. **Dialog Box**
+90. **Slider**
+
+### Animations and Transitions:
+91. **React Transition Group**
+92. **Framer Motion**
+93. **CSS Transitions**
+94. **CSS Animations**
+95. **Keyframes**
+96. **useSpring Hook**
+97. **useTransition Hook**
+
+### Performance Optimization:
+98. **React.memo**
+99. **useMemo Hook**
+100. **useCallback Hook**
+101. **Lazy Loading**
+102. **Suspense**
+103. **Code Splitting**
+104. **React Profiler**
+
+### Miscellaneous:
+105. **JSX**
+106. **Virtual DOM**
+107. **React Fiber**
+108. **Component Lifecycle**
+109. **Mounting**
+110. **Unmounting**
+111. **Updating**
+112. **Error Boundaries**
+113. **Fragment**
+114. **Portal**
+115. **Strict Mode**
+
+Yeh list ReactJS aur UI development ke mostly commonly used words ko cover karti hai. In terms ka React ke andar UI banate waqt baar-baar use hota hai.
+
 ---
 React.js lifecycle methods are crucial for managing the lifecycle of components. Here’s a comprehensive list of questions related to React.js lifecycle methods that can be useful for interviews or study purposes:
 
