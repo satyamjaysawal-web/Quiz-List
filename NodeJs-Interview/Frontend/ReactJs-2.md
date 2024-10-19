@@ -163,6 +163,135 @@ Yeh rahe ReactJS UI se related common terms aur words ki list jo aapko React dev
 114. **Portal**
 115. **Strict Mode**
 
+
+===============================
+
+## Redux :
+
+
+### Core Concepts:
+1. **Redux**  
+2. **Store**
+3. **Action**
+4. **Reducer**
+5. **State**
+6. **Dispatch**
+7. **Action Creators**
+8. **Pure Functions**  
+9. **Immutable State**
+10. **Single Source of Truth**
+11. **Time Travel Debugging**
+
+### Redux Flow:
+1. **Initial State**
+2. **Dispatching Actions**
+3. **Handling Actions**
+4. **Updating State**
+5. **Re-rendering**
+
+### Redux Methods/Functions:
+1. **createStore()**
+2. **combineReducers()**
+3. **applyMiddleware()**
+4. **bindActionCreators()**
+5. **compose()**
+
+### Middleware:
+1. **Middleware**
+2. **Redux Thunk**
+3. **Redux Saga**
+4. **Logger Middleware**
+5. **Custom Middleware**
+
+### Asynchronous Actions:
+1. **Async Actions**
+2. **Thunk**
+3. **Promises in Redux**
+4. **Handling Async Data**
+5. **Side Effects**
+
+### React-Redux (Connecting Redux with React):
+1. **Provider**
+2. **connect()**
+3. **mapStateToProps**
+4. **mapDispatchToProps**
+5. **useSelector Hook**
+6. **useDispatch Hook**
+7. **useStore Hook**
+
+### Reducer Concepts:
+1. **Root Reducer**
+2. **Slice Reducer**
+3. **Switch Cases in Reducer**
+4. **Combining Reducers**
+
+### Action Types:
+1. **Action Type**
+2. **Action Payload**
+3. **Action Constants**
+4. **Synchronous Action**
+5. **Asynchronous Action**
+
+### Redux Toolkit (RTK):
+1. **Redux Toolkit**
+2. **configureStore()**
+3. **createSlice()**
+4. **createAction()**
+5. **createReducer()**
+6. **createAsyncThunk()**
+7. **RTK Query**  
+8. **Immutable Updates with Immer**  
+9. **Redux DevTools Integration**
+
+### Redux Architecture:
+1. **Unidirectional Data Flow**
+2. **Global State Management**
+3. **State Normalization**
+
+### State Management Patterns:
+1. **Local State vs Global State**
+2. **Selector Functions**
+3. **Memoized Selectors (Reselect)**
+
+### Advanced Concepts:
+1. **Persisting Redux State**
+2. **Rehydration**
+3. **Normalization of Data**
+4. **Cross-Slice Communication**
+5. **Error Handling in Redux**
+6. **Optimistic Updates**
+7. **Lazy Loading Reducers**
+8. **Hot Reloading Reducers**
+
+### Debugging and Tools:
+1. **Redux DevTools Extension**
+2. **Time Travel Debugging**
+3. **Redux Logger**
+4. **State Diffing**
+5. **Tracing Actions**
+
+### Best Practices:
+1. **Avoiding Side Effects in Reducers**
+2. **Separation of Concerns**
+3. **Modular Code**
+4. **Keeping Reducers Pure**
+5. **State Structure Design**
+6. **Avoiding Mutations in State**
+
+### Miscellaneous:
+1. **Selective Re-rendering**
+2. **Redux vs Context API**
+3. **Reducing Boilerplate Code**
+4. **Custom Hooks in Redux**
+5. **Testing Redux**  
+6. **Redux and TypeScript**  
+7. **Server-Side Rendering with Redux**  
+8. **Redux Batching**
+  
+
+
+
+===============================
 Yeh list ReactJS aur UI development ke mostly commonly used words ko cover karti hai. In terms ka React ke andar UI banate waqt baar-baar use hota hai.
 
 ---
