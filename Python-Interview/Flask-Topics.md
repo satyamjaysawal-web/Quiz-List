@@ -1,7 +1,7 @@
 
 
 
-Here's a comprehensive table of all the important Flask-related words and topics:
+## Flask-related words and topics:
 
 | **Category**               | **Keyword/Topic**            | **Description**                                                                 |
 |----------------------------|------------------------------|---------------------------------------------------------------------------------|
@@ -103,7 +103,48 @@ Here's a comprehensive table of all the important Flask-related words and topics
 
 ---
 ---
+## Flask libraries aur unke alternatives ko summarize karta hai:
 
+| **Library**                                      | **Primary Use**                                      | **Alternative**                            | **Alternative Use**                      |
+|--------------------------------------------------|-----------------------------------------------------|-------------------------------------------|------------------------------------------|
+| **`jwt`**                                        | JSON Web Tokens (JWT) ke liye encoding/decoding    | **`flask_jwt_extended`**                 | Enhanced JWT functionality with additional features |
+| **`flask_sqlalchemy`**                           | SQL database interactions using SQLAlchemy ORM      | **`flask_peewee`**                        | Use Peewee ORM for lightweight database interactions    |
+| **`flask_mail`**                                 | Email sending functionality                          | **`smtplib`**                             | Python’s built-in library for sending emails directly   |
+| **`flask_login`**                                | User authentication and session management          | **`flask_security`**                       | Provides user authentication, roles, and permissions    |
+| **`flask_restful`**                              | Building RESTful APIs                               | **`flask-api`**                           | An extension for Flask that adds more features for building APIs |
+| **`flask_migrate`**                              | Database migrations                                  | **`flask_alembic`**                       | Direct integration with Alembic for migrations           |
+| **`flask_cors`**                                 | Enabling CORS                                      | **`Flask-Talisman`**                       | Provides CORS support along with security headers        |
+| **`flask_session`**                              | Server-side session management                       | **`flask_kvsession`**                     | Uses key-value storage for sessions                     |
+| **`flask_cache`**                                | Caching for performance improvement                  | **`flask_caching`**                       | More flexible caching options and backends              |
+| **`flask_socketio`**                             | WebSocket communication                              | **`channels`**                             | Django Channels for WebSocket handling                   |
+| **`flask_uploads`**                              | Handling file uploads                               | **`Flask-Dropzone`**                      | A dropzone.js integration for file uploads              |
+| **`flask_debugtoolbar`**                         | Debugging tools                                     | **`pdb`**                                  | Python's built-in debugger for manual debugging         |
+| **`flask_limiter`**                              | Rate limiting for APIs                               | **`django-ratelimit`**                    | Rate limiting for Django applications                     |
+| **`flask_jwt`**                                  | Basic JWT handling                                  | **`flask_jwt_simple`**                   | Simplified JWT handling                               |
+| **`flask_bcrypt`**                               | Password hashing                                    | **`passlib`**                             | A password hashing library with multiple hashing schemes |
+| **`flask_assets`**                               | Asset management (CSS/JS)                          | **`webassets`**                           | General asset management for web applications            |
+| **`flask_graphql`**                              | Building GraphQL APIs                               | **`graphene`**                            | Library to build GraphQL APIs with Python               |
+| **`celery`**                                     | Asynchronous task queues                            | **`flask_celery`**                        | Celery task management integration                       |
+| **`flask_jinja2`**                               | Templating engine for rendering HTML templates      | **`jinja2`**                              | Standalone templating engine                             |
+| **`flask_admin`**                                | Admin interface for managing application data       | **`flask-adminlte`**                      | Admin dashboard based on AdminLTE theme                  |
+| **`flask_oauthlib`**                             | OAuth provider/client support                        | **`authlib`**                            | General OAuth client and provider implementation         |
+| **`flask_compress`**                             | Compressing response data                           | **`Flask-Compress`**                      | Another option for response compression                  |
+| **`flask_truncate`**                             | Truncating text in templates                        | **`bleach`**                              | Sanitizing and truncating text for security             |
+| **`flask_sentry`**                               | Error tracking and monitoring                       | **`sentry-sdk`**                          | Sentry SDK for tracking application errors               |
+| **`flask_security`**                             | Provides security features like user roles         | **`flask_user`**                          | User authentication and management                       |
+| **`flask_limiter`**                              | Rate limiting for APIs                              | **`ratelimit`**                           | Basic rate limiting functionality                         |
+| **`flask_socketio`**                             | WebSocket communication for real-time features     | **`websockets`**                          | Library for WebSocket handling                           |
+| **`flask_smorest`**                              | Building REST APIs with OpenAPI and marshmallow    | **`flask_restplus`**                      | Similar features with a focus on marshmallow            |
+| **`flask_session`**                              | Server-side session management                      | **`flask_kvsession`**                     | Key-value storage for session management                 |
+| **`flask_cachebuster`**                          | Cache-busting for static assets                     | **`flask_assets`**                        | Asset management and cache busting                       |
+| **`flask_pymongo`**                              | MongoDB integration                                 | **`flask_mongoengine`**                  | Using MongoEngine as ORM for MongoDB                     |
+| **`flask_cors`**                                 | CORS management                                    | **`Flask-Talisman`**                      | Combines security headers with CORS                      |
+
+### Additional Notes:
+- Yeh table Flask libraries aur unke alternatives ko summarize karta hai, jisse aap apne project ki requirements ke hisaab se choose kar sakte hain.
+- Alternatives alag functionalities ya approaches offer karte hain, jo specific use cases ke liye beneficial ho sakte hain.
+
+Agar aapko aur libraries ya alternatives ke baare mein jaana hai ya kisi specific functionality ko compare karna hai, toh zaroor batayein!
 
 ---
 ---
