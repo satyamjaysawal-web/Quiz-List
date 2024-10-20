@@ -27,7 +27,145 @@ Yahan par session, cookie, JWT, aur bcrypt ke working flow steps ko table format
 Agar tumhe kisi specific feature ya step ka aur detail chahiye ya koi aur sawaal hai, toh zaroor puchho!
 ---
 ---
+Yahan par session, cookie, JWT, aur bcrypt ka working flow steps aur uses ke sath ek table format mein diya gaya hai. Har feature ke liye flow steps aur implementation ke steps diye gaye hain.
 
+| Feature          | Working Flow Steps                                           | Uses                                                   | Steps to Code                                                   |
+|------------------|------------------------------------------------------------|--------------------------------------------------------|----------------------------------------------------------------|
+| **Session**      | 1. User logs in. <br> 2. Server creates a session. <br> 3. Session ID is sent to client. <br> 4. Client stores session ID in cookies. <br> 5. On subsequent requests, client sends session ID. <br> 6. Server verifies session ID. | - User authentication <br> - User-specific data storage | 1. Import express and session module. <br> 2. Set up session middleware. <br> 3. Create login route. <br> 4. Store user data in session. <br> 5. Create protected routes. |
+| **Cookie**       | 1. Server sets a cookie in the response. <br> 2. Browser stores the cookie. <br> 3. On subsequent requests, browser sends the cookie. <br> 4. Server retrieves cookie data for processing. | - Store user preferences <br> - Remember user sessions | 1. Import express module. <br> 2. Set cookie using `res.cookie()`. <br> 3. Read cookie using `req.cookies`. <br> 4. Create routes to set and get cookies. |
+| **JWT**          | 1. User logs in. <br> 2. Server verifies credentials. <br> 3. Server generates a JWT token. <br> 4. Client stores the token. <br> 5. On subsequent requests, client sends the token in the Authorization header. <br> 6. Server verifies the token. | - Stateless authentication <br> - API authentication | 1. Install jsonwebtoken package. <br> 2. Create login route to generate JWT. <br> 3. Set token in client storage (localStorage). <br> 4. Create middleware to verify JWT. |
+| **Bcrypt**       | 1. User creates a password. <br> 2. Password is hashed using bcrypt. <br> 3. Hashed password is stored in the database. <br> 4. When user logs in, the input password is hashed and compared with the stored hash. | - Securely store passwords <br> - Protect against password cracking | 1. Install bcrypt package. <br> 2. Use `bcrypt.hash()` to hash passwords. <br> 3. Store hashed password in database. <br> 4. Use `bcrypt.compare()` to verify password on login. |
+
+### Example Code for Each Feature:
+
+#### Session Example
+```javascript
+const express = require('express'); // Express framework ko import kar rahe hain
+const session = require('express-session'); // Session middleware ko import karte hain
+const app = express(); // Express application create kar rahe hain
+
+app.use(session({
+    secret: 'mySecret', // Session ko secure karne ke liye secret key
+    resave: false, // Session ko har request par dobara save nahi karna
+    saveUninitialized: false // Uninitialized sessions ko save nahi karna
+}));
+
+app.post('/login', (req, res) => {
+    // #Hinglish: User login details ko check karte hain
+    req.session.user = { id: 1, name: 'User' }; // #Hinglish: User data ko session mein store karte hain
+    res.send('Logged in!'); // #Hinglish: Login success message dikhate hain
+});
+
+app.get('/dashboard', (req, res) => {
+    // #Hinglish: Dashboard access karne ke liye session check karte hain
+    if (req.session.user) {
+        res.send('Welcome to your dashboard!'); // #Hinglish: Dashboard ka message dikhate hain
+    } else {
+        res.send('Please log in first.'); // #Hinglish: Agar login nahi hai toh message dikhate hain
+    }
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000'); // #Hinglish: Server ka message
+});
+```
+
+#### Cookie Example
+```javascript
+const express = require('express'); // Express framework ko import kar rahe hain
+const cookieParser = require('cookie-parser'); // Cookie parser ko import karte hain
+const app = express(); // Express application create kar rahe hain
+
+app.use(cookieParser()); // #Hinglish: Cookie parser middleware ko use karte hain
+
+app.get('/setcookie', (req, res) => {
+    // #Hinglish: Cookie set karte hain
+    res.cookie('username', 'User', { maxAge: 900000, httpOnly: true }); // Cookie ko set karte hain
+    res.send('Cookie has been set!'); // #Hinglish: Cookie set hone ka message dikhate hain
+});
+
+app.get('/getcookie', (req, res) => {
+    // #Hinglish: Cookie ko read karte hain
+    const username = req.cookies.username; // #Hinglish: Cookie se username ko get karte hain
+    res.send(`Username from cookie is: ${username}`); // #Hinglish: Cookie se username dikhate hain
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000'); // #Hinglish: Server ka message
+});
+```
+
+#### JWT Example
+```javascript
+const express = require('express'); // Express framework ko import kar rahe hain
+const jwt = require('jsonwebtoken'); // JWT package ko import karte hain
+const app = express(); // Express application create kar rahe hain
+
+const secretKey = 'mySecretKey'; // #Hinglish: JWT ke liye secret key
+
+app.use(express.json()); // #Hinglish: JSON data ko parse karne ke liye
+
+app.post('/login', (req, res) => {
+    // #Hinglish: User login details ko check karte hain
+    const user = { id: 1, name: 'User' }; // #Hinglish: User object
+    const token = jwt.sign(user, secretKey); // #Hinglish: JWT token generate karte hain
+    res.json({ token }); // #Hinglish: Token client ko bhejte hain
+});
+
+app.get('/protected', (req, res) => {
+    // #Hinglish: Protected route
+    const token = req.headers['authorization']; // #Hinglish: Authorization header se token lete hain
+    if (token) {
+        jwt.verify(token, secretKey, (err, user) => {
+            // #Hinglish: Token ko verify karte hain
+            if (err) {
+                return res.sendStatus(403); // #Hinglish: Agar token invalid hai toh forbidden response
+            }
+            res.send('Protected content!'); // #Hinglish: Protected content dikhate hain
+        });
+    } else {
+        res.sendStatus(401); // #Hinglish: Agar token nahi hai toh unauthorized response
+    }
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000'); // #Hinglish: Server ka message
+});
+```
+
+#### Bcrypt Example
+```javascript
+const express = require('express'); // Express framework ko import kar rahe hain
+const bcrypt = require('bcrypt'); // Bcrypt package ko import karte hain
+const app = express(); // Express application create kar rahe hain
+
+app.use(express.json()); // #Hinglish: JSON data ko parse karne ke liye
+
+app.post('/register', async (req, res) => {
+    // #Hinglish: User registration route
+    const password = req.body.password; // #Hinglish: User se password lete hain
+    const hashedPassword = await bcrypt.hash(password, 10); // #Hinglish: Password ko hash karte hain
+    // #Hinglish: Hashed password ko database mein store karte hain
+    res.send('User registered with hashed password!'); // #Hinglish: Registration success message dikhate hain
+});
+
+app.post('/login', async (req, res) => {
+    // #Hinglish: User login route
+    const { password, hashedPassword } = req.body; // #Hinglish: User se password aur hashed password lete hain
+    const match = await bcrypt.compare(password, hashedPassword); // #Hinglish: Password ko verify karte hain
+    if (match) {
+        res.send('Login successful!'); // #Hinglish: Login success message
+    } else {
+        res.send('Invalid password!'); // #Hinglish: Invalid password message
+    }
+});
+
+app.listen(3000, () => {
+    console.log('Server is running on http://localhost:3000'); // #Hinglish: Server ka message
+});
+```
+
+Agar tumhe in features ke bare mein aur detail chahiye ya koi aur sawaal hai, toh zaroor puchho!
 
 ---
 ---
