@@ -1,5 +1,23 @@
 
+---
 
+---
+Yahan par session, cookie, JWT, aur bcrypt ke working flow steps ko table format mein diya gaya hai:
+
+| **Feature** | **Working Flow Steps** |
+|-------------|------------------------|
+| **Session** | 1. **User Login:** User application par login karta hai.<br>2. **Session Creation:** Server user ke liye ek session create karta hai aur session ID ko server par store karta hai.<br>3. **Session ID Generation:** Server session ID generate karta hai aur use response ke sath client (browser) ko bhejta hai (usually cookies ke through).<br>4. **Subsequent Requests:** Client har request ke sath session ID ko bhejta hai (cookie ke zariye).<br>5. **Session Validation:** Server session ID ko check karta hai aur user ke session data ko retrieve karta hai.<br>6. **Access Control:** Agar session valid hai, toh server request ko process karta hai; agar nahi, toh error ya redirect karta hai. |
+| **Cookie** | 1. **Set Cookie:** Server client ko response bhejte waqt cookie set karta hai, jisme user preferences ya authentication tokens ho sakte hain.<br>2. **Store Cookie:** Client browser par cookie ko store karta hai.<br>3. **Send Cookie:** Client har subsequent request mein cookie ko server ko bhejta hai.<br>4. **Read Cookie:** Server cookie ko read karta hai aur uske contents ko use karta hai (jaise user preferences ya session info).<br>5. **Expire Cookie:** Cookie ki expiration date set ki ja sakti hai, jab tak wo expire nahi hoti, cookie valid rahegi. |
+| **JWT (JSON Web Token)** | 1. **User Login:** User application par login karta hai.<br>2. **Token Generation:** Server user ke information ko lekar ek JWT generate karta hai, jo user ki identity aur permissions ko encode karta hai.<br>3. **Send Token:** Server JWT ko client ko bhejta hai (usually Authorization header ya response body ke through).<br>4. **Store Token:** Client JWT ko localStorage ya sessionStorage mein store karta hai.<br>5. **Subsequent Requests:** Client har request ke sath Authorization header mein JWT ko bhejta hai.<br>6. **Token Verification:** Server JWT ko verify karta hai (signature aur expiration check karta hai).<br>7. **Access Control:** Agar token valid hai, toh server request ko process karta hai; agar nahi, toh error ya unauthorized response bhejta hai. |
+| **Bcrypt** | 1. **User Registration:** User registration form fill karta hai aur password enter karta hai.<br>2. **Hash Password:** Server bcrypt library ka use karke password ko hash karta hai (salt generate karta hai aur password ko hash karta hai).<br>3. **Store Hashed Password:** Server hashed password ko database mein store karta hai.<br>4. **User Login:** User login attempt karta hai aur password enter karta hai.<br>5. **Hash Input Password:** Server input password ko bcrypt ke through hash karta hai (same hashing process).<br>6. **Compare Passwords:** Server hashed password (database se) aur input hashed password ko compare karta hai.<br>7. **Authentication Result:** Agar passwords match karte hain, toh user authenticated hota hai; agar nahi, toh error message diya jata hai. |
+
+Agar tumhe kisi specific feature ya step ka aur detail chahiye ya koi aur sawaal hai, toh zaroor puchho!
+---
+---
+
+
+---
+---
 
 Here’s a comprehensive list of essential **Express.js** terms organized in a table format for easy reference:
 
