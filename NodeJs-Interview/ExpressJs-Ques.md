@@ -1,5 +1,18 @@
 
 ---
+---
+
+Yahan par session, cookie, JWT, aur bcrypt ke working flow steps ko table format mein diya gaya hai:
+
+| Feature  | Steps                                                                                         |
+|----------|-----------------------------------------------------------------------------------------------|
+| **Session** | User Login → Session Creation → Session ID Generation → Subsequent Requests → Session Validation → Access Control |
+| **Cookie**  | Set Cookie → Store Cookie → Send Cookie → Read Cookie → Expire Cookie                     |
+| **JWT**     | User Login → Token Generation → Send Token → Store Token → Subsequent Requests → Token Verification → Access Control |
+| **Bcrypt**  | User Registration → Hash Password → Store Hashed Password → User Login → Hash Input Password → Compare Passwords → Authentication Result |
+
+Agar aur koi sawaal ho ya aur kuch detail chahiye ho, toh batao!
+
 
 ---
 Yahan par session, cookie, JWT, aur bcrypt ke working flow steps ko table format mein diya gaya hai:
