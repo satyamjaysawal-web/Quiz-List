@@ -76,6 +76,21 @@ This table presents the key terms associated with Express.js, along with their d
 ---
 ---
 
+---
+---
+
+
+
+
+---
+---
+
+
+
+---
+---
+
+
 
 Yeh raha ek table jo kuch common **middleware** list karta hai jo different contexts mein use hote hain, jaise React/Redux, Node.js, Express, aur front-end/backend development ke liye.
 
