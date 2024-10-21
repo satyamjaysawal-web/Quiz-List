@@ -279,6 +279,131 @@ app.listen(PORT, () => {
        "message": "Invalid token"
    }
    ```
+
+---
+---
+
+### JWT: Frontend aur Backend ke Beech Ek Kahani
+
+Ek kahani ke format mein samajhte hain ki **JWT (JSON Web Token)** kaise frontend aur backend ke beech kaam karta hai, step by step:
+
+---
+
+**Step 1: User Login Karta Hai**
+
+Ek din, **John** apni favorite e-commerce website par login kar raha tha. Usne apna **username** aur **password** enter kiya aur "Login" button click kiya. Ab yahan se backend ki journey shuru hoti hai.
+
+---
+
+**Step 2: Frontend ne Backend ko Credentials Bheje**
+
+John ka browser frontend (client-side) par kaam kar raha tha. Usne John ke username aur password ko **POST request** ke zariye backend ko bheja.
+
+```plaintext
+POST /login
+Body: { username: "john", password: "password123" }
+```
+
+---
+
+**Step 3: Backend Ne Credentials Verify Kiye**
+
+Backend (server-side) ne ye request receive ki aur database mein check kiya ki kya John ka username aur password sahi hai.
+
+- Agar username aur password sahi hota hai, to backend kehta hai: "Great! John ko authenticate karna hai!".
+- Agar galat hota hai, to backend error response bhej deta hai: "Invalid credentials".
+
+---
+
+**Step 4: JWT Token Generate Kiya Gaya**
+
+Backend ne dekha ki John ka username aur password sahi hai. To backend ne ek special **JWT token** generate kiya. Ye token teen parts mein divide hota hai:
+
+1. **Header**: Isme token ka type aur algorithm hota hai (e.g., HS256).
+2. **Payload**: Isme John ki information hoti hai, jaise uska `userID`, `role`, aur kuch expiry time.
+3. **Signature**: Isko secure karne ke liye backend apna secret key use karta hai.
+
+Backend token banata hai aur response ke through John ke browser ko bhejta hai:
+
+```json
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+```
+
+---
+
+**Step 5: Frontend Ne Token Store Kar Liya**
+
+John ka browser ne ye **JWT token** receive kiya. Ab browser ye token ko apne paas **localStorage** ya **sessionStorage** mein securely store karta hai. Isse browser ko dobara login karne ki zarurat nahi hoti, jab tak token valid hai.
+
+```javascript
+localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...');
+```
+
+---
+
+**Step 6: Protected Routes Access Karna**
+
+Ab John apne e-commerce account ke protected pages (jaise **orders**, **profile**, etc.) access karna chahta hai. Jab bhi John kisi protected page par jata hai, uska browser backend ko ek **GET request** bhejta hai, lekin is baar request ke saath **Authorization header** mein apna JWT token bhejta hai.
+
+```plaintext
+GET /profile
+Headers: { Authorization: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..." }
+```
+
+---
+
+**Step 7: Backend Ne Token Verify Kiya**
+
+Backend ko jab request mili, to usne dekha ki **Authorization header** mein token hai. Backend ne us token ko apne secret key se verify kiya aur dekha ki token valid hai ya nahi. Agar token valid hai, to backend ne John ka profile data bhej diya.
+
+- Agar token invalid ya expired hota, to backend ne error bheja: "Unauthorized access".
+  
+Backend ne JWT verify karne ke liye kuch aise code use kiya:
+
+```javascript
+jwt.verify(token, 'your_secret_key', (err, decoded) => {
+    if (err) {
+        return res.status(401).json({ message: 'Invalid token' });
+    }
+    // Access granted
+});
+```
+
+---
+
+**Step 8: Frontend Ko Data Mil Gaya**
+
+Backend ne John ka profile data successfully return kar diya. Ab frontend (browser) ne wo data show kar diya aur John apna profile dekh sakta hai. Backend ko baar baar user ko authenticate karne ki zarurat nahi thi, kyunki JWT token ke through ye kaam asaan ho gaya.
+
+---
+
+**Step 9: Token Expiry and Refresh**
+
+John ka token kuch ghanton ke baad expire ho jata hai (maan lo 1 hour ke baad). Jab token expire hota hai, aur agar John protected pages par jaane ki koshish karta hai, to backend usse bolega: **"Token expired, please login again."**
+
+Agar JWT ke sath refresh token bhi implemented hai, to backend automatic new token generate kar sakta hai, taki user ko dobara login na karna pade.
+
+---
+
+### Summary of JWT Working:
+
+1. **User login** karta hai aur credentials frontend se backend ko bhejta hai.
+2. Backend user ko authenticate karta hai aur **JWT token** generate karke frontend ko deta hai.
+3. Frontend token ko store karta hai (usually in localStorage).
+4. Jab bhi user koi **protected resource** access karta hai, frontend backend ko token bhejta hai.
+5. Backend token ko verify karta hai aur agar valid hota hai, to access deta hai.
+6. Agar token invalid ya expire ho jata hai, to user ko dubara login karna padta hai ya refresh token use hota hai.
+
+---
+
+Is kahani ke madhyam se JWT ka flow samajhna aasan ho gaya hoga. Agar aapko koi aur specific detail chahiye ho ya aur koi question hai, to bataiye!
+
+
+
+---
+
 ---
 Yahan par **Authentication** aur **Authorization** ke beech ka comparison table format mein diya gaya hai:
 
