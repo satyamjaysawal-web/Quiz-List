@@ -1,4 +1,23 @@
+---
 
+**Stateless** aur **Stateful** architecture ke concepts web development aur application design mein bahut important hain. Yahan par dono ke beech ka comparison diya gaya hai:
+
+| **Aspect**                | **Stateless**                                         | **Stateful**                                          |
+|---------------------------|------------------------------------------------------|------------------------------------------------------|
+| **Definition**            | Server user ki state ko yaad nahi rakhta.           | Server user ki state ko yaad rakhta hai.            |
+| **State Management**      | Har request independent hoti hai; koi previous context nahi hota. | Requests ke beech context ya state maintain hoti hai. |
+| **Scalability**           | Easily scalable, kyunki server ko client state maintain nahi karna hota. | Scalability mushkil ho sakta hai, kyunki server ko state manage karna padta hai. |
+| **Performance**           | Faster response times, kyunki server pe kam load hota hai. | Response times slow ho sakte hain, kyunki server ko state check karna padta hai. |
+| **Example Protocols**     | HTTP (Web protocols), RESTful APIs.                   | WebSocket, FTP, database connections.                 |
+| **Use Cases**             | APIs, microservices, load balanced applications.      | Online gaming, chat applications, shopping carts.     |
+| **Session Management**    | Session management client-side hota hai (e.g., tokens). | Session management server-side hota hai.              |
+| **Error Handling**        | Error handling ke liye state ko validate karna zaruri nahi. | State ko track karna zaruri hai, warna errors ho sakte hain. |
+
+### Summary:
+- **Stateless** architecture mein, har request independent hoti hai aur server user ke state ko yaad nahi rakhta. Ye approach scalability aur performance mein behtar hota hai.
+- **Stateful** architecture mein, server user ki state ko yaad rakhta hai, jisse previous interactions ka context milta hai. Lekin is approach mein complexity aur scalability issues ho sakte hain.
+
+Agar aapko in concepts par aur detail chahiye ya kisi specific use case par baat karni hai, to bataiye!
 ---
 ---
 Here is a table of advanced topics for Node.js, categorized for better understanding:
