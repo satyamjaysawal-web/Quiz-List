@@ -18,6 +18,7 @@
 - **Stateful** architecture mein, server user ki state ko yaad rakhta hai, jisse previous interactions ka context milta hai. Lekin is approach mein complexity aur scalability issues ho sakte hain.
 
 Agar aapko in concepts par aur detail chahiye ya kisi specific use case par baat karni hai, to bataiye!
+
 ---
 ---
 Here is a table of advanced topics for Node.js, categorized for better understanding:
