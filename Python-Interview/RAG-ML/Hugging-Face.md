@@ -1,6 +1,32 @@
 
 
+---
+---
 
+
+Here's a table format of Hugging Face libraries with their description and how to import each of them in Python:
+
+| **Library**       | **Description**                                         | **Python Import**                    |
+|-------------------|---------------------------------------------------------|--------------------------------------|
+| **Transformers**   | Pre-trained transformer models for NLP tasks            | `from transformers import *`         |
+| **Datasets**       | Loading and preprocessing datasets for ML/NLP tasks     | `from datasets import *`             |
+| **Tokenizers**     | Fast, efficient tokenization for text processing        | `from tokenizers import *`           |
+| **Accelerate**     | Simplifies distributed training and mixed precision     | `from accelerate import *`           |
+| **PEFT**           | Parameter-efficient fine-tuning techniques              | `from peft import *`                 |
+| **Evaluate**       | Compute evaluation metrics for various ML/NLP tasks     | `from evaluate import *`             |
+| **Diffusers**      | Denoising diffusion models for image generation         | `from diffusers import *`            |
+| **Gradio**         | Build interactive UIs for ML model demos                | `import gradio as gr`                |
+| **Optimum**        | Hardware acceleration optimizations for Hugging Face    | `from optimum import *`              |
+| **Hub**            | Manage and share models/datasets on Hugging Face Hub    | `from huggingface_hub import *`      |
+| **Inference Endpoints** | API for deploying and running models in production  | `from inference_api import *`        |
+
+### Less Common Libraries:
+| **Library**       | **Description**                                         | **Python Import**                    |
+|-------------------|---------------------------------------------------------|--------------------------------------|
+| **Model Cards**    | Documentation and performance tracking for models       | `from model_cards import *`          |
+| **Hugging Face CLI** | Command-line interface to interact with Hugging Face Hub | `huggingface-cli`                    |
+
+This table shows each library's function and its corresponding Python import statement to use in projects.
 
 ---
 ---
