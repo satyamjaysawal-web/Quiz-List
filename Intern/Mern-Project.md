@@ -245,7 +245,7 @@ By presenting these tasks and use cases, I could illustrate my ability to contri
 
 ---
 
-If I were to explain a project involving **React.js**, it could be structured like this:
+## React.js - project
 
 ---
 
@@ -323,7 +323,7 @@ This structured approach showcases my skills in building a comprehensive web app
 ---
 
 
-If I were to outline a project involving **Node.js**, **MongoDB**, and middleware for a backend development role, it might look something like this:
+## **Node.js**, **MongoDB**, and middleware for a backend development role, it might look something like this:
 
 ---
 
