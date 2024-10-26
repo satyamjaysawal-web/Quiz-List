@@ -90,6 +90,21 @@
 ---
 
 
+| **Category**                  | **Term/Topic**                                                                                         |
+|-------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Core Concepts**             | Web Scraping, HTML Parsing, Data Extraction, Web Crawling, DOM Traversal                               |
+| **Python Libraries**          | BeautifulSoup, Requests, Scrapy, Selenium, lxml, PyQuery, Pyppeteer, MechanicalSoup, HTTPX            |
+| **Techniques and Approaches** | Static Scraping, Dynamic Scraping, Headless Browsing, XPath Selectors, CSS Selectors, Regex           |
+| **Data Handling and Storage** | JSON, CSV, SQL Databases, NoSQL Databases, Data Cleaning                                              |
+| **Web Crawling Techniques**   | Pagination Handling, Spidering, URL Parsing, Rate Limiting, Concurrent Requests, Depth-Limited Search |
+| **Optimization Techniques**   | Request Throttling, Rotating Proxies, User-Agent Spoofing, Session Management, Caching                |
+| **Error Handling**            | Exception Handling, Retry Mechanism, 404 Error Handling, Timeouts                                     |
+| **Ethics and Legal**          | Robots.txt Compliance, Terms of Service, IP Blocking and Detection, Ethical Scraping                  |
+| **Data Processing and Analysis** | NLP, Text Cleaning, Data Visualization, Sentiment Analysis                                       |
+| **Automation and Scheduling** | Cron Jobs, Task Scheduling, API Integration                                                           |
+| **Browser Automation (Selenium)** | Locating Elements, Simulating User Actions, Headless Mode, Handling Alerts and Popups            |
+
+
 ---
 ---
 
