@@ -7,71 +7,70 @@
 ---
 
 
-## The project flow for your Telegram bot, represented with arrows to show how the modules interact with each other:
+
+## The project flow for the `telegram_bot` with arrows indicating the relationships and interactions between the files:
 
 ```
 telegram_bot/
 │
 ├── bot.py               # Main bot script
-│   |
-│   ├── Imports API_TOKEN from config.py
-│   |
-│   ├── Imports handle_message from handlers.py
-│   |
-│   └── Sets up the Bot and Dispatcher
-│       |
-│       └── Listens for incoming messages
-│           |
-│           └── Calls handle_message function for each message
-│               |
-│               └── handle_message function
-│                   |
-│                   ├── Calls get_chatgpt_response from chatgpt.py
-│                   |   |
-│                   |   └── Sends user message to OpenAI API
-│                   |       |
-│                   |       └── Receives response from OpenAI API
-│                   |
-│                   └── Sends the ChatGPT response back to the user
+│   │
+│   ├── imports API_TOKEN from config.py  ->> API_TOKEN
+│   │
+│   ├── imports handle_message from handlers.py ->> handle_message
+│   │
+│   └── Starts the bot and listens for messages ->> Incoming messages
+│           └── Passes messages to handle_message() ->> handle_message()
+│                   │
+│                   └── Calls get_chatgpt_response() ->> chatgpt.py
+│                           │
+│                           └── Sends user message to OpenAI API ->> OpenAI API
+│                                   │
+│                                   └── Receives response from OpenAI API ->> response
+│                                           │
+│                                           └── Returns response to handle_message() ->> handle_message
+│                                                   │
+│                                                   └── Sends response back to user ->> Telegram Bot
 │
 ├── handlers.py          # Message handlers
-│   |
-│   └── Contains handle_message function
-│       |
-│       └── Calls get_chatgpt_response from chatgpt.py
+│   │
+│   └── Defines handle_message() ->> Receives messages from bot.py
+│           │
+│           └── Calls get_chatgpt_response() ->> chatgpt.py
 │
 ├── chatgpt.py           # ChatGPT API integration
-│   |
-│   └── Contains get_chatgpt_response function
-│       |
-│       ├── Sends user message to OpenAI API
-│       |
-│       └── Receives and returns the response
+│   │
+│   └── Defines get_chatgpt_response() ->> Handles communication with OpenAI API
+│           │
+│           └── Sends user message to OpenAI API ->> OpenAI API
+│                   │
+│                   └── Receives and processes response ->> response
 │
 └── config.py            # Configuration settings (tokens and keys)
-    |
-    └── Holds API_TOKEN and OPENAI_API_KEY
+    │
+    └── Holds API_TOKEN and OPENAI_API_KEY ->> Used in bot.py and chatgpt.py
 ```
 
 ### Explanation of the Flow:
 
-- **`bot.py`**:
-  - This is the entry point of the bot, setting everything up.
-  - It imports configurations and the message handler.
-  - It listens for incoming messages and calls the appropriate handler.
+1. **`bot.py`**: 
+   - This is the main script that starts the bot.
+   - It imports the API token and message handler.
+   - Listens for incoming messages and passes them to `handle_message()`.
 
-- **`handlers.py`**:
-  - Contains the `handle_message` function which processes incoming messages.
-  - It interacts with the `chatgpt.py` to get responses from OpenAI.
+2. **`handlers.py`**: 
+   - Contains the `handle_message()` function.
+   - Receives the messages from `bot.py` and calls `get_chatgpt_response()` from `chatgpt.py`.
 
-- **`chatgpt.py`**:
-  - Contains the function that communicates with OpenAI's API.
-  - It sends the user's message and returns the assistant's response.
+3. **`chatgpt.py`**: 
+   - Contains the function to interact with OpenAI’s API.
+   - Takes user input, sends it to the API, and retrieves the response.
 
-- **`config.py`**:
-  - Holds all sensitive data like the API tokens.
-  
-This flow illustrates how the various components interact, allowing for a clean separation of concerns within the application.
+4. **`config.py`**: 
+   - Contains configuration settings, including API tokens.
+   - Provides tokens to both `bot.py` and `chatgpt.py` for authentication.
+
+This flow diagram illustrates how the different components of the project interact with each other, ensuring a clear path from user input to response delivery.
 
 ---
 ---
