@@ -27,6 +27,46 @@
 In **simple linear regression**, the model aims to find a straight line that best fits the data by minimizing the distance between the data points and the line. In **multiple linear regression**, the relationship between multiple variables and a dependent variable is modeled. 
 
 ---
+
+
+---
+
+`.pkl` file extension Python mein **pickle** module ke through create hoti hai. Yeh module data ko serialize aur deserialize karne ke liye use hota hai, jisse ki Python objects ko ek file mein save kiya ja sake ya network par transfer kiya ja sake.
+
+### Pickle Ka Kya Matlab Hai?
+- **Serialization:** Matlab data ko aise format mein convert karna jisse usse file mein store kiya ja sake. Is process ko "pickling" kehte hain.
+- **Deserialization:** Matlab file se data ko wapas original Python object mein convert karna. Is process ko "unpickling" kehte hain.
+
+### Kyu Use Karte Hain `.pkl` Files?
+1. **Model Saving:** Jab tum machine learning models train karte ho, toh unhe pickle karke save kar sakte ho. Yeh tumhe baad mein model ko load karke bina dobara training kiye predictions karne ki flexibility deta hai.
+  
+2. **Data Storage:** Agar tumhe complex data structures (jaise lists, dictionaries, etc.) ko file mein store karna hai, toh pickle iske liye kaafi useful hai.
+
+3. **Easy Retrieval:** Jab bhi tumhe saved model ya data ko use karna ho, tum sirf unpickle karke easily access kar sakte ho.
+
+### Example
+Yeh hai ek chota example kaise pickle ka use karke data ko save aur load karte hain:
+
+```python
+import pickle
+
+# Sample data
+data = {'name': 'John', 'age': 30, 'city': 'New York'}
+
+# Data ko pickle karke save karna
+with open('data.pkl', 'wb') as file:
+    pickle.dump(data, file)
+
+# Data ko unpickle karke load karna
+with open('data.pkl', 'rb') as file:
+    loaded_data = pickle.load(file)
+
+print(loaded_data)  # Output: {'name': 'John', 'age': 30, 'city': 'New York'}
+```
+
+Is tarah se, `.pkl` files kaafi handy hote hain jab hume data ko efficiently save aur retrieve karna hota hai. Agar tumhe aur questions hain toh puch sakte ho!
+
+---
 ---
 
 Linear Regression ke basic se lekar advanced tak ka tutorial chahiye toh yahan main step-by-step samjhaati hoon. Har section mein ek concept explain karenge aur code snippets bhi provide karenge. 
