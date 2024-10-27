@@ -201,7 +201,21 @@ with mlflow.start_run():
 ```
 
 ---
+Data science aur machine learning mein kuch naming conventions follow ki jaati hain to make it easier to read and understand code, aur yeh **mathematical notation** ke norms par based hain:
 
+1. **X (Capital)**:
+   - **Capital letter `X`** use hota hai **input features or independent variables** ke liye. Usually, `X` ek **matrix** hota hai jisme multiple rows (examples) aur columns (features) hote hain, isi liye capital letter use hota hai to denote a **2D array or matrix**.
+   - Example: Agar aapke paas 100 examples hain aur 3 features (like height, weight, and age), toh `X` ek 100x3 matrix hoga.
+
+2. **y (Small)**:
+   - **Lowercase `y`** ka use **target variable or dependent variable** ke liye hota hai. `y` often ek **vector** hota hai jo sirf ek column hota hai aur har row ek example ke output ko represent karta hai, isi liye lowercase notation use hoti hai.
+   - Example: Agar `X` mein 100 rows hain, toh `y` ek 100-element vector hoga jo har example ka output store karega (e.g., yes/no, price, etc.).
+
+### Recap:
+- `X` (capital) -> 2D Matrix for **Features**.
+- `y` (small) -> 1D Vector for **Labels/Targets**.
+
+Yeh conventions follow karne se code mein clarity aur consistency aa jaati hai, making it easier to understand at a glance.
 
 ---
 
