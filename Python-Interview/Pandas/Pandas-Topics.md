@@ -1,6 +1,7 @@
 ---
 
-Here’s a comprehensive table listing various functions, methods, and concepts related to the Pandas library. This includes the most commonly used features for data manipulation, analysis, and visualization.
+## Pandas DataFrame :
+This includes the most commonly used features for data manipulation, analysis, and visualization.
 
 | **Category**                   | **Pandas Function/Method** | **Description**                                               |
 |--------------------------------|-----------------------------|---------------------------------------------------------------|
