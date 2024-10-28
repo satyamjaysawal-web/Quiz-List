@@ -1,11 +1,12 @@
 
 
-
+---
+---
 
 ---
 ---
 
-Python ke topics kaafi vast aur wide-ranging hote hain. Yahaan peh ek comprehensive list hai jo Python ke core se lekar advanced topics tak cover karta hai:
+## Python Topics :
 
 ### **Python Basics:**
 1. **Syntax and Semantics**
@@ -239,7 +240,15 @@ Python ke topics kaafi vast aur wide-ranging hote hain. Yahaan peh ek comprehens
     - CircuitPython
     - Raspberry Pi with Python
 
-Yeh list Python ke beginners se lekar advanced learners ke liye hai, jo log Python ka in-depth knowledge chahte hain, unke liye bhi kaafi helpful ho sakti hai.
+---
+---
+
+
+---
+---
+
+
+
 
 
 ---
