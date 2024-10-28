@@ -6,7 +6,8 @@
 ---
 ---
 
-APIs (Application Programming Interfaces) ke kai types hote hain jo different purposes aur architectures ke liye design kiye gaye hain. Yahan kuch commonly used API types aur unke uses hain:
+## APIs (Application Programming Interfaces) :
+ke kai types hote hain jo different purposes aur architectures ke liye design kiye gaye hain. Yahan kuch commonly used API types aur unke uses hain:
 
 ### 1. **REST API (Representational State Transfer)**
 
