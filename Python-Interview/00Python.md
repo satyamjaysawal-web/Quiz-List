@@ -244,6 +244,77 @@
 ---
 
 
+
+## In Python, **Magic Methods** (ya "Dunder Methods") 
+wo special methods hain jo double underscores (`__`) ke saath start aur end hote hain. Ye methods predefined hote hain Python ke built-in classes mein aur inka major use **operator overloading** ke liye hota hai. "Dunder" ka matlab "Double Under (Underscores)" hota hai.
+
+### Magic Methods ko Kaise Dekhein
+Kisi bhi class ke inherited magic methods ko dekhne ke liye `dir()` function use kar sakte hain:
+
+```python
+print(dir(int))
+```
+
+Ye code `int` class ke magic methods ko list karega.
+
+Ya cmd/terminal pe Python console open karke `dir(int)` type kar sakte hain:
+
+```python
+>>> dir(int)
+```
+
+### Magic Methods in Python
+Python mein kuch commonly used magic methods aur unke uses neeche diye gaye hain:
+
+---
+
+#### **Initialization and Construction**
+- **`__new__`**: Object ki instantiation pe call hota hai.
+- **`__init__`**: `__new__` ke baad initialize karta hai object ko.
+- **`__del__`**: Destructor ka kaam karta hai jo object destroy hone par call hota hai.
+
+#### **Numeric Magic Methods**
+- **`__trunc__`**: `math.trunc()` ke behavior ko implement karta hai.
+- **`__ceil__`**: `math.ceil()` ke behavior ko implement karta hai.
+- **`__floor__`**: `math.floor()` ke behavior ko implement karta hai.
+- **`__round__(self, n)`**: `round()` ke behavior ko define karta hai.
+- **`__invert__`**: Inversion behavior ko `~` operator ke liye implement karta hai.
+- **`__abs__`**: `abs()` function ke behavior ko implement karta hai.
+- **`__neg__`**: Negation ke behavior ko define karta hai.
+- **`__pos__`**: Unary positive ke behavior ko define karta hai.
+
+#### **Arithmetic Operators**
+- **`__add__`**: `+` operator ke liye behavior define karta hai (addition).
+- **`__sub__`**: `-` operator ke liye behavior define karta hai (subtraction).
+- **`__mul__`**: `*` operator ke liye behavior define karta hai (multiplication).
+- **`__floordiv__`**: `//` operator ke liye behavior define karta hai (floor division).
+- **`__truediv__`**: `/` operator ke liye behavior define karta hai (true division).
+- **`__mod__`**: `%` operator ke liye behavior define karta hai (modulus).
+- **`__divmod__`**: `divmod()` function ke behavior ko implement karta hai.
+- **`__pow__`**: `**` operator ke liye behavior define karta hai (exponentiation).
+- **`__lshift__`**, **`__rshift__`**: Bitwise shift operators `<<` aur `>>` ke behavior ko implement karte hain.
+- **`__and__`**, **`__or__`**, **`__xor__`**: Bitwise AND, OR aur XOR operators `&`, `|`, `^` ke behavior ko implement karte hain.
+- **`__invert__`**: Bitwise NOT operator `~` ke behavior ko define karta hai.
+- **`__neg__`** aur **`__pos__`**: Unary negation aur unary positive operators ko handle karte hain.
+
+#### **String Magic Methods**
+- **`__str__`**: `str()` call hone par instance ka readable string representation return karta hai.
+- **`__repr__`**: `repr()` ka machine-readable representation return karta hai.
+- **`__unicode__`**: Unicode string representation return karta hai.
+- **`__format__`**: Custom formatting provide karta hai.
+- **`__hash__`**: Hashing ke liye integer return karta hai (dictionaries mein fast key comparison ke liye).
+- **`__nonzero__`** (ya `__bool__` in Python 3): `bool()` call hone par instance ka boolean value return karta hai.
+- **`__dir__`**: Class ke attributes ki list return karta hai.
+- **`__sizeof__`**: Object ka size return karta hai.
+
+#### **Comparison Magic Methods**
+- **`__eq__`**: Equality operator `==` ka behavior define karta hai.
+- **`__ne__`**: Inequality operator `!=` ka behavior define karta hai.
+- **`__lt__`**, **`__gt__`**: Less-than `<` aur greater-than `>` operators ke behavior ko define karte hain.
+- **`__le__`**, **`__ge__`**: Less-than-or-equal-to `<=` aur greater-than-or-equal-to `>=` operators ke behavior ko define karte hain.
+
+Ye magic methods Python ke objects ko more functional aur expressive banate hain aur kisi bhi object ke behavior ko customize karna aasaan bana dete hain.
+
 ---
 ---
 
