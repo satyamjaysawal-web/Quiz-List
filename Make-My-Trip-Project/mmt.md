@@ -326,7 +326,29 @@ To support the above APIs, we need a well-structured database schema represented
 
 These JSON objects can be stored in a document-based NoSQL database (like MongoDB) or translated into relational tables in an SQL database. They provide a foundation for the data structure needed to support core functionalities of a travel booking application, ensuring that each entity (user, booking, payment, etc.) is well-organized and interconnected.
 
+---
 
+---
+
+---
+
+In JSON and general data structures, the components you’re pointing out are commonly referred to as **key-value pairs**. Let’s break down the key terms used to describe them:
+
+1. **Key-Value Pairs**: Each element in JSON, such as `"supportTicketId": "support_001"`, is a key-value pair.
+   - **Key**: The name that identifies a piece of data (e.g., `"supportTicketId"`).
+   - **Value**: The data itself associated with the key (e.g., `"support_001"`).
+
+2. **Object**: The entire structure enclosed in curly braces `{...}` is a JSON object. An object contains one or more key-value pairs.
+   - In this case, the JSON object represents a support ticket with details like the user’s message, ticket status, and support agent info.
+
+3. **Nested Objects**: Some keys contain another object as their value.
+   - For example, `"supportAgent": { "name": "Jane Smith", "email": "jane.smith@support.com" }` is a nested object within the main support ticket object.
+
+4. **Attributes or Fields**: In the context of database schema design or software development, keys like `"userId"`, `"subject"`, and `"status"` are often referred to as **attributes** or **fields**.
+
+In summary:
+- The JSON structure you provided is an **object** with **key-value pairs**, some of which contain **nested objects**. Each key in this context can also be considered an **attribute** or **field** of the support ticket object.
+---
 
 ---
 ---
