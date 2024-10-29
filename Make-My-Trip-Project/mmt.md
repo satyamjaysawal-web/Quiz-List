@@ -332,7 +332,7 @@ These JSON objects can be stored in a document-based NoSQL database (like MongoD
 
 ---
 
-In a JSON-based database or any structured data storage, terms like "objects," "attribute fields," "elements," and "nested objects" describe the way data is organized and stored. Here’s a breakdown:
+## sIn a JSON-based database or any structured data storage, terms like "objects," "attribute fields," "elements," and "nested objects" describe the way data is organized and stored. Here’s a breakdown:
 
 ### 1. **Objects**
    - **Definition**: In JSON, an object is a collection of key-value pairs enclosed within curly braces `{ }`.
