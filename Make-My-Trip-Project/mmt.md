@@ -129,7 +129,202 @@ We'll structure these APIs using RESTful principles, commonly used for travel ap
      - **Response**: `{ "supportTicketId": "uniqueTicketId", "status": "resolved" }`
 
 ---
+---
 
+---
+
+
+
+To support the above APIs, we need a well-structured database schema represented by JSON objects. Here is a breakdown of sample JSON structures for different entities in a travel booking application, such as users, flights, hotels, cars, bookings, payments, notifications, and support tickets.
+
+### 1. **User Collection**
+   ```json
+   {
+      "userId": "user_001",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "passwordHash": "hashed_password",
+      "phone": "+1234567890",
+      "createdAt": "2023-10-29T10:30:00Z",
+      "preferences": {
+         "notificationType": "email",
+         "preferredCurrency": "USD"
+      },
+      "bookings": ["booking_001", "booking_002"]
+   }
+   ```
+
+---
+
+### 2. **Flight Collection**
+   ```json
+   {
+      "flightId": "flight_001",
+      "airline": "AirlineName",
+      "origin": "JFK",
+      "destination": "LAX",
+      "departureTime": "2023-12-01T08:00:00Z",
+      "arrivalTime": "2023-12-01T11:00:00Z",
+      "price": 250,
+      "currency": "USD",
+      "availability": true,
+      "seatsAvailable": 100,
+      "class": "Economy",
+      "details": {
+         "baggageAllowance": "20kg",
+         "meal": "Included",
+         "inFlightEntertainment": true
+      }
+   }
+   ```
+
+---
+
+### 3. **Hotel Collection**
+   ```json
+   {
+      "hotelId": "hotel_001",
+      "name": "HotelName",
+      "location": {
+         "city": "New York",
+         "address": "123 Main St, New York, NY"
+      },
+      "rating": 4.5,
+      "pricePerNight": 150,
+      "currency": "USD",
+      "availability": true,
+      "roomTypes": [
+         {
+            "roomId": "room_001",
+            "type": "Deluxe",
+            "capacity": 2,
+            "price": 200,
+            "amenities": ["WiFi", "Breakfast", "Air Conditioning"]
+         },
+         {
+            "roomId": "room_002",
+            "type": "Suite",
+            "capacity": 4,
+            "price": 350,
+            "amenities": ["WiFi", "Breakfast", "Air Conditioning", "Ocean View"]
+         }
+      ],
+      "photos": ["image1.jpg", "image2.jpg"],
+      "contactInfo": {
+         "phone": "+1234567890",
+         "email": "contact@hotelname.com"
+      }
+   }
+   ```
+
+---
+
+### 4. **Car Collection**
+   ```json
+   {
+      "carId": "car_001",
+      "brand": "Toyota",
+      "model": "Corolla",
+      "type": "Sedan",
+      "location": "JFK Airport, New York",
+      "pricePerDay": 50,
+      "currency": "USD",
+      "availability": true,
+      "features": ["Air Conditioning", "Automatic Transmission", "GPS"],
+      "details": {
+         "seatingCapacity": 5,
+         "baggageCapacity": "3 bags",
+         "fuelPolicy": "Full to Full"
+      }
+   }
+   ```
+
+---
+
+### 5. **Booking Collection**
+   ```json
+   {
+      "bookingId": "booking_001",
+      "userId": "user_001",
+      "type": "flight",  // could also be "hotel" or "car"
+      "status": "confirmed",
+      "details": {
+         "flightId": "flight_001",
+         "passengerDetails": [
+            {
+               "name": "John Doe",
+               "passportNumber": "A12345678",
+               "age": 30
+            }
+         ]
+      },
+      "price": 250,
+      "currency": "USD",
+      "paymentStatus": "paid",
+      "createdAt": "2023-10-29T10:30:00Z"
+   }
+   ```
+
+---
+
+### 6. **Payment Collection**
+   ```json
+   {
+      "paymentId": "payment_001",
+      "bookingId": "booking_001",
+      "userId": "user_001",
+      "amount": 250,
+      "currency": "USD",
+      "paymentMethod": "creditCard",
+      "paymentStatus": "success",
+      "transactionId": "txn_001",
+      "paymentDate": "2023-10-29T11:00:00Z"
+   }
+   ```
+
+---
+
+### 7. **Notification Collection**
+   ```json
+   {
+      "notificationId": "notif_001",
+      "userId": "user_001",
+      "message": "Your flight booking is confirmed!",
+      "type": "booking_confirmation",
+      "status": "unread",
+      "createdAt": "2023-10-29T11:15:00Z"
+   }
+   ```
+
+---
+
+### 8. **Support Ticket Collection**
+   ```json
+   {
+      "supportTicketId": "support_001",
+      "userId": "user_001",
+      "subject": "Issue with booking cancellation",
+      "message": "I need assistance canceling my flight booking.",
+      "status": "open",
+      "createdAt": "2023-10-29T12:00:00Z",
+      "updatedAt": "2023-10-29T12:30:00Z",
+      "supportAgent": {
+         "name": "Jane Smith",
+         "email": "jane.smith@support.com"
+      },
+      "responseHistory": [
+         {
+            "agentName": "Jane Smith",
+            "message": "We are looking into your issue.",
+            "timestamp": "2023-10-29T12:30:00Z"
+         }
+      ]
+   }
+   ```
+
+---
+
+These JSON objects can be stored in a document-based NoSQL database (like MongoDB) or translated into relational tables in an SQL database. They provide a foundation for the data structure needed to support core functionalities of a travel booking application, ensuring that each entity (user, booking, payment, etc.) is well-organized and interconnected.
 
 
 
