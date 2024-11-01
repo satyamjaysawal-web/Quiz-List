@@ -15,7 +15,7 @@ hey gpt,
 5. show model output
    
 ---
-
+---
 
 Chalo, ek aur scenario-based machine learning (ML) question banate hain, uska answer dete hain, ek required CSV table create karte hain, phir code likhte hain jisme har line par hinglish comments honge. Aakhir mein, model ka output bhi show karte hain.
 
