@@ -9,7 +9,7 @@
 ## Scikit-Learn has a rich ecosystem of libraries (modules) for various machine learning tasks. Here is a categorized list of these main libraries in Scikit-Learn.
 
 ---
-```
+
 ### 1. **Datasets** (`sklearn.datasets`)
    - **datasets.load_iris**: Loads the Iris dataset
    - **datasets.load_digits**: Loads the Digits dataset
@@ -209,7 +209,7 @@ Yahan pe maine **Scikit-Learn** ke important interview questions list kiye hain 
    - **Kaise apne trained model ko web application mein deploy karenge?**
    - **Explain model versioning aur kaise implement karte hain real-world project mein?**
    - **Agar model production mein drift ho raha hai toh kaise handle karenge?**
-```
+
 ---
 
 
