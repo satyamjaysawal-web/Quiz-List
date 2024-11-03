@@ -8,3 +8,13 @@ Streamlit: Enabled us to create the web application interface.
 PyTorch: Assisted in loading and running the YOLO models.
 Roboflow: Managed dataset labeling and organization.
 ```
+
+```
+https://github.com/hemantkumar76/Innovative-Monitoring-System-for-TeleICU-Patients-Using-Video-Processing-and-Deep-Learning/tree/main
+
+```
+
+```
+https://www.kaggle.com/code/prashant111/matplotlib-tutorial-for-beginners
+
+```
