@@ -1,4 +1,4 @@
-
+---
 ```
 YOLOv8: Used for object detection and classification.
 Python: Served as the primary language for scripting and model development.
@@ -22,3 +22,10 @@ https://www.kaggle.com/code/prashant111/matplotlib-tutorial-for-beginners
 
 ---
 
+https://github.com/SaurabhBadole
+
+---
+
+https://github.com/SaurabhBadole/crewAI
+
+---
