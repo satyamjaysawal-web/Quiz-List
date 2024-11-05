@@ -7,7 +7,7 @@
 
 ---
 
-Here is the API list in a structured table format for a Netflix-like application:
+## API list in a structured table format for a Netflix-like application:
 
 | **Category**               | **Endpoint**                        | **Method** | **Description**                                           | **Parameters**                   | **Response**                              |
 |----------------------------|-------------------------------------|------------|-----------------------------------------------------------|----------------------------------|-------------------------------------------|
