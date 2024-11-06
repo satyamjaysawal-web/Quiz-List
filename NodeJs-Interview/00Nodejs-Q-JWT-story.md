@@ -492,8 +492,8 @@ Agar aapko JWT ke baare mein aur detail chahiye ya kisi specific topic par baat 
 
 ---
 ---
+## CORS :
 
-**CORS: Ek Kahani Cross-Origin Communication Ki**
 
 Ek kahani ke format mein samajhte hain ki **CORS** (Cross-Origin Resource Sharing) kaise kaam karta hai aur kyun zaroori hai. 
 
