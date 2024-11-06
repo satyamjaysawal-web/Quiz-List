@@ -493,6 +493,117 @@ Agar aapko JWT ke baare mein aur detail chahiye ya kisi specific topic par baat 
 ---
 ---
 
+**CORS: Ek Kahani Cross-Origin Communication Ki**
+
+Ek kahani ke format mein samajhte hain ki **CORS** (Cross-Origin Resource Sharing) kaise kaam karta hai aur kyun zaroori hai. 
+
+---
+
+### Ek Din Ki Baat Hai: Frontend aur Backend Ka Conversation
+
+Ek din, John apne laptop pe baithe hue apni pasandida shopping website (http://shopping.com) open karte hain. John ke browser mein shopping.com ka frontend loaded hai, aur woh apne orders history dekhna chahte hain. Lekin orders history ka data alag server pe store hai, jo kisi aur domain pe hosted hai (http://data.shopping.com). 
+
+Jaise hi John "View Orders" button par click karte hain, frontend backend se data request karne lagta hai. 
+
+---
+
+### Lekin Yeh Koi Simple Request Nahi Hai!
+
+Yahan ek dikkat aati hai: **frontend aur backend alag domains par hosted hain**:
+
+- **Frontend**: http://shopping.com
+- **Backend**: http://data.shopping.com
+
+Web browsers ek important security feature kehte hain jise **Same-Origin Policy**. Is policy kehte hai ki browser ek page ko usi server ke resources ko access karne ki permission deta hai jahan se page loaded hua hai. Ye isliye hai taki doosre origins (websites) bina permission ke data ko access na kar payen.
+
+### Samasya: Origin Alag Hai, Toh Browser Ne Request Rok Di!
+
+Jaise hi John ka browser (http://shopping.com) ne backend (http://data.shopping.com) se data maangna chaha, browser ne request ko rok diya. 
+
+Browser kehta hai: "Ruko! Data sharing ke liye dono origins (domains) ek jaise hone chahiye! Aap doosre origin se data kaise access kar rahe ho?"
+
+Ab yahan CORS ki zaroorat padti hai.
+
+---
+
+### CORS Ka Solution
+
+Backend (http://data.shopping.com) ko ye samajh aata hai ki agar usko frontend ke saath communicate karna hai, toh **CORS headers** ko set karna padega. 
+
+Backend ne kaha: "Theek hai! Main kuch extra headers set kar dunga jo browser ko ye samjhaenge ki http://shopping.com safe hai aur is origin ko mere data ka access mil sakta hai."
+
+Backend ne **Access-Control-Allow-Origin** header ko http://shopping.com ke liye set kar diya:
+
+```
+Access-Control-Allow-Origin: http://shopping.com
+```
+
+Ye header browser ko signal karta hai ki **ye origin safe hai aur isse resources share kiya ja sakta hai**.
+
+---
+
+### Preflight Request: Ek Test Drive
+
+Ab jab John ka frontend pehli baar backend ko request bhejne ki koshish karta hai, toh kuch aur hota hai. Browser backend ko ek **preflight request** bhejta hai — yeh ek OPTIONS request hoti hai jo test karti hai ki backend CORS ke headers ko support karta hai ya nahi.
+
+Backend is OPTIONS request ko receive karta hai aur **CORS headers** ke sath response bhejta hai:
+
+```
+Access-Control-Allow-Origin: http://shopping.com
+Access-Control-Allow-Methods: GET, POST
+Access-Control-Allow-Headers: Content-Type
+```
+
+Browser yeh dekhkar samajhta hai ki http://shopping.com origin se backend (http://data.shopping.com) safely communicate kar sakta hai.
+
+Agar preflight request successful hoti hai, tabhi browser actual request ko allow karta hai.
+
+---
+
+### Request Finally Allowed!
+
+Ab CORS headers set ho chuke hain aur browser satisfied hai ki backend ne http://shopping.com ko permission de di hai. John ke browser ne backend se data request ki aur backend ne uska order history data John ke browser ko bhej diya:
+
+```
+GET /orders
+Host: data.shopping.com
+Headers:
+  Authorization: Bearer <token>
+```
+
+Ab frontend par orders display ho gaye aur John khushi-khushi apna shopping history dekh paaye.
+
+---
+
+### CORS Ka Summary
+
+1. **Same-Origin Policy**: By default, browsers doosre origins se resources ko block karte hain, jo ek security feature hai.
+2. **CORS Headers**: Backend pe headers set kiye jaate hain jo browser ko ye signal karte hain ki kaunsa origin trusted hai.
+3. **Preflight Request**: Kuch complex requests (e.g., kuch custom headers ya HTTP methods) mein browser pehle ek OPTIONS request bhejta hai.
+4. **Final Request**: Agar CORS headers match karte hain toh actual request allow hoti hai.
+
+---
+
+### CORS Headers Example
+
+1. **Access-Control-Allow-Origin**: Kaunsa origin data access kar sakta hai.
+2. **Access-Control-Allow-Methods**: Kaunse HTTP methods allowed hain (jaise GET, POST).
+3. **Access-Control-Allow-Headers**: Kaunse custom headers allow hain (jaise Content-Type).
+4. **Access-Control-Allow-Credentials**: Agar cookies ya authentication tokens bhejne ki permission deni ho.
+
+---
+
+### CORS: Ek Real-Life Example
+
+Imagine kariye ki aap ek bank mein jaate hain aur sirf un logo ko andar entry di jaati hai jinke paas ek permission card hota hai. Bank ki security yeh ensure karti hai ki safe aur trusted logo ko hi access mile. CORS bhi isi tarah web applications ki security badhata hai aur unko protected rakhta hai.
+
+---
+
+Is kahani se CORS ka concept aur kaise yeh frontend aur backend ke beech safe data sharing mein help karta hai, ye samajhna aasan ho gaya hoga. Agar aur koi sawal ho toh zaroor puchhein!
+
+---
+
+---
 
 Node.js mein events ka concept bahut important hai, kyunki yeh asynchronous programming ko manage karne mein help karta hai. Node.js ek event-driven architecture use karta hai, jismein events ka creation aur handling hota hai. Yeh process asynchronous hota hai, matlab ki jab ek event fire hota hai, tab application kisi doosri task ko execute kar sakta hai bina wait kiye. 
 
