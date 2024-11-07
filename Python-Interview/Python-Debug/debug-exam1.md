@@ -156,4 +156,7 @@ Debugger se kaam ho jane ke baad `pdb.set_trace()` ko hata de ya comment kar dei
 ---
 ![image](https://github.com/user-attachments/assets/f45c2eec-ffa5-4eb6-a41c-d496a5a28ba2)
 
+
+![image](https://github.com/user-attachments/assets/384d0251-5bf7-48f8-8235-c1b143b11552)
+
 ---
