@@ -5,7 +5,7 @@
 
 ---
 
-Chalo, ek simple Flask project banate hain aur isme debug breakpoints lagate hain taaki samajh sakein kaise step-by-step debugging kiya ja sakta hai.
+
 
 ### Simple Project: Todo List API
 
