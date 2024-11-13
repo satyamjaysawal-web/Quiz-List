@@ -22,7 +22,20 @@ We'll structure these APIs using RESTful principles, commonly used for travel ap
      - `POST /api/v1/users/login`
      - **Request Body**: `{ "email": "john@example.com", "password": "strongPassword123" }`
      - **Response**: `{ "token": "JWT_or_session_token", "expiresIn": 3600 }`
-   
+
+   ```
+      fetch('https://jsonplaceholder.typicode.com/posts', {
+      method: 'POST', // #Hinglish: Method POST select kar rahe hain
+      headers: {
+        'Content-Type': 'application/json', // #Hinglish: Content-Type JSON format mein
+      },
+      body: JSON.stringify({ // #Hinglish: Data ko JSON format mein convert kar ke body mein bhej rahe hain
+        title: title, // #Hinglish: Title state ka value
+        body: body,   // #Hinglish: Body state ka value
+        userId: 1,    // #Hinglish: Static userId add kar rahe hain (example ke liye)
+      }),
+
+   ```
    - **User Profile**: Get user profile details.
      - `GET /api/v1/users/{userId}`
      - **Headers**: `Authorization: Bearer {token}`
