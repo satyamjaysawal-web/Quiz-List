@@ -1,6 +1,10 @@
 
 ---
 
+**Axios** ek popular JavaScript library hai jo HTTP requests (jaise GET, POST) ko simplify karta hai. Iska use server se data fetch karne ya server ko data bhejne ke liye kiya jata hai.
+
+**'https://api.example.com/data'** ko **URL (Uniform Resource Locator)** ya **API endpoint** kehte hain. Ye ek address hai jahan se client (browser ya app) data fetch ya send karta hai.
+
 ## React.js developer for 1 year:
 
 | **Feature/Functionality**       | **Description**                                                                                             |
