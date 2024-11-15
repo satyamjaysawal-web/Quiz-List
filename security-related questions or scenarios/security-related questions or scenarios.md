@@ -124,7 +124,84 @@ Below is a list of **10 scenario-based questions** related to securing systems, 
 
 Each of these questions requires a thought-out approach, considering **security best practices, industry standards, and practical implementation**. They are great for evaluating understanding in **incident response, API security, secure coding practices, access management, and defensive programming**.
 
+Here are **15 more scenario-based security questions** that cover various aspects of system, application, and network security. These are designed to test knowledge in **security practices, secure programming, incident handling, and mitigation strategies**:
 
+### **11. Brute Force Attack on Login**
+> **Question**: Your login endpoint is being targeted by a brute force attack with thousands of password attempts per minute. How would you detect, prevent, and mitigate the effects of such an attack while maintaining usability for legitimate users?
+
+### **12. Implementing Role-Based Access Control (RBAC)**
+> **Question**: You are tasked with designing and implementing a Role-Based Access Control (RBAC) system for your API to restrict user access based on their role. What steps would you take, and what challenges might you encounter in implementing RBAC?
+
+### **13. Data Encryption for Sensitive Information**
+> **Question**: Your application stores sensitive user data, and you've been asked to encrypt this information to enhance security. How would you go about encrypting sensitive data at rest and in transit, and what encryption standards would you recommend?
+
+### **14. Preventing Insider Threats**
+> **Question**: An employee with legitimate access to sensitive systems is suspected of data exfiltration. What monitoring and preventive controls would you put in place to mitigate the risk of insider threats, and how would you detect suspicious activities from trusted users?
+
+### **15. Securing Public APIs Against Unauthorized Access**
+> **Question**: Your API is public-facing, but only registered and verified users should have access to certain endpoints. How would you implement API security to ensure that sensitive data is protected while allowing access to public information?
+
+### **16. CSRF (Cross-Site Request Forgery) Attack Mitigation**
+> **Question**: A security audit reveals that your web application is vulnerable to CSRF attacks. How would you detect potential CSRF vulnerabilities, and what strategies would you employ to mitigate these attacks?
+
+### **17. Password Policy and Storage Best Practices**
+> **Question**: Your current system allows users to set weak passwords, and there are concerns about password security. How would you enforce a strong password policy and securely store passwords to prevent them from being compromised?
+
+### **18. Security for Microservices Architecture**
+> **Question**: Your organization is moving to a microservices architecture. What security challenges do you anticipate in a microservices environment, and how would you address authentication, data protection, and inter-service communication securely?
+
+### **19. Real-Time Monitoring for Suspicious Activities**
+> **Question**: You are responsible for implementing a system that monitors and flags suspicious activities in real time. What tools, techniques, and indicators would you use to identify abnormal behavior, and how would you respond to potential threats?
+
+### **20. Handling Third-Party Integrations Securely**
+> **Question**: Your application relies on several third-party services via API integrations. How would you ensure the security of these integrations, and what steps would you take if a third-party service is compromised?
+
+### **21. Zero-Day Vulnerability Response**
+> **Question**: A zero-day vulnerability has been discovered in a widely used library in your application. What immediate steps would you take to mitigate the risk, and how would you communicate the issue to stakeholders?
+
+### **22. Securing Serverless Architectures**
+> **Question**: Your team is deploying a serverless application using AWS Lambda functions. What security concerns should you address in a serverless architecture, and what best practices would you follow to ensure the system’s security?
+
+### **23. Protecting Against Phishing Attacks**
+> **Question**: Several users have fallen victim to a targeted phishing attack and provided their credentials to a malicious website. How would you mitigate the impact, improve user awareness, and prevent phishing in the future?
+
+### **24. Implementing Secure Logging Practices**
+> **Question**: Your system logs sensitive information like errors and user activities. How would you ensure secure logging to avoid information leakage and make logs useful for auditing and incident response?
+
+### **25. Securing a WebSocket-Based Application**
+> **Question**: Your web application relies on WebSocket communication for real-time updates, but there are concerns about the security of WebSocket connections. What precautions would you take to secure WebSocket communication against common threats?
+
+### **26. Database Access Control**
+> **Question**: Your database contains sensitive data, and there is a concern that an unauthorized internal or external party could access it. How would you control and secure database access to ensure that only authorized users have the necessary permissions?
+
+### **27. API Key Management and Security**
+> **Question**: Your team is using API keys for authenticating external services, but there are concerns about key exposure and rotation. How would you securely manage API keys, and what strategies would you use to prevent and handle key leaks?
+
+### **28. Protecting Against Distributed Denial of Service (DDoS) Attacks**
+> **Question**: Your web application is experiencing a Distributed Denial of Service (DDoS) attack, impacting its availability. What mitigation strategies would you put in place to handle a DDoS attack and ensure continuous service availability?
+
+### **29. Implementing Secure CI/CD Pipeline**
+> **Question**: Your development team is setting up a Continuous Integration/Continuous Deployment (CI/CD) pipeline. What security measures would you implement in the CI/CD process to ensure that the codebase is protected, and deployments are secure?
+
+### **30. OAuth 2.0 Implementation for Third-Party Access**
+> **Question**: Your application needs to allow third-party apps to access user data securely. How would you implement OAuth 2.0 for third-party authentication and ensure that user consent and data privacy are maintained?
+
+### **31. Preventing Data Exposure via Misconfiguration**
+> **Question**: During a security audit, it was found that some configuration files were publicly accessible, revealing sensitive information. What practices would you implement to prevent misconfigurations and accidental data exposure in the future?
+
+### **32. Secure Caching of Sensitive Data**
+> **Question**: Your web application uses caching to improve performance, but there are concerns that sensitive information might be stored in caches. How would you manage and secure cache storage to ensure that sensitive data is not exposed?
+
+### **33. Ensuring Secure Communication with TLS/SSL**
+> **Question**: Your application requires secure communication over the internet, but a recent penetration test found that TLS/SSL configurations are not secure. What steps would you take to enforce strong encryption protocols and ensure secure communication?
+
+### **34. Vulnerability Management and Patch Deployment**
+> **Question**: Your software stack includes several third-party libraries that occasionally release security patches. What is your approach for managing vulnerabilities and ensuring timely deployment of security patches?
+
+### **35. Implementing Secure Error Handling**
+> **Question**: Your web application’s error pages sometimes reveal sensitive details like stack traces and database errors. How would you handle errors securely to prevent information leakage while ensuring proper logging for debugging purposes?
+
+These scenario-based questions are designed to challenge an individual's **understanding of security principles** and their ability to apply them in realistic situations. They cover **network security, software development security, access control, monitoring, incident response, and secure coding practices**.
 
 
 
