@@ -87,3 +87,74 @@ Each of these terms captures a specific area of security focus that can be relev
 
 ---
 ---
+
+---
+
+Below is a list of **10 scenario-based questions** related to securing systems, APIs, applications, and handling security incidents. Each question covers different areas of security, including authentication, access control, incident response, and secure coding:
+
+### **1. Compromised User Scenario**
+> **Question**: Suppose a legitimate user has been compromised, and the attacker is accessing sensitive data through their account. What steps would you take to detect, contain, and prevent further access, and how would you identify the attack's impact?
+
+### **2. API Rate Limiting and Abuse**
+> **Question**: Your REST API is being targeted with a high volume of requests by a bot, causing a denial of service for legitimate users. How would you prevent this kind of attack while ensuring regular users are not affected?
+
+### **3. Multi-Factor Authentication Implementation**
+> **Question**: You are asked to implement Multi-Factor Authentication (MFA) for a web application that currently uses only password-based authentication. Describe the process, challenges, and security considerations you would address.
+
+### **4. Session Hijacking Prevention**
+> **Question**: A user reports suspicious behavior on their account, suggesting that their session might have been hijacked. How would you verify if a session hijacking incident occurred, and what mechanisms would you implement to prevent future session hijacking attacks?
+
+### **5. SQL Injection Vulnerability Detection**
+> **Question**: Your application’s audit logs show that a user executed several unusual database queries. How would you determine if the application is vulnerable to SQL Injection, and what best practices would you apply to protect the application from such vulnerabilities?
+
+### **6. Insecure API Endpoint Exposure**
+> **Question**: A penetration test reveals that some of your internal API endpoints are exposed to the internet, allowing unauthorized access to sensitive data. What steps would you take to secure these API endpoints, and what measures can be put in place to prevent accidental exposure in the future?
+
+### **7. Incident Response for Ransomware Attack**
+> **Question**: A ransomware attack has encrypted part of your organization's infrastructure, and a hacker is demanding payment to decrypt the data. What would your incident response plan look like, and how would you ensure the attack does not spread to other parts of the network?
+
+### **8. Cross-Site Scripting (XSS) in Web Application**
+> **Question**: A vulnerability assessment indicates that your web application is susceptible to Cross-Site Scripting (XSS) attacks. How would you identify where the vulnerability lies, and what steps would you take to mitigate it?
+
+### **9. Implementing Secure File Uploads**
+> **Question**: Your application allows users to upload files, but there is a concern about the security risks associated with file uploads. What precautions would you take to ensure that uploaded files do not compromise the system, and what security checks would you implement?
+
+### **10. Secure API Authentication Handling**
+> **Question**: Your application uses JWT for authentication. One of your developers raised concerns about token expiration, refresh mechanisms, and secure storage. How would you design a secure token-based authentication system to handle token expiration, refresh scenarios, and storage on client-side securely?
+
+Each of these questions requires a thought-out approach, considering **security best practices, industry standards, and practical implementation**. They are great for evaluating understanding in **incident response, API security, secure coding practices, access management, and defensive programming**.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+---
+---
+---
