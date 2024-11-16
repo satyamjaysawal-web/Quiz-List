@@ -1,124 +1,153 @@
-Bilkul! Yahan pe main same React code ko user ke dry run steps ke saath likh raha hoon, jahan hum `Rohit` naam ke user ko example ke taur par consider karenge. Har step mein explain karunga ki code ka kya flow hai aur `Rohit` kis tarah se interact kar raha hai:
+Bilkul! Main ab code mein dry run ka step-by-step explanation dunga. Is example mein hum `Rohit` ko consider karenge jo ek `online shopping cart` use kar raha hai. Code ke har step ko main #comments ke saath detail mein samjhaunga.
 
 ```jsx
+// Parent Component: ShoppingCart (Yeh component shopping cart ko manage karega)
+// Is component mein cart ka state store hoga aur necessary functions child components ko provide karega.
+
 import React, { useState } from 'react';
 
-// TaskManager Component: Main parent component jo task list ko manage karta hai
-const TaskManager = () => {
-  const [tasks, setTasks] = useState([]); // #Step 1: Yahan tasks ki state banayi gayi hai jo initially empty hai.
+// ShoppingCart Component: Yahan cart ke items ko manage karenge
+const ShoppingCart = () => {
+  const [cart, setCart] = useState([]);  // #cart state ko initialize kar rahe hain, jisme shopping cart ka data store hoga
+  
+  // Dry Run Scenario: Rohit abhi shopping app open karta hai, aur cart state khali hai []
 
-  // addTask function: Yeh naya task add karta hai task list mein
-  const addTask = (taskName) => {
-    // #Step 2: Jab 'Rohit' naya task add karta hai, yeh function call hota hai
-    setTasks([...tasks, { id: Date.now(), name: taskName, completed: false }]); 
-    // #Step 3: Task list ko update kar rahe hain aur naye task ko add kar rahe hain
-    // #Example: Rohit ne "Complete homework" task add kiya toh state mein ek naya task add ho jayega
+  // Function to add a product to the cart
+  const addToCart = (product) => {
+    // #Check karenge agar product pehle se cart mein hai toh quantity badhao, nahi toh naye product ko add karo
+    const existingProduct = cart.find((item) => item.id === product.id);
+    // Dry Run: Rohit "Laptop" ko cart mein add karta hai
+    // Agar "Laptop" already cart mein hota toh 'existingProduct' mein uska object return hota
+
+    if (existingProduct) {
+      // #Product pehle se hai toh quantity mein +1 karenge
+      const updatedCart = cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + 1 } : item
+      );
+      setCart(updatedCart);  // #Cart ko updated data ke saath set kar rahe hain
+      // Dry Run: Agar "Laptop" already tha, toh uski quantity increase hoti. Rohit agar ek aur "Laptop" add karta hai, toh quantity 1 se 2 ho jayegi.
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);  // #Naya product cart mein add kar rahe hain with quantity 1
+      // Dry Run: Rohit "Laptop" ko cart mein add karta hai aur yeh naya product hai, toh ab cart mein "Laptop" add ho gaya with quantity 1.
+    }
   };
 
-  // toggleTaskCompletion function: Yeh kisi task ka complete status toggle karta hai
-  const toggleTaskCompletion = (taskId) => {
-    // #Step 4: Jab Rohit kisi task ko complete/uncomplete karta hai, checkbox click hota hai, toh yeh function trigger hota hai
-    const updatedTasks = tasks.map((task) =>
-      task.id === taskId ? { ...task, completed: !task.completed } : task
+  // Function to update the quantity of a product in the cart
+  const updateQuantity = (productId, quantity) => {
+    // #Product ki quantity ko update kar rahe hain ID ke basis pe
+    const updatedCart = cart.map((item) =>
+      item.id === productId ? { ...item, quantity } : item
     );
-    setTasks(updatedTasks); 
-    // #Step 5: Task ka completion status update ho jata hai
-    // #Example: Rohit ne "Complete homework" task ko complete kar diya, ab wo line-through style mein dikhega
+    setCart(updatedCart);  // #Updated cart data ko set kar rahe hain
+    // Dry Run: Rohit ne "Laptop" ki quantity ko manually 2 se change karke 3 kiya. Yeh function us change ko update karega.
   };
 
-  // deleteTask function: Yeh task ko list se delete karta hai
-  const deleteTask = (taskId) => {
-    // #Step 6: Jab Rohit kisi task ko delete karta hai, delete button click hota hai aur yeh function call hota hai
-    const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks); 
-    // #Step 7: Task ko list se hata dete hain
-    // #Example: Rohit ne "Complete homework" task delete kiya, ab wo list mein nahi dikhega
+  // Function to remove a product from the cart
+  const removeFromCart = (productId) => {
+    // #Cart se product ko remove karenge uski ID ko match karke
+    const updatedCart = cart.filter((item) => item.id !== productId);
+    setCart(updatedCart);  // #Updated cart ko set kar rahe hain
+    // Dry Run: Rohit "Laptop" ko cart se delete karna chahta hai, toh yeh function "Laptop" ko cart list se hata dega.
   };
 
   return (
     <div>
-      <h1>Task Manager</h1>
-      {/* #Step 8: AddTask component render ho raha hai jo task add karne ka form dikhata hai */}
-      <AddTask onAdd={addTask} /> 
-      {/* #Step 9: TaskList component render hota hai jo current tasks ki list show karta hai */}
-      <TaskList
-        tasks={tasks}
-        onToggleCompletion={toggleTaskCompletion}
-        onDelete={deleteTask}
+      <h1>Online Shopping Cart</h1>
+      <ProductList onAddToCart={addToCart} />  {/* #ProductList component ko addToCart function pass kar rahe hain */}
+      <Cart
+        cartItems={cart}
+        onUpdateQuantity={updateQuantity}  // #Quantity update function pass kar rahe hain
+        onRemoveItem={removeFromCart}  // #Remove item function pass kar rahe hain
       />
     </div>
   );
 };
 
-// AddTask Component: Yeh component user se input leta hai aur task add karta hai
-const AddTask = ({ onAdd }) => {
-  const [taskName, setTaskName] = useState(""); // #Step 10: Task name ka local state, jo input field ko track karta hai
+// Child Component: ProductList (Ye component product list ko render karega)
 
-  // handleSubmit function: Yeh form submit hone par task add karta hai
-  const handleSubmit = (e) => {
-    e.preventDefault(); // #Step 11: Form submit hone par page reload nahi hota
-    if (taskName.trim()) {
-      onAdd(taskName); // #Step 12: Form submit hone par addTask function ko call karta hai, yahan Rohit ka task name pass hota hai
-      setTaskName(""); // #Step 13: Task add hone ke baad input field ko clear kar dete hain
-      // #Example: Rohit ne "Buy groceries" likha aur submit kiya, yeh task list mein add ho gaya
-    }
-  };
+const ProductList = ({ onAddToCart }) => {
+  // Sample product list jo display hogi
+  const products = [
+    { id: 1, name: "Laptop", price: 50000 },
+    { id: 2, name: "Mobile", price: 20000 },
+    { id: 3, name: "Headphones", price: 3000 },
+  ];
 
+  // Dry Run: Rohit ke liye, yeh list "Laptop", "Mobile", aur "Headphones" ko render karegi
+  
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={taskName}
-        onChange={(e) => setTaskName(e.target.value)} // #Step 14: Input field mein type karte waqt taskName state update hota hai
-        placeholder="Enter task"
-      />
-      <button type="submit">Add Task</button> {/* #Step 15: Button dabane se handleSubmit function trigger hota hai */}
-    </form>
+    <div>
+      <h2>Product List</h2>
+      <ul>
+        {products.map((product) => (
+          <li key={product.id}>
+            {product.name} - ₹{product.price}
+            <button onClick={() => onAddToCart(product)}>Add to Cart</button>  {/* #Product ko cart mein add karne ka button */}
+            {/* Dry Run: Rohit "Laptop" ke "Add to Cart" button ko click karta hai, aur yeh product `addToCart` function ko call karega */}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
-// TaskList Component: Yeh component saari tasks ko render karta hai
-const TaskList = ({ tasks, onToggleCompletion, onDelete }) => {
+// Child Component: Cart (Ye component cart ki items ko display karega)
+
+const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem }) => {
+  // Cart component mein hum saari cart items ko list karenge
   return (
-    <ul>
-      {tasks.map((task) => (
-        // #Step 16: Har task ke liye ek TaskItem component render ho raha hai
-        <TaskItem
-          key={task.id}
-          task={task}
-          onToggle={onToggleCompletion} // #Step 17: Completion toggle function pass ho raha hai
-          onDelete={onDelete} // #Step 18: Delete function pass ho raha hai
-        />
-      ))}
-    </ul>
+    <div>
+      <h2>Shopping Cart</h2>
+      {cartItems.length === 0 ? (  // #Check kar rahe hain agar cart khali hai toh message dikhaye
+        <p>No items in the cart</p>
+        // Dry Run: Agar Rohit ne abhi tak kuch bhi add nahi kiya hai, toh yeh message dikhayega "No items in the cart"
+      ) : (
+        <ul>
+          {cartItems.map((item) => (
+            <CartItem
+              key={item.id}
+              item={item}
+              onUpdateQuantity={onUpdateQuantity}  // #Quantity update function ko pass kar rahe hain
+              onRemove={onRemoveItem}  // #Remove item function ko pass kar rahe hain
+            />
+          ))}
+        </ul>
+        // Dry Run: Agar Rohit ne "Laptop" aur "Mobile" add kiye hain, toh yeh list dono items ko render karegi.
+      )}
+    </div>
   );
 };
 
-// TaskItem Component: Yeh component ek individual task ko render karta hai
-const TaskItem = ({ task, onToggle, onDelete }) => {
+// Child Component: CartItem (Yeh component ek individual cart item ko handle karega)
+
+const CartItem = ({ item, onUpdateQuantity, onRemove }) => {
   return (
-    <li style={{ textDecoration: task.completed ? "line-through" : "none" }}>
+    <li>
+      {item.name} - ₹{item.price} x {item.quantity}
+      {/* #Item ka naam aur uski quantity display karega */}
+      
+      <button onClick={() => onRemove(item.id)}>Remove</button>  {/* #Cart se item remove karne ka button */}
+      {/* Dry Run: Rohit agar "Laptop" ko remove karta hai, toh yeh button "removeFromCart" function ko call karega */}
+
       <input
-        type="checkbox"
-        checked={task.completed}
-        onChange={() => onToggle(task.id)} // #Step 19: Checkbox change hone par toggle function call hota hai
+        type="number"
+        value={item.quantity}
+        min="1"
+        onChange={(e) => onUpdateQuantity(item.id, parseInt(e.target.value))}  // #Quantity change hone par update karenge
+        // Dry Run: Rohit agar input field se quantity change karta hai, maan lo 2 se 4, toh "updateQuantity" function us change ko handle karega.
       />
-      {task.name} {/* #Step 20: Task ka naam display ho raha hai */}
-      <button onClick={() => onDelete(task.id)}>Delete</button> {/* #Step 21: Delete button se deleteTask function call hota hai */}
     </li>
   );
 };
 
-export default TaskManager;
+export default ShoppingCart;
 ```
 
-### **Dry Run with User "Rohit" Example:**
-1. `Rohit` opens the app — app initializes with an empty task list.
-2. `Rohit` types "Buy groceries" in the input field and hits "Add Task."
-   - `addTask` function is triggered, and the new task "Buy groceries" is added to the list.
-3. `Rohit` completes the task by checking the checkbox.
-   - `toggleTaskCompletion` function updates the state, marking the task as complete (visible with a line-through).
-4. `Rohit` deletes the task by clicking the delete button.
-   - `deleteTask` function removes the task from the list.
+### **Dry Run Summary for Rohit:**
+1. **Start:** Rohit app open karta hai, initially cart empty hota hai.
+2. **ProductList Render:** Rohit ko products dikhega - "Laptop", "Mobile", "Headphones".
+3. **Add to Cart:** Rohit "Laptop" ka `Add to Cart` button click karta hai, toh "Laptop" cart mein add ho jata hai with quantity 1.
+4. **View Cart:** Cart section mein "Laptop" dikhta hai, agar Rohit quantity change karta hai, toh wo `updateQuantity` function ke through handle hota hai.
+5. **Remove from Cart:** Agar Rohit "Laptop" ko cart se delete karta hai, toh item remove ho jata hai aur updated cart view mein dikhai deta hai.
 
-Is tarah `Rohit` ke actions se har functionality trigger hoti hai aur app ka behavior change hota hai. Agar aapko aur koi clarification chahiye, toh bataiye! 😊
+Aasha hai ki aapko yeh dry run example clear laga hoga! Agar aur kuch samajhna ho toh bataiye. 😊
