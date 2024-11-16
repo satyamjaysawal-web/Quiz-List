@@ -1,43 +1,46 @@
-Sure! Here is the code with comments explaining the flow and steps:
+Bilkul! Yahan pe main same React code ko user ke dry run steps ke saath likh raha hoon, jahan hum `Rohit` naam ke user ko example ke taur par consider karenge. Har step mein explain karunga ki code ka kya flow hai aur `Rohit` kis tarah se interact kar raha hai:
 
 ```jsx
 import React, { useState } from 'react';
 
-// Step 1: TaskManager Component (Parent Component)
-// Yeh component task list ko manage karega aur task state ko store karega
+// TaskManager Component: Main parent component jo task list ko manage karta hai
 const TaskManager = () => {
-  // Step 2: Task state ko initialize kar rahe hain
-  const [tasks, setTasks] = useState([]);  // tasks array ko store kar rahe hain, initially empty hai
+  const [tasks, setTasks] = useState([]); // #Step 1: Yahan tasks ki state banayi gayi hai jo initially empty hai.
 
-  // Step 3: Function to add a new task
+  // addTask function: Yeh naya task add karta hai task list mein
   const addTask = (taskName) => {
-    // Naye task ko add kar rahe hain with a unique id (using Date.now()), initial completion status false
-    setTasks([...tasks, { id: Date.now(), name: taskName, completed: false }]);
+    // #Step 2: Jab 'Rohit' naya task add karta hai, yeh function call hota hai
+    setTasks([...tasks, { id: Date.now(), name: taskName, completed: false }]); 
+    // #Step 3: Task list ko update kar rahe hain aur naye task ko add kar rahe hain
+    // #Example: Rohit ne "Complete homework" task add kiya toh state mein ek naya task add ho jayega
   };
 
-  // Step 4: Function to toggle task completion
+  // toggleTaskCompletion function: Yeh kisi task ka complete status toggle karta hai
   const toggleTaskCompletion = (taskId) => {
-    // Tasks ko map kar rahe hain aur task ke completion status ko toggle kar rahe hain (True to False or vice versa)
+    // #Step 4: Jab Rohit kisi task ko complete/uncomplete karta hai, checkbox click hota hai, toh yeh function trigger hota hai
     const updatedTasks = tasks.map((task) =>
       task.id === taskId ? { ...task, completed: !task.completed } : task
     );
-    setTasks(updatedTasks);  // Updated task list ko state mein update kar rahe hain
+    setTasks(updatedTasks); 
+    // #Step 5: Task ka completion status update ho jata hai
+    // #Example: Rohit ne "Complete homework" task ko complete kar diya, ab wo line-through style mein dikhega
   };
 
-  // Step 5: Function to delete a task
+  // deleteTask function: Yeh task ko list se delete karta hai
   const deleteTask = (taskId) => {
-    // Task ko filter kar rahe hain aur us task ko remove kar rahe hain jiska ID delete karna hai
+    // #Step 6: Jab Rohit kisi task ko delete karta hai, delete button click hota hai aur yeh function call hota hai
     const updatedTasks = tasks.filter((task) => task.id !== taskId);
-    setTasks(updatedTasks);  // Updated task list ko state mein set kar rahe hain
+    setTasks(updatedTasks); 
+    // #Step 7: Task ko list se hata dete hain
+    // #Example: Rohit ne "Complete homework" task delete kiya, ab wo list mein nahi dikhega
   };
 
-  // Step 6: Returning the UI for Task Manager
   return (
     <div>
       <h1>Task Manager</h1>
-      {/* Step 7: AddTask component ko onAdd function pass kar rahe hain */}
-      <AddTask onAdd={addTask} />
-      {/* Step 8: TaskList component ko tasks, toggle completion aur delete function pass kar rahe hain */}
+      {/* #Step 8: AddTask component render ho raha hai jo task add karne ka form dikhata hai */}
+      <AddTask onAdd={addTask} /> 
+      {/* #Step 9: TaskList component render hota hai jo current tasks ki list show karta hai */}
       <TaskList
         tasks={tasks}
         onToggleCompletion={toggleTaskCompletion}
@@ -47,68 +50,61 @@ const TaskManager = () => {
   );
 };
 
-// Step 9: AddTask Component (Child Component)
-// Yeh component user ko task add karne ka option deta hai
+// AddTask Component: Yeh component user se input leta hai aur task add karta hai
 const AddTask = ({ onAdd }) => {
-  // Step 10: Task name state ko initialize kar rahe hain
-  const [taskName, setTaskName] = useState("");
+  const [taskName, setTaskName] = useState(""); // #Step 10: Task name ka local state, jo input field ko track karta hai
 
-  // Step 11: Form submit karte waqt handleSubmit function call hoga
+  // handleSubmit function: Yeh form submit hone par task add karta hai
   const handleSubmit = (e) => {
-    e.preventDefault();  // Step 12: Default form submit behavior ko rok rahe hain
+    e.preventDefault(); // #Step 11: Form submit hone par page reload nahi hota
     if (taskName.trim()) {
-      // Step 13: Agar task name empty nahi hai, toh parent component ke onAdd function ko call kar rahe hain
-      onAdd(taskName);
-      setTaskName("");  // Step 14: Task add karne ke baad input field ko clear kar rahe hain
+      onAdd(taskName); // #Step 12: Form submit hone par addTask function ko call karta hai, yahan Rohit ka task name pass hota hai
+      setTaskName(""); // #Step 13: Task add hone ke baad input field ko clear kar dete hain
+      // #Example: Rohit ne "Buy groceries" likha aur submit kiya, yeh task list mein add ho gaya
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      {/* Step 15: Input field ko bind kar rahe hain taskName state ke saath */}
       <input
         type="text"
         value={taskName}
-        onChange={(e) => setTaskName(e.target.value)}  // Step 16: Jab input change hoga, taskName state update hoga
+        onChange={(e) => setTaskName(e.target.value)} // #Step 14: Input field mein type karte waqt taskName state update hota hai
         placeholder="Enter task"
       />
-      <button type="submit">Add Task</button>
+      <button type="submit">Add Task</button> {/* #Step 15: Button dabane se handleSubmit function trigger hota hai */}
     </form>
   );
 };
 
-// Step 17: TaskList Component (Child Component)
-// Yeh component task list ko display karne ka kaam karta hai
+// TaskList Component: Yeh component saari tasks ko render karta hai
 const TaskList = ({ tasks, onToggleCompletion, onDelete }) => {
   return (
     <ul>
-      {/* Step 18: Tasks ko map kar rahe hain aur har task ke liye TaskItem component render kar rahe hain */}
       {tasks.map((task) => (
+        // #Step 16: Har task ke liye ek TaskItem component render ho raha hai
         <TaskItem
           key={task.id}
           task={task}
-          onToggle={onToggleCompletion}  // Step 19: TaskItem ko onToggle function pass kar rahe hain
-          onDelete={onDelete}  // Step 20: TaskItem ko onDelete function pass kar rahe hain
+          onToggle={onToggleCompletion} // #Step 17: Completion toggle function pass ho raha hai
+          onDelete={onDelete} // #Step 18: Delete function pass ho raha hai
         />
       ))}
     </ul>
   );
 };
 
-// Step 21: TaskItem Component (Child Component)
-// Yeh component ek individual task ko render karta hai
+// TaskItem Component: Yeh component ek individual task ko render karta hai
 const TaskItem = ({ task, onToggle, onDelete }) => {
   return (
     <li style={{ textDecoration: task.completed ? "line-through" : "none" }}>
-      {/* Step 22: Checkbox ko bind kar rahe hain task ke completion status ke saath */}
       <input
         type="checkbox"
         checked={task.completed}
-        onChange={() => onToggle(task.id)}  // Step 23: Checkbox click karne par onToggle function call hoga
+        onChange={() => onToggle(task.id)} // #Step 19: Checkbox change hone par toggle function call hota hai
       />
-      {task.name}  {/* Step 24: Task ka name display kar rahe hain */}
-      {/* Step 25: Delete button ko add kar rahe hain jisse task delete hoga */}
-      <button onClick={() => onDelete(task.id)}>Delete</button>
+      {task.name} {/* #Step 20: Task ka naam display ho raha hai */}
+      <button onClick={() => onDelete(task.id)}>Delete</button> {/* #Step 21: Delete button se deleteTask function call hota hai */}
     </li>
   );
 };
@@ -116,15 +112,13 @@ const TaskItem = ({ task, onToggle, onDelete }) => {
 export default TaskManager;
 ```
 
-### Code Flow:
+### **Dry Run with User "Rohit" Example:**
+1. `Rohit` opens the app — app initializes with an empty task list.
+2. `Rohit` types "Buy groceries" in the input field and hits "Add Task."
+   - `addTask` function is triggered, and the new task "Buy groceries" is added to the list.
+3. `Rohit` completes the task by checking the checkbox.
+   - `toggleTaskCompletion` function updates the state, marking the task as complete (visible with a line-through).
+4. `Rohit` deletes the task by clicking the delete button.
+   - `deleteTask` function removes the task from the list.
 
-1. **TaskManager** is the parent component where the main task list (`tasks`) is managed using the `useState` hook.
-2. **addTask** function adds a new task to the `tasks` array with a unique ID, name, and completion status.
-3. **toggleTaskCompletion** toggles the task’s `completed` status when the checkbox is clicked.
-4. **deleteTask** deletes the task from the `tasks` array based on the task's ID.
-5. The **AddTask** component takes user input and calls the `addTask` function to add a new task.
-6. The **TaskList** component maps through the `tasks` array and renders each task using the **TaskItem** component.
-7. Each **TaskItem** component shows a checkbox for completion, task name, and a delete button.
-8. The **onToggle** and **onDelete** functions are passed down to handle task completion and deletion.
-
-Let me know if you need further clarification!
+Is tarah `Rohit` ke actions se har functionality trigger hoti hai aur app ka behavior change hota hai. Agar aapko aur koi clarification chahiye, toh bataiye! 😊
