@@ -107,3 +107,258 @@ A movie app can have multiple ways for users to select or discover movies. Here 
    - Fun way to discover something unexpected.
 
 By combining some of the methods mentioned above, users can have a seamless and tailored movie selection experience in the app.
+
+
+
+
+---
+
+
+
+---
+---
+
+
+To test the APIs using Postman, follow these steps for each of the key features:
+
+### Step 1: Set up the Flask server
+
+Before testing the APIs with Postman, make sure the Flask application is running. In your terminal, run:
+
+```bash
+python app.py
+```
+
+This will start the server on `http://127.0.0.1:5000/` by default.
+
+---
+
+### Step 2: Test each API endpoint with Postman
+
+#### **1. User Registration**
+**Method**: `POST`  
+**URL**: `http://127.0.0.1:5000/user/register`
+
+**Body** (JSON):
+```json
+{
+  "username": "testuser",
+  "password": "password123"
+}
+```
+
+- This will create a new user.  
+- If successful, you should get a response like:
+```json
+{
+  "message": "User registered successfully"
+}
+```
+
+---
+
+#### **2. User Login**
+**Method**: `POST`  
+**URL**: `http://127.0.0.1:5000/user/login`
+
+**Body** (JSON):
+```json
+{
+  "username": "testuser",
+  "password": "password123"
+}
+```
+
+- This will log in the user you just registered.  
+- If successful, you should get a response like:
+```json
+{
+  "message": "Login successful"
+}
+```
+
+---
+
+#### **3. User Logout**
+**Method**: `POST`  
+**URL**: `http://127.0.0.1:5000/user/logout`
+
+- This will log out the current user.  
+- If successful, you should get a response like:
+```json
+{
+  "message": "Logout successful"
+}
+```
+
+---
+
+#### **4. Get Movies by Genre**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/by-genre?genres=Action&genres=Sci-Fi`
+
+- This will get movies filtered by the `Action` and `Sci-Fi` genres.
+- The response will look something like:
+```json
+[
+  {
+    "Title": "Guardians of the Galaxy",
+    "Genre": ["Action", "Adventure", "Sci-Fi"],
+    "Description": "A group of intergalactic criminals are forced to work together...",
+    "Movie-Image-Url": "http://example.com/default-image.jpg"
+  }
+]
+```
+
+---
+
+#### **5. Search Movies by Title or Keywords**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/search?query=Guardians`
+
+- This will search for movies with the keyword `Guardians` in their title or description.
+- The response will include movies with "Guardians" in the title:
+```json
+[
+  {
+    "Title": "Guardians of the Galaxy",
+    "Genre": ["Action", "Adventure", "Sci-Fi"],
+    "Description": "A group of intergalactic criminals are forced to work together...",
+    "Movie-Image-Url": "http://example.com/default-image.jpg"
+  }
+]
+```
+
+---
+
+#### **6. Get Movies by Year**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/by-year?start=2010&end=2020`
+
+- This will get movies released between 2010 and 2020.
+- The response will list all movies from that time frame.
+
+---
+
+#### **7. Get Movies by Rating**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/by-rating?min=7.0&max=8.5`
+
+- This will get movies with ratings between 7.0 and 8.5.
+- The response will include movies within this rating range.
+
+---
+
+#### **8. Get Movies by Runtime**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/by-runtime?max=120`
+
+- This will get movies with runtime less than or equal to 120 minutes.
+- The response will include movies that match the runtime condition.
+
+---
+
+#### **9. Get Movies by Metascore**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/by-metascore?min=70`
+
+- This will get movies with a Metascore of 70 or higher.
+- The response will list movies with a Metascore above the specified value.
+
+---
+
+#### **10. Get Popular Movies**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/popular?top=5`
+
+- This will get the top 5 most popular movies based on the number of votes.
+- The response will show the most popular movies.
+
+---
+
+#### **11. Get Movie Recommendations**
+**Method**: `GET`  
+**URL**: `http://127.0.0.1:5000/movies/recommendations`
+
+- This will return movie recommendations based on the genres of the current user's favorites (you must log in first).
+- If you're not logged in, you will receive an error:
+```json
+{
+  "error": "User not logged in"
+}
+```
+
+---
+
+#### **12. Add a Movie to Watchlist**
+**Method**: `POST`  
+**URL**: `http://127.0.0.1:5000/user/testuser/watchlist`
+
+**Body** (JSON):
+```json
+{
+  "movie": "Guardians of the Galaxy"
+}
+```
+
+- This will add the movie to the logged-in user's watchlist.
+- The response will be:
+```json
+{
+  "message": "Added to watchlist"
+}
+```
+
+---
+
+#### **13. Add a Movie Review**
+**Method**: `POST`  
+**URL**: `http://127.0.0.1:5000/user/testuser/review`
+
+**Body** (JSON):
+```json
+{
+  "movie": "Guardians of the Galaxy",
+  "review": "Great movie! Loved the humor and action.",
+  "rating": 8
+}
+```
+
+- This will add a review and rating for the specified movie.
+- The response will be:
+```json
+{
+  "message": "Review added"
+}
+```
+
+---
+
+### Step 3: Review and Test Responses
+
+- For each API, check the response status (e.g., 200 for success, 400 for errors).
+- Make sure to test edge cases like invalid parameters, missing fields, and unauthorized requests (e.g., trying to add a review when not logged in).
+- Verify that the returned JSON matches the expected output format and contains the correct data.
+
+---
+
+### Step 4: Example Postman Collection
+Once you've tested each API, you can create a Postman collection to save these requests. Here's how you can do it:
+
+1. Open Postman.
+2. Click on "New" and then "Collection."
+3. Add each of the above API requests to your collection by selecting "Add Request" for each one.
+4. You can then export the collection and share it with others if needed.
+
+---
+
+This should give you a complete workflow for testing your Flask API with Postman. Let me know if you need any further assistance!
+
+
+
+
+
+
+
+---
+---
