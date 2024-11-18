@@ -1,5 +1,51 @@
 
+A **tuple** can be used as a key or a value in a dictionary in Python. Here's a breakdown of both scenarios:
 
+### 1. Using a Tuple as a Key
+- **Why it's allowed**: Tuples are immutable and hashable, so they can be used as dictionary keys.
+- **Use case**: Often used when you need to map data to a composite key (e.g., coordinates or other multi-part keys).
+
+```python
+# Tuple as a key
+coordinates = {
+    (10, 20): "Location A",
+    (30, 40): "Location B"
+}
+
+# Accessing value
+print(coordinates[(10, 20)])  # Output: Location A
+```
+
+### 2. Using a Tuple as a Value
+- **Why it's useful**: Tuples are immutable, making them useful for storing fixed collections of values in dictionaries.
+- **Use case**: When you want to store a fixed-size collection of related data.
+
+```python
+# Tuple as a value
+student_grades = {
+    "Alice": (90, 85, 88),
+    "Bob": (78, 82, 80)
+}
+
+# Accessing value
+print(student_grades["Alice"])  # Output: (90, 85, 88)
+```
+
+### Combined Example: Tuple as Both Key and Value
+```python
+# Tuple as both key and value
+data = {
+    (1, 2): ("apple", "banana"),
+    (3, 4): ("cherry", "date")
+}
+
+# Accessing value
+print(data[(1, 2)])  # Output: ("apple", "banana")
+```
+
+### Key Considerations
+- Tuples used as keys must only contain hashable elements (e.g., strings, numbers, or other tuples). Lists and dictionaries cannot be used inside the tuple key.
+- There are no such restrictions for tuples as values since the values don't need to be hashable.
 ## Python Important Codes
 
 ---
