@@ -21,21 +21,43 @@ This table shows the various specialized services Netflix outsources to differen
 
 
 ## services that Liberty Mutual provides:
+Here’s a comprehensive list of the services and offerings from **Liberty Mutual** across different fields:
 
-| **Service Category**       | **Description**                                                                                  |
-|----------------------------|----------------------------------------------------------------------------------------------|
-| **Auto Insurance**          | Coverage for cars, including comprehensive, collision, liability, and personal injury protection. |
-| **Home Insurance**          | Coverage for homeowners, including property damage, theft, and natural disasters.             |
-| **Life Insurance**          | Options include term life and whole life insurance for financial security.                   |
-| **Health Insurance**        | Health insurance plans for employees and customers.                                           |
-| **Business Insurance**      | Includes liability, workers' compensation, commercial auto, and property insurance for businesses. |
-| **Disability Insurance**    | Financial support in case of income interruption due to injury or illness.                    |
-| **Pet Insurance**           | Coverage for pet health-related expenses.                                                     |
-| **Travel Insurance**        | Protection for trip cancellations, lost luggage, and medical emergencies while traveling.     |
-| **Renters Insurance**       | Insurance for renters to cover personal belongings and liability.                             |
+| **Service Category**             | **Description**                                                                                          |
+|----------------------------------|--------------------------------------------------------------------------------------------------------|
+| **Auto Insurance**               | Coverage for cars, including liability, collision, comprehensive, and personal injury protection.       |
+| **Home Insurance**               | Coverage for homeowners against property damage, theft, fire, and natural disasters.                    |
+| **Renters Insurance**            | Insurance for tenants to cover personal belongings, liability, and additional living expenses.          |
+| **Condo Insurance**              | Specialized insurance for condominium owners covering personal property and structural upgrades.        |
+| **Life Insurance**               | Life insurance options including term life, whole life, and final expense insurance for financial security.|
+| **Health Insurance**             | Coverage for medical expenses, hospital visits, and prescription drugs through partner providers.       |
+| **Business Insurance**           | Comprehensive coverage for small businesses including general liability, property, and workers' compensation. |
+| **Commercial Auto Insurance**    | Insurance for vehicles used for business purposes, including fleets, trucks, and delivery vehicles.     |
+| **General Liability Insurance**  | Protection for businesses from claims involving bodily injury, property damage, and advertising injury.  |
+| **Workers' Compensation Insurance** | Coverage for medical expenses and lost wages for employees injured on the job.                        |
+| **Pet Insurance**                | Health coverage for pets to cover vet visits, surgeries, and medications.                               |
+| **Landlord Insurance**           | Insurance for rental property owners to protect against property damage, liability, and loss of rental income. |
+| **Flood Insurance**              | Specialized insurance for protection against flood damage, usually supplementing standard home insurance. |
+| **Umbrella Insurance**           | Additional liability coverage that goes beyond the limits of other insurance policies.                  |
+| **Boat & Watercraft Insurance**  | Coverage for boats, yachts, and other watercraft, including liability and physical damage.              |
+| **Motorcycle Insurance**         | Insurance for motorcycles, including coverage for custom parts, safety apparel, and theft.              |
+| **RV Insurance**                 | Protection for recreational vehicles (RVs) including motorhomes, travel trailers, and campers.          |
+| **Identity Theft Insurance**     | Protection against identity theft and fraud, including monitoring services and recovery assistance.     |
+| **Mobile & Manufactured Home Insurance** | Coverage specifically for mobile and manufactured homes, including physical damage and liability.     |
+| **Accident & Disability Insurance** | Financial support in case of injury or disability preventing an individual from working.               |
+| **Travel Insurance**             | Coverage for trip cancellations, medical emergencies, lost luggage, and travel delays.                  |
+| **Event Insurance**              | Coverage for special events like weddings and parties, including liability and event cancellation.      |
+| **Financial Services**           | Retirement planning, annuities, and investment services for financial security and wealth management.    |
+| **Risk Management**              | Risk assessment and mitigation services for businesses to identify and manage potential risks.          |
+| **Loss Control Services**        | Assistance for businesses in implementing safety measures to reduce insurance claims and risks.         |
+| **Telematics & Usage-Based Insurance** | Auto insurance options that track driving behavior to provide discounts based on safe driving.          |
+| **Cyber Insurance**              | Protection for businesses against cyber-attacks, data breaches, and online threats.                     |
+| **Legal Services Coverage**      | Optional insurance coverage for legal expenses related to various incidents, like accidents or lawsuits.|
+| **Employee Benefits Programs**   | Group benefits, health insurance, and wellness programs for employees of partner businesses.            |
+| **Affinity Group Discounts**     | Special discounts for members of certain organizations or professional groups.                          |
+| **Green & Sustainable Insurance Options** | Eco-friendly insurance options, like discounts for hybrid vehicles or green home upgrades.             |
 
-This table captures the main services Liberty Mutual offers across various categories.
-
+Liberty Mutual provides a wide array of insurance and risk management services designed to cater to individuals, families, and businesses across multiple industries.
 ---
 
 ---
