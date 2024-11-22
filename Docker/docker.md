@@ -395,7 +395,131 @@ Docker helps you easily containerize and deploy **Spring Boot microservices**. B
 ---
 
 ---
+### **Docker Container vs Docker Image**
 
+In Docker, there are two essential concepts: **Docker Images** and **Docker Containers**. These concepts are fundamental to understanding how Docker works and how it helps in application deployment, scalability, and isolation.
+
+Here’s a detailed comparison between **Docker Container** and **Docker Image**:
+
+---
+
+### **1. Docker Image**
+
+A **Docker image** is a **read-only** blueprint that defines the environment, libraries, dependencies, and the application itself. It is the template used to create containers.
+
+#### **Key Characteristics of a Docker Image:**
+- **Immutable**: Once an image is built, it cannot be changed. Any changes (like installing new dependencies) would require a new image to be built.
+- **Layered**: Docker images are built in layers. Each instruction in a Dockerfile creates a layer (e.g., copying files, installing packages). These layers are stacked together to form the final image.
+- **Portable**: Docker images can be shared across different environments and platforms. They can be pushed to Docker registries like Docker Hub or private registries for others to pull and use.
+- **Contains everything needed to run an application**: This includes the application code, libraries, runtime, system tools, and configurations.
+
+#### **How to Build a Docker Image**:
+A Docker image is typically built from a **Dockerfile** (a text file that contains a series of instructions on how to build the image).
+
+**Example of building an image:**
+```bash
+# Build a Docker image using a Dockerfile in the current directory.
+docker build -t my-app .
+```
+- `-t my-app`: This gives the image a name (`my-app`).
+- `.`: Refers to the current directory where the Dockerfile is located.
+
+#### **How to View Docker Images**:
+You can list all the Docker images on your machine by using the following command:
+```bash
+docker images
+```
+This will show a list of available images, their tags, sizes, and creation dates.
+
+---
+
+### **2. Docker Container**
+
+A **Docker container** is a **running instance** of a Docker image. It is an executable package that includes everything required to run the application—such as the code, libraries, environment variables, and configurations.
+
+#### **Key Characteristics of a Docker Container:**
+- **Mutable**: Unlike Docker images, containers are **writeable**. When a container is started from an image, changes can be made during its execution (e.g., data can be written to the file system inside the container).
+- **Ephemeral**: By default, containers are temporary. Once a container stops, its changes (unless persisted) will be lost. However, data can be stored persistently using Docker volumes.
+- **Isolated**: Containers run in isolated environments, meaning that they can run different versions of libraries or applications without conflicting with each other.
+- **Runtime Environment**: A container is the running process of the image, encapsulated in its own isolated environment (network, filesystem, etc.).
+
+#### **How to Run a Docker Container**:
+To run a container, you use the `docker run` command. This command creates a container from an image and starts the application.
+
+**Example:**
+```bash
+# Run a container from a Docker image
+docker run -d -p 8080:8080 --name my-container my-app
+```
+- `-d`: Runs the container in detached mode (in the background).
+- `-p 8080:8080`: Maps port 8080 on your local machine to port 8080 in the container.
+- `--name my-container`: Assigns a name to the container.
+- `my-app`: The name of the image to create the container from.
+
+#### **How to View Running Containers**:
+You can list all the running containers with the command:
+```bash
+docker ps
+```
+This will show the running containers, their IDs, names, and other relevant details.
+
+#### **How to Stop and Remove a Docker Container**:
+To stop a running container:
+```bash
+docker stop my-container
+```
+
+To remove a stopped container:
+```bash
+docker rm my-container
+```
+
+---
+
+### **Difference Between Docker Image and Docker Container**
+
+| **Feature**                  | **Docker Image**                                  | **Docker Container**                                  |
+|------------------------------|---------------------------------------------------|-------------------------------------------------------|
+| **Definition**                | A static, read-only template to create containers. | A running instance of a Docker image.                 |
+| **Persistence**               | Immutable (does not change).                     | Mutable (can be modified during runtime).             |
+| **Storage**                   | Stored in Docker's image registry.                | Stored in Docker's container runtime (temporary storage). |
+| **State**                     | Contains no state.                               | Holds the state of the running application.           |
+| **Lifecycle**                 | Exists only as a file on disk or registry.       | Exists as a process when running.                     |
+| **Function**                  | Used to create containers.                       | Executes the application based on the image.          |
+| **Creation**                  | Built from a Dockerfile.                         | Created when running an image.                        |
+| **Example Command**           | `docker build -t image-name .`                    | `docker run -d -p 8080:8080 image-name`               |
+| **Changes**                   | No changes can be made after the image is created. | Changes can be made to the running container.         |
+
+---
+
+### **Docker Image and Container Lifecycle**
+
+1. **Creating a Docker Image**:
+   - Write a `Dockerfile` that contains all the instructions to set up the environment and install dependencies.
+   - Build the Docker image using the `docker build` command.
+   - The image is stored in the Docker registry (locally or remotely).
+
+2. **Running a Docker Container**:
+   - The image is used to create and run a container using the `docker run` command.
+   - Once the container is created, it runs independently with its own environment.
+   
+3. **Stopping and Removing Containers**:
+   - Containers are stopped using the `docker stop` command and can be removed using the `docker rm` command when no longer needed.
+
+4. **Pushing Images to Docker Registry**:
+   - Once you have built an image, you can push it to a Docker registry (such as Docker Hub) so others can pull and use it.
+   ```bash
+   docker push my-app
+   ```
+
+---
+
+### **Conclusion**
+
+- A **Docker image** is a blueprint or template from which containers are created. It is static, portable, and reusable across environments.
+- A **Docker container** is the running instance of an image and is mutable, running with its own isolated filesystem and environment.
+
+In a typical development and deployment workflow, you create an image (from a Dockerfile), run a container (from the image), and manage containers for scaling and distributing applications across different environments.
 
 ---
 
