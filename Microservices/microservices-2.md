@@ -18,6 +18,24 @@ This table shows the various specialized services Netflix outsources to differen
 
 ---
 ---
+
+
+## services that Liberty Mutual provides:
+
+| **Service Category**       | **Description**                                                                                  |
+|----------------------------|----------------------------------------------------------------------------------------------|
+| **Auto Insurance**          | Coverage for cars, including comprehensive, collision, liability, and personal injury protection. |
+| **Home Insurance**          | Coverage for homeowners, including property damage, theft, and natural disasters.             |
+| **Life Insurance**          | Options include term life and whole life insurance for financial security.                   |
+| **Health Insurance**        | Health insurance plans for employees and customers.                                           |
+| **Business Insurance**      | Includes liability, workers' compensation, commercial auto, and property insurance for businesses. |
+| **Disability Insurance**    | Financial support in case of income interruption due to injury or illness.                    |
+| **Pet Insurance**           | Coverage for pet health-related expenses.                                                     |
+| **Travel Insurance**        | Protection for trip cancellations, lost luggage, and medical emergencies while traveling.     |
+| **Renters Insurance**       | Insurance for renters to cover personal belongings and liability.                             |
+
+This table captures the main services Liberty Mutual offers across various categories.
+
 ---
 
 ---
