@@ -2,7 +2,15 @@
 
 
 
+```
+**Summary of Main Components:**
+Browser (AJAX engine, JavaScript, DOM)
+Server (web server, backend application)
+Communication Protocol (HTTP/HTTPS)
+Data Formats (JSON, XML)
+Optional Frameworks (e.g., jQuery, React)
 
+```
 
 
 Here is a list of AJAX tutorials, ranging from beginner to advanced levels. These tutorials cover the core concepts, implementation, and advanced features of AJAX.
