@@ -28,41 +28,52 @@ Here’s a comprehensive list of 100 React.js interview questions. These questio
 ### **Intermediate React.js Interview Questions**
 21. How do you update the state of a React component?
 22. What is the component lifecycle in React?
-23. What are lifecycle methods in React?
-24. Can you explain the React component lifecycle with examples?
-25. What are the different phases of the React lifecycle?
-26. What is the difference between `componentDidMount()` and `componentWillMount()` lifecycle methods?
-27. How do you handle side-effects in React?
-28. What is the use of `useEffect()` hook in React?
-29. How does the `useMemo()` hook work in React?
-30. How does the `useCallback()` hook work in React?
-31. How can you handle forms in React?
-32. What is form validation in React?
-33. What are `context` and `useContext()` in React?
-34. How does React handle conditional rendering?
-35. What is lazy loading in React?
-36. How can you implement routing in a React application?
-37. What is the use of `React Router` in React?
-38. How do you handle errors in React?
-39. What are error boundaries in React?
-40. What is the `Suspense` component in React?
-41. What is the purpose of `React.StrictMode` in React?
-42. How can you handle multiple state values in React?
-43. What is the `componentDidUpdate()` lifecycle method in React, and when is it called?
-44. What is the purpose of `componentWillUnmount()` lifecycle method in React?
-45. What is the difference between `shouldComponentUpdate()` and `PureComponent`?
-46. What is a key difference between controlled and uncontrolled form components in React?
-47. How can you pass functions as props in React?
-48. How does React handle re-rendering?
-49. What is the `forceUpdate()` method in React, and when should it be used?
-50. What is the difference between `==` and `===` in React?
-51. What is the `useRef()` hook, and how do you use it in React?
-52. What are Fragment and its usage in React?
-53. How do you handle the performance optimization in React?
-54. What is `React.memo()` in React?
-55. How does React handle lists and dynamic rendering?
-56. What is JSX and why is it important in React development?
-57. What is the role of `React.createElement()` in React?
+    ### **Comparison: Class Components vs. Functional Components**
+
+| **Lifecycle Phase**        | **Class Component Method**       | **Functional Component Hook**        |
+|-----------------------------|----------------------------------|---------------------------------------|
+| Initialization              | `constructor()`                 | `useState()`                         |
+| Mounting                    | `componentDidMount()`           | `useEffect(() => {}, [])`            |
+| Updating                    | `componentDidUpdate()`          | `useEffect()` with dependencies      |
+| Unmounting                  | `componentWillUnmount()`        | `useEffect()` cleanup function       |
+| Error Handling              | `getDerivedStateFromError()`    | `useErrorBoundary()` (custom hooks)  |
+
+---
+24. What are lifecycle methods in React?
+25. Can you explain the React component lifecycle with examples?
+26. What are the different phases of the React lifecycle?
+27. What is the difference between `componentDidMount()` and `componentWillMount()` lifecycle methods?
+28. How do you handle side-effects in React?
+29. What is the use of `useEffect()` hook in React?
+30. How does the `useMemo()` hook work in React?
+31. How does the `useCallback()` hook work in React?
+32. How can you handle forms in React?
+33. What is form validation in React?
+34. What are `context` and `useContext()` in React?
+35. How does React handle conditional rendering?
+36. What is lazy loading in React?
+37. How can you implement routing in a React application?
+38. What is the use of `React Router` in React?
+39. How do you handle errors in React?
+40. What are error boundaries in React?
+41. What is the `Suspense` component in React?
+42. What is the purpose of `React.StrictMode` in React?
+43. How can you handle multiple state values in React?
+44. What is the `componentDidUpdate()` lifecycle method in React, and when is it called?
+45. What is the purpose of `componentWillUnmount()` lifecycle method in React?
+46. What is the difference between `shouldComponentUpdate()` and `PureComponent`?
+47. What is a key difference between controlled and uncontrolled form components in React?
+48. How can you pass functions as props in React?
+49. How does React handle re-rendering?
+50. What is the `forceUpdate()` method in React, and when should it be used?
+51. What is the difference between `==` and `===` in React?
+52. What is the `useRef()` hook, and how do you use it in React?
+53. What are Fragment and its usage in React?
+54. How do you handle the performance optimization in React?
+55. What is `React.memo()` in React?
+56. How does React handle lists and dynamic rendering?
+57. What is JSX and why is it important in React development?
+58. What is the role of `React.createElement()` in React?
 
 ### **Advanced React.js Interview Questions**
 58. What are hooks, and how do they replace class components in React?
