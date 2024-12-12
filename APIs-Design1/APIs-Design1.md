@@ -567,7 +567,223 @@ Send alerts for task deadlines, payments, and system updates.
 
 
 ****
+# **Internal Service-Based Company Employee Management API Design**
 
+## **1. API Design**
+
+---
+
+### **1.1 Employee Management APIs**
+
+#### **Employee Registration**
+
+- **Endpoint**: `POST /api/v1/employees/register`
+- Request Body:
+  ```json
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "password": "strongPassword123",
+    "role": "Software Engineer",
+    "department": "Development"
+  }
+  ```
+- **Response**:
+  ```json
+  { "employeeId": "uniqueEmployeeId", "status": "success" }
+  ```
+
+#### **Employee Login**
+
+- **Endpoint**: `POST /api/v1/employees/login`
+- **Request Body**:
+  ```json
+  { "email": "john@example.com", "password": "strongPassword123" }
+  ```
+- **Response**:
+  ```json
+  { "token": "JWT_or_session_token", "expiresIn": 3600 }
+  ```
+
+#### **Employee Profile**
+
+- **Endpoint**: `GET /api/v1/employees/{employeeId}`
+- **Headers**: `Authorization: Bearer {token}`
+- **Response**:
+  ```json
+  { 
+    "employeeId": "uniqueEmployeeId", 
+    "name": "John Doe", 
+    "email": "john@example.com", 
+    "role": "Software Engineer", 
+    "department": "Development" 
+  }
+  ```
+
+---
+
+### **1.2 Employee Role and Permissions APIs**
+
+#### **Assign Role to Employee**
+
+- **Endpoint**: `POST /api/v1/employees/{employeeId}/roles`
+- **Request Body**:
+  ```json
+  { "role": "Team Lead" }
+  ```
+- **Response**:
+  ```json
+  { "status": "role assigned" }
+  ```
+
+#### **Update Employee Permissions**
+
+- **Endpoint**: `PUT /api/v1/employees/{employeeId}/permissions`
+- **Request Body**:
+  ```json
+  { "permissions": ["view_reports", "edit_projects"] }
+  ```
+- **Response**:
+  ```json
+  { "status": "permissions updated" }
+  ```
+
+---
+
+### **1.3 Leave Management APIs**
+
+#### **Apply for Leave**
+
+- **Endpoint**: `POST /api/v1/employees/{employeeId}/leave-requests`
+- **Request Body**:
+  ```json
+  { 
+    "startDate": "2024-12-20", 
+    "endDate": "2024-12-25", 
+    "reason": "Family Event" 
+  }
+  ```
+- **Response**:
+  ```json
+  { "leaveRequestId": "uniqueLeaveRequestId", "status": "pending" }
+  ```
+
+#### **View Leave Requests**
+
+- **Endpoint**: `GET /api/v1/employees/{employeeId}/leave-requests`
+- **Headers**: `Authorization: Bearer {token}`
+- **Response**:
+  ```json
+  [{ "leaveRequestId": "leave_001", "status": "approved", "startDate": "2024-12-20", "endDate": "2024-12-25" }, ...]
+  ```
+
+#### **Approve or Reject Leave Request**
+
+- **Endpoint**: `PUT /api/v1/leave-requests/{leaveRequestId}`
+- **Request Body**:
+  ```json
+  { "status": "approved" }
+  ```
+- **Response**:
+  ```json
+  { "status": "leave request updated" }
+  ```
+
+---
+
+### **1.4 Employee Attendance APIs**
+
+#### **Clock In**
+
+- **Endpoint**: `POST /api/v1/employees/{employeeId}/attendance/clock-in`
+- **Request Body**:
+  ```json
+  { "timestamp": "2024-12-12T09:00:00Z" }
+  ```
+- **Response**:
+  ```json
+  { "status": "clocked in", "attendanceId": "uniqueAttendanceId" }
+  ```
+
+#### **Clock Out**
+
+- **Endpoint**: `PUT /api/v1/attendance/{attendanceId}/clock-out`
+- **Request Body**:
+  ```json
+  { "timestamp": "2024-12-12T17:00:00Z" }
+  ```
+- **Response**:
+  ```json
+  { "status": "clocked out" }
+  ```
+
+---
+
+### **1.5 Employee Performance APIs**
+
+#### **Submit Performance Review**
+
+- **Endpoint**: `POST /api/v1/employees/{employeeId}/performance-reviews`
+- **Request Body**:
+  ```json
+  { 
+    "reviewerId": "manager_001", 
+    "reviewDate": "2024-12-10", 
+    "comments": "Excellent performance this quarter.", 
+    "rating": 4.8 
+  }
+  ```
+- **Response**:
+  ```json
+  { "reviewId": "uniqueReviewId", "status": "submitted" }
+  ```
+
+#### **View Employee Reviews**
+
+- **Endpoint**: `GET /api/v1/employees/{employeeId}/performance-reviews`
+- **Headers**: `Authorization: Bearer {token}`
+- **Response**:
+  ```json
+  [{ "reviewId": "review_001", "rating": 4.8, "comments": "Excellent work!" }, ...]
+  ```
+
+---
+
+### **1.6 Notifications and Support APIs**
+
+#### **Subscribe to Notifications**
+
+- **Endpoint**: `POST /api/v1/notifications/subscribe`
+- **Request Body**:
+  ```json
+  { "employeeId": "uniqueEmployeeId", "notificationType": "email" }
+  ```
+- **Response**:
+  ```json
+  { "status": "subscribed" }
+  ```
+
+#### **Contact Support**
+
+- **Endpoint**: `POST /api/v1/support/contact`
+- **Request Body**:
+  ```json
+  { "employeeId": "uniqueEmployeeId", "message": "Help with leave request issue" }
+  ```
+- **Response**:
+  ```json
+  { "supportTicketId": "uniqueTicketId", "status": "open" }
+  ```
+
+---
+
+****
+
+
+
+****
+
+****
 
 
 
