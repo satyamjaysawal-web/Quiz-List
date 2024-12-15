@@ -1,206 +1,972 @@
-Certainly! Below is a detailed comparison of **List**, **Tuple**, **Dictionary**, and **Set** with each property explained and demonstrated for each data structure.
+****
+### 🔥 **Comprehensive Properties of Tuples in Python**
+
+Tuples are a fundamental data structure in Python, with numerous features and properties that make them versatile for various applications. Below is a complete explanation of the key properties of tuples, organized systematically.
 
 ---
 
-## 🔥 **Comparison of List, Tuple, Dictionary, and Set with Each Property**
+### 1️⃣ **Immutable**
+- Tuples are **immutable**, meaning their elements cannot be changed after the tuple is created.
+- You cannot add, remove, or modify elements in a tuple.
 
-### **1. Mutable**
-- **List**: **Mutable** — You can modify the elements, add or remove items.
-- **Tuple**: **Immutable** — Once created, the elements cannot be modified.
-- **Dictionary**: **Mutable** — You can modify the key-value pairs.
-- **Set**: **Mutable** — You can add or remove elements.
-
-#### **Examples**:
+**Example:**
 ```python
-# List: Mutable
-my_list = [1, 2, 3]
-my_list[1] = 99  # Modify element
-print(my_list)  # Output: [1, 99, 3]
-
-# Tuple: Immutable
-my_tuple = (1, 2, 3)
-# my_tuple[1] = 99  # TypeError: 'tuple' object does not support item assignment
-
-# Dictionary: Mutable
-my_dict = {'name': 'John', 'age': 25}
-my_dict['age'] = 26  # Modify value
-print(my_dict)  # Output: {'name': 'John', 'age': 26}
-
-# Set: Mutable
-my_set = {1, 2, 3}
-my_set.add(4)  # Add element
-my_set.remove(2)  # Remove element
-print(my_set)  # Output: {1, 3, 4}
+t = (1, 2, 3)
+# This will raise an error
+# t[0] = 10  # ❌ TypeError: 'tuple' object does not support item assignment
 ```
 
 ---
 
-### **2. Ordered**
-- **List**: **Ordered** — The order in which you insert items is preserved.
-- **Tuple**: **Ordered** — Elements appear in the order they were defined.
-- **Dictionary**: **Ordered** (Python 3.7+): The insertion order of key-value pairs is preserved.
-- **Set**: **Unordered** — The order of elements is not guaranteed.
+### 2️⃣ **Ordered**
+- Tuples maintain the **order of elements**. 
+- You can access the elements of a tuple using indexing.
 
-#### **Examples**:
+**Example:**
 ```python
-# List: Ordered
-my_list = [1, 2, 3]
-print(my_list)  # Output: [1, 2, 3]
-
-# Tuple: Ordered
-my_tuple = (1, 2, 3)
-print(my_tuple)  # Output: (1, 2, 3)
-
-# Dictionary: Ordered (from Python 3.7+)
-my_dict = {'name': 'John', 'age': 25}
-print(my_dict)  # Output: {'name': 'John', 'age': 25}
-
-# Set: Unordered
-my_set = {3, 1, 2}
-print(my_set)  # Output: {1, 2, 3} (order may vary)
+t = (10, 20, 30)
+print(t[0])  # 10
+print(t[2])  # 30
 ```
 
 ---
 
-### **3. Duplicates Allowed**
-- **List**: **Duplicates allowed** — You can have the same element multiple times.
-- **Tuple**: **Duplicates allowed** — You can have repeated elements.
-- **Dictionary**: **No duplicates for keys** — Keys must be unique, but values can be duplicated.
-- **Set**: **No duplicates** — A set automatically removes duplicate elements.
+### 3️⃣ **Allows Duplicates**
+- Tuples allow **duplicate values**.
+- Multiple occurrences of the same value are stored as separate elements.
 
-#### **Examples**:
+**Example:**
 ```python
-# List: Duplicates allowed
-my_list = [1, 2, 2, 3]
-print(my_list)  # Output: [1, 2, 2, 3]
-
-# Tuple: Duplicates allowed
-my_tuple = (1, 2, 2, 3)
-print(my_tuple)  # Output: (1, 2, 2, 3)
-
-# Dictionary: No duplicates for keys
-my_dict = {'name': 'John', 'age': 25, 'name': 'Jane'}
-print(my_dict)  # Output: {'name': 'Jane', 'age': 25} (key 'name' is unique)
-
-# Set: No duplicates
-my_set = {1, 2, 2, 3}
-print(my_set)  # Output: {1, 2, 3} (duplicates removed)
+t = (1, 2, 2, 3, 4, 1)
+print(t)  # (1, 2, 2, 3, 4, 1)
 ```
 
 ---
 
-### **4. Indexing & Slicing**
-- **List**: **Supports indexing** and **slicing**. You can access and slice elements by their index.
-- **Tuple**: **Supports indexing** and **slicing**. Works the same as lists for accessing elements.
-- **Dictionary**: **No indexing** — You access elements by keys.
-- **Set**: **No indexing** or **slicing** — Sets are unordered.
+### 4️⃣ **Heterogeneous**
+- Tuples can store **different types of data** (e.g., integers, floats, strings, booleans, lists, etc.).
 
-#### **Examples**:
+**Example:**
 ```python
-# List: Indexing & Slicing
-my_list = [1, 2, 3, 4]
-print(my_list[1])   # Output: 2
-print(my_list[1:3]) # Output: [2, 3]
-
-# Tuple: Indexing & Slicing
-my_tuple = (1, 2, 3, 4)
-print(my_tuple[1])   # Output: 2
-print(my_tuple[1:3]) # Output: (2, 3)
-
-# Dictionary: No Indexing (Access by key)
-my_dict = {'name': 'John', 'age': 25}
-# print(my_dict[1])  # TypeError: 'dict' object is not subscriptable
-print(my_dict['name'])  # Output: John
-
-# Set: No Indexing
-my_set = {1, 2, 3}
-# print(my_set[1])  # TypeError: 'set' object is not subscriptable
+t = (1, "Hello", 3.14, True, [1, 2, 3])
+print(t)  # (1, 'Hello', 3.14, True, [1, 2, 3])
 ```
 
 ---
 
-### **5. Size**
-- **List**: **Dynamic size** — You can add and remove elements, changing its size.
-- **Tuple**: **Fixed size** — Once a tuple is created, its size cannot change.
-- **Dictionary**: **Dynamic size** — You can add or remove key-value pairs.
-- **Set**: **Dynamic size** — You can add or remove elements.
+### 5️⃣ **Indexing & Slicing**
+- Tuples support **0-based indexing**.
+- Elements can be accessed using positive or negative indices.
+- You can also extract a **slice** of a tuple.
 
-#### **Examples**:
+**Example:**
 ```python
-# List: Dynamic size
-my_list = [1, 2, 3]
-my_list.append(4)  # Add element
-print(len(my_list))  # Output: 4
-
-# Tuple: Fixed size
-my_tuple = (1, 2, 3)
-# my_tuple.append(4)  # AttributeError: 'tuple' object has no attribute 'append'
-
-# Dictionary: Dynamic size
-my_dict = {'name': 'John', 'age': 25}
-my_dict['city'] = 'New York'  # Add key-value pair
-print(len(my_dict))  # Output: 3
-
-# Set: Dynamic size
-my_set = {1, 2, 3}
-my_set.add(4)  # Add element
-print(len(my_set))  # Output: 4
+t = (10, 20, 30, 40, 50)
+print(t[1])       # 20 (Indexing)
+print(t[-1])      # 50 (Negative indexing)
+print(t[1:4])     # (20, 30, 40) (Slicing)
 ```
 
 ---
 
-### **6. Methods**
-- **List**: Has many methods like `append()`, `remove()`, `pop()`, `sort()`, etc.
-- **Tuple**: Very few methods like `count()` and `index()`.
-- **Dictionary**: Many methods like `get()`, `update()`, `keys()`, `values()`, `items()`, etc.
-- **Set**: Basic methods like `add()`, `remove()`, `union()`, `intersection()`, etc.
+### 6️⃣ **Packing & Unpacking**
+- **Packing**: You can pack multiple values into a single tuple.
+- **Unpacking**: You can unpack a tuple into individual variables.
 
-#### **Examples**:
+**Example:**
 ```python
-# List: Many methods
-my_list = [1, 2, 3]
-my_list.append(4)  # Add an element
-my_list.remove(2)  # Remove an element
-print(my_list)  # Output: [1, 3, 4]
+# Packing
+t = (1, 2, 3)
 
-# Tuple: Few methods
-my_tuple = (1, 2, 3, 2)
-print(my_tuple.count(2))  # Output: 2
-print(my_tuple.index(3))  # Output: 2
+# Unpacking
+a, b, c = t
+print(f"a = {a}, b = {b}, c = {c}")
+```
 
-# Dictionary: Many methods
-my_dict = {'name': 'John', 'age': 25}
-print(my_dict.get('age'))  # Output: 25
-print(my_dict.keys())      # Output: dict_keys(['name', 'age'])
-
-# Set: Basic methods
-my_set = {1, 2, 3}
-my_set.add(4)  # Add an element
-my_set.remove(2)  # Remove an element
-print(my_set)  # Output: {1, 3, 4}
-
-# Set operations
-other_set = {3, 4, 5, 6}
-print(my_set.union(other_set))  # Output: {1, 3, 4, 5, 6}
-print(my_set.intersection(other_set))  # Output: {3, 4}
+**Output:**
+```
+a = 1, b = 2, c = 3
 ```
 
 ---
 
-## 🔥 **Summary Comparison Table**
+### 7️⃣ **Concatenation**
+- You can concatenate two or more tuples using the `+` operator.
 
-| **Property**               | **List**                        | **Tuple**                        | **Dictionary**                   | **Set**                           |
-|---------------------------|---------------------------------|----------------------------------|----------------------------------|-----------------------------------|
-| **Mutable**                | ✅ Yes                          | ❌ No (Immutable)                | ✅ Yes (for values)              | ✅ Yes                            |
-| **Ordered**                | ✅ Yes                          | ✅ Yes                           | ✅ Yes (from Python 3.7+)        | ❌ No (unordered)                 |
-| **Duplicates Allowed**     | ✅ Yes                          | ✅ Yes                           | ❌ No (keys must be unique)      | ❌ No (unique elements only)      |
-| **Indexing**               | ✅ Yes                          | ✅ Yes                           | ❌ No (keys)                     | ❌ No                             |
-| **Slicing**                | ✅ Yes                          | ✅ Yes                           | ❌ No                            | ❌ No                             |
+**Example:**
+```python
+t1 = (1, 2, 3)
+t2 = (4, 5)
+t3 = t1 + t2
+print(t3)  # (1, 2, 3, 4, 5)
+```
+
+---
+
+### 8️⃣ **Repetition**
+- You can repeat a tuple's elements using the `*` operator.
+
+**Example:**
+```python
+t = (1, 2, 3)
+t_repeated = t * 3
+print(t_repeated)  # (1, 2, 3, 1, 2, 3, 1, 2, 3)
+```
+
+---
+
+### 9️⃣ **Dictionary Key**
+- Tuples are **hashable**, making them suitable for use as dictionary keys.
+- Lists, being mutable, cannot be used as dictionary keys.
+
+**Example:**
+```python
+my_dict = {
+    (1, 2): 'value1',
+    (3, 4): 'value2'
+}
+print(my_dict[(1, 2)])  # 'value1'
+```
+
+---
+
+### 🔟 **Tuple Methods**
+- Tuples have **two built-in methods**:
+  1. **count(value)**: Returns the count of occurrences of a value.
+  2. **index(value)**: Returns the index of the first occurrence of a value.
+
+**Example:**
+```python
+t = (10, 20, 30, 10, 20, 10)
+
+print(t.count(10))     # 3 (10 appears three times)
+print(t.index(30))     # 2 (30 appears at index 2)
+```
+
+---
+
+### 1️⃣1️⃣ **Supports Nesting**
+- Tuples can contain other tuples (nested tuples).
+- Nested tuples can also store heterogeneous data.
+
+**Example:**
+```python
+t = (1, (2, 3), (4, 5, (6, 7)))
+print(t)          # (1, (2, 3), (4, 5, (6, 7)))
+print(t[1][1])    # 3
+print(t[2][2][1]) # 7
+```
+
+---
+
+### 1️⃣2️⃣ **Hashable**
+- Since tuples are immutable, they are **hashable**, making them usable in sets and as dictionary keys.
+
+**Example:**
+```python
+t = (1, 2, 3)
+print(hash(t))  # Prints a unique hash value
+```
+
+---
+
+### 1️⃣3️⃣ **Supports Iteration**
+- Tuples are iterable and can be looped through using a `for` loop.
+
+**Example:**
+```python
+t = (10, 20, 30)
+for item in t:
+    print(item)
+```
+
+---
+
+### 1️⃣4️⃣ **Memory Efficient**
+- Tuples are more **memory-efficient** compared to lists because they are immutable.
+
+**Example:**
+```python
+import sys
+
+t = (1, 2, 3)
+l = [1, 2, 3]
+
+print(sys.getsizeof(t))  # Memory usage of tuple
+print(sys.getsizeof(l))  # Memory usage of list
+```
+
+---
+
+### 1️⃣5️⃣ **Supports Comparisons**
+- Tuples support comparisons using relational operators (`==`, `!=`, `<`, `>`, `<=`, `>=`).
+- Tuples are compared element by element.
+
+**Example:**
+```python
+t1 = (1, 2, 3)
+t2 = (1, 2, 4)
+t3 = (1, 2, 3)
+
+print(t1 == t3)  # True (element by element comparison)
+print(t1 < t2)   # True (compares first differing element)
+```
+
+---
+
+### 🔥 **Summary of Tuple Properties**
+
+| **Property**           | **Explanation**                                             |
+|-----------------------|-----------------------------------------------------------|
+| **Immutable**          | Elements cannot be modified after creation.                |
+| **Ordered**            | Maintains the order of elements.                           |
+| **Allows Duplicates**  | Duplicates are allowed.                                    |
+| **Heterogeneous**      | Can store elements of different data types.                |
+| **Indexing & Slicing** | Supports access via indices and slicing operations.        |
+| **Packing & Unpacking**| Allows packing and unpacking of values.                    |
+| **Concatenation**      | Tuples can be concatenated using `+`.                      |
+| **Repetition**         | Elements can be repeated using `*`.                        |
+| **Dictionary Key**     | Can be used as dictionary keys (hashable).                 |
+| **Tuple Methods**      | Provides `count()` and `index()` methods.                  |
+| **Supports Nesting**   | Can contain other tuples or collections (nested structure).|
+| **Hashable**           | Immutable and can be hashed.                              |
+| **Supports Iteration** | Tuples can be iterated using loops.                        |
+| **Memory Efficient**   | Uses less memory compared to lists.                        |
+| **Supports Comparisons**| Supports comparison operators (e.g., `<`, `>`).           |
+
+---
+
+### 📢 **When Should You Use a Tuple?**
+1. **Immutable Data**: When you want to ensure data is protected from accidental modification.
+2. **Keys in Dictionaries**: When you need to use a collection as a key in a dictionary.
+3. **Memory Constraints**: When memory efficiency is important.
+4. **Readability**: When representing fixed collections, like coordinates or RGB values.
+
+---
+****
+
+
+### 🔥 **Comprehensive Properties of Lists in Python**
+
+A **list** in Python is a **mutable** and versatile data structure used to store an ordered collection of items. Unlike tuples, lists allow modifications, making them highly useful for dynamic data manipulation.
+
+---
+
+### 1️⃣ **Mutable**
+- Lists are **mutable**, meaning their elements can be modified after the list is created.
+- You can add, remove, or change elements in a list.
+
+**Example:**
+```python
+l = [1, 2, 3]
+l[0] = 10  # Modifying the first element
+print(l)   # [10, 2, 3]
+```
+
+---
+
+### 2️⃣ **Ordered**
+- Lists maintain the **order of elements**.
+- The order in which elements are added is the same order in which they are accessed.
+
+**Example:**
+```python
+l = [10, 20, 30]
+print(l[0])  # 10
+print(l[2])  # 30
+```
+
+---
+
+### 3️⃣ **Allows Duplicates**
+- Lists allow **duplicate values**.
+- Multiple occurrences of the same value are stored as separate elements.
+
+**Example:**
+```python
+l = [1, 2, 2, 3, 4, 1]
+print(l)  # [1, 2, 2, 3, 4, 1]
+```
+
+---
+
+### 4️⃣ **Heterogeneous**
+- Lists can store **different types of data** (e.g., integers, strings, floats, booleans, etc.).
+
+**Example:**
+```python
+l = [1, "Hello", 3.14, True, [1, 2, 3]]
+print(l)  # [1, 'Hello', 3.14, True, [1, 2, 3]]
+```
+
+---
+
+### 5️⃣ **Indexing & Slicing**
+- Lists support **0-based indexing**.
+- Elements can be accessed using positive or negative indices.
+- You can also extract a **slice** of a list.
+
+**Example:**
+```python
+l = [10, 20, 30, 40, 50]
+print(l[1])       # 20 (Indexing)
+print(l[-1])      # 50 (Negative indexing)
+print(l[1:4])     # [20, 30, 40] (Slicing)
+```
+
+---
+
+### 6️⃣ **Dynamic Size**
+- Lists in Python are dynamic, meaning you can change their size (add or remove elements) at runtime.
+
+**Example:**
+```python
+l = [1, 2, 3]
+l.append(4)  # Adding an element
+l.remove(2)  # Removing an element
+print(l)     # [1, 3, 4]
+```
+
+---
+
+### 7️⃣ **Concatenation**
+- You can concatenate two or more lists using the `+` operator.
+
+**Example:**
+```python
+l1 = [1, 2, 3]
+l2 = [4, 5]
+l3 = l1 + l2
+print(l3)  # [1, 2, 3, 4, 5]
+```
+
+---
+
+### 8️⃣ **Repetition**
+- You can repeat a list's elements using the `*` operator.
+
+**Example:**
+```python
+l = [1, 2, 3]
+l_repeated = l * 3
+print(l_repeated)  # [1, 2, 3, 1, 2, 3, 1, 2, 3]
+```
+
+---
+
+### 9️⃣ **List Methods**
+- Lists provide a wide range of built-in methods for dynamic operations:
+  - **append(value)**: Adds a value to the end of the list.
+  - **extend(iterable)**: Extends the list by adding all elements from an iterable.
+  - **insert(index, value)**: Inserts a value at the specified index.
+  - **remove(value)**: Removes the first occurrence of a value.
+  - **pop(index)**: Removes and returns the element at the specified index (default: last element).
+  - **reverse()**: Reverses the list in place.
+  - **sort()**: Sorts the list in ascending order.
+  - **index(value)**: Returns the index of the first occurrence of a value.
+  - **count(value)**: Counts how many times a value appears in the list.
+
+**Example:**
+```python
+l = [3, 1, 4, 1, 5, 9]
+l.append(6)
+l.remove(1)
+l.sort()
+print(l)  # [1, 3, 4, 5, 6, 9]
+```
+
+---
+
+### 🔟 **Supports Nesting**
+- Lists can contain other lists (nested lists) and allow complex structures.
+
+**Example:**
+```python
+l = [1, [2, 3], [4, [5, 6]]]
+print(l[1])       # [2, 3]
+print(l[2][1][0]) # 5
+```
+
+---
+
+### 1️⃣1️⃣ **Supports Iteration**
+- Lists are iterable and can be looped through using a `for` loop.
+
+**Example:**
+```python
+l = [10, 20, 30]
+for item in l:
+    print(item)
+```
+
+---
+
+### 1️⃣2️⃣ **Mutable & Dynamic Nature**
+- Unlike tuples, lists are **mutable** and support dynamic changes such as adding or removing elements.
+
+**Example:**
+```python
+l = [1, 2, 3]
+l.append(4)  # Adds 4 to the list
+l.pop(1)     # Removes the element at index 1
+print(l)     # [1, 3, 4]
+```
+
+---
+
+### 1️⃣3️⃣ **Not Hashable**
+- Lists are **not hashable**, meaning they cannot be used as keys in dictionaries.
+- This is because lists are mutable and can change after creation.
+
+**Example:**
+```python
+# This will raise an error
+# my_dict = {[1, 2]: 'value'}  # ❌ TypeError: unhashable type: 'list'
+```
+
+---
+
+### 1️⃣4️⃣ **Memory Usage**
+- Lists use more memory than tuples because they are mutable and maintain extra metadata for dynamic resizing.
+
+**Example:**
+```python
+import sys
+
+l = [1, 2, 3]
+t = (1, 2, 3)
+
+print(sys.getsizeof(l))  # Memory usage of list
+print(sys.getsizeof(t))  # Memory usage of tuple
+```
+
+---
+
+### 1️⃣5️⃣ **Supports Comparisons**
+- Lists support comparisons using relational operators (`==`, `!=`, `<`, `>`, `<=`, `>=`).
+- Lists are compared element by element.
+
+**Example:**
+```python
+l1 = [1, 2, 3]
+l2 = [1, 2, 4]
+l3 = [1, 2, 3]
+
+print(l1 == l3)  # True (element by element comparison)
+print(l1 < l2)   # True (compares first differing element)
+```
+
+---
+
+### 🔥 **Summary of List Properties**
+
+| **Property**           | **Explanation**                                             |
+|-----------------------|-----------------------------------------------------------|
+| **Mutable**            | Elements can be modified after creation.                   |
+| **Ordered**            | Maintains the order of elements.                           |
+| **Allows Duplicates**  | Duplicates are allowed.                                    |
+| **Heterogeneous**      | Can store elements of different data types.                |
+| **Indexing & Slicing** | Supports access via indices and slicing operations.        |
+| **Dynamic Size**       | Size can change at runtime (add/remove elements).          |
+| **Concatenation**      | Lists can be concatenated using `+`.                       |
+| **Repetition**         | Elements can be repeated using `*`.                        |
+| **List Methods**       | Provides methods like `append()`, `sort()`, `remove()`.    |
+| **Supports Nesting**   | Can contain other lists or collections (nested structure). |
+| **Supports Iteration** | Lists can be iterated using loops.                         |
+| **Not Hashable**       | Cannot be used as dictionary keys.                         |
+| **Memory Usage**       | Uses more memory compared to tuples.                       |
+| **Supports Comparisons**| Supports comparison operators (e.g., `<`, `>`).           |
+
+---
+
+### 📢 **When Should You Use a List?**
+1. **Dynamic Data**: Use lists when you need to modify the data frequently (add, remove, or update elements).
+2. **Order Matters**: When you need to maintain the order of elements.
+3. **Iteration & Operations**: Ideal for iterative operations, sorting, or filtering.
+
+---
+****
+
+### 🔥 **Comprehensive Properties of Sets in Python**
+
+A **set** in Python is an **unordered**, **mutable**, and **unindexed** collection of unique elements. Sets are primarily used when you need to eliminate duplicate items or perform mathematical set operations like union, intersection, or difference.
+
+---
+
+### 1️⃣ **Unordered**
+- Sets are **unordered**, meaning the elements are not stored in any particular order.
+- The order of elements in a set can change and is not guaranteed.
+
+**Example:**
+```python
+s = {10, 20, 30}
+print(s)  # Output order may vary
+```
+
+---
+
+### 2️⃣ **Mutable**
+- Sets are **mutable**, meaning you can add or remove elements after the set is created.
+
+**Example:**
+```python
+s = {1, 2, 3}
+s.add(4)  # Adds 4 to the set
+s.remove(2)  # Removes 2 from the set
+print(s)  # {1, 3, 4}
+```
+
+---
+
+### 3️⃣ **Unique Elements**
+- Sets store **unique elements**. Duplicates are automatically removed.
+
+**Example:**
+```python
+s = {1, 2, 2, 3, 4, 1}
+print(s)  # {1, 2, 3, 4} (duplicates are removed)
+```
+
+---
+
+### 4️⃣ **Unindexed**
+- Sets do not support indexing or slicing because they are unordered.
+- You cannot access elements of a set using an index.
+
+**Example:**
+```python
+s = {10, 20, 30}
+# This will raise an error
+# print(s[0])  # ❌ TypeError: 'set' object is not subscriptable
+```
+
+---
+
+### 5️⃣ **Heterogeneous**
+- Sets can store elements of **different data types** (e.g., integers, strings, floats, etc.).
+
+**Example:**
+```python
+s = {1, "Hello", 3.14, True}
+print(s)  # {1, 3.14, 'Hello'}
+```
+
+---
+
+### 6️⃣ **Dynamic Size**
+- Sets are dynamic, meaning you can add or remove elements at runtime.
+
+**Example:**
+```python
+s = {1, 2, 3}
+s.add(4)  # Add an element
+s.discard(2)  # Remove an element
+print(s)  # {1, 3, 4}
+```
+
+---
+
+### 7️⃣ **Supports Iteration**
+- You can iterate over the elements of a set using a `for` loop.
+
+**Example:**
+```python
+s = {10, 20, 30}
+for item in s:
+    print(item)
+```
+
+---
+
+### 8️⃣ **Set Operations**
+- Sets support **mathematical operations** such as union, intersection, difference, and symmetric difference:
+  - **Union (`|`)**: Combines all unique elements from both sets.
+  - **Intersection (`&`)**: Retains only elements present in both sets.
+  - **Difference (`-`)**: Retains elements that are in one set but not the other.
+  - **Symmetric Difference (`^`)**: Retains elements that are in one set or the other, but not both.
+
+**Example:**
+```python
+s1 = {1, 2, 3}
+s2 = {3, 4, 5}
+
+print(s1 | s2)  # Union: {1, 2, 3, 4, 5}
+print(s1 & s2)  # Intersection: {3}
+print(s1 - s2)  # Difference: {1, 2}
+print(s1 ^ s2)  # Symmetric Difference: {1, 2, 4, 5}
+```
+
+---
+
+### 9️⃣ **Built-in Methods**
+- Sets provide various methods for operations:
+  - **add(value)**: Adds a value to the set.
+  - **remove(value)**: Removes a value (raises an error if not found).
+  - **discard(value)**: Removes a value (does not raise an error if not found).
+  - **pop()**: Removes and returns an arbitrary element.
+  - **clear()**: Removes all elements.
+  - **union(other_set)**: Returns a new set with elements from both sets.
+  - **intersection(other_set)**: Returns a new set with elements common to both sets.
+  - **difference(other_set)**: Returns a new set with elements in the first set but not in the second.
+  - **symmetric_difference(other_set)**: Returns a new set with elements in one set or the other, but not both.
+
+**Example:**
+```python
+s = {1, 2, 3}
+s.add(4)
+s.discard(2)
+s.pop()  # Removes an arbitrary element
+print(s)  # Set after modifications
+```
+
+---
+
+### 🔟 **Hashable Elements Only**
+- A set can only contain **hashable** (immutable) elements like integers, strings, tuples, etc.
+- Mutable objects like lists and dictionaries **cannot** be added to a set.
+
+**Example:**
+```python
+# This will raise an error
+# s = {1, 2, [3, 4]}  # ❌ TypeError: unhashable type: 'list'
+
+s = {1, 2, (3, 4)}  # Tuples are allowed
+print(s)  # {1, 2, (3, 4)}
+```
+
+---
+
+### 1️⃣1️⃣ **Not Hashable**
+- Sets themselves are **not hashable** and cannot be used as keys in dictionaries.
+- To create a hashable version of a set, use a **frozenset**.
+
+**Example:**
+```python
+# This will raise an error
+# my_dict = {{1, 2}: 'value'}  # ❌ TypeError: unhashable type: 'set'
+
+fs = frozenset({1, 2, 3})
+my_dict = {fs: 'value'}
+print(my_dict[fs])  # 'value'
+```
+
+---
+
+### 1️⃣2️⃣ **Supports Comparisons**
+- Sets support subset (`<=`), superset (`>=`), equality (`==`), and inequality (`!=`) comparisons.
+
+**Example:**
+```python
+s1 = {1, 2, 3}
+s2 = {2, 3}
+print(s2 <= s1)  # True (s2 is a subset of s1)
+print(s1 >= s2)  # True (s1 is a superset of s2)
+print(s1 == s2)  # False
+```
+
+---
+
+### 1️⃣3️⃣ **Memory Efficient**
+- Sets are generally more memory-efficient than lists for operations requiring unique elements.
+
+**Example:**
+```python
+import sys
+
+l = [1, 2, 3, 3]
+s = set(l)
+
+print(sys.getsizeof(l))  # Memory usage of list
+print(sys.getsizeof(s))  # Memory usage of set
+```
+
+---
+
+### 🔥 **Summary of Set Properties**
+
+| **Property**           | **Explanation**                                             |
+|-----------------------|-----------------------------------------------------------|
+| **Unordered**          | Does not maintain the order of elements.                   |
+| **Mutable**            | Elements can be added or removed after creation.           |
+| **Unique Elements**    | Automatically removes duplicates.                          |
+| **Unindexed**          | Does not support indexing or slicing.                      |
+| **Heterogeneous**      | Can store elements of different data types.                |
+| **Dynamic Size**       | Can grow or shrink in size dynamically.                    |
+| **Supports Iteration** | Can be iterated using a `for` loop.                        |
+| **Set Operations**     | Supports union, intersection, difference, etc.             |
+| **Built-in Methods**   | Provides methods like `add()`, `remove()`, `union()`.      |
+| **Hashable Elements**  | Only hashable elements (e.g., numbers, strings, tuples).   |
+| **Not Hashable**       | Sets themselves cannot be used as dictionary keys.         |
+| **Supports Comparisons**| Supports subset, superset, and equality comparisons.      |
+| **Memory Efficient**   | Efficient for storing unique elements.                    |
+
+---
+
+### 📢 **When Should You Use a Set?**
+1. **Unique Elements**: When you need to eliminate duplicates from a collection.
+2. **Set Operations**: When performing mathematical operations like union, intersection, or difference.
+3. **Membership Testing**: Sets are highly efficient for checking if an element exists (`in` operator).
+4. **Dynamic and Mutable**: When you need a mutable, unordered collection of unique elements.
+
+---
+****
+
+### 🔥 **Comprehensive Properties of Dictionaries in Python**
+
+A **dictionary** in Python is a **mutable**, **unordered**, and **key-value pair-based** data structure. It allows efficient data storage and retrieval by mapping keys to corresponding values. Dictionaries are widely used for scenarios where quick lookups, associations, or mappings are needed.
+
+---
+
+### 1️⃣ **Key-Value Pair Structure**
+- A dictionary stores data as **key-value pairs**.
+- Each key is associated with a value, allowing efficient access to the value using the key.
+
+**Example:**
+```python
+d = {"name": "Alice", "age": 25, "city": "New York"}
+print(d["name"])  # Alice
+```
+
+---
+
+### 2️⃣ **Unordered**
+- Dictionaries in Python (since version 3.7) maintain insertion order for keys, but they are technically **unordered** structures because the order is not guaranteed for all operations.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2, "c": 3}
+print(d)  # Output will maintain insertion order: {'a': 1, 'b': 2, 'c': 3}
+```
+
+---
+
+### 3️⃣ **Mutable**
+- Dictionaries are **mutable**, meaning you can add, remove, or change key-value pairs after the dictionary is created.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2}
+d["c"] = 3  # Adding a new key-value pair
+d["b"] = 10  # Updating an existing key's value
+del d["a"]  # Removing a key-value pair
+print(d)  # {'b': 10, 'c': 3}
+```
+
+---
+
+### 4️⃣ **Unique Keys**
+- Dictionary keys must be **unique**. If you try to assign a value to an existing key, it will overwrite the previous value.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2, "a": 3}  # Duplicate key 'a'
+print(d)  # {'a': 3, 'b': 2} (latest value of 'a' is retained)
+```
+
+---
+
+### 5️⃣ **Heterogeneous Keys and Values**
+- Dictionary keys and values can store elements of **different data types**.
+
+**Example:**
+```python
+d = {"name": "Alice", "age": 25, "is_student": True}
+print(d)  # {'name': 'Alice', 'age': 25, 'is_student': True}
+```
+
+---
+
+### 6️⃣ **Efficient Data Access**
+- Dictionaries provide **O(1) average time complexity** for accessing, inserting, and updating key-value pairs due to their internal **hashing** mechanism.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2, "c": 3}
+print(d["b"])  # Fast access to the value: 2
+```
+
+---
+
+### 7️⃣ **Dynamic Size**
+- Dictionaries can dynamically grow or shrink as you add or remove key-value pairs.
+
+**Example:**
+```python
+d = {"a": 1}
+d["b"] = 2  # Adding a new key-value pair
+del d["a"]  # Removing an existing key-value pair
+print(d)  # {'b': 2}
+```
+
+---
+
+### 8️⃣ **Keys Must Be Hashable**
+- Dictionary keys must be **hashable** (immutable), such as numbers, strings, tuples, or frozensets.
+- Lists and dictionaries cannot be used as keys because they are mutable.
+
+**Example:**
+```python
+# Valid keys
+d = {1: "one", "name": "Alice", (2, 3): "tuple key"}
+
+# Invalid key
+# d = {[1, 2]: "list key"}  # ❌ TypeError: unhashable type: 'list'
+```
+
+---
+
+### 9️⃣ **Built-in Methods**
+- Dictionaries have several useful built-in methods:
+  - **keys()**: Returns a view object of all keys.
+  - **values()**: Returns a view object of all values.
+  - **items()**: Returns a view object of key-value pairs.
+  - **get(key, default)**: Returns the value for a key, or a default value if the key is not found.
+  - **update(dict2)**: Updates the dictionary with key-value pairs from another dictionary or iterable.
+  - **pop(key)**: Removes and returns the value for a specified key.
+  - **popitem()**: Removes and returns an arbitrary key-value pair.
+  - **clear()**: Removes all key-value pairs.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2, "c": 3}
+print(d.keys())  # dict_keys(['a', 'b', 'c'])
+print(d.values())  # dict_values([1, 2, 3])
+print(d.items())  # dict_items([('a', 1), ('b', 2), ('c', 3)])
+```
+
+---
+
+### 🔟 **Supports Iteration**
+- You can iterate through a dictionary's keys, values, or key-value pairs using a `for` loop.
+
+**Example:**
+```python
+d = {"a": 1, "b": 2, "c": 3}
+
+# Iterating over keys
+for key in d:
+    print(key)
+
+# Iterating over values
+for value in d.values():
+    print(value)
+
+# Iterating over key-value pairs
+for key, value in d.items():
+    print(f"{key}: {value}")
+```
+
+---
+
+### 1️⃣1️⃣ **Supports Nesting**
+- Dictionaries can contain other dictionaries or complex nested structures.
+
+**Example:**
+```python
+nested_dict = {
+    "person1": {"name": "Alice", "age": 25},
+    "person2": {"name": "Bob", "age": 30},
+}
+print(nested_dict["person1"]["name"])  # Alice
+```
+
+---
+
+### 1️⃣2️⃣ **Memory Usage**
+- Dictionaries use more memory compared to lists or tuples due to their hash table implementation.
+
+**Example:**
+```python
+import sys
+d = {"a": 1, "b": 2, "c": 3}
+print(sys.getsizeof(d))  # Memory usage of the dictionary
+```
+
+---
+
+### 1️⃣3️⃣ **Dictionary Comprehensions**
+- You can create dictionaries using a **comprehension** for concise and efficient code.
+
+**Example:**
+```python
+squared = {x: x**2 for x in range(5)}
+print(squared)  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+---
+
+### 1️⃣4️⃣ **Supports Comparisons**
+- Dictionaries support equality and inequality comparisons (`==`, `!=`).
+- Two dictionaries are equal if they have the same key-value pairs (order does not matter).
+
+**Example:**
+```python
+d1 = {"a": 1, "b": 2}
+d2 = {"b": 2, "a": 1}
+print(d1 == d2)  # True (same key-value pairs)
+```
+
+---
+
+### 🔥 **Summary of Dictionary Properties**
+
+| **Property**              | **Explanation**                                            |
+|--------------------------|----------------------------------------------------------|
+| **Key-Value Pairs**       | Stores data as key-value pairs.                           |
+| **Unordered**             | Does not maintain a strict order (insertion order maintained since 3.7). |
+| **Mutable**               | Can add, remove, or modify key-value pairs.               |
+| **Unique Keys**           | Keys must be unique; duplicate keys are overwritten.      |
+| **Heterogeneous**         | Keys and values can store different data types.           |
+| **Efficient Access**      | O(1) average time complexity for lookups and updates.     |
+| **Dynamic Size**          | Size can grow or shrink dynamically.                      |
+| **Hashable Keys**         | Keys must be hashable (e.g., strings, numbers, tuples).   |
+| **Built-in Methods**      | Provides methods like `keys()`, `values()`, `update()`.   |
+| **Supports Iteration**    | Can iterate over keys, values, or key-value pairs.        |
+| **Supports Nesting**      | Can contain nested dictionaries or structures.            |
+| **Memory Usage**          | Uses more memory than lists or tuples.                    |
+| **Dictionary Comprehension**| Supports concise creation using comprehensions.         |
+| **Supports Comparisons**  | Supports equality and inequality comparisons.            |
+
+---
+
+### 📢 **When Should You Use a Dictionary?**
+1. **Key-Based Access**: Use dictionaries when you need to associate keys with values for fast lookups.
+2. **Dynamic Data**: Ideal for scenarios where the data structure needs to grow or change dynamically.
+3. **Complex Mappings**: Great for nested or hierarchical data structures.
+4. **Data with Unique Identifiers**: Perfect for storing data with unique keys, like user details or configurations.
+
+---
+****
+
+
+Sure! Here’s an extended comparison table of **List**, **Tuple**, **Dictionary**, and **Set** with additional properties for a more comprehensive understanding:
+
+| **Property**               | **List**                         | **Tuple**                        | **Dictionary**                   | **Set**                           |
+|---------------------------|----------------------------------|----------------------------------|----------------------------------|-----------------------------------|
+| **Mutable**                | ✅ Yes                           | ❌ No (Immutable)                | ✅ Yes (for values)              | ✅ Yes                            |
+| **Ordered**                | ✅ Yes                           | ✅ Yes                           | ✅ Yes (from Python 3.7+)        | ❌ No (unordered)                 |
+| **Duplicates Allowed**     | ✅ Yes                           | ✅ Yes                           | ❌ No (keys must be unique)      | ❌ No (unique elements only)      |
+| **Indexing**               | ✅ Yes                           | ✅ Yes                           | ❌ No (keys)                     | ❌ No                             |
+| **Slicing**                | ✅ Yes                           | ✅ Yes                           | ❌ No                            | ❌ No                             |
 | **Size**                   | Dynamic                         | Fixed                           | Dynamic                          | Dynamic                           |
 | **Data Types**             | Any (heterogeneous)             | Any (heterogeneous)              | Key: Immutable, Value: Any       | Any (heterogeneous, but unique)   |
 | **Supports Operations**    | Add/Remove/Update elements      | Cannot modify elements           | Add/Remove/Update key-value pairs| Set operations (union, intersection)|
-| **Methods**                | Many (`append()`, `pop()`, etc.)| Few (`count()`, `index()`)       | Many (`get()`, `keys()`, etc.)   | Basic (`add()`, `remove()`, etc.) |
+| **Methods**                | Many (`append()`, `pop()`, `sort()`, `remove()`, etc.) | Few (`count()`, `index()`) | Many (`get()`, `keys()`, `items()`, `pop()`, etc.) | Basic (`add()`, `remove()`, `discard()`, `union()`, `intersection()`, etc.) |
+| **Performance (Lookup)**   | **O(n)**                        | **O(n)**                         | **O(1)**                         | **O(1)**                          |
+| **Memory Usage**           | Higher (due to dynamic resizing) | Lower (due to immutability)      | Higher (due to key-value storage) | Lower (due to uniqueness)         |
+| **Iteration**              | ✅ Yes (in order)                | ✅ Yes (in order)                | ✅ Yes (in insertion order)      | ✅ Yes (unordered)                |
+| **Thread Safety**          | ❌ Not thread-safe               | ✅ Thread-safe                   | ❌ Not thread-safe               | ✅ Thread-safe                    |
+| **Hashable**               | ❌ No (elements can be mutable)  | ✅ Yes (tuples can be hashable)  | Keys: ✅ Yes, Values: ❌ No       | ✅ Yes (if elements are hashable) |
+| **Use Case**               | Ordered collections, dynamic data | Fixed records, immutable data    | Key-value mapping, dictionaries  | Unique collections, set operations|
+| **Speed for Adding**       | ✅ Fast (append operation)       | ❌ Not applicable (immutable)    | ✅ Fast (adding key-value pairs) | ✅ Fast (adding elements)         |
+| **Speed for Removing**     | ✅ Fast (`pop()`, `remove()`)    | ❌ Not applicable (immutable)    | ✅ Fast (removing key-value pairs)| ✅ Fast (removing elements)       |
 
----
 
-This comparison should help you understand the differences and characteristics of each data structure in Python. Let me know if you need further clarification! 😊
+****
+****
+
+
+
+
+
+
