@@ -22,6 +22,8 @@
 | `TRUNCATE`   | Delete all rows from a table.                 | `TRUNCATE TABLE employees;`                    |
 | `EXPLAIN`    | Show how a query will be executed.            | `EXPLAIN SELECT * FROM employees;`             |
 
+****
+
 
 
 
