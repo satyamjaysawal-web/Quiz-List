@@ -1,25 +1,58 @@
 
 
 
-### **Simplified Summary**
+### **Expanded SQL Clauses, Commands, and Examples**
 
-| **Clause**   | **Purpose**                                   | **Example**                                      |
-|--------------|-----------------------------------------------|-------------------------------------------------|
-| `WHERE`      | Filter rows before grouping or aggregation.   | `WHERE age > 30;`                               |
-| `HAVING`     | Filter rows after grouping or aggregation.    | `HAVING total_salary > 100000;`                |
-| `GROUP BY`   | Group rows with the same values.              | `GROUP BY department;`                         |
-| `ORDER BY`   | Sort rows in ascending or descending order.   | `ORDER BY salary DESC;`                        |
-| `LIMIT`      | Restrict the number of rows returned.         | `LIMIT 5;`                                     |
-| `JOIN`       | Combine rows from multiple tables.            | `JOIN departments ON employees.department_id;` |
-| `SELECT`     | Retrieve data from a table.                   | `SELECT name, salary;`                         |
-| `INSERT`     | Add new rows to a table.                      | `INSERT INTO employees (name, salary);`        |
-| `UPDATE`     | Modify existing rows in a table.              | `UPDATE employees SET salary = 70000;`         |
-| `DELETE`     | Remove rows from a table.                     | `DELETE FROM employees WHERE age > 60;`        |
-| `CREATE`     | Create a new database object.                 | `CREATE TABLE employees;`                      |
-| `ALTER`      | Modify the structure of a table.              | `ALTER TABLE employees ADD age INT;`           |
-| `DROP`       | Delete a table or object.                     | `DROP TABLE employees;`                        |
-| `TRUNCATE`   | Delete all rows from a table.                 | `TRUNCATE TABLE employees;`                    |
-| `EXPLAIN`    | Show how a query will be executed.            | `EXPLAIN SELECT * FROM employees;`             |
+
+
+---
+
+| **Clause/Command** | **Purpose**                                           | **Example**                                                    |
+|---------------------|-------------------------------------------------------|----------------------------------------------------------------|
+| **`WHERE`**         | Filter rows before grouping or aggregation.           | `WHERE age > 30;`                                             |
+| **`HAVING`**        | Filter rows after grouping or aggregation.            | `HAVING total_salary > 100000;`                               |
+| **`GROUP BY`**      | Group rows with the same values.                      | `GROUP BY department;`                                        |
+| **`ORDER BY`**      | Sort rows in ascending or descending order.           | `ORDER BY salary DESC;`                                       |
+| **`LIMIT`**         | Restrict the number of rows returned.                 | `LIMIT 5;`                                                   |
+| **`OFFSET`**        | Skip a specific number of rows before returning results. | `LIMIT 5 OFFSET 10;` (Rows 11–15)                            |
+| **`JOIN`**          | Combine rows from multiple tables.                    | `JOIN departments ON employees.department_id = departments.id;` |
+| **`INNER JOIN`**    | Combine rows with matching values in both tables.     | `SELECT * FROM employees INNER JOIN departments ON employees.department_id = departments.id;` |
+| **`LEFT JOIN`**     | Combine rows and keep unmatched rows from the left table. | `LEFT JOIN departments ON employees.department_id = departments.id;` |
+| **`RIGHT JOIN`**    | Combine rows and keep unmatched rows from the right table. | `RIGHT JOIN departments ON employees.department_id = departments.id;` |
+| **`FULL OUTER JOIN`** | Combine rows, keeping unmatched rows from both tables. | `FULL OUTER JOIN departments ON employees.department_id = departments.id;` |
+| **`CROSS JOIN`**    | Combine all rows from two tables (Cartesian Product). | `CROSS JOIN departments;`                                     |
+| **`SELF JOIN`**     | Join a table with itself.                             | `SELECT e1.name, e2.name FROM employees e1, employees e2 WHERE e1.manager_id = e2.id;` |
+| **`UNION`**         | Combine results of two queries (no duplicates).       | `SELECT name FROM employees UNION SELECT name FROM managers;` |
+| **`UNION ALL`**     | Combine results of two queries (allows duplicates).   | `SELECT name FROM employees UNION ALL SELECT name FROM managers;` |
+| **`SELECT`**        | Retrieve data from a table.                           | `SELECT name, salary FROM employees;`                         |
+| **`INSERT`**        | Add new rows to a table.                              | `INSERT INTO employees (name, salary) VALUES ('Alice', 60000);` |
+| **`UPDATE`**        | Modify existing rows in a table.                      | `UPDATE employees SET salary = 70000 WHERE id = 1;`           |
+| **`DELETE`**        | Remove rows from a table.                             | `DELETE FROM employees WHERE age > 60;`                       |
+| **`CREATE`**        | Create a new database object.                         | `CREATE TABLE employees (id INT, name VARCHAR(100));`         |
+| **`ALTER`**         | Modify the structure of a table.                      | `ALTER TABLE employees ADD COLUMN age INT;`                   |
+| **`DROP`**          | Delete a table or database object.                    | `DROP TABLE employees;`                                       |
+| **`TRUNCATE`**      | Delete all rows from a table (structure remains).     | `TRUNCATE TABLE employees;`                                   |
+| **`EXPLAIN`**       | Show how a query will be executed.                    | `EXPLAIN SELECT * FROM employees WHERE age > 30;`             |
+| **`CASE`**          | Add conditional logic in queries.                    | `SELECT name, CASE WHEN salary > 70000 THEN 'High' ELSE 'Low' END AS salary_range FROM employees;` |
+| **`LIKE`**          | Perform pattern matching.                            | `SELECT * FROM employees WHERE name LIKE 'A%';`               |
+| **`IN`**            | Match any value in a list.                           | `SELECT * FROM employees WHERE department IN ('HR', 'IT');`   |
+| **`BETWEEN`**       | Filter values within a range.                        | `SELECT * FROM employees WHERE salary BETWEEN 50000 AND 80000;` |
+| **`DISTINCT`**      | Select unique values from a column.                  | `SELECT DISTINCT department FROM employees;`                 |
+| **`SUBQUERY`**      | Use a query within another query.                    | `SELECT name FROM employees WHERE salary > (SELECT AVG(salary) FROM employees);` |
+| **`VIEW`**          | Create a virtual table from a query.                 | `CREATE VIEW high_earners AS SELECT name, salary FROM employees WHERE salary > 80000;` |
+| **`INDEX`**         | Create an index to improve query performance.        | `CREATE INDEX idx_salary ON employees(salary);`              |
+| **`GRANT`**         | Provide access privileges to a user.                 | `GRANT SELECT ON employees TO user1;`                        |
+| **`REVOKE`**        | Remove access privileges from a user.                | `REVOKE SELECT ON employees FROM user1;`                     |
+| **`START TRANSACTION`** | Begin a transaction for multiple queries.           | `START TRANSACTION;`                                         |
+| **`COMMIT`**        | Save changes made during a transaction.              | `COMMIT;`                                                    |
+| **`ROLLBACK`**      | Undo changes made during a transaction.              | `ROLLBACK;`                                                  |
+| **`SAVEPOINT`**     | Set a point within a transaction for partial rollbacks. | `SAVEPOINT sp1;`                                            |
+| **`SET`**           | Set configuration variables for the session.         | `SET autocommit = 0;`                                        |
+| **`SHOW`**          | Display information about databases, tables, or configurations. | `SHOW DATABASES;`, `SHOW TABLES;`                            |
+| **`DESCRIBE`**      | Display the structure of a table.                    | `DESCRIBE employees;`                                        |
+| **`FULLTEXT`**      | Perform full-text searches on indexed columns.       | `SELECT * FROM products WHERE MATCH(description) AGAINST('laptop');` |
+
+---
 
 ****
 
