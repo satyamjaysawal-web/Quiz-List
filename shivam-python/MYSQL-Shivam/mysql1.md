@@ -706,6 +706,235 @@ SELECT * FROM employees WHERE department = 'HR';
 ****
 
 
+### 🔥 **Data Integrity and Constraints in SQL**
+
+**Data Integrity** refers to the accuracy, consistency, and reliability of data stored in a database. **Constraints** are rules enforced at the database level to maintain data integrity. Together, they ensure that the data remains valid and usable, preventing invalid, inconsistent, or corrupted data.
+
+---
+
+### 🔑 **Types of Data Integrity**
+
+1. **Entity Integrity**  
+   - Ensures that every table has a unique identifier (primary key).
+   - No two rows can have the same value for the primary key, and primary key values cannot be `NULL`.
+
+2. **Referential Integrity**  
+   - Ensures consistency between related tables through **foreign keys**.
+   - Prevents actions that would leave orphaned rows or break relationships.
+
+3. **Domain Integrity**  
+   - Ensures data stored in a column adheres to predefined rules, such as data type, format, and range.
+   - Enforced through constraints like `CHECK`, `NOT NULL`, and data types.
+
+4. **User-Defined Integrity**  
+   - Custom rules defined to meet specific business requirements.
+   - Implemented using triggers, stored procedures, or application logic.
+
+---
+
+### 🔍 **Types of Constraints**
+
+Constraints are used to define rules for the data in a table. They can be applied at the **column level** (for a single column) or the **table level** (for multiple columns).
+
+| **Constraint**      | **Description**                                                   |
+|---------------------|-------------------------------------------------------------------|
+| **NOT NULL**        | Ensures a column cannot contain `NULL` values.                   |
+| **UNIQUE**          | Ensures all values in a column are unique.                       |
+| **PRIMARY KEY**     | Combines `NOT NULL` and `UNIQUE` to uniquely identify rows.      |
+| **FOREIGN KEY**     | Establishes relationships between tables.                        |
+| **CHECK**           | Ensures values in a column satisfy a specific condition.         |
+| **DEFAULT**         | Assigns a default value if no value is provided for a column.    |
+
+---
+
+### 📋 **Detailed Explanation of Constraints**
+
+#### 1️⃣ **NOT NULL**
+- Prevents a column from having `NULL` values.
+- Used to ensure mandatory fields.
+
+**Syntax:**
+```sql
+CREATE TABLE employees (
+    id INT NOT NULL,
+    name VARCHAR(100) NOT NULL,
+    age INT
+);
+```
+
+**Example:**
+```sql
+INSERT INTO employees (id, name) VALUES (1, 'Alice'); -- Valid
+INSERT INTO employees (id) VALUES (2); -- ❌ Error: "name" cannot be NULL
+```
+
+---
+
+#### 2️⃣ **UNIQUE**
+- Ensures all values in a column (or combination of columns) are unique.
+
+**Syntax:**
+```sql
+CREATE TABLE employees (
+    email VARCHAR(100) UNIQUE
+);
+```
+
+**Example:**
+```sql
+INSERT INTO employees (email) VALUES ('alice@example.com'); -- Valid
+INSERT INTO employees (email) VALUES ('alice@example.com'); -- ❌ Error: Duplicate entry
+```
+
+---
+
+#### 3️⃣ **PRIMARY KEY**
+- Combines `NOT NULL` and `UNIQUE` to uniquely identify rows in a table.
+- A table can have only one primary key.
+
+**Syntax:**
+```sql
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+```
+
+**Example:**
+```sql
+INSERT INTO employees (id, name) VALUES (1, 'Alice'); -- Valid
+INSERT INTO employees (id, name) VALUES (1, 'Bob'); -- ❌ Error: Duplicate primary key
+```
+
+---
+
+#### 4️⃣ **FOREIGN KEY**
+- Links two tables by creating a relationship between a column in one table and the primary key in another table.
+- Ensures **referential integrity**.
+
+**Syntax:**
+```sql
+CREATE TABLE departments (
+    id INT PRIMARY KEY,
+    name VARCHAR(100)
+);
+
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    department_id INT,
+    FOREIGN KEY (department_id) REFERENCES departments (id)
+);
+```
+
+**Example:**
+```sql
+INSERT INTO departments (id, name) VALUES (1, 'HR'); -- Valid
+INSERT INTO employees (id, department_id) VALUES (1, 1); -- Valid
+INSERT INTO employees (id, department_id) VALUES (2, 99); -- ❌ Error: "department_id" 99 does not exist in "departments"
+```
+
+---
+
+#### 5️⃣ **CHECK**
+- Ensures values in a column meet a specific condition.
+
+**Syntax:**
+```sql
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    age INT CHECK (age >= 18 AND age <= 60)
+);
+```
+
+**Example:**
+```sql
+INSERT INTO employees (id, age) VALUES (1, 25); -- Valid
+INSERT INTO employees (id, age) VALUES (2, 17); -- ❌ Error: "age" must be between 18 and 60
+```
+
+---
+
+#### 6️⃣ **DEFAULT**
+- Assigns a default value to a column if no value is provided during insertion.
+
+**Syntax:**
+```sql
+CREATE TABLE employees (
+    id INT PRIMARY KEY,
+    name VARCHAR(100),
+    status VARCHAR(50) DEFAULT 'Active'
+);
+```
+
+**Example:**
+```sql
+INSERT INTO employees (id, name) VALUES (1, 'Alice'); -- "status" will be 'Active'
+```
+
+---
+
+### 📈 **Advantages of Constraints**
+
+1. **Data Accuracy**
+   - Prevents invalid or inconsistent data from being inserted into tables.
+
+2. **Simplifies Validation**
+   - Eliminates the need for repetitive validation logic in application code.
+
+3. **Ensures Relationships**
+   - Maintains referential integrity between related tables.
+
+4. **Improves Query Performance**
+   - Constraints like `PRIMARY KEY` and `UNIQUE` often create indexes, improving query speed.
+
+---
+
+### ⚠️ **Common Mistakes and Best Practices**
+
+1. **Overusing Constraints**
+   - Adding too many constraints can reduce flexibility in data manipulation. Use constraints judiciously.
+
+2. **Testing Foreign Key Relationships**
+   - Ensure referenced data exists in parent tables before inserting data in child tables.
+
+3. **Avoiding Low-Cardinality Indexing**
+   - Avoid creating unique constraints or indexes on columns with few distinct values, like `gender`.
+
+4. **Use Default Values**
+   - Always define default values for optional fields to prevent `NULL` unless explicitly required.
+
+---
+
+### 🛠 **Examples: Adding, Dropping, and Altering Constraints**
+
+#### Add a Constraint to an Existing Table
+```sql
+ALTER TABLE employees ADD CONSTRAINT chk_salary CHECK (salary > 0);
+```
+
+#### Drop a Constraint
+```sql
+ALTER TABLE employees DROP CONSTRAINT chk_salary; -- For systems that support named constraints
+```
+
+#### Modify a Column with a Constraint
+```sql
+ALTER TABLE employees MODIFY COLUMN age INT NOT NULL;
+```
+
+---
+
+### 🔥 **Summary of Data Integrity and Constraints**
+
+| **Constraint**       | **Purpose**                                                        |
+|-----------------------|--------------------------------------------------------------------|
+| **NOT NULL**          | Prevents `NULL` values in a column.                               |
+| **UNIQUE**            | Ensures all values in a column are unique.                        |
+| **PRIMARY KEY**       | Uniquely identifies rows and ensures `NOT NULL`.                  |
+| **FOREIGN KEY**       | Maintains referential integrity between tables.                   |
+| **CHECK**             | Validates values against a condition.                             |
+| **DEFAULT**           | Assigns default values when no value is provided.                |
+
 
 
 
