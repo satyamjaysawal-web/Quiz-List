@@ -939,27 +939,33 @@ print(d1 == d2)  # True (same key-value pairs)
 ****
 
 
-Sure! Here’s an extended comparison table of **List**, **Tuple**, **Dictionary**, and **Set** with additional properties for a more comprehensive understanding:
+Here’s an expanded comparison table that includes the **List**, **Tuple**, **Dictionary**, **Set**, and **other collections like String, Frozenset, and Range** in Python:
 
-| **Property**               | **List**                         | **Tuple**                        | **Dictionary**                   | **Set**                           |
-|---------------------------|----------------------------------|----------------------------------|----------------------------------|-----------------------------------|
-| **Mutable**                | ✅ Yes                           | ❌ No (Immutable)                | ✅ Yes (for values)              | ✅ Yes                            |
-| **Ordered**                | ✅ Yes                           | ✅ Yes                           | ✅ Yes (from Python 3.7+)        | ❌ No (unordered)                 |
-| **Duplicates Allowed**     | ✅ Yes                           | ✅ Yes                           | ❌ No (keys must be unique)      | ❌ No (unique elements only)      |
-| **Indexing**               | ✅ Yes                           | ✅ Yes                           | ❌ No (keys)                     | ❌ No                             |
-| **Slicing**                | ✅ Yes                           | ✅ Yes                           | ❌ No                            | ❌ No                             |
-| **Size**                   | Dynamic                         | Fixed                           | Dynamic                          | Dynamic                           |
-| **Data Types**             | Any (heterogeneous)             | Any (heterogeneous)              | Key: Immutable, Value: Any       | Any (heterogeneous, but unique)   |
-| **Supports Operations**    | Add/Remove/Update elements      | Cannot modify elements           | Add/Remove/Update key-value pairs| Set operations (union, intersection)|
-| **Methods**                | Many (`append()`, `pop()`, `sort()`, `remove()`, etc.) | Few (`count()`, `index()`) | Many (`get()`, `keys()`, `items()`, `pop()`, etc.) | Basic (`add()`, `remove()`, `discard()`, `union()`, `intersection()`, etc.) |
-| **Performance (Lookup)**   | **O(n)**                        | **O(n)**                         | **O(1)**                         | **O(1)**                          |
-| **Memory Usage**           | Higher (due to dynamic resizing) | Lower (due to immutability)      | Higher (due to key-value storage) | Lower (due to uniqueness)         |
-| **Iteration**              | ✅ Yes (in order)                | ✅ Yes (in order)                | ✅ Yes (in insertion order)      | ✅ Yes (unordered)                |
-| **Thread Safety**          | ❌ Not thread-safe               | ✅ Thread-safe                   | ❌ Not thread-safe               | ✅ Thread-safe                    |
-| **Hashable**               | ❌ No (elements can be mutable)  | ✅ Yes (tuples can be hashable)  | Keys: ✅ Yes, Values: ❌ No       | ✅ Yes (if elements are hashable) |
-| **Use Case**               | Ordered collections, dynamic data | Fixed records, immutable data    | Key-value mapping, dictionaries  | Unique collections, set operations|
-| **Speed for Adding**       | ✅ Fast (append operation)       | ❌ Not applicable (immutable)    | ✅ Fast (adding key-value pairs) | ✅ Fast (adding elements)         |
-| **Speed for Removing**     | ✅ Fast (`pop()`, `remove()`)    | ❌ Not applicable (immutable)    | ✅ Fast (removing key-value pairs)| ✅ Fast (removing elements)       |
+| **Property**               | **List**                         | **Tuple**                        | **Dictionary**                   | **Set**                           | **String**                       | **Frozenset**                   | **Range**                        |
+|---------------------------|----------------------------------|----------------------------------|----------------------------------|-----------------------------------|----------------------------------|----------------------------------|----------------------------------|
+| **Mutable**                | ✅ Yes                           | ❌ No (Immutable)                | ✅ Yes (for values)              | ✅ Yes                            | ❌ No                            | ❌ No                            | ❌ No                            |
+| **Ordered**                | ✅ Yes                           | ✅ Yes                           | ✅ Yes (from Python 3.7+)        | ❌ No (unordered)                 | ✅ Yes                           | ❌ No (unordered)                | ✅ Yes                           |
+| **Duplicates Allowed**     | ✅ Yes                           | ✅ Yes                           | ❌ No (keys must be unique)      | ❌ No (unique elements only)      | ✅ Yes                           | ❌ No                            | ✅ Yes                           |
+| **Indexing**               | ✅ Yes                           | ✅ Yes                           | ❌ No (keys only)                | ❌ No                             | ✅ Yes                           | ❌ No                            | ✅ Yes                           |
+| **Slicing**                | ✅ Yes                           | ✅ Yes                           | ❌ No                            | ❌ No                             | ✅ Yes                           | ❌ No                            | ✅ Yes                           |
+| **Size**                   | Dynamic                         | Fixed                           | Dynamic                          | Dynamic                           | Fixed                           | Fixed                           | Fixed                           |
+| **Data Types**             | Any (heterogeneous)             | Any (heterogeneous)              | Key: Immutable, Value: Any       | Any (heterogeneous, but unique)   | Characters (homogeneous)         | Any (hashable, unique)          | Integers (homogeneous)          |
+| **Supports Operations**    | Add/Remove/Update elements      | Cannot modify elements           | Add/Remove/Update key-value pairs| Set operations (union, intersection)| String operations (concatenation, slicing)| Set operations                | Arithmetic with ranges           |
+| **Methods**                | Many (`append()`, `pop()`, `sort()`, etc.) | Few (`count()`, `index()`) | Many (`get()`, `keys()`, `items()`, etc.) | Basic (`add()`, `remove()`, `discard()`, etc.) | Many (`upper()`, `replace()`, etc.) | Few (`union()`, `intersection()`) | Few (`start`, `stop`, `step`) |
+| **Performance (Lookup)**   | **O(n)**                        | **O(n)**                         | **O(1)**                         | **O(1)**                          | **O(n)**                         | **O(1)**                         | **O(1)**                        |
+| **Memory Usage**           | Higher (due to dynamic resizing) | Lower (due to immutability)      | Higher (due to key-value storage) | Lower (due to uniqueness)         | Lower (compact representation)  | Lower (immutable, unique elements)| Very Low (compact representation) |
+| **Iteration**              | ✅ Yes (in order)                | ✅ Yes (in order)                | ✅ Yes (in insertion order)      | ✅ Yes (unordered)                | ✅ Yes                           | ✅ Yes (unordered)               | ✅ Yes (in range order)          |
+| **Thread Safety**          | ❌ Not thread-safe               | ✅ Thread-safe                   | ❌ Not thread-safe               | ✅ Thread-safe                    | ✅ Thread-safe                   | ✅ Thread-safe                   | ✅ Thread-safe                   |
+| **Hashable**               | ❌ No (elements can be mutable)  | ✅ Yes (tuples can be hashable)  | Keys: ✅ Yes, Values: ❌ No       | ✅ Yes (if elements are hashable) | ✅ Yes                           | ✅ Yes                           | ✅ Yes                           |
+| **Use Case**               | Ordered collections, dynamic data | Fixed records, immutable data    | Key-value mapping, dictionaries  | Unique collections, set operations| Text handling                   | Immutable sets, caching         | Efficient iteration over ranges |
+| **Speed for Adding**       | ✅ Fast (append operation)       | ❌ Not applicable (immutable)    | ✅ Fast (adding key-value pairs) | ✅ Fast (adding elements)         | ❌ Not applicable                | ❌ Not applicable                | ❌ Not applicable                |
+| **Speed for Removing**     | ✅ Fast (`pop()`, `remove()`)    | ❌ Not applicable (immutable)    | ✅ Fast (removing key-value pairs)| ✅ Fast (removing elements)       | ❌ Not applicable                | ❌ Not applicable                | ❌ Not applicable                |
+| **Immutability**           | ❌ Mutable                      | ✅ Immutable                     | ✅ Keys immutable                | ❌ Mutable                        | ✅ Immutable                     | ✅ Immutable                     | ✅ Immutable                     |
+| **Supports Nesting**       | ✅ Yes                          | ✅ Yes                           | ✅ Yes                           | ✅ Yes                            | ❌ No                            | ❌ No                            | ❌ No                            |
+| **Supports Comparisons**   | ✅ Yes                          | ✅ Yes                           | ✅ Yes (key-value pairs)         | ✅ Yes                            | ✅ Yes                           | ✅ Yes                           | ✅ Yes                           |
+
+---
+
 
 
 ****
