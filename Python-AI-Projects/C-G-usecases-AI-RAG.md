@@ -5,7 +5,7 @@
 ****
 ****
 
-Here is the table with row numbers included for easy reference:
+A table with row numbers included for easy reference:
 
 | **#** | **Use Case Name**                 | **Description**                               |
 |-------|-----------------------------------|-----------------------------------------------|
