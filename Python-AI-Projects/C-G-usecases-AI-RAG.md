@@ -1,6 +1,53 @@
 
 
 
+****
+****
+****
+
+Here is the table with row numbers included for easy reference:
+
+| **#** | **Use Case Name**                 | **Description**                               |
+|-------|-----------------------------------|-----------------------------------------------|
+| 1     | **Text Generation**               | Generate text content based on inputs.       |
+| 2     | **Ask To PDF**                    | Extract insights or Q&A from PDF documents.  |
+| 3     | **Synthetic Data Generation**     | Create synthetic data for analysis.          |
+| 4     | **Document Translation**          | Translate documents into different languages.|
+| 5     | **URL Summary**                   | Summarize content from URLs.                 |
+| 6     | **Ask To Files**                  | Extract Q&A or insights from files.          |
+| 7     | **Ask To PPT**                    | Generate PowerPoint presentations from inputs.|
+| 8     | **QnA with Summ**                 | Provide Q&A combined with summaries.         |
+| 9     | **Attribute Extraction**          | Extract key attributes from text or documents.|
+| 10    | **Tabular Data**                  | Process and manage tabular datasets.         |
+| 11    | **SQL DB**                        | Query and interact with SQL databases.       |
+| 12    | **GitHub Copilot**                | Assist with code generation and suggestions. |
+| 13    | **Transcript Summarizer**         | Summarize transcripts of audio or meetings.  |
+| 14    | **Know Your Data**                | Analyze and summarize data insights.         |
+| 15    | **Document Comparison**           | Compare and analyze documents.               |
+| 16    | **Multiple RAG**                  | Perform retrieval-augmented generation tasks.|
+| 17    | **Resume Shortlister**            | Shortlist resumes based on criteria.         |
+| 18    | **Resume Validation**             | Validate resumes for completeness or accuracy.|
+| 19    | **Cognitive Document Processing** | Process and analyze documents intelligently. |
+| 20    | **Classify Bills**                | Categorize bills into various categories.    |
+| 21    | **Requirement Creation**          | Generate requirements for projects.          |
+| 22    | **Code Generation**               | Automatically generate code.                 |
+| 23    | **Testcase Generation**           | Create test cases for software testing.      |
+| 24    | **Code Documentation**            | Generate documentation for codebases.        |
+| 25    | **Code Transformation**           | Transform and refactor code.                 |
+| 26    | **Automation Test Script Generation** | Generate test scripts for automation.    |
+| 27    | **Video Summary**                 | Summarize video content.                     |
+| 28    | **Text To Image**                 | Generate images from text descriptions.      |
+| 29    | **Image Modifier**                | Modify or enhance images.                    |
+| 30    | **Image To Content Creation**     | Create content based on image analysis.      |
+| 31    | **Text to 3D Model**              | Convert text descriptions into 3D models.    |
+| 32    | **Image to HTML**                 | Generate HTML from images.                   |
+| 33    | **Multimodal Search**             | Search using multiple modalities (text, image).|
+| 34    | **Perform Similarity**            | Assess similarity between datasets or inputs.|
+| 35    | **Image Storyboarding**           | Create storyboards from image inputs.        |
+| 36    | **Legal Summary**                 | Summarize legal briefs and documents.        |
+| 37    | **Generate Legal Documents**      | Create various legal document templates.     |
+
+
 
 ---
 
