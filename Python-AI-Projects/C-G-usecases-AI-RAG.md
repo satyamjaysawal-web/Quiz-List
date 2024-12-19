@@ -47,7 +47,66 @@ Here is the table with row numbers included for easy reference:
 | 36    | **Legal Summary**                 | Summarize legal briefs and documents.        |
 | 37    | **Generate Legal Documents**      | Create various legal document templates.     |
 
+****
+****
+Here’s the table format for the **current market-use cases**:
 
+| **#** | **Category**          | **Use Case Name**                     | **Description**                                               |
+|-------|-----------------------|---------------------------------------|---------------------------------------------------------------|
+| 1     | **AI & ML**           | AI-Powered Personalization           | Create hyper-personalized user experiences.                  |
+| 2     | **AI & ML**           | Predictive Maintenance               | Predict equipment failures using data.                       |
+| 3     | **AI & ML**           | Fraud Detection                      | Detect fraudulent activities in real-time.                   |
+| 4     | **AI & ML**           | AutoML Platforms                     | Simplify machine learning for non-experts.                   |
+| 5     | **AI & ML**           | AI for ESG Compliance                | Monitor ESG compliance for businesses.                       |
+| 6     | **Generative AI**     | Generative Branding                  | Automatically create branding materials.                     |
+| 7     | **Generative AI**     | Music Composition AI                | Generate original music tracks for media.                    |
+| 8     | **Generative AI**     | AI-Powered Storyboarding             | Create storyboards for ad or film production.                |
+| 9     | **Generative AI**     | AI-Driven Social Media Posts         | Generate and schedule social media content.                  |
+| 10    | **Healthcare**        | AI Drug Discovery                    | Accelerate drug discovery using AI.                          |
+| 11    | **Healthcare**        | Remote Patient Monitoring            | Monitor patient health data in real-time.                    |
+| 12    | **Healthcare**        | Digital Twin for Patients            | Simulate health data for personalized treatment.             |
+| 13    | **Healthcare**        | Genomic Data Analysis                | Provide insights from genetic data for healthcare.           |
+| 14    | **Finance**           | Real-Time Credit Scoring             | Assess creditworthiness using real-time data.                |
+| 15    | **Finance**           | Robo-Advisors                        | Provide automated financial planning.                        |
+| 16    | **Finance**           | Smart Contracts                      | Automate contract execution with blockchain.                 |
+| 17    | **Finance**           | Expense Categorization               | Automatically categorize business expenses.                  |
+| 18    | **Retail & E-commerce** | Dynamic Pricing Models              | Adjust prices based on market trends.                        |
+| 19    | **Retail & E-commerce** | Visual Search                       | Allow users to search products using images.                 |
+| 20    | **Retail & E-commerce** | Virtual Try-On Solutions            | Enable online product try-ons with AR.                       |
+| 21    | **Retail & E-commerce** | AI Inventory Optimization           | Manage stock levels to reduce waste.                         |
+| 22    | **Education**         | AI Tutor Chatbots                    | Provide 24/7 educational assistance.                         |
+| 23    | **Education**         | Skill Gap Analysis                   | Identify knowledge gaps and recommend learning materials.    |
+| 24    | **Education**         | Gamified Learning Platforms          | Create interactive, game-based learning experiences.         |
+| 25    | **Education**         | Virtual Lab Simulations              | Perform virtual experiments in science and engineering.      |
+| 26    | **HR & Recruitment**  | AI-Powered Talent Matching           | Match candidates to job roles using AI.                      |
+| 27    | **HR & Recruitment**  | Employee Sentiment Analysis          | Analyze employee feedback for better retention.              |
+| 28    | **HR & Recruitment**  | Onboarding Automation                | Streamline onboarding workflows.                             |
+| 29    | **Customer Service**  | Voice Assistants for Businesses      | Provide customer support through voice AI.                   |
+| 30    | **Customer Service**  | Real-Time Chat Moderation            | Moderate live comments or discussions.                       |
+| 31    | **Customer Service**  | Proactive Customer Retention         | Predict churn risk and take preventive actions.              |
+| 32    | **Marketing**         | Hyper-Targeted Ads                   | Create ads tailored to specific preferences.                 |
+| 33    | **Marketing**         | Content Recommendation Engines       | Suggest personalized content to users.                       |
+| 34    | **Marketing**         | Real-Time Campaign Optimization      | Adjust marketing campaigns dynamically.                      |
+| 35    | **Gaming & Entertainment** | AI NPC Behavior Generation       | Make non-player characters smarter and more lifelike.        |
+| 36    | **Gaming & Entertainment** | Procedural Content Generation   | Automatically create game levels and maps.                   |
+| 37    | **Gaming & Entertainment** | Live Streaming Enhancement      | Provide real-time overlays and analytics for streaming.      |
+| 38    | **Energy**            | Renewable Energy Optimization        | Predict and optimize renewable energy usage.                 |
+| 39    | **Energy**            | Carbon Footprint Tracking            | Monitor and reduce carbon emissions.                         |
+| 40    | **Energy**            | Smart Grid Management                | Balance electricity supply and demand.                       |
+| 41    | **Supply Chain**      | AI Route Optimization                | Plan efficient delivery routes.                              |
+| 42    | **Supply Chain**      | Demand Forecasting                   | Predict demand to improve logistics.                         |
+| 43    | **Supply Chain**      | Supplier Risk Analysis               | Evaluate risks from suppliers.                               |
+| 44    | **LegalTech**         | Litigation Prediction                | Predict case outcomes using AI.                              |
+| 45    | **LegalTech**         | AI-Powered Compliance Tools          | Ensure compliance with global regulations.                   |
+| 46    | **LegalTech**         | Contract Lifecycle Management        | Automate creation and tracking of contracts.                 |
+| 47    | **Real Estate**       | Property Value Estimation            | Predict property prices based on market data.                |
+| 48    | **Real Estate**       | Virtual Property Tours               | Explore properties virtually.                                |
+| 49    | **Real Estate**       | Tenant Screening Automation          | Automate checks for potential tenants.                       |
+
+---
+
+
+****
 
 ---
 
