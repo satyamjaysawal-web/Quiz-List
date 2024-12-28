@@ -249,6 +249,8 @@ Sure! Here's a **100-question coding challenge list** tailored for **LangChain**
 ****
 ****
 ****
+
+## Gemini Generative AI
 ****
 Yeh ek **100-question list** hai jo **Gemini Generative AI** ke upar focus karti hai. Isme basic concepts se lekar advanced integrations aur real-world applications tak ke sawaal shamil hain. Har ek category ko systematically dikhaya gaya hai.
 
