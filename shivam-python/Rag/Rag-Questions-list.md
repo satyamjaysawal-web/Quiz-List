@@ -250,6 +250,136 @@ Sure! Here's a **100-question coding challenge list** tailored for **LangChain**
 ****
 ****
 ****
+Yeh ek **100-question list** hai jo **Gemini Generative AI** ke upar focus karti hai. Isme basic concepts se lekar advanced integrations aur real-world applications tak ke sawaal shamil hain. Har ek category ko systematically dikhaya gaya hai.
+
+---
+
+### **1–20: Core Concepts aur Model Samajhna**
+1. Gemini AI kya hai aur yeh GPT-4 ya Claude jaise models se kaise alag hai?  
+2. Gemini AI ke multimodal capabilities kya hain? Example ke saath samjhao.  
+3. Gemini ka text-to-image aur image-to-text conversion kaise kaam karta hai?  
+4. Gemini ke generative AI architecture ke main components kya hain?  
+5. Mixture of Experts (MoE) kya hota hai aur Gemini AI mein iska role kya hai?  
+6. Ek Python script likho jo Gemini AI ka use kare text generation ke liye.  
+7. Gemini ke multimodal functionality ka ek example dikhane wala code likho.  
+8. Gemini AI ke training process aur datasets ke baare mein samjhao.  
+9. Gemini external knowledge ko apne response mein kaise include karta hai?  
+10. Google infrastructure ke saath Gemini AI ke integration ke advantages kya hain?  
+11. Gemini AI ko ek specific domain (jaise healthcare) ke liye fine-tune karne ka code likho.  
+12. Gemini ke outputs ke safety aur compliance ensure karne ke steps kya hain?  
+13. RLHF (Reinforcement Learning from Human Feedback) kya hai aur Gemini mein kaise use hota hai?  
+14. Gemini AI ke multimodal capabilities ko DALL-E aur Stable Diffusion ke saath compare karo.  
+15. Ek script likho jo Gemini AI ka use karke text document ka summary banaye.  
+16. Gemini jaise large-scale models ko scale karne ke challenges kya hain?  
+17. Gemini ka use karke images ke liye detailed captions generate karne ka code likho.  
+18. Google Vertex AI ke saath Gemini AI ka integration kaise hota hai?  
+19. Gemini AI ke latent spaces ka role text aur image generation mein kya hota hai?  
+20. Ek Python script likho jo Gemini AI se multimodal results query kare.  
+
+---
+
+### **21–40: Text Generation aur NLP**
+21. Gemini AI ka use karke creative writing (jaise poems, stories) generate karne ka code likho.  
+22. Text-to-speech pipeline banane ka code likho jo Gemini-generated text ka use kare.  
+23. Gemini AI ambiguous prompts ko kaise handle karta hai?  
+24. Ek chatbot banayein jo Gemini AI ka use kare open-domain questions ke liye.  
+25. Gemini AI ke text summarization capabilities ka example dikhane wala code likho.  
+26. Ek function likho jo Gemini AI ka use karke coherent dialogues generate kare.  
+27. Gemini multi-turn conversations mein contextual memory kaise handle karta hai?  
+28. Sentiment analysis ke liye Gemini AI ka use karne ka Python function likho.  
+29. Personalized email drafts generate karne ke liye Gemini AI ka code likho.  
+30. Ek script likho jo Gemini ka use kare text ko multiple languages mein translate karne ke liye.  
+31. Customer feedback ko classify karne ke liye Gemini AI ka code likho.  
+32. User-provided context ke saath text generation mein Gemini AI ka role kya hai?  
+33. SEO-optimized blog posts generate karne ke liye Gemini AI ka pipeline banayein.  
+34. Metadata filtering ke saath text generation ka code likho.  
+35. Paraphrase generate karne ke liye Gemini AI ka use kaise karein?  
+36. Gemini AI fluency aur grammatical accuracy kaise ensure karta hai?  
+37. Ek LinkedIn post banane ka code likho Gemini AI ka use karke.  
+38. Gemini AI ka use karke video transcript summarize karne ka example dikhayein.  
+39. Real-time news article generator banane ka code likho Gemini ke saath.  
+40. Personalized journaling assistant banane ka code likho Gemini AI ka use karke.  
+
+---
+
+### **41–60: Multimodal Features**
+41. Text se images generate karne ke liye Gemini AI ka use kaise karein?  
+42. Images ke text descriptions retrieve karne ke liye Gemini AI ka code likho.  
+43. Video summarization aur analysis ke liye Gemini AI ka use samjhao.  
+44. Multimodal Q&A system banayein jo text aur image queries ka jawab de sake.  
+45. Image captions enhance karne ke liye Gemini AI ka use karke function likho.  
+46. Gemini AI audio aur visual data ko combine karke tasks kaise karta hai?  
+47. Product photos ke basis par descriptions generate karne ka pipeline banayein.  
+48. Memes banane ke liye Gemini AI ka use karne ka script likho.  
+49. Multimodal embeddings ka Gemini AI mein role samjhao.  
+50. Visual storytelling banane ke liye Gemini AI ka use kaise karein?  
+51. Educational content generate karne ke liye text aur images ka pipeline likho.  
+52. Cross-modal consistency ensure karne ke methods kya hain Gemini AI mein?  
+53. Image analysis karke social media hashtags generate karne ka code likho.  
+54. OCR results ko correct karne ke liye Gemini AI ka use kaise karein?  
+55. Video subtitles enhance karne ke liye Gemini AI ka code likho.  
+56. Multi-turn image-based dialogues ka example dikhayein Gemini AI ke saath.  
+57. Uploaded images ko categorize karne ke liye Gemini AI ka use kaise karein?  
+58. Food images aur text prompts ke basis par recipes generate karne ka code likho.  
+59. Dynamic advertisements generate karne ke liye Gemini AI ka use karein.  
+60. Interactive e-learning materials banane ke liye Gemini AI ka use karke script likho.  
+
+---
+
+### **61–80: Optimization aur Evaluation**
+61. Gemini AI ko real-time applications ke liye optimize karne ke steps likho.  
+62. Quality aur latency ka balance kaise achieve hota hai Gemini AI mein?  
+63. BLEU aur ROUGE scores ka use karke Gemini ke outputs ko evaluate karo.  
+64. Inference time profile karne ke liye script likho.  
+65. Hallucinations reduce karne ke techniques kya hain?  
+66. Mobile aur edge devices ke liye Gemini AI ko optimize karne ke methods kya hain?  
+67. Generated content ki diversity analyze karne ka code likho.  
+68. Multimodal fusion Gemini AI ke outputs ko kaise improve karta hai?  
+69. User reviews ke basis par Gemini AI ke outputs refine karne ka feedback loop banayein.  
+70. API caching ka use karke Gemini AI ka performance optimize karein.  
+71. Low-resource languages ke tasks ke liye Gemini AI ka role samjhao.  
+72. Gemini AI aur doosre generative models ke beech accuracy comparison ka code likho.  
+73. Active learning ka use karke retrieval aur generation pipeline ko refine karein.  
+74. Ethical compliance ensure karne ke liye Gemini ke monitoring tools kaise kaam karte hain?  
+75. Bias detect karne aur handle karne ke liye Gemini AI ka use karein.  
+76. Gemini AI ke decision-making steps visualize karne ka method likho.  
+77. Real-time logging system banane ke liye Gemini AI ka use karein.  
+78. Multimodal query recall track aur improve karne ka system banayein.  
+79. Generated content ki relevance measure karne ka process samjhao.  
+80. Diversity aur length constraints enforce karne ka script likho.  
+
+---
+
+### **81–100: Real-World Applications**
+81. Educational tutor banayein jo Gemini AI ka use kare science aur math sikhane ke liye.  
+82. Movie recommendation system banayein jo detailed descriptions provide karein.  
+83. Personalized workout aur diet plans generate karne ke liye Gemini AI ka use karein.  
+84. Product reviews generate karne ke liye Gemini AI ka use karke script likho.  
+85. E-commerce ke liye automated content creation ka system banayein.  
+86. Travel itinerary suggest karne ke liye Gemini AI ka chatbot banayein.  
+87. Medical image aur text inputs ke basis par clinical notes generate karein.  
+88. Digital marketing assistant banayein jo ads generate kare Gemini AI ke saath.  
+89. Virtual interior designer banane ka code likho text aur images ka use karke.  
+90. Academic papers ko summarize karne ke liye Gemini AI ka use karein.  
+91. Realistic movie scripts generate karne ke liye Gemini AI ka use kaise karein?  
+92. Personalized financial assistant banayein Gemini AI ke saath.  
+93. Customer support bot banayein jo multimodal queries handle kare.  
+94. Legal document summaries generate karne ke liye Gemini AI ka use karein.  
+95. Business intelligence reports generate karne ke liye Gemini AI ka system banayein.  
+96. Long audio files ko summarize karne ke liye Gemini AI ka use kaise karein?  
+97. Adaptive online learning content generate karne ke liye Gemini AI ka use karein.  
+98. Children ke liye storytelling app banayein Gemini AI ke saath.  
+99. Multi-lingual document workflows manage karne ke liye Gemini AI ka use karein.  
+100. Daily task management ke liye personalized AI assistant banayein.  
+
+---
+
+---
+****
+****
+****
+****
+****
 
 
 
@@ -257,8 +387,21 @@ Sure! Here's a **100-question coding challenge list** tailored for **LangChain**
 
 
 
+---
+****
+****
+****
+****
+****
 
 
 
+
+---
+****
+****
+****
+****
+****
 
 
