@@ -278,11 +278,178 @@ These questions cover a wide range of topics, including basics, query optimizati
 ****
 ****
 
+Here’s a table of MongoDB-related terms, including commands, keywords, data types, operators, and concepts for a comprehensive overview:
+
+---
+
+### **MongoDB Commands and Shell Keywords**
+
+| **Command/Keyword**            | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `db`                           | Refers to the current database.                                                |
+| `use <database>`               | Switches to or creates a new database.                                         |
+| `show dbs`                     | Lists all databases.                                                           |
+| `show collections`             | Lists all collections in the current database.                                 |
+| `db.createCollection()`        | Creates a new collection.                                                      |
+| `db.<collection>.insertOne()`  | Inserts a single document into a collection.                                   |
+| `db.<collection>.insertMany()` | Inserts multiple documents into a collection.                                  |
+| `db.<collection>.find()`       | Retrieves documents from a collection.                                         |
+| `db.<collection>.updateOne()`  | Updates a single document in a collection.                                     |
+| `db.<collection>.updateMany()` | Updates multiple documents in a collection.                                    |
+| `db.<collection>.deleteOne()`  | Deletes a single document from a collection.                                   |
+| `db.<collection>.deleteMany()` | Deletes multiple documents from a collection.                                  |
+| `db.dropDatabase()`            | Drops the current database.                                                    |
+| `db.<collection>.drop()`       | Drops a collection from the database.                                          |
+| `db.<collection>.createIndex()`| Creates an index on a collection.                                              |
+| `db.<collection>.getIndexes()` | Lists indexes on a collection.                                                 |
+
+---
+
+### **MongoDB Data Types**
+
+| **Data Type**                  | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `ObjectId`                     | A unique identifier for documents.                                             |
+| `String`                       | Text values.                                                                   |
+| `NumberInt`                    | 32-bit integer.                                                                |
+| `NumberLong`                   | 64-bit integer.                                                                |
+| `Double`                       | Floating-point number.                                                         |
+| `Boolean`                      | True or false values.                                                          |
+| `Date`                         | Date and time values.                                                          |
+| `Array`                        | Lists of values.                                                               |
+| `Object`                       | Embedded documents.                                                            |
+| `Null`                         | Represents a null value.                                                       |
+| `Binary`                       | Binary data.                                                                   |
+
+---
+
+### **Query Operators**
+
+| **Operator**                   | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `$eq`                          | Matches values equal to a specified value.                                      |
+| `$ne`                          | Matches values not equal to a specified value.                                  |
+| `$gt`                          | Matches values greater than a specified value.                                  |
+| `$gte`                         | Matches values greater than or equal to a specified value.                      |
+| `$lt`                          | Matches values less than a specified value.                                     |
+| `$lte`                         | Matches values less than or equal to a specified value.                         |
+| `$in`                          | Matches any of the values specified in an array.                                |
+| `$nin`                         | Matches none of the values specified in an array.                               |
+| `$and`                         | Combines query clauses with a logical AND.                                      |
+| `$or`                          | Combines query clauses with a logical OR.                                       |
+| `$not`                         | Inverts the effect of a query expression.                                       |
+| `$exists`                      | Matches documents where a field exists or does not exist.                       |
+| `$type`                        | Matches documents based on a field's data type.                                 |
+| `$regex`                       | Matches values using regular expressions.                                       |
+
+---
+
+### **Update Operators**
+
+| **Operator**                   | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `$set`                         | Sets the value of a field in a document.                                        |
+| `$unset`                       | Removes a field from a document.                                                |
+| `$inc`                         | Increments the value of a field by a specified amount.                          |
+| `$rename`                      | Renames a field in a document.                                                  |
+| `$push`                        | Adds an element to an array.                                                    |
+| `$pull`                        | Removes an element from an array.                                               |
+| `$addToSet`                    | Adds a value to an array if it doesn’t already exist.                           |
+
+---
+
+### **Aggregation Framework Keywords**
+
+| **Keyword/Operator**           | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `$match`                       | Filters documents based on specified criteria.                                  |
+| `$group`                       | Groups documents by a specified key and performs aggregations.                  |
+| `$sort`                        | Sorts documents in ascending or descending order.                               |
+| `$limit`                       | Limits the number of documents passed to the next stage.                        |
+| `$skip`                        | Skips a specified number of documents.                                          |
+| `$project`                     | Shapes the documents by including/excluding fields.                             |
+| `$unwind`                      | Deconstructs an array field into multiple documents.                            |
+| `$lookup`                      | Performs a join with another collection.                                        |
+
+---
+
+### **Index Types**
+
+| **Index Type**                 | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| Single Field Index             | Index on a single field.                                                       |
+| Compound Index                 | Index on multiple fields.                                                      |
+| Multikey Index                 | Indexes the elements of an array.                                              |
+| Text Index                     | Index for text search queries.                                                 |
+| Hashed Index                   | Index for hashed shard keys.                                                   |
+| TTL Index                      | Automatically removes documents after a specified period.                      |
+
+---
+
+### **Replication and Sharding**
+
+| **Concept**                    | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| **Replica Set**                | A group of MongoDB servers that maintain the same data, providing redundancy and failover. |
+| **Primary Node**               | Receives all write operations in a replica set.                                |
+| **Secondary Node**             | Synchronizes data from the primary node.                                       |
+| **Arbiter Node**               | Participates in elections without storing data.                                |
+| **Sharding**                   | Distributes data across multiple servers for horizontal scaling.               |
+| **Shard Key**                  | Field used to determine the distribution of data across shards.                |
+
+---
+
+### **Admin Commands**
+
+| **Command**                    | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `db.stats()`                   | Provides statistics about the database.                                         |
+| `db.collection.stats()`        | Provides statistics about a collection.                                         |
+| `db.serverStatus()`            | Returns an overview of the server's status.                                     |
+| `db.currentOp()`               | Displays information about operations currently running.                        |
+| `db.killOp(<opId>)`            | Terminates a long-running operation.                                            |
+| `db.repairDatabase()`          | Repairs the database.                                                           |
+
+---
+
+### **Security and Authentication**
+
+| **Term**                       | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| Authentication                 | Verifies the identity of users connecting to MongoDB.                           |
+| Authorization                  | Determines the actions a user can perform.                                      |
+| Roles                          | Assign permissions to users.                                                   |
+| SCRAM                          | Salted Challenge Response Authentication Mechanism for user authentication.     |
+| SSL/TLS                        | Secure connections using encryption.                                            |
+
+---
+
+### **Tools and Utilities**
+
+| **Tool/Utility**               | **Description**                                                                 |
+|--------------------------------|---------------------------------------------------------------------------------|
+| `mongo`                        | The MongoDB shell.                                                              |
+| `mongod`                       | MongoDB server process.                                                         |
+| `mongos`                       | MongoDB query router for sharded clusters.                                      |
+| `mongoexport`                  | Exports data from MongoDB collections to JSON or CSV files.                     |
+| `mongoimport`                  | Imports data into MongoDB from JSON or CSV files.                               |
+| `mongodump`                    | Creates a binary backup of a MongoDB database.                                  |
+| `mongorestore`                 | Restores data from a binary backup created by `mongodump`.                      |
+| `mongotop`                     | Tracks the read and write activity for MongoDB.                                 |
+| `mongostat`                    | Displays a summary of MongoDB server operations.                                |
+
+---
+
+If you'd like detailed explanations or examples for any of these terms, feel free to ask!
 
 
 
-
-
+****
+****
+****
+****
+****
+****
 
 
 
