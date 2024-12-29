@@ -1,7 +1,111 @@
-Here’s a comprehensive list of MongoDB interview questions covering basic to advanced levels, categorized for clarity:
+****
+Here’s a comprehensive list of MongoDB interview questions, categorized by basic, intermediate, and advanced levels to help you prepare effectively:
 
 ---
 
+### **Basic Level MongoDB Interview Questions**
+1. **What is MongoDB?**
+2. **Explain the difference between SQL and NoSQL databases.**
+3. **What are the key features of MongoDB?**
+4. **What is a document in MongoDB?**
+5. **What is a collection in MongoDB?**
+6. **What is a database in MongoDB?**
+7. **What are the advantages of MongoDB over traditional relational databases?**
+8. **Explain BSON in MongoDB.**
+9. **What are MongoDB data types?**
+10. **What is the role of `_id` in MongoDB?**
+11. **How do you check the version of MongoDB?**
+12. **What is the difference between `db.collection.findOne()` and `db.collection.find()`?**
+13. **What is `use <database>` command?**
+14. **What is the difference between `insertOne()` and `insertMany()`?**
+15. **How do you list all collections in a MongoDB database?**
+16. **What are MongoDB indexes, and why are they used?**
+17. **What is a capped collection?**
+18. **Explain the purpose of the `ObjectId`.**
+19. **What is the aggregation framework in MongoDB?**
+20. **What is a replica set in MongoDB?**
+
+---
+
+### **Intermediate Level MongoDB Interview Questions**
+1. **Explain the difference between embedded documents and references in MongoDB.**
+2. **What is the purpose of the `$lookup` operator in MongoDB?**
+3. **What is sharding, and why is it used in MongoDB?**
+4. **Explain the difference between replication and sharding in MongoDB.**
+5. **What is the difference between `updateOne()` and `updateMany()`?**
+6. **What is the difference between `$set` and `$unset` in MongoDB?**
+7. **What is the `explain()` method, and why is it used in MongoDB?**
+8. **What are the different types of indexes in MongoDB?**
+9. **What is a compound index?**
+10. **How does MongoDB handle schema design?**
+11. **What is a map-reduce operation in MongoDB?**
+12. **How does MongoDB ensure high availability?**
+13. **What is the purpose of the `upsert` option in an update operation?**
+14. **What is `$regex`, and how is it used in MongoDB queries?**
+15. **What is the difference between `$and`, `$or`, and `$not` operators in MongoDB?**
+16. **How do you perform text searches in MongoDB?**
+17. **What is the difference between the `$group` and `$project` stages in an aggregation pipeline?**
+18. **What are MongoDB transactions, and how are they implemented?**
+19. **What is the `changeStream` feature in MongoDB?**
+20. **How do you backup and restore MongoDB databases?**
+
+---
+
+### **Advanced Level MongoDB Interview Questions**
+1. **What is the architecture of MongoDB?**
+2. **Explain the consistency model of MongoDB.**
+3. **What are the limitations of MongoDB?**
+4. **What is the Global Write Lock in MongoDB?**
+5. **How does MongoDB handle large-scale data storage?**
+6. **What is the difference between horizontal and vertical scaling, and how does MongoDB implement horizontal scaling?**
+7. **How does MongoDB implement eventual consistency?**
+8. **What is the oplog in MongoDB?**
+9. **Explain journaling in MongoDB.**
+10. **What is a MongoDB validator, and how is it used?**
+11. **What are MongoDB projections, and why are they important?**
+12. **How does MongoDB implement concurrency control?**
+13. **What is the WiredTiger storage engine in MongoDB?**
+14. **What are the best practices for schema design in MongoDB?**
+15. **How can you optimize MongoDB queries?**
+16. **Explain the role of the MongoDB profiler.**
+17. **What is the difference between a shard key and a hashed shard key?**
+18. **How does MongoDB ensure data durability?**
+19. **What is TTL (Time-To-Live) indexing in MongoDB?**
+20. **How do you secure a MongoDB deployment?**
+
+---
+
+### **Scenario-Based MongoDB Questions**
+1. **How would you migrate data from an SQL database to MongoDB?**
+2. **How would you design a schema for an e-commerce application in MongoDB?**
+3. **How would you implement a leaderboard system using MongoDB?**
+4. **How would you use MongoDB for real-time analytics?**
+5. **What steps would you take to improve MongoDB query performance in a slow application?**
+6. **How would you handle a high write throughput application in MongoDB?**
+7. **What approach would you take to ensure MongoDB backups are consistent?**
+8. **How would you troubleshoot a replica set synchronization issue?**
+9. **How would you handle a shard that is nearing capacity?**
+10. **What would you do if you notice slow read performance in a sharded MongoDB cluster?**
+
+---
+
+### **Best Practices and Optimization Questions**
+1. **What are the best practices for creating indexes in MongoDB?**
+2. **How do you monitor the performance of a MongoDB cluster?**
+3. **What are the anti-patterns in MongoDB schema design?**
+4. **How would you implement rate limiting in MongoDB?**
+5. **What tools are available for MongoDB monitoring and management?**
+6. **How would you partition data for better query performance in MongoDB?**
+7. **What are the best practices for securing a MongoDB cluster?**
+8. **How do you choose a shard key in MongoDB?**
+9. **What are the benefits of using GridFS in MongoDB?**
+10. **How do you handle schema migrations in MongoDB?**
+
+---
+
+These questions cover a wide range of topics, including basics, query optimization, schema design, clustering, and real-world applications of MongoDB. Let me know if you want detailed answers, explanations, or sample projects to practice these concepts!
+---
+****
 ### **Basic MongoDB Interview Questions**
 
 1. **What is MongoDB?**
