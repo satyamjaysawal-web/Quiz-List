@@ -148,6 +148,7 @@
 ****
 
 
+# Indexing 
 
 ### **50 SQL Interview Questions on Indexing**
 
