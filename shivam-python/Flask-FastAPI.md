@@ -1,6 +1,5 @@
 ### **50 FastAPI Interview Questions**
 
-Here’s a comprehensive list of FastAPI interview questions covering basic, intermediate, advanced, and scenario-based topics:
 
 ---
 
