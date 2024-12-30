@@ -150,6 +150,158 @@ Here’s a categorized list of MySQL interview questions, covering basic, interm
 
 
 
+### **50 SQL Interview Questions on Indexing**
+
+Indexing is a critical concept in SQL for database performance optimization. Below is a list of interview questions exclusively focused on indexing, covering basic, intermediate, and advanced aspects.
+
+---
+
+### **Basic Level Questions**
+
+1. **What is an index in SQL?**
+2. **What are the benefits of using indexes in SQL?**
+3. **What are the different types of indexes in SQL?**
+4. **What is the difference between a clustered and non-clustered index?**
+5. **What is the primary key index in SQL?**
+6. **Can a table have more than one index?**
+7. **What are the drawbacks of using indexes?**
+8. **What is the difference between a unique index and a primary key index?**
+9. **How do indexes affect INSERT, UPDATE, and DELETE operations?**
+10. **What is the syntax to create an index in SQL?**
+
+    ```sql
+    CREATE INDEX index_name ON table_name (column_name);
+    ```
+
+11. **What is the difference between a composite index and a single-column index?**
+12. **How does SQL automatically create indexes on certain constraints?**
+13. **What is the difference between implicit and explicit indexing?**
+14. **What is a bitmap index?**
+15. **What is the syntax for creating a unique index?**
+
+    ```sql
+    CREATE UNIQUE INDEX index_name ON table_name (column_name);
+    ```
+
+16. **What happens if an index becomes fragmented?**
+17. **Can an index be created on a computed column?**
+18. **How do you drop an index in SQL?**
+
+    ```sql
+    DROP INDEX index_name;
+    ```
+
+19. **What is the maximum number of indexes a table can have?**
+20. **Can indexes be created on views?**
+
+---
+
+### **Intermediate Level Questions**
+
+21. **What is a covering index in SQL?**
+22. **What is a filtered index, and when should you use it?**
+23. **What is a full-text index, and how is it different from a regular index?**
+24. **What is the difference between a clustered index and a heap?**
+25. **What are descending indexes, and why are they used?**
+26. **What is index maintenance, and why is it important?**
+27. **What is an index hint in SQL, and how do you use it?**
+
+    ```sql
+    SELECT * FROM table_name WITH (INDEX (index_name)) WHERE condition;
+    ```
+
+28. **What is index selectivity, and how does it impact query performance?**
+29. **What are the best practices for choosing columns to index?**
+30. **What is index cardinality?**
+31. **What is an index scan, and how does it differ from a table scan?**
+32. **What is an index seek, and how does it improve query performance?**
+33. **What is the difference between a partial index and a full index?**
+34. **How does an index impact database locking and blocking?**
+35. **What are the pros and cons of indexing foreign key columns?**
+36. **Can you create an index on a column that allows NULL values?**
+37. **What is the purpose of the `REBUILD` and `REORGANIZE` options for indexes?**
+
+    ```sql
+    ALTER INDEX index_name ON table_name REBUILD;
+    ALTER INDEX index_name ON table_name REORGANIZE;
+    ```
+
+38. **What is the difference between a B-tree index and a hash index?**
+39. **How do indexes affect the execution plan of a query?**
+40. **What is the difference between dense and sparse indexes?**
+
+---
+
+### **Advanced Level Questions**
+
+41. **What are the considerations for indexing large tables?**
+42. **How does indexing affect the performance of OLTP and OLAP systems differently?**
+43. **What are invisible indexes, and how do they work?**
+44. **What is the impact of indexed views on query performance?**
+45. **What are the advantages and disadvantages of unique indexes?**
+46. **What is a spatial index, and how is it used in geospatial queries?**
+47. **How do you monitor index usage in a database?**
+48. **How can index fragmentation be detected and resolved?**
+49. **What is the difference between index compression and page compression?**
+50. **How do columnstore indexes differ from rowstore indexes?**
+
+---
+
+### **Additional Scenario-Based Questions**
+
+- **How would you optimize a query that involves sorting a large dataset?**
+- **Which index would you use for a high cardinality column, and why?**
+- **How do you decide which columns to include in a composite index?**
+- **If a query is running slow even with an index, what steps would you take to investigate?**
+- **How do you handle indexing in a table that undergoes frequent writes?**
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+****
+****
+****
+****
+****
+****
+
+
+
+
+
+
+
+
+
 
 
 
