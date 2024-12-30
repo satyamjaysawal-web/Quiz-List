@@ -17,7 +17,6 @@
 
 ### **MySQL Interview Questions**  
 
-Here’s a categorized list of MySQL interview questions, covering basic, intermediate, advanced, and scenario-based questions to prepare thoroughly:  
 
 ---
 
