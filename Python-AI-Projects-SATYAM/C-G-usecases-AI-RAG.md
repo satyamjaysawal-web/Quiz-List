@@ -3,9 +3,23 @@
 ****
 
 
-### Comprehensive Project List  
+****
+****
 
+### **Example Notebooks for Interactive Modules Links**
+1. **Digi Yatra**: [https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/digi-yatra](https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/digi-yatra)  
+2. **Snake Game Using AI**: [https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/teachable-snake-game](https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/teachable-snake-game)  
+3. **Titanic Notebook**: [https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/titanic-survivor/intro](https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/titanic-survivor/intro)  
+4. **Plant Health Monitor**: [https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/plant-disease-detection](https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/plant-disease-detection)  
+5. **Ethics 101**: [https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/ethics101](https://vizuara-dot-ai.vercel.app/ai-labs/student-projects/ethics101)  
+
+
+### Comprehensive Project List  
+****
 ---
+
+****
+****
 
 #### Personal Projects:  
 1. Make My Trip  
