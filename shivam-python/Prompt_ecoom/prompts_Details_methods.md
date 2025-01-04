@@ -175,9 +175,9 @@ This flow ensures **seamless operations** and **data consistency** for both admi
 ****
 # prompt :--------->
 
-```
-gpt show me all actions  & steps json - don't skip any points
-```
+
+# gpt show me all actions  & steps json - don't skip any points
+
 ****
 ****
 
