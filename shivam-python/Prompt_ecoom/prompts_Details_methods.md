@@ -3,6 +3,7 @@
 ****
 ****
 ****
+# Prompts : Ecoommerce Project
 ```
 I am building an e-commerce system with two roles: admin and user. Please create a detailed JSON response that includes:
 - All admin actions: managing products, stock, categories, orders, and users.
