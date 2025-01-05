@@ -1,4 +1,4 @@
-Here’s the updated schema including a **"Nullability"** column for tables other than **Login** and **Register**, as you requested. This clearly indicates whether a column can accept `NULL` values or not.
+
 
 ---
 
@@ -137,4 +137,4 @@ Here’s the updated schema including a **"Nullability"** column for tables othe
 
 ---
 
-This schema now includes **Nullability** for all columns (except `Register` and `Login`), along with **Visibility** and a detailed description. Let me know if further refinements are needed! 😊
+
