@@ -1,4 +1,5 @@
-Below is the **complete schema** for all tables, including the updated **Payments Table** with visibility for both **customers** and **vendors**:
+
+**complete schema** for all tables, including the updated **Payments Table** with visibility for both **customers** and **vendors**:
 
 ---
 
@@ -129,4 +130,4 @@ Below is the **complete schema** for all tables, including the updated **Payment
 
 ---
 
-This schema now fully integrates **Payment Management**, maintaining clarity for **customers** and **vendors**. Let me know if additional refinements are required!
+This schema now fully integrates **Payment Management**, maintaining clarity for **customers** and **vendors**.
