@@ -1,4 +1,4 @@
-Here’s the **complete updated schema**, including the changes for order processing and delivery by vendors:
+Below is the **complete schema** for all tables, including the updated **Payments Table** with visibility for both **customers** and **vendors**:
 
 ---
 
@@ -14,6 +14,7 @@ Here’s the **complete updated schema**, including the changes for order proces
 | `discount_percentage`               | DECIMAL(5, 2)       | Customer & Vendor   | Discount percentage applied to the product.                        |
 | `after_discount_selling_price_inr`  | DECIMAL(10, 2)      | Customer & Vendor   | Selling price after applying the discount.                         |
 | `profit_per_item_inr`               | DECIMAL(10, 2)      | Vendor Only         | Profit per item after deducting expenditure cost.                  |
+| `stock_remaining`                   | INT                 | Customer & Vendor   | Remaining stock available for sale.                                |
 | `image_url`                         | VARCHAR(255)        | Customer & Vendor   | URL of the product image.                                          |
 | `description`                       | TEXT                | Customer & Vendor   | Detailed description of the product.                               |
 | `created_at`                        | DATETIME            | Vendor Only         | Timestamp when the product was created.                            |
@@ -114,4 +115,18 @@ Here’s the **complete updated schema**, including the changes for order proces
 
 ---
 
-Let me know if further details are needed!
+### **10. Payments Table**
+| **Column Name**                     | **Data Type**       | **Visibility**      | **Description**                                                    |
+|-------------------------------------|---------------------|---------------------|--------------------------------------------------------------------|
+| `payment_id`                        | INT PRIMARY KEY     | Customer & Vendor   | Unique identifier for the payment.                                 |
+| `order_id`                          | INT                 | Customer & Vendor   | ID of the order for which payment is made.                         |
+| `customer_id`                       | INT                 | Vendor Only         | ID of the customer making the payment.                             |
+| `amount_paid_inr`                   | DECIMAL(15, 2)      | Customer & Vendor   | Total amount paid for the order.                                   |
+| `payment_method`                    | VARCHAR(50)         | Customer & Vendor   | Payment method (e.g., Credit Card, UPI, Net Banking).              |
+| `transaction_id`                    | VARCHAR(255)        | Customer & Vendor   | Unique identifier for the payment transaction.                     |
+| `status`                            | VARCHAR(50)         | Customer & Vendor   | Status of the payment (e.g., Pending, Completed, Failed).          |
+| `payment_date`                      | DATETIME            | Customer & Vendor   | Timestamp when the payment was made.                               |
+
+---
+
+This schema now fully integrates **Payment Management**, maintaining clarity for **customers** and **vendors**. Let me know if additional refinements are required!
