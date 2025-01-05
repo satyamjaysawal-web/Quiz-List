@@ -1,13 +1,13 @@
 
 
-Here are the tables based on your request:
+Here are the tables based on your updated request:
 
 ### **Login Table** (For User Authentication)
 
 | Column Name     | Data Type    | Description                                      |
 |-----------------|--------------|--------------------------------------------------|
-| `user_name`     | `VARCHAR(255)`| Unique identifier for the user (username)       |
-| `password`      | `VARCHAR(255)`| Hashed password for user authentication         |
+| `username`      | `VARCHAR(255)`| Unique identifier for the user (username)       |
+| `password_hash` | `VARCHAR(255)`| Hashed password for user authentication         |
 | `role`          | `VARCHAR(50)` | User role (can be `vendor` or `customer` - hidden from the user in the login flow) |
 
 ---
@@ -16,10 +16,10 @@ Here are the tables based on your request:
 
 | Column Name     | Data Type    | Description                                      |
 |-----------------|--------------|--------------------------------------------------|
-| `user_name`     | `VARCHAR(255)`| Unique identifier for the user (username)       |
+| `username`      | `VARCHAR(255)`| Unique identifier for the user (username)       |
 | `email`         | `VARCHAR(255)`| User email address                               |
-| `password`      | `VARCHAR(255)`| Hashed password for user registration           |
-| `created_date`  | `DATETIME`   | Timestamp when the user account was created     |
+| `password_hash` | `VARCHAR(255)`| Hashed password for user registration           |
+| `created_at`    | `DATETIME`   | Timestamp when the user account was created     |
 | `role`          | `VARCHAR(50)` | User role (defaults to `customer`, can be set to `vendor` by admin/vendor) - hidden |
 
 
