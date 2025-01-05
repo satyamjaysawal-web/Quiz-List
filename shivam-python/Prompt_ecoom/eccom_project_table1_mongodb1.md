@@ -8,7 +8,7 @@
 | `username`      | `String`      | Not Nullable    | Unique username for the user.                        |
 | `email`         | `String`      | Not Nullable    | User email address (unique).                         |
 | `password_hash` | `String`      | Not Nullable    | Hashed password for user registration.               |
-| `role`          | `String`      | Not Nullable    | User role (e.g., `vendor` or `customer`).            |
+| `role`          | `String`      | Not Nullable    | User role (handled by db `vendor` or default `customer`).            |
 | `created_at`    | `Date`        | Not Nullable    | Timestamp when the user account was created.         |
 
 ---
