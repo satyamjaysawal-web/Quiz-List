@@ -1,4 +1,4 @@
-Here’s the final schema with all the tables consolidated and displayed based on your requirements:
+Here’s the updated schema where **`user_id`** is added as a visible column that can be seen and utilized by both **customers** and **vendors** for all relevant tables:
 
 ---
 
@@ -6,7 +6,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 
 | **Column Name**   | **Data Type**         | **Description**                                         |
 |-------------------|-----------------------|---------------------------------------------------------|
-| `user_id`         | INT PRIMARY KEY AUTO_INCREMENT | Unique identifier for the user.                         |
+| `user_id`         | INT PRIMARY KEY AUTO_INCREMENT | Unique identifier for the user (can be seen by both).   |
 | `username`        | `VARCHAR(255)`       | Unique identifier for the user (username).              |
 | `email`           | `VARCHAR(255)`       | User email address (must be unique).                    |
 | `password_hash`   | `VARCHAR(255)`       | Hashed password for user registration.                  |
@@ -19,6 +19,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 
 | **Column Name**   | **Data Type**    | **Description**                                     |
 |-------------------|------------------|-----------------------------------------------------|
+| `user_id`         | INT              | Unique identifier for the user (can be seen by both). |
 | `username`        | `VARCHAR(255)`  | Unique identifier for the user (username).          |
 | `password_hash`   | `VARCHAR(255)`  | Hashed password for user authentication.            |
 | `role`            | `VARCHAR(50)`   | - **Hidden at UI frontend** - User role (`vendor` or `customer`). |
@@ -32,7 +33,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 | `product_id`                        | INT PRIMARY KEY     | Customer & Vendor  | Unique identifier for the product.                                             |
 | `name`                              | VARCHAR(255)        | Customer & Vendor  | Name of the product.                                                           |
 | `category_id`                       | INT                 | Customer & Vendor  | ID of the category the product belongs to.                                     |
-| `user_id`                           | INT                 | Vendor Only        | Common `user_id` of the vendor managing the product.                           |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the vendor managing the product.                           |
 | `expenditure_cost_inr`              | DECIMAL(10, 2)      | Vendor Only        | Fixed cost to purchase/manufacture the product.                                |
 | `selling_price_inr`                 | DECIMAL(10, 2)      | Vendor Only        | Price of the product before any discount.                                      |
 | `discount_percentage`               | DECIMAL(5, 2)       | Customer & Vendor  | Discount percentage applied to the product.                                    |
@@ -61,7 +62,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 | **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `product_id`                        | INT PRIMARY KEY     | Vendor Only        | Unique identifier for the product.                                             |
-| `user_id`                           | INT                 | Vendor Only        | Common `user_id` of the vendor managing the stock.                             |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the vendor managing the stock.                             |
 | `total_stock`                       | INT                 | Vendor Only        | Total initial stock available.                                                 |
 | `stock_remaining`                   | INT                 | Customer & Vendor  | Remaining stock after orders.                                                  |
 | `total_stock_price_inr`             | DECIMAL(15, 2)      | Vendor Only        | Total value of remaining stock based on expenditure cost.                      |
@@ -74,7 +75,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 | **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `order_id`                          | INT PRIMARY KEY     | Customer & Vendor  | Unique identifier for the order.                                               |
-| `user_id`                           | INT                 | Customer Only      | Common `user_id` of the customer placing the order.                            |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer placing the order.                            |
 | `vendor_id`                         | INT                 | Vendor Only        | Common `user_id` of the vendor fulfilling the order.                           |
 | `order_date`                        | DATETIME            | Customer & Vendor  | Timestamp when the order was placed.                                           |
 | `status`                            | VARCHAR(50)         | Customer & Vendor  | Current status of the order (Pending, Delivered, etc.).                        |
@@ -90,7 +91,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 | **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `cart_id`                           | INT PRIMARY KEY     | Customer Only      | Unique identifier for the cart.                                                |
-| `user_id`                           | INT                 | Customer Only      | Common `user_id` of the customer owning the cart.                              |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer owning the cart.                              |
 | `items`                             | JSON                | Customer Only      | List of products with quantities in the cart.                                  |
 | `cart_total_inr`                    | DECIMAL(15, 2)      | Customer Only      | Total value of the cart in INR.                                                |
 
@@ -101,7 +102,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 | **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `wishlist_id`                       | INT PRIMARY KEY     | Customer Only      | Unique identifier for the wishlist.                                            |
-| `user_id`                           | INT                 | Customer Only      | Common `user_id` of the customer owning the wishlist.                          |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer owning the wishlist.                          |
 | `product_id`                        | INT                 | Customer Only      | ID of the product in the wishlist.                                             |
 | `product_name`                      | VARCHAR(255)        | Customer Only      | Name of the product.                                                           |
 | `price_inr`                         | DECIMAL(15, 2)      | Customer Only      | Price of the product in INR.                                                   |
@@ -114,7 +115,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `review_id`                         | INT PRIMARY KEY     | Customer Only      | Unique identifier for the review.                                              |
 | `product_id`                        | INT                 | Customer Only      | ID of the product being reviewed.                                              |
-| `user_id`                           | INT                 | Customer Only      | Common `user_id` of the customer leaving the review.                           |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer leaving the review.                           |
 | `rating`                            | DECIMAL(2, 1)       | Customer Only      | Rating for the product (1–5).                                                  |
 | `comment`                           | TEXT                | Customer Only      | Customer's comment about the product.                                          |
 | `timestamp`                         | DATETIME            | Customer Only      | Timestamp when the review was created.                                         |
@@ -127,7 +128,7 @@ Here’s the final schema with all the tables consolidated and displayed based o
 |-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
 | `payment_id`                        | INT PRIMARY KEY     | Customer Only      | Unique identifier for the payment.                                             |
 | `order_id`                          | INT                 | Customer Only      | ID of the order for which payment is made.                                     |
-| `user_id`                           | INT                 | Customer Only      | Common `user_id` of the customer making the payment.                           |
+| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer making the payment.                           |
 | `amount_paid_inr`                   | DECIMAL(15, 2)      | Customer Only      | Total amount paid for the order.                                               |
 | `payment_method`                    | VARCHAR(50)         | Customer Only      | Payment method (e.g., Credit Card, UPI, Net Banking).                          |
 | `transaction_id`                    | VARCHAR(255)        | Customer Only      | Unique identifier for the payment transaction.                                 |
@@ -136,4 +137,4 @@ Here’s the final schema with all the tables consolidated and displayed based o
 
 ---
 
-Let me know if you need further refinements! 😊
+This updated schema ensures **`user_id`** is accessible across all relevant tables for both customers and vendors. Let me know if further adjustments are required! 😊
