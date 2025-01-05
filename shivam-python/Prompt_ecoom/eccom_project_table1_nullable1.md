@@ -1,4 +1,4 @@
-Here’s the updated schema where **`user_id`** is added as a visible column that can be seen and utilized by both **customers** and **vendors** for all relevant tables:
+Here’s the updated schema including a **"Nullability"** column for tables other than **Login** and **Register**, as you requested. This clearly indicates whether a column can accept `NULL` values or not.
 
 ---
 
@@ -28,113 +28,113 @@ Here’s the updated schema where **`user_id`** is added as a visible column tha
 
 ### **3. Products Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `product_id`                        | INT PRIMARY KEY     | Customer & Vendor  | Unique identifier for the product.                                             |
-| `name`                              | VARCHAR(255)        | Customer & Vendor  | Name of the product.                                                           |
-| `category_id`                       | INT                 | Customer & Vendor  | ID of the category the product belongs to.                                     |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the vendor managing the product.                           |
-| `expenditure_cost_inr`              | DECIMAL(10, 2)      | Vendor Only        | Fixed cost to purchase/manufacture the product.                                |
-| `selling_price_inr`                 | DECIMAL(10, 2)      | Vendor Only        | Price of the product before any discount.                                      |
-| `discount_percentage`               | DECIMAL(5, 2)       | Customer & Vendor  | Discount percentage applied to the product.                                    |
-| `after_discount_selling_price_inr`  | DECIMAL(10, 2)      | Customer & Vendor  | Selling price after applying the discount.                                     |
-| `profit_per_item_inr`               | DECIMAL(10, 2)      | Vendor Only        | Profit per item after deducting expenditure cost.                              |
-| `stock_remaining`                   | INT                 | Customer & Vendor  | Remaining stock available for sale.                                            |
-| `image_url`                         | VARCHAR(255)        | Customer & Vendor  | URL of the product image.                                                      |
-| `description`                       | TEXT                | Customer & Vendor  | Detailed description of the product.                                           |
-| `created_at`                        | DATETIME            | Vendor Only        | Timestamp when the product was created.                                        |
-| `last_updated`                      | DATETIME            | Vendor Only        | Timestamp when the product was last updated.                                   |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `product_id`                        | INT PRIMARY KEY     | NOT NULL        | Customer & Vendor  | Unique identifier for the product.                                             |
+| `name`                              | VARCHAR(255)        | NOT NULL        | Customer & Vendor  | Name of the product.                                                           |
+| `category_id`                       | INT                 | NULL            | Customer & Vendor  | ID of the category the product belongs to.                                     |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the vendor managing the product.                           |
+| `expenditure_cost_inr`              | DECIMAL(10, 2)      | NULL            | Vendor Only        | Fixed cost to purchase/manufacture the product.                                |
+| `selling_price_inr`                 | DECIMAL(10, 2)      | NOT NULL        | Vendor Only        | Price of the product before any discount.                                      |
+| `discount_percentage`               | DECIMAL(5, 2)       | NULL            | Customer & Vendor  | Discount percentage applied to the product.                                    |
+| `after_discount_selling_price_inr`  | DECIMAL(10, 2)      | NULL            | Customer & Vendor  | Selling price after applying the discount.                                     |
+| `profit_per_item_inr`               | DECIMAL(10, 2)      | NULL            | Vendor Only        | Profit per item after deducting expenditure cost.                              |
+| `stock_remaining`                   | INT                 | NOT NULL        | Customer & Vendor  | Remaining stock available for sale.                                            |
+| `image_url`                         | VARCHAR(255)        | NULL            | Customer & Vendor  | URL of the product image.                                                      |
+| `description`                       | TEXT                | NULL            | Customer & Vendor  | Detailed description of the product.                                           |
+| `created_at`                        | DATETIME            | NOT NULL        | Vendor Only        | Timestamp when the product was created.                                        |
+| `last_updated`                      | DATETIME            | NOT NULL        | Vendor Only        | Timestamp when the product was last updated.                                   |
 
 ---
 
 ### **4. Categories Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `category_id`                       | INT PRIMARY KEY     | Customer & Vendor  | Unique identifier for the category.                                            |
-| `name`                              | VARCHAR(255)        | Customer & Vendor  | Name of the category.                                                          |
-| `products`                          | JSON                | Customer & Vendor  | List of product IDs in the category.                                           |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `category_id`                       | INT PRIMARY KEY     | NOT NULL        | Customer & Vendor  | Unique identifier for the category.                                            |
+| `name`                              | VARCHAR(255)        | NOT NULL        | Customer & Vendor  | Name of the category.                                                          |
+| `products`                          | JSON                | NULL            | Customer & Vendor  | List of product IDs in the category.                                           |
 
 ---
 
 ### **5. Stock Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `product_id`                        | INT PRIMARY KEY     | Vendor Only        | Unique identifier for the product.                                             |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the vendor managing the stock.                             |
-| `total_stock`                       | INT                 | Vendor Only        | Total initial stock available.                                                 |
-| `stock_remaining`                   | INT                 | Customer & Vendor  | Remaining stock after orders.                                                  |
-| `total_stock_price_inr`             | DECIMAL(15, 2)      | Vendor Only        | Total value of remaining stock based on expenditure cost.                      |
-| `last_updated`                      | DATETIME            | Vendor Only        | Timestamp of the last stock update.                                            |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `product_id`                        | INT PRIMARY KEY     | NOT NULL        | Vendor Only        | Unique identifier for the product.                                             |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the vendor managing the stock.                             |
+| `total_stock`                       | INT                 | NOT NULL        | Vendor Only        | Total initial stock available.                                                 |
+| `stock_remaining`                   | INT                 | NOT NULL        | Customer & Vendor  | Remaining stock after orders.                                                  |
+| `total_stock_price_inr`             | DECIMAL(15, 2)      | NULL            | Vendor Only        | Total value of remaining stock based on expenditure cost.                      |
+| `last_updated`                      | DATETIME            | NOT NULL        | Vendor Only        | Timestamp of the last stock update.                                            |
 
 ---
 
 ### **6. Orders Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `order_id`                          | INT PRIMARY KEY     | Customer & Vendor  | Unique identifier for the order.                                               |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer placing the order.                            |
-| `vendor_id`                         | INT                 | Vendor Only        | Common `user_id` of the vendor fulfilling the order.                           |
-| `order_date`                        | DATETIME            | Customer & Vendor  | Timestamp when the order was placed.                                           |
-| `status`                            | VARCHAR(50)         | Customer & Vendor  | Current status of the order (Pending, Delivered, etc.).                        |
-| `items`                             | JSON                | Customer & Vendor  | List of products with quantities in the order.                                 |
-| `total_amount_inr`                  | DECIMAL(15, 2)      | Customer & Vendor  | Total amount for the order in INR.                                             |
-| `processed_at`                      | DATETIME            | Vendor Only        | Timestamp when the order was processed.                                        |
-| `delivered_at`                      | DATETIME            | Customer & Vendor  | Timestamp when the order was delivered.                                        |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `order_id`                          | INT PRIMARY KEY     | NOT NULL        | Customer & Vendor  | Unique identifier for the order.                                               |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the customer placing the order.                            |
+| `vendor_id`                         | INT                 | NULL            | Vendor Only        | Common `user_id` of the vendor fulfilling the order.                           |
+| `order_date`                        | DATETIME            | NOT NULL        | Customer & Vendor  | Timestamp when the order was placed.                                           |
+| `status`                            | VARCHAR(50)         | NOT NULL        | Customer & Vendor  | Current status of the order (Pending, Delivered, etc.).                        |
+| `items`                             | JSON                | NOT NULL        | Customer & Vendor  | List of products with quantities in the order.                                 |
+| `total_amount_inr`                  | DECIMAL(15, 2)      | NOT NULL        | Customer & Vendor  | Total amount for the order in INR.                                             |
+| `processed_at`                      | DATETIME            | NULL            | Vendor Only        | Timestamp when the order was processed.                                        |
+| `delivered_at`                      | DATETIME            | NULL            | Customer & Vendor  | Timestamp when the order was delivered.                                        |
 
 ---
 
 ### **7. Cart Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `cart_id`                           | INT PRIMARY KEY     | Customer Only      | Unique identifier for the cart.                                                |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer owning the cart.                              |
-| `items`                             | JSON                | Customer Only      | List of products with quantities in the cart.                                  |
-| `cart_total_inr`                    | DECIMAL(15, 2)      | Customer Only      | Total value of the cart in INR.                                                |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `cart_id`                           | INT PRIMARY KEY     | NOT NULL        | Customer Only      | Unique identifier for the cart.                                                |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the customer owning the cart.                              |
+| `items`                             | JSON                | NULL            | Customer Only      | List of products with quantities in the cart.                                  |
+| `cart_total_inr`                    | DECIMAL(15, 2)      | NULL            | Customer Only      | Total value of the cart in INR.                                                |
 
 ---
 
 ### **8. Wishlist Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `wishlist_id`                       | INT PRIMARY KEY     | Customer Only      | Unique identifier for the wishlist.                                            |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer owning the wishlist.                          |
-| `product_id`                        | INT                 | Customer Only      | ID of the product in the wishlist.                                             |
-| `product_name`                      | VARCHAR(255)        | Customer Only      | Name of the product.                                                           |
-| `price_inr`                         | DECIMAL(15, 2)      | Customer Only      | Price of the product in INR.                                                   |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `wishlist_id`                       | INT PRIMARY KEY     | NOT NULL        | Customer Only      | Unique identifier for the wishlist.                                            |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the customer owning the wishlist.                          |
+| `product_id`                        | INT                 | NOT NULL        | Customer Only      | ID of the product in the wishlist.                                             |
+| `product_name`                      | VARCHAR(255)        | NOT NULL        | Customer Only      | Name of the product.                                                           |
+| `price_inr`                         | DECIMAL(15, 2)      | NULL            | Customer Only      | Price of the product in INR.                                                   |
 
 ---
 
 ### **9. Reviews Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `review_id`                         | INT PRIMARY KEY     | Customer Only      | Unique identifier for the review.                                              |
-| `product_id`                        | INT                 | Customer Only      | ID of the product being reviewed.                                              |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer leaving the review.                           |
-| `rating`                            | DECIMAL(2, 1)       | Customer Only      | Rating for the product (1–5).                                                  |
-| `comment`                           | TEXT                | Customer Only      | Customer's comment about the product.                                          |
-| `timestamp`                         | DATETIME            | Customer Only      | Timestamp when the review was created.                                         |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `review_id`                         | INT PRIMARY KEY     | NOT NULL        | Customer Only      | Unique identifier for the review.                                              |
+| `product_id`                        | INT                 | NOT NULL        | Customer Only      | ID of the product being reviewed.                                              |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the customer leaving the review.                           |
+| `rating`                            | DECIMAL(2, 1)       | NOT NULL        | Customer Only      | Rating for the product (1–5).                                                  |
+| `comment`                           | TEXT                | NULL            | Customer Only      | Customer's comment about the product.                                          |
+| `timestamp`                         | DATETIME            | NOT NULL        | Customer Only      | Timestamp when the review was created.                                         |
 
 ---
 
 ### **10. Payments Table**
 
-| **Column Name**                     | **Data Type**       | **Visibility**     | **Description**                                                                 |
-|-------------------------------------|---------------------|--------------------|---------------------------------------------------------------------------------|
-| `payment_id`                        | INT PRIMARY KEY     | Customer Only      | Unique identifier for the payment.                                             |
-| `order_id`                          | INT                 | Customer Only      | ID of the order for which payment is made.                                     |
-| `user_id`                           | INT                 | Customer & Vendor  | Common `user_id` of the customer making the payment.                           |
-| `amount_paid_inr`                   | DECIMAL(15, 2)      | Customer Only      | Total amount paid for the order.                                               |
-| `payment_method`                    | VARCHAR(50)         | Customer Only      | Payment method (e.g., Credit Card, UPI, Net Banking).                          |
-| `transaction_id`                    | VARCHAR(255)        | Customer Only      | Unique identifier for the payment transaction.                                 |
-| `status`                            | VARCHAR(50)         | Customer Only      | Status of the payment (Pending, Completed, Failed).                            |
-| `payment_date`                      | DATETIME            | Customer Only      | Timestamp when the payment was made.                                           |
+| **Column Name**                     | **Data Type**       | **Nullability** | **Visibility**     | **Description**                                                                 |
+|-------------------------------------|---------------------|-----------------|--------------------|---------------------------------------------------------------------------------|
+| `payment_id`                        | INT PRIMARY KEY     | NOT NULL        | Customer Only      | Unique identifier for the payment.                                             |
+| `order_id`                          | INT                 | NOT NULL        | Customer Only      | ID of the order for which payment is made.                                     |
+| `user_id`                           | INT                 | NOT NULL        | Customer & Vendor  | Common `user_id` of the customer making the payment.                           |
+| `amount_paid_inr`                   | DECIMAL(15, 2)      | NOT NULL        | Customer Only      | Total amount paid for the order.                                               |
+| `payment_method`                    | VARCHAR(50)         | NOT NULL        | Customer Only      | Payment method (e.g., Credit Card, UPI, Net Banking).                          |
+| `transaction_id`                    | VARCHAR(255)        | NOT NULL        | Customer Only      | Unique identifier for the payment transaction.                                 |
+| `status`                            | VARCHAR(50)         | NOT NULL        | Customer Only      | Status of the payment (Pending, Completed, Failed).                            |
+| `payment_date`                      | DATETIME            | NOT NULL        | Customer Only      | Timestamp when the payment was made.                                           |
 
 ---
 
-This updated schema ensures **`user_id`** is accessible across all relevant tables for both customers and vendors. Let me know if further adjustments are required! 😊
+This schema now includes **Nullability** for all columns (except `Register` and `Login`), along with **Visibility** and a detailed description. Let me know if further refinements are needed! 😊
