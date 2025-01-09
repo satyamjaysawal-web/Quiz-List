@@ -1,3 +1,4 @@
+```
 Ecommerce1/
 ├── backend/
 │   ├── __pycache__/
@@ -27,3 +28,4 @@ Ecommerce1/
 ├── config.py
 ├── extensions.py
 ├── requirements.txt
+```
