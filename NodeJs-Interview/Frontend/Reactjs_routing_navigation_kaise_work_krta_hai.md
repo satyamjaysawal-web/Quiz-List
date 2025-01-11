@@ -1,23 +1,23 @@
-# React Router Notes
+# React Router Notes (Hinglish)
 
-## Setting Up a Vite ReactJS Project with React Router
+## Vite ReactJS Project Setup ke Saath React Router
 
 ### 1. **Project Setup**
-Run the following commands to set up a Vite ReactJS project:
+Vite ReactJS project banane ke liye ye commands run karo:
 ```bash
 npm create vite@latest my-react-app --template react
 cd my-react-app
 npm install
 ```
 
-### 2. **Install React Router**
-Install React Router and its dependencies:
+### 2. **React Router Install Karo**
+React Router aur uske dependencies install karne ke liye:
 ```bash
 npm install react-router-dom
 ```
 
 ### 3. **Project Structure**
-Typical structure for a routing-enabled React app:
+Routing-enabled React app ka typical structure:
 ```
 src/
 ├── components/
@@ -30,7 +30,7 @@ src/
 
 ---
 
-## Routing with React Router
+## React Router ke Saath Routing
 
 ### Basic Example (`App.jsx`):
 ```jsx
@@ -46,7 +46,7 @@ function App() {
       <div>
         <h1>Welcome to My React App</h1>
         <Routes>
-          {/* Render Home component */}
+          {/* Home component render karo */}
           <Route path="/" element={<Home />} />
 
           {/* About route */}
@@ -72,7 +72,7 @@ export default App;
 ---
 
 ## Dynamic Routes with URL Parameters
-Use `useParams` to access dynamic URL segments.
+`useParams` ka use karke dynamic URL segments access karo.
 
 ### Example (`Profile.jsx`):
 ```jsx
@@ -80,7 +80,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function Profile() {
-  const { username } = useParams(); // Access the dynamic parameter
+  const { username } = useParams(); // Dynamic parameter access karo
   return (
     <div>
       <h2>Profile Page</h2>
@@ -92,12 +92,12 @@ function Profile() {
 export default Profile;
 ```
 
-- Navigating to `/profile/JohnDoe` will display "Profile of JohnDoe".
+- Agar `/profile/JohnDoe` pe navigate karoge to "Profile of JohnDoe" dikhayega.
 
 ---
 
 ## Programmatic Navigation with `useNavigate`
-Use `useNavigate` for dynamic navigation via code.
+Dynamic navigation ke liye `useNavigate` ka use karo.
 
 ### Example (`Home.jsx`):
 ```jsx
@@ -108,7 +108,7 @@ function Home() {
   const navigate = useNavigate();
 
   const goToAbout = () => {
-    navigate("/about"); // Navigate to About page
+    navigate("/about"); // About page pe navigate karo
   };
 
   return (
@@ -123,10 +123,10 @@ function Home() {
 export default Home;
 ```
 
-- Clicking the button navigates to `/about`.
+- Button click karne par `/about` pe navigate karega.
 
-### Another Example (`Profile.jsx`):
-Add a button to navigate back to the Home page:
+### Ek Aur Example (`Profile.jsx`):
+Home page pe navigate karne ke liye ek button add karo:
 ```jsx
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
@@ -136,7 +136,7 @@ function Profile() {
   const navigate = useNavigate();
 
   const goToHome = () => {
-    navigate("/"); // Navigate to Home page
+    navigate("/"); // Home page pe navigate karo
   };
 
   return (
@@ -153,22 +153,22 @@ export default Profile;
 
 ---
 
-## How Routing Works
+## Routing Kaise Work Karta Hai
 1. **Route Matching**:
-   - `path` in `Route` defines the URL to match.
-   - `element` specifies the component to render for that URL.
+   - `path` jo `Route` me define kiya gaya hai, wo URL ko match karta hai.
+   - `element` batata hai ki us URL ke liye kaunsa component render karna hai.
 
 2. **Example**:
    ```jsx
    <Route path="/about" element={<About />} />
    ```
-   - Navigating to `/about` renders the `About` component.
+   - Agar `/about` pe navigate karte ho to `About` component render hoga.
 
 3. **Redirects**:
-   - Use `<Navigate to="/path" />` to programmatically redirect.
+   - Programmatically redirect karne ke liye `<Navigate to="/path" />` ka use karo.
 
 4. **404 Handling**:
-   - Use `path="*"` for undefined routes.
+   - Undefined routes ke liye `path="*"` ka use karo.
    ```jsx
    <Route path="*" element={<div>Page Not Found</div>} />
    ```
@@ -178,19 +178,19 @@ export default Profile;
 ## Project Execution
 
 ### Steps to Run:
-1. **Install Dependencies**:
+1. **Dependencies Install Karo**:
    ```bash
    npm install
    ```
 
-2. **Start Development Server**:
+2. **Development Server Start Karo**:
    ```bash
    npm run dev
    ```
 
-3. **Test Routes**:
+3. **Routes Test Karo**:
    - `/` → Home Page
    - `/about` → About Page
    - `/redirect` → Redirects to `/about`
-   - `/profile/JohnDoe` → Displays "Profile of JohnDoe"
-   - Any other path → Displays "Page Not Found"
+   - `/profile/JohnDoe` → "Profile of JohnDoe" dikhayega
+   - Any other path → "Page Not Found" dikhayega
