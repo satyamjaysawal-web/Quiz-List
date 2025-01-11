@@ -90,13 +90,15 @@ Get : http://127.0.0.1:5000/api/orders/
 
 ---
 
-/components/Navbar.jsx
-/components/Login.jsx
-/components/Logout.jsx
-/components/Register.jsx
-/components/Profile.jsx
-/components/ProductList.jsx
-/components/api.js
+/components/Navbar.jsx with Home, Products, Login, Register, if Loggined `Logout`
+/components/Login.jsx with Register Logout button
+
+/components/Register.jsx with Login Logout button
+/components/Profile.jsx Loggined user
+/components/ProductList.jsx no need login
+/components/cart.jsx - with user_id , loggined user
+AuthContext.jsx
+api.js
 App.jsx
 -- frontend using vite http://localhost:5173/
 
