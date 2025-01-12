@@ -76,12 +76,12 @@ Get : http://127.0.0.1:5000/api/auth/cart/
         {
             "image_url": "http://example.com/product-a.jpg",
             "name": "Product A",
-            "price": "Not Available",
+            "price": 270.0,
             "product_id": 1,
-            "quantity": 1
+            "quantity": 15
         }
     ],
-    "last_updated": "Sat, 11 Jan 2025 23:00:13 GMT",
+    "last_updated": "Sun, 12 Jan 2025 07:51:37 GMT",
     "user_id": 1
 }
 Put : http://127.0.0.1:5000/api/auth/cart/update
