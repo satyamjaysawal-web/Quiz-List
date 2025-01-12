@@ -85,7 +85,12 @@ Get : http://127.0.0.1:5000/api/auth/cart/
     "user_id": 1
 }
 Put : http://127.0.0.1:5000/api/auth/cart/update
-Delete : http://127.0.0.1:5000/api/auth/cart/remove/1
+{
+    "product_id": 1,
+    "quantity": 5
+}
+
+Delete : http://127.0.0.1:5000/api/auth/cart/remove/<product_id>
 Delete : http://127.0.0.1:5000/api/auth/cart/clear
 
 Post : http://127.0.0.1:5000/api/auth/wishlist/add
@@ -94,14 +99,78 @@ Post : http://127.0.0.1:5000/api/auth/wishlist/add
 }
 Delete : http://127.0.0.1:5000/api/auth/wishlist/clear
 
-Post : http://127.0.0.1:5000/api/auth/orders/create
+Post : http://127.0.0.1:5000/api/auth/orders/create-by-product
 
 {
-    "message": "Order created successfully.",
-    "order_id": 1
+    "product_id": 1,
+    "quantity": 2,
+    "shipping_address": "123 Main Street, City, Country"
 }
 
-Get : http://127.0.0.1:5000/api/auth/orders/
+Post : http://127.0.0.1:5000/api/auth/orders/create-from-cart
+{
+    "shipping_address": "123 Main Street, City, Country"
+}
+GET http://127.0.0.1:5000/api/auth/orders
+[
+    {
+        "order_id": 101,
+        "user_id": 1,
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Product A",
+                "quantity": 2,
+                "price": 270.0
+            }
+        ],
+        "total_price": 540.0,
+        "shipping_address": "123 Main Street, City, Country",
+        "created_at": "2025-01-12T08:30:00Z",
+        "status": "Pending"
+    },
+    {
+        "order_id": 102,
+        "user_id": 1,
+        "items": [
+            {
+                "product_id": 2,
+                "name": "Product B",
+                "quantity": 1,
+                "price": 300.0
+            }
+        ],
+        "total_price": 300.0,
+        "shipping_address": "456 Main Avenue, City, Country",
+        "created_at": "2025-01-13T09:15:00Z",
+        "status": "Shipped"
+    }
+]
+
+GET http://127.0.0.1:5000/api/orders/vendor
+[
+    {
+        "order_id": 101,
+        "customer_id": 1,
+        "items": [
+            {
+                "product_id": 1,
+                "name": "Product A",
+                "quantity": 2,
+                "price": 270.0
+            }
+        ],
+        "total_price": 540.0,
+        "shipping_address": "123 Main Street, City, Country",
+        "created_at": "2025-01-12T08:30:00Z",
+        "status": "Pending"
+    }
+]
+
+PUT http://127.0.0.1:5000/api/orders/vendor/<order_id>
+{
+    "status": "Shipped"
+}
 
 ---
 
