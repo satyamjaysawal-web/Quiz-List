@@ -61,14 +61,14 @@ Get : http://127.0.0.1:5000/api/products
     }
 ]
 
-Post : http://127.0.0.1:5000/api/cart/add
+Post : http://127.0.0.1:5000/api/auth/cart/add 
 
 {
     "product_id": 1,
     "quantity": 2
 }
 
-Get : http://127.0.0.1:5000/api/cart/
+Get : http://127.0.0.1:5000/api/auth/cart/ 
 {
     "_id": 3,
     "created_at": "Sat, 11 Jan 2025 23:00:13 GMT",
