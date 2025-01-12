@@ -190,3 +190,38 @@ App.jsx
 
 
 ```
+```
+
+
+backend/
+├── models/
+│   ├── cart.py
+│   ├── email.py
+│   ├── order.py
+│   ├── payment.py
+│   ├── product.py
+│   ├── review.py
+│   ├── user.py
+│   ├── util.py
+│   ├── wishlist.py
+├── routes/
+│   ├── auth_routes.py
+│   ├── cart_routes.py
+│   ├── order_routes.py
+│   ├── payment_routes.py
+│   ├── product_routes.py
+│   ├── review_routes.py
+│   ├── wishlist_routes.py
+├── venv/
+├── .env
+├── .gitignore
+├── app.py
+├── config.py
+├── extensions.py
+├── requirements.txt
+
+
+
+
+
+```
