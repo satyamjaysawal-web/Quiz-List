@@ -69,6 +69,21 @@ Post : http://127.0.0.1:5000/api/cart/add
 }
 
 Get : http://127.0.0.1:5000/api/cart/
+{
+    "_id": 3,
+    "created_at": "Sat, 11 Jan 2025 23:00:13 GMT",
+    "items": [
+        {
+            "image_url": "http://example.com/product-a.jpg",
+            "name": "Product A",
+            "price": "Not Available",
+            "product_id": 1,
+            "quantity": 1
+        }
+    ],
+    "last_updated": "Sat, 11 Jan 2025 23:00:13 GMT",
+    "user_id": 1
+}
 Put : http://127.0.0.1:5000/api/cart/update
 Delete : http://127.0.0.1:5000/api/cart/remove/1
 Delete : http://127.0.0.1:5000/api/cart/clear
