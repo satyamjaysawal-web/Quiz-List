@@ -181,6 +181,7 @@ PUT http://127.0.0.1:5000/api/orders/vendor/<order_id>
 /components/Profile.jsx Loggined user
 /components/ProductList.jsx no need login
 /components/Cart.jsx - with user_id , loggined user
+/components/Wishlist.jsx with user_id, loggined user
 AuthContext.jsx
 api.js
 App.jsx
