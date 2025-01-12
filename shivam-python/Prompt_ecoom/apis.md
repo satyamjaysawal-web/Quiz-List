@@ -84,24 +84,24 @@ Get : http://127.0.0.1:5000/api/auth/cart/
     "last_updated": "Sat, 11 Jan 2025 23:00:13 GMT",
     "user_id": 1
 }
-Put : http://127.0.0.1:5000/api/cart/update
-Delete : http://127.0.0.1:5000/api/cart/remove/1
-Delete : http://127.0.0.1:5000/api/cart/clear
+Put : http://127.0.0.1:5000/api/auth/cart/update
+Delete : http://127.0.0.1:5000/api/auth/cart/remove/1
+Delete : http://127.0.0.1:5000/api/auth/cart/clear
 
-Post : http://127.0.0.1:5000/api/wishlist/add
+Post : http://127.0.0.1:5000/api/auth/wishlist/add
 {
     "product_id": 1
 }
-Delete : http://127.0.0.1:5000/api/wishlist/clear
+Delete : http://127.0.0.1:5000/api/auth/wishlist/clear
 
-Post : http://127.0.0.1:5000/api/orders/create
+Post : http://127.0.0.1:5000/api/auth/orders/create
 
 {
     "message": "Order created successfully.",
     "order_id": 1
 }
 
-Get : http://127.0.0.1:5000/api/orders/
+Get : http://127.0.0.1:5000/api/auth/orders/
 
 ---
 
