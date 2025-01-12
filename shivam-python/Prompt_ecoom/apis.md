@@ -173,14 +173,14 @@ PUT http://127.0.0.1:5000/api/orders/vendor/<order_id>
 }
 
 ---
-
+/components/Home.jsx
 /components/Navbar.jsx with Home, Products, Login, Register, if Loggined `Logout`
 /components/Login.jsx with Register Logout button
 
 /components/Register.jsx with Login Logout button
 /components/Profile.jsx Loggined user
 /components/ProductList.jsx no need login
-/components/cart.jsx - with user_id , loggined user
+/components/Cart.jsx - with user_id , loggined user
 AuthContext.jsx
 api.js
 App.jsx
