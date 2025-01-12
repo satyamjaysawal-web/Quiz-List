@@ -97,6 +97,7 @@ Post : http://127.0.0.1:5000/api/auth/wishlist/add
 {
     "product_id": 1
 }
+
 Delete : http://127.0.0.1:5000/api/auth/wishlist/clear
 
 Post : http://127.0.0.1:5000/api/auth/orders/create-by-product
@@ -106,7 +107,10 @@ Post : http://127.0.0.1:5000/api/auth/orders/create-by-product
     "quantity": 2,
     "shipping_address": "123 Main Street, City, Country"
 }
-
+GET : http://127.0.0.1:5000/api/auth/wishlist/
+{
+    "products": []
+}
 Post : http://127.0.0.1:5000/api/auth/orders/create-from-cart
 {
     "shipping_address": "123 Main Street, City, Country"
