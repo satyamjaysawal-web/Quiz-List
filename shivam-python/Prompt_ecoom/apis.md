@@ -27,36 +27,38 @@ Get : http://127.0.0.1:5000/api/auth/profile
 Post : http://127.0.0.1:5000/api/products
 
 {
-    "name": "Product A",
-    "category_id": 1,
-    "selling_price_inr": 300,
-    "expenditure_cost_inr": 200,
-    "discount_percentage": 10,
-    "total_stock": 100,
-    "stock_remaining": 80,
-    "image_url": "http://example.com/product-a.jpg",
-    "description": "This is Product A"
+{
+  "name": "Wireless Headphones",
+  "category": "Electronics",
+  "selling_price_inr": 3500,
+  "discount_percentage": 12,
+  "expenditure_cost_inr": 2500,
+  "total_stock": 120,
+  "description": "Noise-canceling wireless headphones with long battery life",
+  "image_url": "http://example.com/wireless_headphones.jpg"
+}
+
 }
 
 Get : http://127.0.0.1:5000/api/products
 
 [
     {
-        "_id": 1,
-        "after_discount_selling_price_inr": 270.0,
-        "category_id": 1,
-        "created_at": "Mon, 06 Jan 2025 09:24:19 GMT",
-        "description": "This is Product A",
-        "discount_percentage": 10,
-        "expenditure_cost_inr": 200,
-        "image_url": "http://example.com/product-a.jpg",
-        "last_updated": "Mon, 06 Jan 2025 09:28:11 GMT",
-        "name": "Product A",
-        "profit_per_item_inr": 70.0,
-        "selling_price_inr": 300,
-        "stock_remaining": 78,
-        "total_stock": 100,
-        "total_stock_price_inr": 21060.0,
+        "_id": 31,
+        "after_discount_selling_price_inr": 3080.0,
+        "category": "Electronics",
+        "created_at": "Tue, 14 Jan 2025 19:14:57 GMT",
+        "description": "Noise-canceling wireless headphones with long battery life",
+        "discount_percentage": 12,
+        "expenditure_cost_inr": 2500,
+        "image_url": "http://example.com/wireless_headphones.jpg",
+        "last_updated": "Tue, 14 Jan 2025 19:14:57 GMT",
+        "name": "Wireless Headphones",
+        "profit_per_item_inr": 580.0,
+        "selling_price_inr": 3500,
+        "stock_remaining": 120,
+        "total_stock": 120,
+        "total_stock_price_inr": 369600.0,
         "user_id": 1
     }
 ]
